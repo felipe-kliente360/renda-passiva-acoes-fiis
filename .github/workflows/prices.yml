@@ -1,0 +1,44 @@
+name: Preços diários (Fase 1)
+
+# Preço de mercado é diário; job leve e separado da ingestão mensal de fundamentos.
+on:
+  schedule:
+    - cron: "30 22 * * 1-5" # dias úteis, após o fechamento da B3 (22:30 UTC ~ 19:30 BRT)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prices
+  cancel-in-progress: true
+
+jobs:
+  fetch-prices:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências (inclui fallback yfinance)
+        run: pip install -r requirements.txt
+
+      - name: Buscar preços da watchlist
+        env:
+          BRAPI_TOKEN: ${{ secrets.BRAPI_TOKEN }}
+        run: python scripts/fetch_prices.py --fii-vp data/fii_vp.json --out data/prices
+
+      - name: Commitar artefatos atualizados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/prices.json data/prices.parquet
+          if git diff --staged --quiet; then
+            echo "Sem mudanças nos artefatos."
+          else
+            git commit -m "chore(data): atualiza preços diários"
+            git push
+          fi
