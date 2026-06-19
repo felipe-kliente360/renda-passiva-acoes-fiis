@@ -1,0 +1,28 @@
+# Config-driven: nomes de coluna do CSV cru da CVM NÃO ficam fixos no código.
+# Para cada campo lógico listamos CANDIDATOS de nome de coluna; o parser escolhe o
+# primeiro presente no arquivo real. Os nomes pós-Resolução 175 podem ter mudado:
+#   SEMPRE rodar `python scripts/inspect_zip.py <zip>` e validar o que resolveu
+#   antes de confiar. Acrescentar candidatos aqui conforme os arquivos reais.
+
+# Informe mensal de FII (INF_MENSAL) — insumo do P/VP (valor patrimonial da cota).
+fii_inf_mensal:
+  encoding: ISO-8859-1
+  sep: ";"
+  decimal: ","
+  fields:
+    cnpj_fundo:
+      candidates: ["CNPJ_Fundo", "CNPJ_Fundo_Classe", "CNPJ_FUNDO"]
+      required: true
+    competencia:
+      candidates: ["Data_Referencia", "Data_Competencia", "DT_COMPTC"]
+      required: true
+    patrimonio_liquido:
+      candidates: ["Patrimonio_Liquido", "Patrimonio_Liquido_Classe", "VL_PATRIM_LIQ"]
+      required: false
+    cotas_emitidas:
+      candidates: ["Cotas_Emitidas", "Numero_Cotas", "Quantidade_Cotas_Emitidas"]
+      required: false
+    valor_patrimonial_cota:
+      # Quando presente, usar direto. Quando ausente, derivar = PL / cotas_emitidas.
+      candidates: ["Valor_Patrimonial_Cotas", "Valor_Patrimonial_Cota", "VL_PATRIM_COTA"]
+      required: false

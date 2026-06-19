@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Dados brutos baixados (não versionar ZIPs/CSVs crus da CVM ou caches de preço)
+data/raw/
+*.zip
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Segredos
+.env
+.env.*
+!.env.example

@@ -1,0 +1,27 @@
+# Watchlist inicial — blue chips + FIIs de alta liquidez, ordenados por volume diário
+# DECRESCENTE (aproximado, conhecimento de mercado). É um ponto de partida do MVP:
+#   - tickers conferidos; é seguro buscar preço.
+#   - `cnpj` dos FIIs é necessário para o JOIN com o informe CVM (P/VP). Onde está
+#     `null`, NÃO foi inventado — preencher/validar contra o cadastro da CVM antes de
+#     confiar no P/VP daquele fundo.
+# Editar à vontade. O sufixo de mercado (.SA) é responsabilidade do fetcher, não daqui.
+
+acoes:
+  - { ticker: PETR4, nome: "Petrobras PN",        cnpj: null }
+  - { ticker: VALE3, nome: "Vale ON",             cnpj: null }
+  - { ticker: ITUB4, nome: "Itaú Unibanco PN",    cnpj: null }
+  - { ticker: BBDC4, nome: "Bradesco PN",         cnpj: null }
+  - { ticker: B3SA3, nome: "B3 ON",               cnpj: null }
+  - { ticker: BBAS3, nome: "Banco do Brasil ON",  cnpj: null }
+  - { ticker: ABEV3, nome: "Ambev ON",            cnpj: null }
+  - { ticker: ITSA4, nome: "Itaúsa PN",           cnpj: null }
+
+fiis:
+  - { ticker: MXRF11, nome: "Maxi Renda",            cnpj: null }
+  - { ticker: HGLG11, nome: "CSHG Logística",        cnpj: null }
+  - { ticker: KNCR11, nome: "Kinea Rendimentos",     cnpj: null }
+  - { ticker: KNRI11, nome: "Kinea Renda Imob.",     cnpj: null }
+  - { ticker: XPML11, nome: "XP Malls",              cnpj: null }
+  - { ticker: HGRU11, nome: "CSHG Renda Urbana",     cnpj: null }
+  - { ticker: VISC11, nome: "Vinci Shopping Centers", cnpj: null }
+  - { ticker: BTLG11, nome: "BTG Logística",         cnpj: null }
