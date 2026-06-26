@@ -102,11 +102,13 @@ GitHub Actions (cron) → Python (pandas) ingestão+normalização
 0. **Fundação** (normalize CVM, parser FII config-driven, métricas puras de DY). ✅ feito
 1. **Pipeline de preços** (brapi + yfinance, série ajustada só por split, P/VP, preço médio
    anual, export, Action diária). ✅ feito
-2. **Fundamentos + proventos via CVM ITR/DFP (ações)** — espinha da tese. Ingestão
-   config-driven dos membros DFC (proventos pagos), DMPL (proventos declarados), DRE
-   (lucro) e `composicao_capital` (ações). Parsing por `CD_CONTA` tratando os dois planos
-   (financeira × não-financeira). DY oficial por competência cai como subproduto. (Funde
-   as antigas Fases 2+3 — ver revisão da metodologia de DY.)
+2. **Fundamentos + proventos via CVM ITR/DFP (ações)** — espinha da tese. ✅ feito
+   (DFP 2015–2025): proventos pagos (DFC), lucro atribuível à controladora (DRE), ações
+   (`composicao_capital`, escala por ano via âncora yfinance), DY histórico/corrente,
+   payout, recorrência, CAGR e flag yield trap → `data/fundamentos.json`. Config-driven
+   por `config/contas.yml`, tratando os dois planos (financeira × não-financeira). DMPL
+   (proventos declarados) e TTM via ITR ficam como refinamentos. (Funde as antigas Fases
+   2+3 — ver revisão da metodologia de DY.)
 4. Score composto → short-list ranqueada (consistência do histórico + saúde atual com
    tendência).
 5. Dashboard Next.js/Netlify.

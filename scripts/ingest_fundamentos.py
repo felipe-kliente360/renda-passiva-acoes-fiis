@@ -84,7 +84,11 @@ def main() -> int:
     for year in range(args.start, args.end + 1):
         zip_path = DEFAULT_RAW / f"dfp_cia_aberta_{year}.zip"
         if not args.no_download and not zip_path.exists():
-            zip_path = download_dfp(year)
+            try:
+                zip_path = download_dfp(year)
+            except Exception as e:  # ano ainda não publicado (DFP sai no ano seguinte) etc.
+                print(f"[{year}] download falhou ({e}); pulando.", file=sys.stderr)
+                continue
         if not zip_path.exists():
             print(f"[{year}] ZIP ausente, pulando.", file=sys.stderr)
             continue

@@ -1,0 +1,51 @@
+name: Fundamentos de ações (trimestral)
+
+# DFP/ITR da CVM saem em janelas trimestrais/anuais. Cron trimestral + disparo manual.
+# Reconstrói a série histórica inteira (anos antigos são imutáveis; baixar é barato).
+on:
+  schedule:
+    - cron: "0 7 10 1,4,7,10 *" # dia 10 de jan/abr/jul/out, 07:00 UTC
+  workflow_dispatch:
+    inputs:
+      start_year:
+        description: "Primeiro ano fiscal (DFP)"
+        default: "2015"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fundamentos
+  cancel-in-progress: false
+
+jobs:
+  ingest-fundamentos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+
+      - name: Ingerir fundamentos (DFP) e calcular DY/payout
+        env:
+          START_YEAR: ${{ github.event.inputs.start_year || '2015' }}
+        run: |
+          python scripts/ingest_fundamentos.py \
+            --start "$START_YEAR" --end "$(date -u +%Y)" --out data/fundamentos
+
+      - name: Commitar artefatos atualizados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/fundamentos.json data/fundamentos.parquet
+          if git diff --staged --quiet; then
+            echo "Sem mudanças nos artefatos."
+          else
+            git commit -m "chore(data): atualiza fundamentos de ações (ingestão trimestral)"
+            git push
+          fi
