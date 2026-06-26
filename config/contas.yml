@@ -1,0 +1,27 @@
+# Conceitos lógicos -> como localizá-los nas demonstrações da CVM (ITR/DFP), que vêm em
+# formato long-format (uma linha por conta: CD_CONTA / DS_CONTA / VL_CONTA).
+#
+# Por que NÃO fixamos o CD_CONTA: ele varia entre o plano de contas financeiro e o
+# não-financeiro (ex.: dividendos pagos = 6.03.05/06 na Petrobras, 6.03.07/08 no Itaú) e
+# uma empresa pode ter várias linhas do mesmo conceito. Em vez de código fixo, casamos por
+# SEÇÃO (prefixo do CD_CONTA, estável) + PALAVRAS na DS_CONTA, e SOMAMOS as linhas que
+# batem. Resiliente aos dois planos. SEMPRE validar com scripts/inspect_dfp.py.
+#
+# `statement` = sufixo do membro no ZIP (DFC_MI, DRE, DMPL, ...); o parser prefere o
+# consolidado (_con) e cai para o individual (_ind). `absolute` = tomar |valor| (saídas de
+# caixa vêm negativas). Match de DS é case/acento-insensível.
+
+proventos_pagos:            # numerador do DY — dividendos + JCP PAGOS no período (caixa)
+  statement: DFC_MI
+  section_prefix: "6.03"    # atividades de financiamento
+  ds_includes: ["dividendo", "juros sobre o capital", "juros sobre capital"]
+  # exclui dividendos RECEBIDOS (6.02, operacional) e os pagos a acionistas NÃO
+  # controladores (são das controladas; queremos só o que foi pago aos acionistas da
+  # própria empresa). Validado: Petrobras 6.03.05+06, Itaú 6.03.07+08, Vale 6.03.04.
+  ds_excludes: ["recebido", "nao controlador"]
+  absolute: true
+
+# NOTA: lucro_liquido (denominador do payout) ainda NÃO está aqui de propósito. O número
+# correto é o "Lucro atribuído aos sócios da controladora" (3.11.01), não o "Consolidado
+# do Período" (3.11, que inclui não-controladores). Isso pede lógica de prioridade, não
+# soma — será adicionado no commit do payout, com tratamento explícito.

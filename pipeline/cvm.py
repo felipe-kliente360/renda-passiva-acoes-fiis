@@ -16,6 +16,10 @@ from pathlib import Path
 
 # Base dos informes mensais de FII. Validar contra o índice da CVM.
 FII_INF_MENSAL_BASE = "https://dados.cvm.gov.br/dados/FII/DOC/INF_MENSAL/DADOS"
+# Demonstrações de companhias abertas (ações): DFP (anual) e ITR (trimestral). Validados
+# contra o índice vivo em 2026-06-26 (dfp_cia_aberta_AAAA.zip / itr_cia_aberta_AAAA.zip).
+DFP_BASE = "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS"
+ITR_BASE = "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS"
 
 DEFAULT_DEST = Path("data/raw")
 
@@ -23,6 +27,16 @@ DEFAULT_DEST = Path("data/raw")
 def fii_inf_mensal_url(year: int) -> str:
     """URL do ZIP do informe mensal de FII para um ano."""
     return f"{FII_INF_MENSAL_BASE}/inf_mensal_fii_{year}.zip"
+
+
+def dfp_url(year: int) -> str:
+    """URL do ZIP das DFP (demonstrações anuais) de companhias abertas."""
+    return f"{DFP_BASE}/dfp_cia_aberta_{year}.zip"
+
+
+def itr_url(year: int) -> str:
+    """URL do ZIP das ITR (demonstrações trimestrais) de companhias abertas."""
+    return f"{ITR_BASE}/itr_cia_aberta_{year}.zip"
 
 
 def download(url: str, dest: str | Path, *, timeout: int = 60) -> Path:
@@ -49,3 +63,17 @@ def download_fii_inf_mensal(
     year = year or date.today().year
     dest = Path(dest_dir) / f"inf_mensal_fii_{year}.zip"
     return download(fii_inf_mensal_url(year), dest)
+
+
+def download_dfp(year: int | None = None, dest_dir: str | Path = DEFAULT_DEST) -> Path:
+    """Baixa o ZIP das DFP (anuais) do ano (default: ano corrente)."""
+    year = year or date.today().year
+    dest = Path(dest_dir) / f"dfp_cia_aberta_{year}.zip"
+    return download(dfp_url(year), dest)
+
+
+def download_itr(year: int | None = None, dest_dir: str | Path = DEFAULT_DEST) -> Path:
+    """Baixa o ZIP das ITR (trimestrais) do ano (default: ano corrente)."""
+    year = year or date.today().year
+    dest = Path(dest_dir) / f"itr_cia_aberta_{year}.zip"
+    return download(itr_url(year), dest)
