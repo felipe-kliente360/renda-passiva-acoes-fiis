@@ -18,7 +18,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from pipeline.columns import load_columns_config  # noqa: E402
+from pipeline.columns import (  # noqa: E402
+    DatasetSpec,
+    load_columns_config,
+    pick_member_by_resolution,
+)
 from pipeline.export import export_json, export_parquet  # noqa: E402
 from pipeline.fii import DATASET, latest_vp_por_fundo, parse_fii_inf_mensal  # noqa: E402
 from pipeline.normalize import (  # noqa: E402
@@ -26,6 +30,21 @@ from pipeline.normalize import (  # noqa: E402
     read_cvm_csv,
     read_cvm_csv_from_zip,
 )
+
+# Campos que carregam o VP da cota (direto ou derivável). O membro escolhido do ZIP
+# deve resolver pelo menos um deles, senão o parse sai vazio (ex.: o membro
+# `ativo_passivo` resolve cnpj/competencia mas NÃO tem VP/PL/cotas; vivem no `complemento`).
+VP_FIELDS = ("valor_patrimonial_cota", "patrimonio_liquido", "cotas_emitidas")
+
+
+def _select_member(zip_path: Path, spec: DatasetSpec, members: list[str]) -> str | None:
+    """Lê o header de cada CSV do ZIP e delega a escolha à lógica pura (config-driven)."""
+    members_columns = {
+        m: list(read_cvm_csv_from_zip(zip_path, m, nrows=0).columns)
+        for m in members
+        if m.lower().endswith(".csv")
+    }
+    return pick_member_by_resolution(spec, members_columns, prefer_fields=VP_FIELDS)
 
 
 def main() -> int:
@@ -45,13 +64,15 @@ def main() -> int:
 
     spec = load_columns_config()[DATASET]
     if args.path.suffix.lower() == ".zip":
-        member = args.member or next(
-            (m for m in list_zip_members(args.path) if m.lower().endswith(".csv")),
-            None,
-        )
+        member = args.member or _select_member(args.path, spec, list_zip_members(args.path))
         if member is None:
-            print("Nenhum CSV no ZIP.", file=sys.stderr)
+            print(
+                "Nenhum CSV do ZIP resolveu os campos do dataset. "
+                "Rode scripts/inspect_zip.py e ajuste config/columns.yml.",
+                file=sys.stderr,
+            )
             return 2
+        print(f"Membro: {member}")
         df = read_cvm_csv_from_zip(args.path, member)
     else:
         df = read_cvm_csv(args.path)

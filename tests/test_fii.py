@@ -37,7 +37,7 @@ def test_latest_vp_picks_most_recent_competencia():
     a = latest[latest["cnpj_fundo"] == "11.111.111/0001-11"]
     assert len(a) == 1
     assert a["valor_patrimonial_cota"].iloc[0] == 102.0
-    assert a["competencia"].iloc[0] == pd.Timestamp("2024-02-29")
+    assert a["competencia"].iloc[0] == pd.Timestamp("2026-02-01")
     # fundo C (sempre NaN) não entra
     assert "33.333.333/0001-33" not in set(latest["cnpj_fundo"])
 

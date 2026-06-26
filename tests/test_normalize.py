@@ -2,6 +2,7 @@ import io
 import zipfile
 
 import pandas as pd
+import pytest
 from conftest import DATA_DIR
 
 from pipeline.normalize import (
@@ -11,11 +12,12 @@ from pipeline.normalize import (
     to_numeric_ptbr,
 )
 
+COMMA_SAMPLE = DATA_DIR / "cvm_comma_sample.csv"
 SAMPLE = DATA_DIR / "fii_inf_mensal_sample.csv"
 
 
 def test_read_cvm_csv_handles_latin1_sep_decimal():
-    df = read_cvm_csv(SAMPLE)
+    df = read_cvm_csv(COMMA_SAMPLE)
     assert list(df.columns) == [
         "CNPJ_Fundo",
         "Data_Referencia",
@@ -28,10 +30,20 @@ def test_read_cvm_csv_handles_latin1_sep_decimal():
 
 
 def test_to_numeric_ptbr_thousand_and_decimal():
-    df = read_cvm_csv(SAMPLE)
-    pl = to_numeric_ptbr(df["Patrimonio_Liquido"])
+    df = read_cvm_csv(COMMA_SAMPLE)
+    pl = to_numeric_ptbr(df["Patrimonio_Liquido"])  # default vírgula
     assert pl.iloc[0] == 1_000_000.00
     assert pl.iloc[1] == 1_020_000.00
+
+
+def test_to_numeric_ptbr_dot_decimal_keeps_point():
+    # Caminho do FII INF_MENSAL: ponto é o decimal, NÃO separador de milhar.
+    # Regressão do bug que lia "92.21" como 9221 ao remover o ponto.
+    s = pd.Series(["92.2101419138767", "100.00", "606485090.82"])
+    out = to_numeric_ptbr(s, decimal=".")
+    assert out.iloc[0] == pytest.approx(92.2101419138767)
+    assert out.iloc[1] == 100.0
+    assert out.iloc[2] == pytest.approx(606485090.82)
 
 
 def test_to_numeric_ptbr_idempotent_on_numeric():

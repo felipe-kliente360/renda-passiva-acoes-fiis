@@ -55,6 +55,30 @@ def load_columns_config(path: str | Path | None = None) -> dict[str, DatasetSpec
     return specs
 
 
+def pick_member_by_resolution(
+    spec: DatasetSpec,
+    members_columns: dict[str, list[str]],
+    *,
+    prefer_fields: tuple[str, ...] = (),
+) -> str | None:
+    """Escolhe, entre vários membros (CSV de um ZIP), o que melhor resolve o dataset.
+
+    Pura e testável: recebe um mapa `membro -> colunas reais`. Descarta membros que
+    deixam campos obrigatórios faltando; entre os válidos, vence o que resolve mais
+    campos de `prefer_fields` (ex.: as colunas de VP do FII). Empate fica com a ordem
+    de inserção do dict. Retorna None se nenhum membro resolver os obrigatórios.
+    """
+    best: tuple[int, str] | None = None
+    for member, cols in members_columns.items():
+        resolved, missing = resolve_columns(spec, cols)
+        if missing:
+            continue
+        score = sum(1 for f in prefer_fields if f in resolved)
+        if best is None or score > best[0]:
+            best = (score, member)
+    return best[1] if best else None
+
+
 def resolve_columns(
     spec: DatasetSpec, available: list[str]
 ) -> tuple[dict[str, str], list[str]]:

@@ -5,10 +5,14 @@
 #   antes de confiar. Acrescentar candidatos aqui conforme os arquivos reais.
 
 # Informe mensal de FII (INF_MENSAL) — insumo do P/VP (valor patrimonial da cota).
+# NOTA decimal: este dataset usa PONTO como separador decimal (validado contra os
+# arquivos reais 2020 e 2026 — ex.: "92.2101419138767"). A "vírgula decimal" do briefing
+# vale para outros datasets da CVM, não para este. Decimal é resolvido por-dataset aqui.
+# As colunas de VP/PL/cotas vivem no membro `..._complemento_AAAA.csv` do ZIP.
 fii_inf_mensal:
   encoding: ISO-8859-1
   sep: ";"
-  decimal: ","
+  decimal: "."
   fields:
     cnpj_fundo:
       candidates: ["CNPJ_Fundo", "CNPJ_Fundo_Classe", "CNPJ_FUNDO"]

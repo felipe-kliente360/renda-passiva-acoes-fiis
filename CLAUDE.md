@@ -35,10 +35,17 @@ Produto final: portal web alimentado por pipelines que rodam sozinhos, sem infra
   dívida líquida/EBITDA e ROE.
 
 ### Formato cru da CVM (sempre tratar)
-- Encoding **ISO-8859-1**; separador `;`; vírgula decimal.
+- Encoding **ISO-8859-1**; separador `;`. **Separador decimal varia por dataset** —
+  NÃO é universalmente vírgula. Validado: **INF_MENSAL de FII usa PONTO** (ex.: `92.21`,
+  em 2020 e 2026). Decimal é config-driven por dataset em `config/columns.yml` e threadado
+  via `spec.decimal`; o default vírgula é só fallback. Validar cada dataset novo.
+- INF_MENSAL de FII tem 3 CSVs no ZIP (`ativo_passivo`, `complemento`, `geral`); o VP da
+  cota / PL / cotas vivem no **`complemento`**. O ingest escolhe o membro pela resolução
+  de colunas, não pelo 1º CSV.
 - O ZIP do ano corrente é reescrito a cada atualização (não incremental).
 - Nomes de coluna podem ter mudado após a Resolução 175 → **validar contra arquivo real,
-  nunca fixar no código** (config-driven via `config/columns.yml`).
+  nunca fixar no código** (config-driven via `config/columns.yml`). Ex.: `CNPJ_Fundo`
+  (2020) → `CNPJ_Fundo_Classe` (2026).
 
 ### Arquitetura
 ```

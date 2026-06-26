@@ -1,6 +1,6 @@
 # Estado do código (mapa vivo)
 
-Atualizado em: 2026-06-19
+Atualizado em: 2026-06-26
 
 ## Pronto e testado (offline)
 | Módulo | Função | Testes |
@@ -17,14 +17,22 @@ Scripts: `scripts/inspect_zip.py` (valida colunas reais), `scripts/ingest_fii.py
 (ingestão FII), `scripts/fetch_prices.py` (Fase 1).
 Workflows: `.github/workflows/ingest.yml` (mensal), `prices.yml` (diário).
 
-`pytest`: 36 testes passando offline.
+`pytest`: 39 testes passando offline.
+
+## Validado contra dados reais (2026-06-26)
+- **Pipeline real rodado localmente** (rede aberta): `ingest_fii --download` →
+  `data/fii_vp.json` com 1314 fundos; `fetch_prices` → `data/prices.json` com os 16
+  tickers da watchlist. Primeiros artefatos reais commitados.
+- **columns.yml validado**: os candidatos resolvem contra o arquivo real. Correções:
+  (a) INF_MENSAL de FII é **ponto-decimal** (não vírgula) — `decimal: "."`; (b) VP/PL/cotas
+  vivem no membro `complemento` (o ingest agora escolhe o membro pela resolução de colunas,
+  não pelo 1º CSV); (c) `fii.py` threada `spec.decimal` (antes ignorava). Ver `CLAUDE.md`.
+- **URLs da CVM validadas** contra o índice vivo (`inf_mensal_fii_2026.zip` presente, 200 OK).
 
 ## Pendências conhecidas / a validar
-- **columns.yml** lista CANDIDATOS de nome de coluna por suposição. Validar contra o ZIP
-  REAL da CVM com `scripts/inspect_zip.py` e ajustar (nomes pós-Resolução 175).
-- **URLs da CVM** em `cvm.py` precisam de validação contra o índice vivo.
-- **watchlist.yml**: tickers conferidos; `cnpj` dos FIIs está `null` (necessário para o
-  JOIN do P/VP — preencher do cadastro CVM, não inventar).
+- **watchlist.yml**: tickers conferidos; `cnpj` dos FIIs está `null` → P/VP dos 8 FIIs sai
+  `null`. Falta uma fonte autoritativa ticker→CNPJ (não está no INF_MENSAL, que só tem
+  nome/ISIN). Preencher do cadastro CVM/B3, não inventar.
 - **Série histórica de preços** vem do yfinance (`Close` auto_adjust=False = split-adj,
   div-unadj). brapi é o primário do PREÇO SPOT. Refinamento sobre o briefing (brapi
   primário p/ série) — feito por correção metodológica; sinalizado ao Felipe.

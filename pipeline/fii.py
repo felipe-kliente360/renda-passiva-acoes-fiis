@@ -41,12 +41,12 @@ def parse_fii_inf_mensal(
 
     vp = pd.Series(np.nan, index=df.index, dtype="float64")
     if "valor_patrimonial_cota" in resolved:
-        vp = to_numeric_ptbr(df[resolved["valor_patrimonial_cota"]])
+        vp = to_numeric_ptbr(df[resolved["valor_patrimonial_cota"]], decimal=spec.decimal)
 
     # Deriva VP da cota onde não veio direto: PL / cotas emitidas.
     if {"patrimonio_liquido", "cotas_emitidas"} <= resolved.keys():
-        pl = to_numeric_ptbr(df[resolved["patrimonio_liquido"]])
-        cotas = to_numeric_ptbr(df[resolved["cotas_emitidas"]])
+        pl = to_numeric_ptbr(df[resolved["patrimonio_liquido"]], decimal=spec.decimal)
+        cotas = to_numeric_ptbr(df[resolved["cotas_emitidas"]], decimal=spec.decimal)
         derived = pl.where(cotas.gt(0)) / cotas.where(cotas.gt(0))
         vp = vp.where(vp.notna(), derived)
 

@@ -1,6 +1,9 @@
 """Leitura e normalização do formato cru da CVM.
 
-Decisão TRAVADA do formato CVM: encoding ISO-8859-1, separador `;`, vírgula decimal.
+Formato cru da CVM: encoding ISO-8859-1, separador `;`. O separador DECIMAL varia por
+dataset e NÃO é universal — os defaults abaixo (vírgula) servem de fallback, mas cada
+dataset declara o seu em `config/columns.yml` e os parsers threadam `spec.decimal`.
+Validado: o INF_MENSAL de FII usa PONTO (ex.: "92.21"), não vírgula.
 Funções puras sobre arquivos/buffers locais — nenhum acesso a rede aqui.
 """
 
