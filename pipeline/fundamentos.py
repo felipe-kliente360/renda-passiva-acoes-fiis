@@ -141,6 +141,28 @@ def _empty_concept() -> pd.DataFrame:
     )
 
 
+def lucro_liquido(
+    df_dre: pd.DataFrame, specs: dict[str, ContaSpec] | None = None, *, ordem: str = "ÚLTIMO"
+) -> pd.DataFrame:
+    """Lucro líquido por empresa/exercício, preferindo o ATRIBUÍDO À CONTROLADORA.
+
+    Cai no consolidado do período só onde não há abertura por controladora (empresas sem
+    minoritários). Coluna `fonte_lucro` registra qual saiu. Mesma saída tidy do
+    extract_concept (cnpj, cd_cvm, denom, dt_fim_exerc, valor).
+    """
+    specs = specs or load_contas_config()
+    contr = extract_concept(df_dre, specs["lucro_controladora"], ordem=ordem)
+    conso = extract_concept(df_dre, specs["lucro_consolidado"], ordem=ordem)
+    contr = contr.assign(fonte_lucro="controladora")
+    keys = ["cnpj", "cd_cvm", "denom", "dt_fim_exerc"]
+    # consolidado só para chaves ausentes na controladora
+    falta = conso.merge(contr[keys], on=keys, how="left", indicator=True)
+    falta = falta[falta["_merge"] == "left_only"].drop(columns="_merge")
+    falta = falta.assign(fonte_lucro="consolidado")
+    out = pd.concat([contr, falta], ignore_index=True)
+    return out.reset_index(drop=True)
+
+
 def total_acoes(df_comp: pd.DataFrame) -> pd.DataFrame:
     """Ações em circulação por empresa = (ON + PN) integralizadas − tesouraria.
 

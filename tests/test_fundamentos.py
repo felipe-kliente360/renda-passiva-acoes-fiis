@@ -5,11 +5,13 @@ from conftest import DATA_DIR
 from pipeline.fundamentos import (
     extract_concept,
     load_contas_config,
+    lucro_liquido,
     total_acoes,
 )
 from pipeline.normalize import read_cvm_csv
 
 DFC = DATA_DIR / "dfp_dfc_sample.csv"
+DRE = DATA_DIR / "dfp_dre_sample.csv"
 COMP = DATA_DIR / "dfp_composicao_capital_sample.csv"
 
 
@@ -54,6 +56,29 @@ def test_extract_concept_valida_colunas_obrigatorias():
     spec = load_contas_config()["proventos_pagos"]
     with pytest.raises(ValueError, match="ausentes"):
         extract_concept(pd.DataFrame({"foo": [1]}), spec)
+
+
+def test_lucro_prefere_controladora_sobre_consolidado():
+    out = lucro_liquido(read_cvm_csv(DRE))
+    alfa = out[out["denom"] == "CIA ALFA SA"]
+    # 180.000 (controladora, MIL) -> 180.000.000 ; NÃO 200.000 (consolidado) nem soma.
+    assert len(alfa) == 1
+    assert alfa["valor"].iloc[0] == pytest.approx(180_000_000.0)
+    assert alfa["fonte_lucro"].iloc[0] == "controladora"
+
+
+def test_lucro_cai_no_consolidado_sem_abertura():
+    out = lucro_liquido(read_cvm_csv(DRE))
+    beta = out[out["denom"] == "BANCO BETA SA"]
+    # banco sem linha de controladora -> usa o consolidado do período (90.000 MIL).
+    assert beta["valor"].iloc[0] == pytest.approx(90_000_000.0)
+    assert beta["fonte_lucro"].iloc[0] == "consolidado"
+
+
+def test_lucro_uma_linha_por_empresa_exercicio():
+    out = lucro_liquido(read_cvm_csv(DRE))
+    assert out.groupby(["cnpj", "dt_fim_exerc"]).size().max() == 1
+    assert set(out["dt_fim_exerc"].dt.year.unique()) == {2025}
 
 
 def test_total_acoes_emitidas_menos_tesouraria():

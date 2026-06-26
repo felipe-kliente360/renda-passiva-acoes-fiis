@@ -21,7 +21,25 @@ proventos_pagos:            # numerador do DY — dividendos + JCP PAGOS no per�
   ds_excludes: ["recebido", "nao controlador"]
   absolute: true
 
-# NOTA: lucro_liquido (denominador do payout) ainda NÃO está aqui de propósito. O número
-# correto é o "Lucro atribuído aos sócios da controladora" (3.11.01), não o "Consolidado
-# do Período" (3.11, que inclui não-controladores). Isso pede lógica de prioridade, não
-# soma — será adicionado no commit do payout, com tratamento explícito.
+# Lucro líquido (denominador do payout). O número correto é o ATRIBUÍDO À CONTROLADORA,
+# não o consolidado total (que inclui minoritários). A DS_CONTA é idêntica nos dois planos
+# mesmo com código diferente — banco: 3.09.01, não-financeira: 3.11.01 — por isso casamos
+# por descrição. fundamentos.lucro_liquido() prefere a controladora e cai no consolidado
+# (3.09/3.11) só para empresas sem a abertura. Validado 2025: Petrobras 110,1bi (consol.
+# 110,6), Itaú 44,86bi, Vale 13,81bi (consol. 11,8 — minoritário negativo!), Ambev 15,5bi.
+lucro_controladora:
+  statement: DRE
+  section_prefix: "3"
+  # substring estável: casa "a Sócios" e "aos Sócios da Empresa Controladora" (BB usa "aos").
+  ds_includes: ["socios da empresa controladora", "acionistas controladores"]
+  ds_excludes: ["nao control"]
+  absolute: false
+
+lucro_consolidado:          # fallback quando não há abertura por controladora/minoritário
+  statement: DRE
+  section_prefix: "3"
+  # casa "Lucro/Prejuízo Consolidado do Período" e "Lucro ou Prejuízo Líquido Consolidado
+  # do Período" (BB). Exclui as aberturas (atribuído) e linhas por ação/descontinuadas.
+  ds_includes: ["consolidado do periodo"]
+  ds_excludes: ["atribuido", "nao control", "operacoes descontinuadas", "por acao"]
+  absolute: false
