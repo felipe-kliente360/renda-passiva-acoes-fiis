@@ -14,7 +14,9 @@
 proventos_pagos:            # numerador do DY — dividendos + JCP PAGOS no período (caixa)
   statement: DFC_MI
   section_prefix: "6.03"    # atividades de financiamento
-  ds_includes: ["dividendo", "juros sobre o capital", "juros sobre capital"]
+  # "provento" cobre "Pagamento de Proventos" (B3 usa isso, não "Dividendos"); dentro da
+  # seção de financiamento + exclude "recebido" é seguro. Validado: B3 2025 R$ 1,44bi.
+  ds_includes: ["dividendo", "juros sobre o capital", "juros sobre capital", "provento"]
   # exclui dividendos RECEBIDOS (6.02, operacional) e os pagos a acionistas NÃO
   # controladores (são das controladas; queremos só o que foi pago aos acionistas da
   # própria empresa). Validado: Petrobras 6.03.05+06, Itaú 6.03.07+08, Vale 6.03.04.

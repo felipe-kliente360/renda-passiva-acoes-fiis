@@ -6,15 +6,18 @@
 #     confiar no P/VP daquele fundo.
 # Editar à vontade. O sufixo de mercado (.SA) é responsabilidade do fetcher, não daqui.
 
+# cd_cvm = código da companhia na CVM (chave de JOIN das demonstrações ITR/DFP). Resolvido
+# pela DENOM_CIA no DFP real e conferido um a um (atenção: "Bradesco" casa também a Bradesco
+# Leasing — usar BCO BRADESCO S.A.). É a chave estável entre todos os arquivos CIA_ABERTA.
 acoes:
-  - { ticker: PETR4, nome: "Petrobras PN",        cnpj: null }
-  - { ticker: VALE3, nome: "Vale ON",             cnpj: null }
-  - { ticker: ITUB4, nome: "Itaú Unibanco PN",    cnpj: null }
-  - { ticker: BBDC4, nome: "Bradesco PN",         cnpj: null }
-  - { ticker: B3SA3, nome: "B3 ON",               cnpj: null }
-  - { ticker: BBAS3, nome: "Banco do Brasil ON",  cnpj: null }
-  - { ticker: ABEV3, nome: "Ambev ON",            cnpj: null }
-  - { ticker: ITSA4, nome: "Itaúsa PN",           cnpj: null }
+  - { ticker: PETR4, nome: "Petrobras PN",        cd_cvm: "009512", cnpj: "33.000.167/0001-01" }
+  - { ticker: VALE3, nome: "Vale ON",             cd_cvm: "004170", cnpj: "33.592.510/0001-54" }
+  - { ticker: ITUB4, nome: "Itaú Unibanco PN",    cd_cvm: "019348", cnpj: "60.872.504/0001-23" }
+  - { ticker: BBDC4, nome: "Bradesco PN",         cd_cvm: "000906", cnpj: "60.746.948/0001-12" }
+  - { ticker: B3SA3, nome: "B3 ON",               cd_cvm: "021610", cnpj: "09.346.601/0001-25" }
+  - { ticker: BBAS3, nome: "Banco do Brasil ON",  cd_cvm: "001023", cnpj: "00.000.000/0001-91" }
+  - { ticker: ABEV3, nome: "Ambev ON",            cd_cvm: "023264", cnpj: "07.526.557/0001-00" }
+  - { ticker: ITSA4, nome: "Itaúsa PN",           cd_cvm: "007617", cnpj: "61.532.644/0001-15" }
 
 # cnpj preenchido via JOIN ticker→ISIN→CNPJ no membro `geral` do INF_MENSAL (CVM),
 # cruzado contra o cadastro de VP (1314 fundos). P/VP resultante validado em 0,90–1,05.

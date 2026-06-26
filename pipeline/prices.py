@@ -209,6 +209,25 @@ def fetch_yfinance(ticker: str, period: str = "5y") -> FetchResult | None:
         return None
 
 
+def fetch_shares_outstanding(ticker: str) -> float | None:
+    """Ações em circulação via yfinance — ÂNCORA para desambiguar a escala da CVM.
+
+    Não é a fonte da contagem (essa é o composicao_capital da CVM); serve só para decidir
+    se o número cru da CVM está em unidades ou milhares (ver fundamentos.resolve_share_scale).
+    Retorna None se indisponível — o chamador sinaliza baixa confiança, não inventa.
+    """
+    try:
+        import yfinance as yf
+    except ImportError:
+        return None
+    try:
+        info = yf.Ticker(market_symbol(ticker)).info
+        n = info.get("sharesOutstanding")
+        return float(n) if n else None
+    except Exception:
+        return None
+
+
 def fetch_brapi(
     ticker: str, *, token: str | None = None, range_: str = "3mo"
 ) -> FetchResult | None:

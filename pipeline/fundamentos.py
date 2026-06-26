@@ -163,6 +163,24 @@ def lucro_liquido(
     return out.reset_index(drop=True)
 
 
+def resolve_share_scale(cvm_raw: float, anchor_shares: float | None) -> float:
+    """Fator de escala (1 ou 1000) para a contagem de ações crua da CVM.
+
+    O `composicao_capital` mistura unidades e milhares por empresa, sem coluna que sinalize
+    (validado: Petrobras em unidades, Vale/Itaú/Ambev em milhares). A CVM dá a CONTAGEM
+    autoritativa; uma âncora de mercado (ex.: sharesOutstanding do yfinance) só desambigua a
+    UNIDADE. Compara a ordem de grandeza: razão ~1 ⇒ unidades; ~1000 ⇒ milhares. As bandas
+    são folgadas porque a âncora pode ser de uma só classe (ON) vs total ON+PN da CVM.
+    Sem âncora confiável, assume 1 (não inventa) — o chamador deve sinalizar baixa confiança.
+    """
+    if not anchor_shares or not cvm_raw or cvm_raw <= 0:
+        return 1.0
+    ratio = anchor_shares / cvm_raw
+    if 200 < ratio < 5000:
+        return 1000.0
+    return 1.0
+
+
 def total_acoes(df_comp: pd.DataFrame) -> pd.DataFrame:
     """Ações em circulação por empresa = (ON + PN) integralizadas − tesouraria.
 

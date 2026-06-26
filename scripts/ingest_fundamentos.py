@@ -1,0 +1,207 @@
+#!/usr/bin/env python3
+"""Ingestão de fundamentos de AÇÕES via CVM ITR/DFP (Fase 2 — espinha da tese).
+
+Para cada ano do intervalo baixa a DFP, extrai (config-driven) proventos pagos (DFC),
+lucro atribuível à controladora (DRE) e ações em circulação (composicao_capital) das
+empresas da watchlist, e monta as séries por competência. Cruza com a série de preços
+(Fase 1, data/prices.json) e roda as métricas puras (DY histórico média/mediana, payout,
+recorrência, crescimento, flag de yield trap). Exporta data/fundamentos.json.
+
+Metodologia (TRAVADA, revisada 2026-06-26): proventos por COMPETÊNCIA da CVM, DY no nível
+da empresa (proventos ÷ valor de mercado = preço × ações). A escala de ações da CVM é
+desambiguada por âncora de mercado (yfinance sharesOutstanding); sem âncora, baixa
+confiança e não inventa.
+
+Uso:
+    python scripts/ingest_fundamentos.py --start 2015 --end 2025 [--out data/fundamentos]
+    python scripts/ingest_fundamentos.py --start 2015 --end 2025 --no-download  # usa cache
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from pathlib import Path
+
+import pandas as pd
+import yaml
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from pipeline import metrics  # noqa: E402
+from pipeline.cvm import download_dfp  # noqa: E402
+from pipeline.export import export_json, export_parquet  # noqa: E402
+from pipeline.fundamentos import (  # noqa: E402
+    extract_concept,
+    load_contas_config,
+    lucro_liquido,
+    resolve_share_scale,
+    total_acoes,
+)
+from pipeline.normalize import list_zip_members, read_cvm_csv_from_zip  # noqa: E402
+from pipeline.prices import fetch_shares_outstanding  # noqa: E402
+
+DEFAULT_RAW = Path("data/raw")
+
+
+def _member(zip_path: Path, contains: str) -> str | None:
+    """Membro do ZIP cujo nome contém `contains` (prefere consolidado _con)."""
+    members = [m for m in list_zip_members(zip_path) if contains in m and m.endswith(".csv")]
+    con = [m for m in members if "_con_" in m]
+    return (con or members or [None])[0]
+
+
+def _by_key(df: pd.DataFrame, key_col: str, key_val: str, val_col: str = "valor") -> float | None:
+    sub = df[df[key_col].astype("string").str.zfill(6) == str(key_val).zfill(6)]
+    return float(sub[val_col].iloc[0]) if not sub.empty else None
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--start", type=int, required=True, help="primeiro ano fiscal (DFP)")
+    ap.add_argument("--end", type=int, required=True, help="último ano fiscal (DFP)")
+    ap.add_argument("--watchlist", type=Path, default=Path("config/watchlist.yml"))
+    ap.add_argument("--prices", type=Path, default=Path("data/prices.json"))
+    ap.add_argument("--out", type=Path, default=Path("data/fundamentos"))
+    ap.add_argument("--no-download", action="store_true", help="usar ZIPs já em data/raw")
+    args = ap.parse_args()
+
+    wl = yaml.safe_load(args.watchlist.read_text(encoding="utf-8"))
+    acoes = [a for a in (wl.get("acoes") or []) if a.get("cd_cvm")]
+    specs = load_contas_config()
+
+    prices = {}
+    if args.prices.exists():
+        for r in json.loads(args.prices.read_text(encoding="utf-8")).get("data", []):
+            prices[r["ticker"]] = r
+
+    # Acumula por (cd_cvm/cnpj, ano): proventos pagos, lucro, ações cruas.
+    prov: dict[str, dict[int, float]] = {}
+    lucro: dict[str, dict[int, float]] = {}
+    shares_raw: dict[str, dict[int, float]] = {}
+
+    for year in range(args.start, args.end + 1):
+        zip_path = DEFAULT_RAW / f"dfp_cia_aberta_{year}.zip"
+        if not args.no_download and not zip_path.exists():
+            zip_path = download_dfp(year)
+        if not zip_path.exists():
+            print(f"[{year}] ZIP ausente, pulando.", file=sys.stderr)
+            continue
+
+        m_dfc, m_dre, m_comp = (
+            _member(zip_path, "DFC_MI"),
+            _member(zip_path, "DRE"),
+            _member(zip_path, "composicao_capital"),
+        )
+        prov_y = (
+            extract_concept(read_cvm_csv_from_zip(zip_path, m_dfc), specs["proventos_pagos"])
+            if m_dfc else None
+        )
+        lucro_y = lucro_liquido(read_cvm_csv_from_zip(zip_path, m_dre), specs) if m_dre else None
+        # composicao_capital só existe em DFPs recentes; ações por ano ficam limitadas a eles.
+        acoes_y = total_acoes(read_cvm_csv_from_zip(zip_path, m_comp)) if m_comp else None
+
+        for a in acoes:
+            cd, cnpj = a["cd_cvm"], a.get("cnpj")
+            p = _by_key(prov_y, "cd_cvm", cd) if prov_y is not None else None
+            ll = _by_key(lucro_y, "cd_cvm", cd) if lucro_y is not None else None
+            sh = (
+                _by_key(acoes_y, "cnpj", cnpj, "acoes_circulacao")
+                if (acoes_y is not None and cnpj) else None
+            )
+            if p is not None:
+                prov.setdefault(cd, {})[year] = p
+            if ll is not None:
+                lucro.setdefault(cd, {})[year] = ll
+            if sh is not None:
+                shares_raw.setdefault(cd, {})[year] = sh
+        print(f"[{year}] ok")
+
+    records = []
+    for a in acoes:
+        cd, tk = a["cd_cvm"], a["ticker"]
+        rec = _build_record(a, prov.get(cd, {}), lucro.get(cd, {}), shares_raw.get(cd, {}),
+                            prices.get(tk, {}))
+        records.append(rec)
+
+    meta = {
+        "metodologia": "proventos por competência CVM (DFP); DY nível empresa; "
+        "denominador split-adj (Fase 1); escala de ações ancorada no yfinance",
+        "anos": [args.start, args.end],
+    }
+    json_path = export_json(records, args.out.with_suffix(".json"), meta=meta)
+    export_parquet(records, args.out.with_suffix(".parquet"))
+    print(f"Ações processadas: {len(records)}")
+    print(f"Escrito: {json_path}")
+    return 0
+
+
+def _build_record(a: dict, prov: dict, lucro: dict, shares_raw: dict, price: dict) -> dict:
+    tk = a["ticker"]
+    notes: list[str] = []
+
+    # escala das ações: âncora yfinance desambigua unidade x milhar, POR ANO (a CVM chega a
+    # trocar de unidade no meio do histórico — ex.: Bradesco em milhares até 2023, unidades
+    # depois). A âncora é a contagem atual; cada ano é classificado contra ela.
+    latest_share_year = max(shares_raw) if shares_raw else None
+    anchor = fetch_shares_outstanding(tk) if latest_share_year is not None else None
+    if latest_share_year is not None and anchor is None:
+        notes.append("sem âncora de ações (yfinance): escala assumida 1, baixa confiança")
+    shares = {y: v * resolve_share_scale(v, anchor) for y, v in shares_raw.items()}
+    scales = {resolve_share_scale(v, anchor) for v in shares_raw.values()}
+    if len(scales) > 1:
+        notes.append("escala de ações variou entre anos no arquivo da CVM (corrigida por ano)")
+
+    # séries por ano
+    prov_total = pd.Series(prov, dtype="float64").sort_index()  # R$ por ano
+    dps = pd.Series(
+        {y: prov[y] / shares[y] for y in prov if shares.get(y, 0) > 0}, dtype="float64"
+    ).sort_index()  # provento por ação
+    avg_price = pd.Series(
+        {int(y): float(v) for y, v in (price.get("annual_avg_price") or {}).items()},
+        dtype="float64",
+    ).sort_index()
+
+    hist = metrics.historical_dy(dps, avg_price)
+    current_price = price.get("current_price")
+    latest_y = max(prov) if prov else None
+    current_dy = float("nan")
+    if latest_y is not None and shares.get(latest_y, 0) > 0 and current_price:
+        current_dy = metrics.current_dy(prov[latest_y] / shares[latest_y], current_price)
+
+    payout = {
+        int(y): metrics.payout_ratio(prov[y], lucro[y])
+        for y in sorted(set(prov) & set(lucro))
+    }
+    rec_y = latest_y or (max(avg_price.index) if len(avg_price) else 0)
+    recur = metrics.recurrence(prov_total, asof_year=int(rec_y)) if rec_y else {}
+
+    return {
+        "ticker": tk,
+        "nome": a.get("nome"),
+        "cd_cvm": a["cd_cvm"],
+        "proventos_pagos_por_ano": {int(y): float(v) for y, v in prov_total.items()},
+        "lucro_liquido_por_ano": {int(y): float(v) for y, v in sorted(lucro.items())},
+        "dps_por_ano": {int(y): float(v) for y, v in dps.items()},
+        "dy_historico_por_ano": {int(y): float(v) for y, v in hist.by_year.items()},
+        "dy_historico_media": None if pd.isna(hist.mean) else hist.mean,
+        "dy_historico_mediana": None if pd.isna(hist.median) else hist.median,
+        "dy_corrente": None if pd.isna(current_dy) else current_dy,
+        "payout_por_ano": {y: (None if pd.isna(v) else v) for y, v in payout.items()},
+        "recorrencia": recur,
+        "crescimento_dps_cagr": (
+            None if pd.isna(g := metrics.dividend_growth(dps)) else g
+        ),
+        "yield_trap": metrics.yield_trap_flag(current_dy, hist.median),
+        "acoes_circulacao": shares.get(latest_share_year) if latest_share_year else None,
+        "escala_acoes_recente": (
+            resolve_share_scale(shares_raw[latest_share_year], anchor)
+            if latest_share_year else None
+        ),
+        "notes": notes,
+    }
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

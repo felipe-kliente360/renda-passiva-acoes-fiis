@@ -6,6 +6,7 @@ from pipeline.fundamentos import (
     extract_concept,
     load_contas_config,
     lucro_liquido,
+    resolve_share_scale,
     total_acoes,
 )
 from pipeline.normalize import read_cvm_csv
@@ -79,6 +80,16 @@ def test_lucro_uma_linha_por_empresa_exercicio():
     out = lucro_liquido(read_cvm_csv(DRE))
     assert out.groupby(["cnpj", "dt_fim_exerc"]).size().max() == 1
     assert set(out["dt_fim_exerc"].dt.year.unique()) == {2025}
+
+
+def test_resolve_share_scale_detecta_milhares_e_unidades():
+    # Vale: CVM cru 4,5M, âncora yfinance 4,26bi -> milhares (x1000).
+    assert resolve_share_scale(4_539_007, 4_257_407_053) == 1000.0
+    # Petrobras: CVM cru 12,9bi, âncora 5,4bi (só PN) -> unidades (x1).
+    assert resolve_share_scale(12_888_732_761, 5_446_501_379) == 1.0
+    # sem âncora confiável -> assume 1 (não inventa).
+    assert resolve_share_scale(4_539_007, None) == 1.0
+    assert resolve_share_scale(0, 1_000_000) == 1.0
 
 
 def test_total_acoes_emitidas_menos_tesouraria():
