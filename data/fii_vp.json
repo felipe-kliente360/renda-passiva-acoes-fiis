@@ -1,0 +1,6579 @@
+{
+  "meta": {
+    "generated_at": "2026-06-26T16:00:26.892540+00:00",
+    "count": 1314,
+    "dataset": "fii_inf_mensal"
+  },
+  "data": [
+    {
+      "cnpj_fundo": "23.964.908/0001-10",
+      "competencia": "2026-01-01",
+      "valor_patrimonial_cota": 39.1391948970755
+    },
+    {
+      "cnpj_fundo": "36.642.244/0001-15",
+      "competencia": "2026-01-01",
+      "valor_patrimonial_cota": 115.961163
+    },
+    {
+      "cnpj_fundo": "32.667.306/0001-92",
+      "competencia": "2026-01-01",
+      "valor_patrimonial_cota": 904.440603
+    },
+    {
+      "cnpj_fundo": "07.000.400/0001-46",
+      "competencia": "2026-01-01",
+      "valor_patrimonial_cota": 33.912882
+    },
+    {
+      "cnpj_fundo": "57.545.219/0001-93",
+      "competencia": "2026-02-01",
+      "valor_patrimonial_cota": 0.0
+    },
+    {
+      "cnpj_fundo": "49.112.611/0001-10",
+      "competencia": "2026-02-01",
+      "valor_patrimonial_cota": 200.564783412951
+    },
+    {
+      "cnpj_fundo": "53.018.363/0001-10",
+      "competencia": "2026-02-01",
+      "valor_patrimonial_cota": 0.0
+    },
+    {
+      "cnpj_fundo": "55.987.139/0001-62",
+      "competencia": "2026-02-01",
+      "valor_patrimonial_cota": 107.831330177104
+    },
+    {
+      "cnpj_fundo": "19.213.231/0001-01",
+      "competencia": "2026-03-01",
+      "valor_patrimonial_cota": 61.6911728090701
+    },
+    {
+      "cnpj_fundo": "32.275.196/0001-13",
+      "competencia": "2026-03-01",
+      "valor_patrimonial_cota": -776.810156482352
+    },
+    {
+      "cnpj_fundo": "59.680.687/0001-04",
+      "competencia": "2026-03-01",
+      "valor_patrimonial_cota": 94.620339093386
+    },
+    {
+      "cnpj_fundo": "59.269.477/0001-10",
+      "competencia": "2026-04-01",
+      "valor_patrimonial_cota": 1049.73573921359
+    },
+    {
+      "cnpj_fundo": "58.495.684/0001-20",
+      "competencia": "2026-04-01",
+      "valor_patrimonial_cota": 0.0
+    },
+    {
+      "cnpj_fundo": "63.168.672/0001-20",
+      "competencia": "2026-04-01",
+      "valor_patrimonial_cota": -26040.15
+    },
+    {
+      "cnpj_fundo": "62.203.816/0001-70",
+      "competencia": "2026-04-01",
+      "valor_patrimonial_cota": 433.41267294157
+    },
+    {
+      "cnpj_fundo": "36.669.660/0001-07",
+      "competencia": "2026-04-01",
+      "valor_patrimonial_cota": 8.07498545616633
+    },
+    {
+      "cnpj_fundo": "41.650.365/0001-49",
+      "competencia": "2026-04-01",
+      "valor_patrimonial_cota": 1.18148846508017
+    },
+    {
+      "cnpj_fundo": "13.598.226/0001-88",
+      "competencia": "2026-04-01",
+      "valor_patrimonial_cota": 541.304591867306
+    },
+    {
+      "cnpj_fundo": "51.710.043/0001-00",
+      "competencia": "2026-04-01",
+      "valor_patrimonial_cota": 119.408628046369
+    },
+    {
+      "cnpj_fundo": "52.889.976/0001-60",
+      "competencia": "2026-04-01",
+      "valor_patrimonial_cota": 2.12150390659551
+    },
+    {
+      "cnpj_fundo": "52.589.406/0001-55",
+      "competencia": "2026-04-01",
+      "valor_patrimonial_cota": 60557.395
+    },
+    {
+      "cnpj_fundo": "48.978.731/0001-32",
+      "competencia": "2026-04-01",
+      "valor_patrimonial_cota": 1745.67966582935
+    },
+    {
+      "cnpj_fundo": "28.893.734/0001-66",
+      "competencia": "2026-04-01",
+      "valor_patrimonial_cota": 6.37472171208439
+    },
+    {
+      "cnpj_fundo": "34.691.520/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.676269
+    },
+    {
+      "cnpj_fundo": "04.066.582/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 286.780844
+    },
+    {
+      "cnpj_fundo": "23.740.527/0001-58",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.388946336667
+    },
+    {
+      "cnpj_fundo": "34.736.510/0001-43",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 53.2067248007246
+    },
+    {
+      "cnpj_fundo": "34.895.711/0001-93",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 434.158535811539
+    },
+    {
+      "cnpj_fundo": "35.507.457/0001-71",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 74.1174328463712
+    },
+    {
+      "cnpj_fundo": "35.360.687/0001-50",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 89.2516317785272
+    },
+    {
+      "cnpj_fundo": "64.987.074/0001-46",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.991562730116912
+    },
+    {
+      "cnpj_fundo": "64.636.299/0001-58",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 999.754311487482
+    },
+    {
+      "cnpj_fundo": "62.805.438/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.0
+    },
+    {
+      "cnpj_fundo": "23.537.203/0001-17",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.398224
+    },
+    {
+      "cnpj_fundo": "62.883.138/0001-33",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.898352128752
+    },
+    {
+      "cnpj_fundo": "23.648.935/0001-84",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 94.839523
+    },
+    {
+      "cnpj_fundo": "18.647.268/0001-85",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 693.015064320388
+    },
+    {
+      "cnpj_fundo": "23.179.381/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 314.604873382755
+    },
+    {
+      "cnpj_fundo": "62.683.216/0001-56",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.3441191432432
+    },
+    {
+      "cnpj_fundo": "34.598.181/0001-11",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 106.39972322
+    },
+    {
+      "cnpj_fundo": "64.776.566/0001-92",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.883888332164
+    },
+    {
+      "cnpj_fundo": "64.739.777/0001-55",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1005.10274848925
+    },
+    {
+      "cnpj_fundo": "35.507.610/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 148.682613248337
+    },
+    {
+      "cnpj_fundo": "62.739.410/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 106.298710367568
+    },
+    {
+      "cnpj_fundo": "64.607.978/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 155.86007281
+    },
+    {
+      "cnpj_fundo": "35.449.574/0001-26",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.17704289007518
+    },
+    {
+      "cnpj_fundo": "21.156.164/0001-82",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 432598.576060844
+    },
+    {
+      "cnpj_fundo": "62.736.870/0001-80",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 360.57443
+    },
+    {
+      "cnpj_fundo": "64.634.907/0001-95",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 106.195766
+    },
+    {
+      "cnpj_fundo": "64.790.666/0001-73",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.894090989223058
+    },
+    {
+      "cnpj_fundo": "34.736.474/0001-18",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 87.4337339631469
+    },
+    {
+      "cnpj_fundo": "34.847.042/0001-84",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 93.7033315157684
+    },
+    {
+      "cnpj_fundo": "23.532.837/0001-87",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 4.3070967
+    },
+    {
+      "cnpj_fundo": "23.538.112/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.11183478510118
+    },
+    {
+      "cnpj_fundo": "23.426.470/0001-17",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 78.38107057
+    },
+    {
+      "cnpj_fundo": "34.895.894/0001-47",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.4499184269622
+    },
+    {
+      "cnpj_fundo": "21.126.204/0001-43",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 694.703343910861
+    },
+    {
+      "cnpj_fundo": "18.730.914/0001-73",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1382680.30860385
+    },
+    {
+      "cnpj_fundo": "62.754.323/0001-28",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 30.13
+    },
+    {
+      "cnpj_fundo": "64.851.907/0001-47",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.98450861
+    },
+    {
+      "cnpj_fundo": "04.141.645/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 250.71598090782
+    },
+    {
+      "cnpj_fundo": "35.507.262/0001-21",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.90508007007015
+    },
+    {
+      "cnpj_fundo": "64.635.947/0001-51",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 105.130185
+    },
+    {
+      "cnpj_fundo": "64.768.430/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 91.2282323333333
+    },
+    {
+      "cnpj_fundo": "62.731.360/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.619727174302
+    },
+    {
+      "cnpj_fundo": "23.570.871/0001-46",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.325476
+    },
+    {
+      "cnpj_fundo": "18.497.672/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.0151347400732264
+    },
+    {
+      "cnpj_fundo": "34.835.191/0001-23",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 118.43170988
+    },
+    {
+      "cnpj_fundo": "62.864.543/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 96.80638358
+    },
+    {
+      "cnpj_fundo": "64.722.519/0001-66",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.7891299342752
+    },
+    {
+      "cnpj_fundo": "34.895.752/0001-80",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 469.505602923773
+    },
+    {
+      "cnpj_fundo": "34.691.925/0001-48",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 436.638268296084
+    },
+    {
+      "cnpj_fundo": "62.855.536/0001-46",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1074.466642
+    },
+    {
+      "cnpj_fundo": "35.360.651/0001-77",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1208.74788450025
+    },
+    {
+      "cnpj_fundo": "62.808.826/0001-39",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 88.672374
+    },
+    {
+      "cnpj_fundo": "23.533.796/0001-43",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 6.4158094
+    },
+    {
+      "cnpj_fundo": "62.811.491/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.25879961
+    },
+    {
+      "cnpj_fundo": "34.867.728/0001-37",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 245.05550603
+    },
+    {
+      "cnpj_fundo": "63.787.107/0001-41",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2011.21515958572
+    },
+    {
+      "cnpj_fundo": "23.120.027/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.345875
+    },
+    {
+      "cnpj_fundo": "36.200.701/0001-11",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 24.6235679987249
+    },
+    {
+      "cnpj_fundo": "65.794.655/0001-24",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1000.85169311571
+    },
+    {
+      "cnpj_fundo": "36.244.015/0001-42",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 11.09893478
+    },
+    {
+      "cnpj_fundo": "65.838.122/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 997.0960959
+    },
+    {
+      "cnpj_fundo": "62.293.353/0001-84",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.89655651
+    },
+    {
+      "cnpj_fundo": "21.917.235/0001-12",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2027.78013007453
+    },
+    {
+      "cnpj_fundo": "62.296.221/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 586486.048947934
+    },
+    {
+      "cnpj_fundo": "36.258.924/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 358303.591737377
+    },
+    {
+      "cnpj_fundo": "65.842.323/0001-78",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1027.1857003
+    },
+    {
+      "cnpj_fundo": "18.289.950/0001-43",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.54966769329612
+    },
+    {
+      "cnpj_fundo": "62.254.106/0001-79",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.395868969697
+    },
+    {
+      "cnpj_fundo": "65.870.565/0001-75",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.9690853341723
+    },
+    {
+      "cnpj_fundo": "36.312.025/0001-78",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 527.800004514634
+    },
+    {
+      "cnpj_fundo": "65.920.467/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.806557
+    },
+    {
+      "cnpj_fundo": "36.293.425/0001-83",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 78.45473839
+    },
+    {
+      "cnpj_fundo": "65.923.811/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.97769745466112
+    },
+    {
+      "cnpj_fundo": "65.794.271/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1022.612534
+    },
+    {
+      "cnpj_fundo": "65.788.132/0001-75",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -1.4194335
+    },
+    {
+      "cnpj_fundo": "35.820.768/0001-96",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1537.31646877961
+    },
+    {
+      "cnpj_fundo": "62.334.936/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1068.6132596
+    },
+    {
+      "cnpj_fundo": "65.680.221/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.62394378
+    },
+    {
+      "cnpj_fundo": "35.864.448/0001-38",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.7619617526272
+    },
+    {
+      "cnpj_fundo": "22.081.808/0001-83",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 41743.1576382988
+    },
+    {
+      "cnpj_fundo": "35.880.201/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.568309257348669
+    },
+    {
+      "cnpj_fundo": "05.562.312/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 972.612892164063
+    },
+    {
+      "cnpj_fundo": "65.782.151/0001-94",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -122.526123607447
+    },
+    {
+      "cnpj_fundo": "65.787.500/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.0
+    },
+    {
+      "cnpj_fundo": "36.098.375/0001-83",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 156.07640499
+    },
+    {
+      "cnpj_fundo": "18.307.582/0001-19",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 7.77229363193183
+    },
+    {
+      "cnpj_fundo": "62.305.611/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.404941
+    },
+    {
+      "cnpj_fundo": "22.003.469/0001-17",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 360.294907824541
+    },
+    {
+      "cnpj_fundo": "36.200.654/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 136.066815311584
+    },
+    {
+      "cnpj_fundo": "62.308.074/0001-47",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 11.7387386257888
+    },
+    {
+      "cnpj_fundo": "65.676.386/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.328664321951
+    },
+    {
+      "cnpj_fundo": "62.252.669/0001-28",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.4521429886562
+    },
+    {
+      "cnpj_fundo": "21.500.500/0001-62",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 180.747955
+    },
+    {
+      "cnpj_fundo": "66.392.053/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1001.87973193262
+    },
+    {
+      "cnpj_fundo": "36.501.159/0001-37",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 116.750748
+    },
+    {
+      "cnpj_fundo": "62.173.916/0001-09",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1095.574406
+    },
+    {
+      "cnpj_fundo": "66.629.246/0001-35",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 999.895711646
+    },
+    {
+      "cnpj_fundo": "66.688.948/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.00827156
+    },
+    {
+      "cnpj_fundo": "36.501.181/0001-87",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 104.08585498
+    },
+    {
+      "cnpj_fundo": "66.287.969/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 60.533945
+    },
+    {
+      "cnpj_fundo": "66.961.964/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.0
+    },
+    {
+      "cnpj_fundo": "36.501.198/0001-34",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 108.963603573333
+    },
+    {
+      "cnpj_fundo": "62.173.370/0001-88",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.58194265555556
+    },
+    {
+      "cnpj_fundo": "18.259.637/0001-62",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 153963.806757
+    },
+    {
+      "cnpj_fundo": "36.501.210/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 128.271594975345
+    },
+    {
+      "cnpj_fundo": "21.500.514/0001-86",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 22.0029201553748
+    },
+    {
+      "cnpj_fundo": "62.161.749/0001-78",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3.047757
+    },
+    {
+      "cnpj_fundo": "21.826.249/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 116.074557842649
+    },
+    {
+      "cnpj_fundo": "36.312.772/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 68.50167835
+    },
+    {
+      "cnpj_fundo": "36.501.128/0001-86",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.0664726709287
+    },
+    {
+      "cnpj_fundo": "66.286.953/0001-76",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -1.61534
+    },
+    {
+      "cnpj_fundo": "65.974.097/0001-89",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.6107696787149
+    },
+    {
+      "cnpj_fundo": "36.368.925/0001-37",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.0055077665591
+    },
+    {
+      "cnpj_fundo": "21.862.783/0001-92",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 68.3018131878361
+    },
+    {
+      "cnpj_fundo": "66.060.256/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.9155275649795
+    },
+    {
+      "cnpj_fundo": "62.235.730/0001-29",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 124.26534571
+    },
+    {
+      "cnpj_fundo": "66.197.624/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.13127267
+    },
+    {
+      "cnpj_fundo": "66.287.781/0001-55",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 95.2761935108479
+    },
+    {
+      "cnpj_fundo": "36.420.742/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 107.216624943124
+    },
+    {
+      "cnpj_fundo": "06.175.262/0001-73",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 190.619160134003
+    },
+    {
+      "cnpj_fundo": "62.206.618/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.54695373842
+    },
+    {
+      "cnpj_fundo": "18.265.829/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -38590.2173560828
+    },
+    {
+      "cnpj_fundo": "66.218.014/0001-94",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 90.7326966666667
+    },
+    {
+      "cnpj_fundo": "36.445.587/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3.513098
+    },
+    {
+      "cnpj_fundo": "66.285.471/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.0045002691248335
+    },
+    {
+      "cnpj_fundo": "36.445.551/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 39.2212219222572
+    },
+    {
+      "cnpj_fundo": "35.586.415/0001-73",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 95.5082334102776
+    },
+    {
+      "cnpj_fundo": "22.169.671/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 919.310138842723
+    },
+    {
+      "cnpj_fundo": "62.363.267/0001-09",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.758830598769
+    },
+    {
+      "cnpj_fundo": "35.652.278/0001-28",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 176.28999
+    },
+    {
+      "cnpj_fundo": "65.131.846/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 90.1814705555555
+    },
+    {
+      "cnpj_fundo": "21.408.063/0001-51",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 80.4000181825452
+    },
+    {
+      "cnpj_fundo": "62.547.973/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 4225.64616918047
+    },
+    {
+      "cnpj_fundo": "35.688.460/0001-39",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 92.6480834540059
+    },
+    {
+      "cnpj_fundo": "22.503.991/0001-68",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 17.1531755586975
+    },
+    {
+      "cnpj_fundo": "22.646.161/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 634.511846035032
+    },
+    {
+      "cnpj_fundo": "65.133.202/0001-57",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1060.59867603175
+    },
+    {
+      "cnpj_fundo": "62.529.006/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 543.091552955643
+    },
+    {
+      "cnpj_fundo": "65.196.656/0001-77",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.623242017352
+    },
+    {
+      "cnpj_fundo": "35.689.670/0001-41",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 103.005788
+    },
+    {
+      "cnpj_fundo": "65.254.272/0001-63",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 999.631801278149
+    },
+    {
+      "cnpj_fundo": "35.689.733/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 74.9209125139853
+    },
+    {
+      "cnpj_fundo": "62.526.654/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 106.686346589522
+    },
+    {
+      "cnpj_fundo": "35.689.497/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 90.9769721158537
+    },
+    {
+      "cnpj_fundo": "22.459.737/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 30.320561781099
+    },
+    {
+      "cnpj_fundo": "62.572.251/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 7710660.891
+    },
+    {
+      "cnpj_fundo": "35.652.252/0001-80",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 87.642786
+    },
+    {
+      "cnpj_fundo": "18.369.510/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 110.170762437825
+    },
+    {
+      "cnpj_fundo": "62.662.477/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 94.7207686057698
+    },
+    {
+      "cnpj_fundo": "65.055.239/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.6456802882994
+    },
+    {
+      "cnpj_fundo": "35.652.081/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 446.230321
+    },
+    {
+      "cnpj_fundo": "23.120.006/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 27.6520972718531
+    },
+    {
+      "cnpj_fundo": "35.652.102/0001-76",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 107.744504
+    },
+    {
+      "cnpj_fundo": "18.330.535/0001-96",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 525.485841
+    },
+    {
+      "cnpj_fundo": "62.603.652/0001-78",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.550248
+    },
+    {
+      "cnpj_fundo": "22.862.226/0001-34",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 43.1779697262108
+    },
+    {
+      "cnpj_fundo": "35.652.174/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 40.243564
+    },
+    {
+      "cnpj_fundo": "04.644.612/0001-78",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 13.7226992278213
+    },
+    {
+      "cnpj_fundo": "62.572.288/0001-26",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 242795.04265
+    },
+    {
+      "cnpj_fundo": "35.652.227/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 30.720078
+    },
+    {
+      "cnpj_fundo": "65.112.490/0001-63",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 104.41814144
+    },
+    {
+      "cnpj_fundo": "65.060.467/0001-72",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 105.74368382
+    },
+    {
+      "cnpj_fundo": "35.819.314/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.0898349614231611
+    },
+    {
+      "cnpj_fundo": "18.312.285/0001-61",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.412295
+    },
+    {
+      "cnpj_fundo": "35.704.849/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 90.699139738061
+    },
+    {
+      "cnpj_fundo": "22.211.522/0001-75",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 408108.735333333
+    },
+    {
+      "cnpj_fundo": "35.755.232/0001-34",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 341.781331011446
+    },
+    {
+      "cnpj_fundo": "65.600.446/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.77544817383
+    },
+    {
+      "cnpj_fundo": "62.385.601/0001-17",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1828.88455904377
+    },
+    {
+      "cnpj_fundo": "35.765.826/0001-26",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 76.0116158779288
+    },
+    {
+      "cnpj_fundo": "35.765.889/0001-82",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 252.536449469836
+    },
+    {
+      "cnpj_fundo": "65.511.886/0001-83",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 104.865634
+    },
+    {
+      "cnpj_fundo": "65.629.469/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.921233
+    },
+    {
+      "cnpj_fundo": "62.364.712/0001-47",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.21593843990842
+    },
+    {
+      "cnpj_fundo": "21.500.481/0001-74",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 104.684281479512
+    },
+    {
+      "cnpj_fundo": "22.169.716/0001-50",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 13.0768146497337
+    },
+    {
+      "cnpj_fundo": "35.765.907/0001-26",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 107.063584993105
+    },
+    {
+      "cnpj_fundo": "18.308.516/0001-63",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 64.772367
+    },
+    {
+      "cnpj_fundo": "65.654.231/0001-64",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 70.2499512439024
+    },
+    {
+      "cnpj_fundo": "05.437.916/0001-27",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 394.114479619794
+    },
+    {
+      "cnpj_fundo": "65.261.977/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.010943
+    },
+    {
+      "cnpj_fundo": "62.429.810/0001-15",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 83.9196906978085
+    },
+    {
+      "cnpj_fundo": "35.755.044/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 252.915732739687
+    },
+    {
+      "cnpj_fundo": "04.722.883/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 165.487802
+    },
+    {
+      "cnpj_fundo": "62.502.267/0001-34",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 45.104279
+    },
+    {
+      "cnpj_fundo": "65.275.189/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 922.317031845511
+    },
+    {
+      "cnpj_fundo": "35.705.463/0001-33",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.0675586489378
+    },
+    {
+      "cnpj_fundo": "65.325.740/0001-43",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.7168133742715
+    },
+    {
+      "cnpj_fundo": "65.326.215/0001-42",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.406892731379
+    },
+    {
+      "cnpj_fundo": "65.456.922/0001-53",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.257565
+    },
+    {
+      "cnpj_fundo": "62.455.533/0001-15",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 109.942386408799
+    },
+    {
+      "cnpj_fundo": "35.725.659/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1149.90073845645
+    },
+    {
+      "cnpj_fundo": "22.219.335/0001-38",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 84.5460445266307
+    },
+    {
+      "cnpj_fundo": "65.331.709/0001-15",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.055965
+    },
+    {
+      "cnpj_fundo": "62.452.316/0001-71",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 107.429673237664
+    },
+    {
+      "cnpj_fundo": "35.754.164/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 68.10219774
+    },
+    {
+      "cnpj_fundo": "18.311.024/0001-27",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1126.87300621118
+    },
+    {
+      "cnpj_fundo": "35.705.542/0001-44",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 240.384523051935
+    },
+    {
+      "cnpj_fundo": "22.340.978/0001-35",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 4154517.26299694
+    },
+    {
+      "cnpj_fundo": "24.960.430/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 93.4233078231817
+    },
+    {
+      "cnpj_fundo": "64.607.895/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.54077155
+    },
+    {
+      "cnpj_fundo": "63.879.307/0001-24",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 957.562814211861
+    },
+    {
+      "cnpj_fundo": "27.771.547/0001-47",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 14.8706885
+    },
+    {
+      "cnpj_fundo": "30.871.698/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 84.237296382094
+    },
+    {
+      "cnpj_fundo": "30.871.716/0001-25",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1218.089884
+    },
+    {
+      "cnpj_fundo": "63.505.786/0001-19",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3310.18494141414
+    },
+    {
+      "cnpj_fundo": "19.419.994/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2341.7646660324
+    },
+    {
+      "cnpj_fundo": "63.566.516/0001-18",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 95.4964465
+    },
+    {
+      "cnpj_fundo": "27.590.950/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 503.033021439863
+    },
+    {
+      "cnpj_fundo": "30.982.880/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.256061091754
+    },
+    {
+      "cnpj_fundo": "27.539.651/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 5859.17172349738
+    },
+    {
+      "cnpj_fundo": "63.496.639/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.438598272384
+    },
+    {
+      "cnpj_fundo": "30.982.923/0001-57",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.11124518
+    },
+    {
+      "cnpj_fundo": "01.636.325/0001-28",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1324.20275
+    },
+    {
+      "cnpj_fundo": "63.492.653/0001-55",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 85.67367099
+    },
+    {
+      "cnpj_fundo": "63.879.740/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 997.157932874211
+    },
+    {
+      "cnpj_fundo": "30.871.660/0001-09",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1443.3010364708
+    },
+    {
+      "cnpj_fundo": "27.771.586/0001-44",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 18.2422436106622
+    },
+    {
+      "cnpj_fundo": "63.573.987/0001-53",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 863.343279
+    },
+    {
+      "cnpj_fundo": "30.629.603/0001-18",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 120.459097
+    },
+    {
+      "cnpj_fundo": "28.108.193/0001-18",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.503833341868169
+    },
+    {
+      "cnpj_fundo": "30.642.032/0001-51",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 7317.345109
+    },
+    {
+      "cnpj_fundo": "63.574.892/0001-54",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 88.8309061115529
+    },
+    {
+      "cnpj_fundo": "30.647.758/0001-87",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 86.5828408727664
+    },
+    {
+      "cnpj_fundo": "63.848.135/0001-21",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 109.967536
+    },
+    {
+      "cnpj_fundo": "27.882.272/0001-19",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 990.957039789762
+    },
+    {
+      "cnpj_fundo": "30.654.849/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 43.53837409
+    },
+    {
+      "cnpj_fundo": "01.633.741/0001-72",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 47.4932525668887
+    },
+    {
+      "cnpj_fundo": "63.574.240/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.93675856385
+    },
+    {
+      "cnpj_fundo": "19.628.741/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.009923
+    },
+    {
+      "cnpj_fundo": "20.216.935/0001-17",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.758220047765
+    },
+    {
+      "cnpj_fundo": "30.816.679/0001-52",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 356.891721360059
+    },
+    {
+      "cnpj_fundo": "27.773.327/0001-52",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2071.96067933595
+    },
+    {
+      "cnpj_fundo": "63.852.839/0001-78",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1592.1599101795
+    },
+    {
+      "cnpj_fundo": "63.918.369/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.096593697333
+    },
+    {
+      "cnpj_fundo": "30.982.974/0001-89",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 432.408438754905
+    },
+    {
+      "cnpj_fundo": "20.265.467/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 84.350479034
+    },
+    {
+      "cnpj_fundo": "30.983.020/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 7.87552701044336
+    },
+    {
+      "cnpj_fundo": "27.368.863/0001-72",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 499.439404645089
+    },
+    {
+      "cnpj_fundo": "19.249.989/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 767.250802826637
+    },
+    {
+      "cnpj_fundo": "63.952.812/0001-57",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 104.65479102
+    },
+    {
+      "cnpj_fundo": "01.657.856/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.89267465952381
+    },
+    {
+      "cnpj_fundo": "63.420.458/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 94.3981192375
+    },
+    {
+      "cnpj_fundo": "31.524.769/0001-32",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1642.66093626505
+    },
+    {
+      "cnpj_fundo": "20.680.775/0001-62",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2460.271027
+    },
+    {
+      "cnpj_fundo": "31.524.789/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 11581998.4657457
+    },
+    {
+      "cnpj_fundo": "27.368.617/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 179.142430372
+    },
+    {
+      "cnpj_fundo": "63.416.131/0001-74",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 291.58072397
+    },
+    {
+      "cnpj_fundo": "31.544.493/0001-54",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2255.32892059659
+    },
+    {
+      "cnpj_fundo": "26.990.011/0001-50",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.620336935428
+    },
+    {
+      "cnpj_fundo": "63.952.986/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 980.002134188034
+    },
+    {
+      "cnpj_fundo": "31.544.514/0001-31",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.0
+    },
+    {
+      "cnpj_fundo": "63.375.304/0001-53",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.0750567119466
+    },
+    {
+      "cnpj_fundo": "31.508.219/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 161.258908600147
+    },
+    {
+      "cnpj_fundo": "63.601.980/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1052.84717783181
+    },
+    {
+      "cnpj_fundo": "63.429.256/0001-39",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.83590224
+    },
+    {
+      "cnpj_fundo": "63.946.968/0001-25",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.237655
+    },
+    {
+      "cnpj_fundo": "27.538.477/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 561.27407125
+    },
+    {
+      "cnpj_fundo": "63.461.382/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.110988040323
+    },
+    {
+      "cnpj_fundo": "31.145.875/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.028840610356
+    },
+    {
+      "cnpj_fundo": "19.267.845/0001-76",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3580.18775464624
+    },
+    {
+      "cnpj_fundo": "63.933.215/0001-85",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.994622811428571
+    },
+    {
+      "cnpj_fundo": "00.868.235/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2241.40777432064
+    },
+    {
+      "cnpj_fundo": "31.152.015/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 57.83072677
+    },
+    {
+      "cnpj_fundo": "27.538.422/0001-71",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 24.46477223
+    },
+    {
+      "cnpj_fundo": "63.460.267/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 980.948849226357
+    },
+    {
+      "cnpj_fundo": "27.486.542/0001-72",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 11.9343559887059
+    },
+    {
+      "cnpj_fundo": "63.941.672/0001-11",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 93.3700262615385
+    },
+    {
+      "cnpj_fundo": "31.161.410/0001-48",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 78.7733094140774
+    },
+    {
+      "cnpj_fundo": "27.445.482/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 64.637597788712
+    },
+    {
+      "cnpj_fundo": "63.441.263/0001-56",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.260744
+    },
+    {
+      "cnpj_fundo": "31.373.514/0001-16",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.20162083315001
+    },
+    {
+      "cnpj_fundo": "31.469.385/0001-64",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 165.587066988473
+    },
+    {
+      "cnpj_fundo": "01.201.140/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 110.844586883388
+    },
+    {
+      "cnpj_fundo": "63.821.784/0001-39",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 995.095093615244
+    },
+    {
+      "cnpj_fundo": "30.578.417/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 95.1067102886837
+    },
+    {
+      "cnpj_fundo": "30.048.651/0001-12",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 34.3270108073942
+    },
+    {
+      "cnpj_fundo": "28.737.771/0001-85",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.670966
+    },
+    {
+      "cnpj_fundo": "20.019.120/0001-48",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 320.569963
+    },
+    {
+      "cnpj_fundo": "63.700.460/0001-42",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1019.04131
+    },
+    {
+      "cnpj_fundo": "28.729.197/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 92.8826765285812
+    },
+    {
+      "cnpj_fundo": "30.091.444/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 91.7799043404687
+    },
+    {
+      "cnpj_fundo": "63.787.833/0001-64",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.080125879044
+    },
+    {
+      "cnpj_fundo": "01.497.954/0001-14",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 18.8293382440291
+    },
+    {
+      "cnpj_fundo": "63.680.695/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 96.34024925
+    },
+    {
+      "cnpj_fundo": "30.091.506/0001-14",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 170.829576
+    },
+    {
+      "cnpj_fundo": "28.693.595/0001-27",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 94.3989246890774
+    },
+    {
+      "cnpj_fundo": "63.669.622/0001-27",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.995241009074
+    },
+    {
+      "cnpj_fundo": "30.130.708/0001-28",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.7651893965701
+    },
+    {
+      "cnpj_fundo": "63.791.163/0001-50",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1293.63581350605
+    },
+    {
+      "cnpj_fundo": "30.166.700/0001-11",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.955634
+    },
+    {
+      "cnpj_fundo": "30.017.492/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1315.98166024991
+    },
+    {
+      "cnpj_fundo": "63.638.558/0001-17",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.046902448571
+    },
+    {
+      "cnpj_fundo": "63.756.393/0001-88",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 106.812577164564
+    },
+    {
+      "cnpj_fundo": "28.757.546/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 110.112376
+    },
+    {
+      "cnpj_fundo": "29.242.809/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.54897992763447
+    },
+    {
+      "cnpj_fundo": "28.899.178/0001-35",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.9332706
+    },
+    {
+      "cnpj_fundo": "01.356.517/0001-80",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3612.51597185235
+    },
+    {
+      "cnpj_fundo": "63.779.981/0001-37",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1003.13403888889
+    },
+    {
+      "cnpj_fundo": "29.242.844/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 286.947573539292
+    },
+    {
+      "cnpj_fundo": "29.299.737/0001-39",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 284.917349314463
+    },
+    {
+      "cnpj_fundo": "20.118.470/0001-61",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 142921.787646563
+    },
+    {
+      "cnpj_fundo": "63.759.978/0001-51",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.88924875
+    },
+    {
+      "cnpj_fundo": "63.787.222/0001-16",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 13.302975
+    },
+    {
+      "cnpj_fundo": "29.467.977/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 93.290061
+    },
+    {
+      "cnpj_fundo": "20.118.492/0001-21",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 178.778916183741
+    },
+    {
+      "cnpj_fundo": "28.851.767/0001-43",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 150.10143638
+    },
+    {
+      "cnpj_fundo": "63.757.906/0001-75",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 986.78988
+    },
+    {
+      "cnpj_fundo": "29.641.226/0001-53",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 128.901843605549
+    },
+    {
+      "cnpj_fundo": "29.852.732/0001-91",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.79638
+    },
+    {
+      "cnpj_fundo": "63.787.595/0001-97",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 11.306584
+    },
+    {
+      "cnpj_fundo": "26.846.280/0001-47",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 423.3895379
+    },
+    {
+      "cnpj_fundo": "01.235.622/0001-61",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2951.79201474553
+    },
+    {
+      "cnpj_fundo": "30.178.506/0001-56",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 97737.80846801
+    },
+    {
+      "cnpj_fundo": "63.811.693/0001-12",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.477212380952
+    },
+    {
+      "cnpj_fundo": "20.132.453/0001-89",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 118.60720658
+    },
+    {
+      "cnpj_fundo": "01.601.918/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 119.58280538
+    },
+    {
+      "cnpj_fundo": "63.616.390/0001-49",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.868816
+    },
+    {
+      "cnpj_fundo": "30.495.165/0001-42",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 691.704431183041
+    },
+    {
+      "cnpj_fundo": "30.567.216/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 96.9235599083847
+    },
+    {
+      "cnpj_fundo": "28.267.530/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1698.45253949269
+    },
+    {
+      "cnpj_fundo": "63.812.442/0001-52",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 985.586086
+    },
+    {
+      "cnpj_fundo": "63.616.278/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.899123
+    },
+    {
+      "cnpj_fundo": "30.578.275/0001-78",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 122.38909188
+    },
+    {
+      "cnpj_fundo": "28.216.384/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 6.84180507626185
+    },
+    {
+      "cnpj_fundo": "30.578.351/0001-45",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 250.62120218
+    },
+    {
+      "cnpj_fundo": "19.722.048/0001-31",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.00053
+    },
+    {
+      "cnpj_fundo": "63.602.404/0001-75",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.0
+    },
+    {
+      "cnpj_fundo": "28.152.272/0001-26",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 88.4228833030465
+    },
+    {
+      "cnpj_fundo": "30.492.505/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.572048229773876
+    },
+    {
+      "cnpj_fundo": "20.118.507/0001-51",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3350.78192854203
+    },
+    {
+      "cnpj_fundo": "63.626.722/0001-76",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 97.4514416172901
+    },
+    {
+      "cnpj_fundo": "19.872.996/0001-53",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.271733783296728
+    },
+    {
+      "cnpj_fundo": "19.878.616/0001-98",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.9693428576485
+    },
+    {
+      "cnpj_fundo": "28.548.288/0001-52",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.3326365378688
+    },
+    {
+      "cnpj_fundo": "63.638.500/0001-73",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.151908553333
+    },
+    {
+      "cnpj_fundo": "30.230.870/0001-18",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 36.71829414
+    },
+    {
+      "cnpj_fundo": "63.801.471/0001-19",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 29.916122496
+    },
+    {
+      "cnpj_fundo": "28.516.325/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 74.77744207
+    },
+    {
+      "cnpj_fundo": "30.248.129/0001-84",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.0248416301733125
+    },
+    {
+      "cnpj_fundo": "63.638.435/0001-86",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.052228823333
+    },
+    {
+      "cnpj_fundo": "28.516.301/0001-91",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 88.5564120742528
+    },
+    {
+      "cnpj_fundo": "30.248.158/0001-46",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 131.922379
+    },
+    {
+      "cnpj_fundo": "30.248.180/0001-96",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.37445726
+    },
+    {
+      "cnpj_fundo": "63.806.554/0001-09",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.18451036
+    },
+    {
+      "cnpj_fundo": "63.638.368/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.914531371789
+    },
+    {
+      "cnpj_fundo": "28.267.696/0001-36",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 103.828201
+    },
+    {
+      "cnpj_fundo": "30.258.790/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 61.4508620917386
+    },
+    {
+      "cnpj_fundo": "28.267.555/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9935.961392
+    },
+    {
+      "cnpj_fundo": "34.547.078/0001-42",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 485.570480542231
+    },
+    {
+      "cnpj_fundo": "31.547.782/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3237.97170125102
+    },
+    {
+      "cnpj_fundo": "26.846.134/0001-11",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 210.97567865
+    },
+    {
+      "cnpj_fundo": "63.009.499/0001-18",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 103.203965083333
+    },
+    {
+      "cnpj_fundo": "33.701.455/0001-93",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1396256.31905899
+    },
+    {
+      "cnpj_fundo": "24.853.060/0001-15",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1016.12139267
+    },
+    {
+      "cnpj_fundo": "24.853.044/0001-22",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 111.808081324918
+    },
+    {
+      "cnpj_fundo": "33.701.485/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10749.3875
+    },
+    {
+      "cnpj_fundo": "62.995.712/0001-45",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 104.680607263
+    },
+    {
+      "cnpj_fundo": "64.144.327/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1185.87121693018
+    },
+    {
+      "cnpj_fundo": "64.145.714/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1501.50989853886
+    },
+    {
+      "cnpj_fundo": "33.701.501/0001-54",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1767.219909991
+    },
+    {
+      "cnpj_fundo": "24.796.967/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 30.863221
+    },
+    {
+      "cnpj_fundo": "33.701.887/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 713.599602705551
+    },
+    {
+      "cnpj_fundo": "62.995.191/0001-26",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 106.942404701422
+    },
+    {
+      "cnpj_fundo": "33.842.871/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 349.404716509505
+    },
+    {
+      "cnpj_fundo": "18.929.353/0001-36",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 956.711742851465
+    },
+    {
+      "cnpj_fundo": "00.332.266/0001-31",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 92.3005699232434
+    },
+    {
+      "cnpj_fundo": "18.950.957/0001-64",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 5487.7912319471
+    },
+    {
+      "cnpj_fundo": "33.554.611/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 574.609208067946
+    },
+    {
+      "cnpj_fundo": "63.032.672/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.480259
+    },
+    {
+      "cnpj_fundo": "63.051.078/0001-55",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 93.9756079879466
+    },
+    {
+      "cnpj_fundo": "25.032.881/0001-53",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 108.79302019
+    },
+    {
+      "cnpj_fundo": "32.892.018/0001-31",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 104.197363777625
+    },
+    {
+      "cnpj_fundo": "18.979.895/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.790752
+    },
+    {
+      "cnpj_fundo": "64.099.959/0001-09",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.1144394768
+    },
+    {
+      "cnpj_fundo": "32.903.621/0001-71",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 109.487361912856
+    },
+    {
+      "cnpj_fundo": "63.034.711/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 156.646933253553
+    },
+    {
+      "cnpj_fundo": "24.976.492/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 43572.3312420037
+    },
+    {
+      "cnpj_fundo": "32.903.661/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 93.3319283441129
+    },
+    {
+      "cnpj_fundo": "64.137.795/0001-67",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.102339702112
+    },
+    {
+      "cnpj_fundo": "63.034.061/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 94.66132962
+    },
+    {
+      "cnpj_fundo": "33.046.142/0001-49",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 123.879406
+    },
+    {
+      "cnpj_fundo": "21.044.600/0001-21",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.68656852740253
+    },
+    {
+      "cnpj_fundo": "33.354.650/0001-94",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.82972202
+    },
+    {
+      "cnpj_fundo": "03.507.519/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1037.35623939568
+    },
+    {
+      "cnpj_fundo": "64.145.927/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.023931
+    },
+    {
+      "cnpj_fundo": "62.992.889/0001-98",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.366975
+    },
+    {
+      "cnpj_fundo": "33.884.145/0001-51",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 94.04826579716
+    },
+    {
+      "cnpj_fundo": "24.774.904/0001-32",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -136.856140735355
+    },
+    {
+      "cnpj_fundo": "34.197.776/0001-65",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 22.283604
+    },
+    {
+      "cnpj_fundo": "34.197.811/0001-46",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 91.397902
+    },
+    {
+      "cnpj_fundo": "64.542.109/0001-33",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.1554331
+    },
+    {
+      "cnpj_fundo": "62.950.991/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.3566544967669
+    },
+    {
+      "cnpj_fundo": "34.508.872/0001-87",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 83.83757209
+    },
+    {
+      "cnpj_fundo": "21.085.863/0001-89",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.53158520178118
+    },
+    {
+      "cnpj_fundo": "23.768.027/0001-24",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.3189
+    },
+    {
+      "cnpj_fundo": "34.508.959/0001-54",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 82.95803806
+    },
+    {
+      "cnpj_fundo": "03.855.441/0001-63",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.989941402667865
+    },
+    {
+      "cnpj_fundo": "62.935.643/0001-84",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 96.5440024523067
+    },
+    {
+      "cnpj_fundo": "18.874.954/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -986.404413081147
+    },
+    {
+      "cnpj_fundo": "64.581.643/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.02872232
+    },
+    {
+      "cnpj_fundo": "34.509.007/0001-55",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 130.752984113082
+    },
+    {
+      "cnpj_fundo": "23.740.595/0001-17",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 114.08859840385
+    },
+    {
+      "cnpj_fundo": "62.894.743/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1094.03827095786
+    },
+    {
+      "cnpj_fundo": "62.951.756/0001-73",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 14.0741082
+    },
+    {
+      "cnpj_fundo": "32.754.734/0001-52",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 65.571129
+    },
+    {
+      "cnpj_fundo": "23.781.211/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 161.81721623
+    },
+    {
+      "cnpj_fundo": "34.197.700/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 42.9792651032816
+    },
+    {
+      "cnpj_fundo": "03.683.056/0001-86",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 199.095359337469
+    },
+    {
+      "cnpj_fundo": "21.067.825/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.824227100760869
+    },
+    {
+      "cnpj_fundo": "62.962.772/0001-61",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.55218824465735
+    },
+    {
+      "cnpj_fundo": "33.884.197/0001-28",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1488.7946010308
+    },
+    {
+      "cnpj_fundo": "24.514.406/0001-50",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3802.90184157143
+    },
+    {
+      "cnpj_fundo": "64.156.203/0001-54",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1293.76608257007
+    },
+    {
+      "cnpj_fundo": "34.027.774/0001-28",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.426172258597316
+    },
+    {
+      "cnpj_fundo": "23.964.843/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 11.3945025215969
+    },
+    {
+      "cnpj_fundo": "62.959.750/0001-42",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.322249614318
+    },
+    {
+      "cnpj_fundo": "34.081.631/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 121.15679536
+    },
+    {
+      "cnpj_fundo": "34.081.637/0001-71",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 46.63899223
+    },
+    {
+      "cnpj_fundo": "18.874.965/0001-79",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1016.03922890555
+    },
+    {
+      "cnpj_fundo": "62.952.567/0001-15",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.0
+    },
+    {
+      "cnpj_fundo": "64.280.202/0001-17",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 56.244485
+    },
+    {
+      "cnpj_fundo": "23.876.086/0001-16",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 31.3366669641174
+    },
+    {
+      "cnpj_fundo": "64.357.284/0001-50",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 36.35652004
+    },
+    {
+      "cnpj_fundo": "64.089.566/0001-14",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.009040235914
+    },
+    {
+      "cnpj_fundo": "26.091.656/0001-50",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.9787203909502
+    },
+    {
+      "cnpj_fundo": "32.527.626/0001-47",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 130.199502539505
+    },
+    {
+      "cnpj_fundo": "63.286.011/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 996.240851193059
+    },
+    {
+      "cnpj_fundo": "26.642.834/0001-94",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.570018681159718
+    },
+    {
+      "cnpj_fundo": "31.962.875/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1661.94998026957
+    },
+    {
+      "cnpj_fundo": "32.000.013/0001-57",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 276.063040047006
+    },
+    {
+      "cnpj_fundo": "26.642.727/0001-66",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 14.338792
+    },
+    {
+      "cnpj_fundo": "63.279.539/0001-41",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 326.166214345904
+    },
+    {
+      "cnpj_fundo": "63.992.956/0001-37",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.74895275449735
+    },
+    {
+      "cnpj_fundo": "32.006.821/0001-21",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.42608790921858
+    },
+    {
+      "cnpj_fundo": "26.614.291/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 11.03199193
+    },
+    {
+      "cnpj_fundo": "32.065.364/0001-46",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 97.5796246012467
+    },
+    {
+      "cnpj_fundo": "63.279.000/0001-92",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.84504742
+    },
+    {
+      "cnpj_fundo": "26.545.627/0001-11",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 194735.582340446
+    },
+    {
+      "cnpj_fundo": "32.140.405/0001-11",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1156.61935960374
+    },
+    {
+      "cnpj_fundo": "32.177.294/0001-18",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 14172.87348454
+    },
+    {
+      "cnpj_fundo": "64.012.870/0001-63",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1109.6367899
+    },
+    {
+      "cnpj_fundo": "63.976.969/0001-12",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1222.64183672
+    },
+    {
+      "cnpj_fundo": "63.266.685/0001-32",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1059.22966290429
+    },
+    {
+      "cnpj_fundo": "31.907.591/0001-09",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2137.22404800918
+    },
+    {
+      "cnpj_fundo": "63.320.393/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.498517273
+    },
+    {
+      "cnpj_fundo": "63.360.692/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.859512596899
+    },
+    {
+      "cnpj_fundo": "31.547.989/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1887.20382830134
+    },
+    {
+      "cnpj_fundo": "63.954.054/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 97.719436083
+    },
+    {
+      "cnpj_fundo": "31.713.934/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.526739278324505
+    },
+    {
+      "cnpj_fundo": "63.352.779/0001-24",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.721536998621
+    },
+    {
+      "cnpj_fundo": "26.813.118/0001-22",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 38.7987444298309
+    },
+    {
+      "cnpj_fundo": "31.772.231/0001-47",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 28.8350431810213
+    },
+    {
+      "cnpj_fundo": "63.327.294/0001-80",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 168.744460986547
+    },
+    {
+      "cnpj_fundo": "63.973.003/0001-21",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 920.818202497784
+    },
+    {
+      "cnpj_fundo": "31.887.401/0001-39",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 84.5723287780419
+    },
+    {
+      "cnpj_fundo": "00.762.723/0001-28",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 16.7137833549249
+    },
+    {
+      "cnpj_fundo": "31.894.369/0001-19",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 56.7034105045222
+    },
+    {
+      "cnpj_fundo": "20.717.355/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 652.857180574351
+    },
+    {
+      "cnpj_fundo": "01.964.775/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.124340658825399
+    },
+    {
+      "cnpj_fundo": "26.681.370/0001-25",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.584665
+    },
+    {
+      "cnpj_fundo": "19.239.245/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.2961725783384
+    },
+    {
+      "cnpj_fundo": "19.249.956/0001-50",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1064.22711777003
+    },
+    {
+      "cnpj_fundo": "32.222.912/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 804.317037781403
+    },
+    {
+      "cnpj_fundo": "20.748.515/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 115.722407840762
+    },
+    {
+      "cnpj_fundo": "64.031.021/0001-57",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.02101421
+    },
+    {
+      "cnpj_fundo": "32.388.168/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 94836.2956294909
+    },
+    {
+      "cnpj_fundo": "26.452.053/0001-37",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2229.27051898551
+    },
+    {
+      "cnpj_fundo": "32.400.250/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 93.6621058661489
+    },
+    {
+      "cnpj_fundo": "63.134.454/0001-75",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.875869404485302
+    },
+    {
+      "cnpj_fundo": "20.990.694/0001-69",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -50.2590614357733
+    },
+    {
+      "cnpj_fundo": "26.269.251/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 334.572681445958
+    },
+    {
+      "cnpj_fundo": "32.441.656/0001-36",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 318.369362
+    },
+    {
+      "cnpj_fundo": "19.026.454/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1680.99488498408
+    },
+    {
+      "cnpj_fundo": "03.251.720/0001-18",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 357.887931
+    },
+    {
+      "cnpj_fundo": "63.105.082/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.30410212
+    },
+    {
+      "cnpj_fundo": "64.083.111/0001-91",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 29.666166
+    },
+    {
+      "cnpj_fundo": "32.527.552/0001-49",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 700.319365770642
+    },
+    {
+      "cnpj_fundo": "26.191.053/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 365.81315697
+    },
+    {
+      "cnpj_fundo": "63.104.203/0001-48",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.0300938633794
+    },
+    {
+      "cnpj_fundo": "32.317.313/0001-64",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 370.327140914723
+    },
+    {
+      "cnpj_fundo": "19.131.224/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 50825.1783211162
+    },
+    {
+      "cnpj_fundo": "63.186.685/0001-22",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.8546579158235
+    },
+    {
+      "cnpj_fundo": "26.452.179/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.41971097088501
+    },
+    {
+      "cnpj_fundo": "02.508.235/0001-14",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 15349.5698877193
+    },
+    {
+      "cnpj_fundo": "63.249.022/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 999.907159157895
+    },
+    {
+      "cnpj_fundo": "26.502.810/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 4970901.61399
+    },
+    {
+      "cnpj_fundo": "32.274.163/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 89.7274155348404
+    },
+    {
+      "cnpj_fundo": "64.030.930/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.0493125875
+    },
+    {
+      "cnpj_fundo": "26.502.794/0001-85",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 105.248317815881
+    },
+    {
+      "cnpj_fundo": "63.240.822/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.442874
+    },
+    {
+      "cnpj_fundo": "32.274.197/0001-43",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.03398835552009
+    },
+    {
+      "cnpj_fundo": "26.499.833/0001-32",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 116.668699477253
+    },
+    {
+      "cnpj_fundo": "32.274.553/0001-29",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.06862710121197
+    },
+    {
+      "cnpj_fundo": "63.225.091/0001-83",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.144304092766
+    },
+    {
+      "cnpj_fundo": "64.030.981/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.070209109091
+    },
+    {
+      "cnpj_fundo": "32.275.252/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 11.2599493383134
+    },
+    {
+      "cnpj_fundo": "19.107.604/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 140.623804413793
+    },
+    {
+      "cnpj_fundo": "00.613.094/0001-74",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -34.7144113924051
+    },
+    {
+      "cnpj_fundo": "32.287.811/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1099.47712537679
+    },
+    {
+      "cnpj_fundo": "30.846.692/0001-54",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 88.960233287636
+    },
+    {
+      "cnpj_fundo": "53.866.393/0001-87",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1006.18150726847
+    },
+    {
+      "cnpj_fundo": "36.501.249/0001-28",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2537.47879171985
+    },
+    {
+      "cnpj_fundo": "49.916.958/0001-16",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.88900648
+    },
+    {
+      "cnpj_fundo": "57.216.258/0001-47",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 118.254090876404
+    },
+    {
+      "cnpj_fundo": "49.996.755/0001-87",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 966.001382580253
+    },
+    {
+      "cnpj_fundo": "14.376.247/0001-11",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 107.887627
+    },
+    {
+      "cnpj_fundo": "50.027.615/0001-80",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 910.596203373459
+    },
+    {
+      "cnpj_fundo": "57.170.846/0001-97",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.902837
+    },
+    {
+      "cnpj_fundo": "50.041.467/0001-58",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.775263
+    },
+    {
+      "cnpj_fundo": "57.136.514/0001-96",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 111.240527090964
+    },
+    {
+      "cnpj_fundo": "50.117.874/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 83.43379487
+    },
+    {
+      "cnpj_fundo": "49.893.516/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.109023970975
+    },
+    {
+      "cnpj_fundo": "50.135.849/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 89.17504651
+    },
+    {
+      "cnpj_fundo": "50.143.549/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.47365634271963
+    },
+    {
+      "cnpj_fundo": "14.217.108/0001-45",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 592.082372773723
+    },
+    {
+      "cnpj_fundo": "57.109.161/0001-35",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.0
+    },
+    {
+      "cnpj_fundo": "50.180.894/0001-17",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.762111
+    },
+    {
+      "cnpj_fundo": "57.077.139/0001-50",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 13.9319716283909
+    },
+    {
+      "cnpj_fundo": "50.252.286/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -4031.84180017153
+    },
+    {
+      "cnpj_fundo": "50.275.622/0001-09",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.839895472255
+    },
+    {
+      "cnpj_fundo": "11.281.322/0001-72",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.091107619958
+    },
+    {
+      "cnpj_fundo": "56.992.328/0001-96",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 958.482976696581
+    },
+    {
+      "cnpj_fundo": "57.109.239/0001-11",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 96.2298961
+    },
+    {
+      "cnpj_fundo": "57.231.494/0001-32",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 108.340171004098
+    },
+    {
+      "cnpj_fundo": "11.274.415/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 93.166463
+    },
+    {
+      "cnpj_fundo": "49.649.500/0001-48",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 435.65583261
+    },
+    {
+      "cnpj_fundo": "14.423.780/0001-97",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.642198974902963
+    },
+    {
+      "cnpj_fundo": "48.978.797/0001-22",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 885.178303432688
+    },
+    {
+      "cnpj_fundo": "57.376.810/0001-64",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 179.6485012
+    },
+    {
+      "cnpj_fundo": "48.978.859/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 109.819142
+    },
+    {
+      "cnpj_fundo": "11.268.335/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 705717.166089217
+    },
+    {
+      "cnpj_fundo": "57.350.504/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.02276394438285
+    },
+    {
+      "cnpj_fundo": "48.984.698/0001-53",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 6462.16829606022
+    },
+    {
+      "cnpj_fundo": "49.005.348/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.673052
+    },
+    {
+      "cnpj_fundo": "57.306.908/0001-45",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -0.361260868824703
+    },
+    {
+      "cnpj_fundo": "49.005.570/0001-63",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3.95342632372087
+    },
+    {
+      "cnpj_fundo": "14.413.342/0001-48",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 13346.7015144157
+    },
+    {
+      "cnpj_fundo": "57.300.684/0001-64",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.0
+    },
+    {
+      "cnpj_fundo": "49.152.919/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.32725929756092
+    },
+    {
+      "cnpj_fundo": "49.184.940/0001-77",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 90.17971
+    },
+    {
+      "cnpj_fundo": "57.300.503/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 11.426585
+    },
+    {
+      "cnpj_fundo": "49.318.661/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1518.34755
+    },
+    {
+      "cnpj_fundo": "49.592.781/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 11.2649319810328
+    },
+    {
+      "cnpj_fundo": "57.285.563/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 103.963985711111
+    },
+    {
+      "cnpj_fundo": "14.410.722/0001-29",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 103.970962816487
+    },
+    {
+      "cnpj_fundo": "49.640.601/0001-58",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 967.462647522669
+    },
+    {
+      "cnpj_fundo": "57.244.407/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 15.9865372016765
+    },
+    {
+      "cnpj_fundo": "50.352.284/0001-53",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.396252
+    },
+    {
+      "cnpj_fundo": "57.378.678/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.234202
+    },
+    {
+      "cnpj_fundo": "50.375.550/0001-63",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3.8191014881594
+    },
+    {
+      "cnpj_fundo": "14.149.745/0001-21",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.525065644348596
+    },
+    {
+      "cnpj_fundo": "11.602.654/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 125.089224
+    },
+    {
+      "cnpj_fundo": "56.212.023/0001-14",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 996.050052
+    },
+    {
+      "cnpj_fundo": "50.876.919/0001-11",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1070.59460307981
+    },
+    {
+      "cnpj_fundo": "14.074.706/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 16.7388331676771
+    },
+    {
+      "cnpj_fundo": "50.918.320/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 989.510582
+    },
+    {
+      "cnpj_fundo": "56.191.016/0001-83",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 95.2238319
+    },
+    {
+      "cnpj_fundo": "50.939.923/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 932.657587287803
+    },
+    {
+      "cnpj_fundo": "56.174.611/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2292.58961996788
+    },
+    {
+      "cnpj_fundo": "50.940.230/0001-09",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 406.037017942854
+    },
+    {
+      "cnpj_fundo": "50.808.042/0001-21",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 137.68259033
+    },
+    {
+      "cnpj_fundo": "50.957.247/0001-79",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1278.09487972037
+    },
+    {
+      "cnpj_fundo": "51.067.062/0001-51",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 13610.8351339776
+    },
+    {
+      "cnpj_fundo": "14.056.001/0001-62",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2.61655434715431
+    },
+    {
+      "cnpj_fundo": "56.061.587/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 112.17352028
+    },
+    {
+      "cnpj_fundo": "51.192.125/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.358357
+    },
+    {
+      "cnpj_fundo": "11.664.201/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 83.8032876985644
+    },
+    {
+      "cnpj_fundo": "56.053.824/0001-84",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.284231
+    },
+    {
+      "cnpj_fundo": "51.226.569/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3254.48558582265
+    },
+    {
+      "cnpj_fundo": "51.294.441/0001-84",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.888714926456
+    },
+    {
+      "cnpj_fundo": "56.028.598/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 490.978130837319
+    },
+    {
+      "cnpj_fundo": "56.073.063/0001-22",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 872.031532325449
+    },
+    {
+      "cnpj_fundo": "56.303.820/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 13545.32225
+    },
+    {
+      "cnpj_fundo": "50.750.438/0001-65",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.0295803594705
+    },
+    {
+      "cnpj_fundo": "50.718.976/0001-72",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 180.316654
+    },
+    {
+      "cnpj_fundo": "50.385.179/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.52655243833333
+    },
+    {
+      "cnpj_fundo": "56.978.773/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 112.766887264706
+    },
+    {
+      "cnpj_fundo": "50.399.189/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 12.0915833156951
+    },
+    {
+      "cnpj_fundo": "50.479.122/0001-80",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.447436
+    },
+    {
+      "cnpj_fundo": "56.883.420/0001-18",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1036.14668393864
+    },
+    {
+      "cnpj_fundo": "50.492.450/0001-17",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 156.1013154
+    },
+    {
+      "cnpj_fundo": "50.522.058/0001-73",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1190.823297
+    },
+    {
+      "cnpj_fundo": "56.805.391/0001-76",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 105.665398
+    },
+    {
+      "cnpj_fundo": "14.088.246/0001-71",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 409737.907746415
+    },
+    {
+      "cnpj_fundo": "50.555.700/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.10472160211623
+    },
+    {
+      "cnpj_fundo": "11.326.746/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 23826.48409284
+    },
+    {
+      "cnpj_fundo": "56.524.816/0001-79",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 94.8088499516365
+    },
+    {
+      "cnpj_fundo": "50.659.134/0001-97",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 138.371869017857
+    },
+    {
+      "cnpj_fundo": "56.430.935/0001-62",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.17622299675127
+    },
+    {
+      "cnpj_fundo": "50.686.473/0001-62",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 178.10152532
+    },
+    {
+      "cnpj_fundo": "50.701.686/0001-16",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 200.799533
+    },
+    {
+      "cnpj_fundo": "56.414.379/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1088.78422275862
+    },
+    {
+      "cnpj_fundo": "50.716.077/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.0
+    },
+    {
+      "cnpj_fundo": "14.080.689/0001-16",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 15.4884943372343
+    },
+    {
+      "cnpj_fundo": "50.718.891/0001-94",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 186.649216
+    },
+    {
+      "cnpj_fundo": "56.304.155/0001-76",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 163.92137205
+    },
+    {
+      "cnpj_fundo": "56.990.470/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 97.893984
+    },
+    {
+      "cnpj_fundo": "48.969.543/0001-48",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 118.440159679146
+    },
+    {
+      "cnpj_fundo": "48.964.604/0001-84",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2317.41114080672
+    },
+    {
+      "cnpj_fundo": "57.457.407/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1784.58119213756
+    },
+    {
+      "cnpj_fundo": "45.188.099/0001-35",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.203831
+    },
+    {
+      "cnpj_fundo": "58.022.479/0001-47",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.475413
+    },
+    {
+      "cnpj_fundo": "45.188.124/0001-80",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 47.796875
+    },
+    {
+      "cnpj_fundo": "45.188.176/0001-57",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.972757
+    },
+    {
+      "cnpj_fundo": "11.044.355/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 153.24757088
+    },
+    {
+      "cnpj_fundo": "58.019.792/0001-26",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 12904.7145545881
+    },
+    {
+      "cnpj_fundo": "45.188.199/0001-61",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 877.696891
+    },
+    {
+      "cnpj_fundo": "15.006.286/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 84.0641593460389
+    },
+    {
+      "cnpj_fundo": "57.986.419/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 946.788476611638
+    },
+    {
+      "cnpj_fundo": "58.054.129/0001-62",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10455.1600953159
+    },
+    {
+      "cnpj_fundo": "45.254.732/0001-46",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 118.200807088446
+    },
+    {
+      "cnpj_fundo": "57.979.459/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.794094110375
+    },
+    {
+      "cnpj_fundo": "45.727.531/0001-19",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.58543341451797
+    },
+    {
+      "cnpj_fundo": "45.742.299/0001-98",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.627725612030075
+    },
+    {
+      "cnpj_fundo": "57.977.051/0001-95",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 134.230657625821
+    },
+    {
+      "cnpj_fundo": "45.777.119/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1702.98629048099
+    },
+    {
+      "cnpj_fundo": "15.006.267/0001-63",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 15.092063
+    },
+    {
+      "cnpj_fundo": "57.976.696/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 975.754664112903
+    },
+    {
+      "cnpj_fundo": "46.027.189/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 114.431253654275
+    },
+    {
+      "cnpj_fundo": "11.160.521/0001-22",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.4678681343869
+    },
+    {
+      "cnpj_fundo": "45.338.646/0001-11",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.59362539941477
+    },
+    {
+      "cnpj_fundo": "45.188.066/0001-95",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.11214978020181
+    },
+    {
+      "cnpj_fundo": "15.098.422/0001-19",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 120.155072
+    },
+    {
+      "cnpj_fundo": "45.188.033/0001-45",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9528.990925
+    },
+    {
+      "cnpj_fundo": "44.728.452/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 360.862472635899
+    },
+    {
+      "cnpj_fundo": "44.728.520/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1102.16189688219
+    },
+    {
+      "cnpj_fundo": "58.263.012/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 325080.3713
+    },
+    {
+      "cnpj_fundo": "15.348.117/0001-38",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101363.219845047
+    },
+    {
+      "cnpj_fundo": "45.063.985/0001-32",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 518406.14861
+    },
+    {
+      "cnpj_fundo": "58.250.751/0001-46",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 94.13089075
+    },
+    {
+      "cnpj_fundo": "45.105.676/0001-88",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2.61956383425273
+    },
+    {
+      "cnpj_fundo": "45.105.714/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.947645050525751
+    },
+    {
+      "cnpj_fundo": "58.239.657/0001-96",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.472045
+    },
+    {
+      "cnpj_fundo": "45.106.274/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.649264647940075
+    },
+    {
+      "cnpj_fundo": "45.106.312/0001-12",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.29499249751696
+    },
+    {
+      "cnpj_fundo": "58.198.613/0001-65",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.1031414062959
+    },
+    {
+      "cnpj_fundo": "15.333.306/0001-37",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 42.728343
+    },
+    {
+      "cnpj_fundo": "45.106.376/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.24144000924855
+    },
+    {
+      "cnpj_fundo": "10.991.914/0001-15",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 63.1083397238682
+    },
+    {
+      "cnpj_fundo": "58.197.921/0001-76",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 975.86530939399
+    },
+    {
+      "cnpj_fundo": "45.120.786/0001-19",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1135.958165
+    },
+    {
+      "cnpj_fundo": "58.160.171/0001-68",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 256280.8171
+    },
+    {
+      "cnpj_fundo": "45.123.401/0001-77",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.14008751198208
+    },
+    {
+      "cnpj_fundo": "45.123.465/0001-78",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 174.190669200114
+    },
+    {
+      "cnpj_fundo": "58.099.321/0001-75",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.00134979570351
+    },
+    {
+      "cnpj_fundo": "57.965.466/0001-49",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1048.47540472356
+    },
+    {
+      "cnpj_fundo": "46.078.492/0001-39",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 658.209297849441
+    },
+    {
+      "cnpj_fundo": "46.079.965/0001-12",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 16.4214670967742
+    },
+    {
+      "cnpj_fundo": "57.927.297/0001-52",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 96.932609
+    },
+    {
+      "cnpj_fundo": "47.142.218/0001-44",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 7.36291290361994
+    },
+    {
+      "cnpj_fundo": "11.233.841/0001-65",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 272.020158587851
+    },
+    {
+      "cnpj_fundo": "57.583.846/0001-19",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.866428
+    },
+    {
+      "cnpj_fundo": "47.154.849/0001-83",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1000.96728288757
+    },
+    {
+      "cnpj_fundo": "47.669.336/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 655.711372637481
+    },
+    {
+      "cnpj_fundo": "57.567.076/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 149.574504
+    },
+    {
+      "cnpj_fundo": "47.669.545/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -14.5765048970355
+    },
+    {
+      "cnpj_fundo": "14.631.148/0001-39",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 68.4335136997997
+    },
+    {
+      "cnpj_fundo": "47.896.665/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 11.569124
+    },
+    {
+      "cnpj_fundo": "57.519.008/0001-86",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1080.288826
+    },
+    {
+      "cnpj_fundo": "48.373.413/0001-48",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 398.302615873024
+    },
+    {
+      "cnpj_fundo": "48.373.428/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 445.589751949159
+    },
+    {
+      "cnpj_fundo": "57.495.006/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 73.2259733512944
+    },
+    {
+      "cnpj_fundo": "48.389.780/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 41.5434760640295
+    },
+    {
+      "cnpj_fundo": "11.260.134/0001-68",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 49.3530603169207
+    },
+    {
+      "cnpj_fundo": "57.469.492/0001-86",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.210919
+    },
+    {
+      "cnpj_fundo": "48.904.259/0001-93",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1105.61251515766
+    },
+    {
+      "cnpj_fundo": "14.609.653/0001-87",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 708.965199
+    },
+    {
+      "cnpj_fundo": "48.916.699/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 126.596466
+    },
+    {
+      "cnpj_fundo": "57.466.934/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 13.8298802247477
+    },
+    {
+      "cnpj_fundo": "48.961.539/0001-33",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 103.933151
+    },
+    {
+      "cnpj_fundo": "57.593.613/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 122.509302
+    },
+    {
+      "cnpj_fundo": "51.295.092/0001-15",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1694.98322647924
+    },
+    {
+      "cnpj_fundo": "47.136.369/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 66.1013716527645
+    },
+    {
+      "cnpj_fundo": "47.102.860/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 117.865872133333
+    },
+    {
+      "cnpj_fundo": "46.157.247/0001-17",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 27.821828664196
+    },
+    {
+      "cnpj_fundo": "46.157.348/0001-98",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.3182985369422
+    },
+    {
+      "cnpj_fundo": "14.793.782/0001-78",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 95.9186576330298
+    },
+    {
+      "cnpj_fundo": "57.909.000/0001-26",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.070781
+    },
+    {
+      "cnpj_fundo": "46.285.299/0001-79",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 74.9873760176991
+    },
+    {
+      "cnpj_fundo": "57.904.514/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.0
+    },
+    {
+      "cnpj_fundo": "46.322.850/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 77.512667
+    },
+    {
+      "cnpj_fundo": "46.334.715/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.85090949
+    },
+    {
+      "cnpj_fundo": "57.882.804/0001-89",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 982.107537
+    },
+    {
+      "cnpj_fundo": "46.437.903/0001-35",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.350277
+    },
+    {
+      "cnpj_fundo": "11.179.118/0001-45",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 224.562555
+    },
+    {
+      "cnpj_fundo": "57.811.221/0001-67",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.426937651861
+    },
+    {
+      "cnpj_fundo": "46.449.786/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 94.12218957
+    },
+    {
+      "cnpj_fundo": "14.788.492/0001-36",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 213.208185
+    },
+    {
+      "cnpj_fundo": "46.716.709/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -52.1555993579454
+    },
+    {
+      "cnpj_fundo": "57.683.576/0001-18",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10650.171568291
+    },
+    {
+      "cnpj_fundo": "46.879.122/0001-09",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 174.294298941524
+    },
+    {
+      "cnpj_fundo": "57.682.963/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.545061
+    },
+    {
+      "cnpj_fundo": "46.965.606/0001-62",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 571.844515309185
+    },
+    {
+      "cnpj_fundo": "47.085.640/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 61.6216620981523
+    },
+    {
+      "cnpj_fundo": "57.640.413/0001-58",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 34.3901235285714
+    },
+    {
+      "cnpj_fundo": "14.721.889/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 33.605073311763
+    },
+    {
+      "cnpj_fundo": "51.303.221/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.04195170203566e-08
+    },
+    {
+      "cnpj_fundo": "13.974.819/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 27.6149245939398
+    },
+    {
+      "cnpj_fundo": "56.012.069/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 111.656473035502
+    },
+    {
+      "cnpj_fundo": "53.123.631/0001-64",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1250.10291034483
+    },
+    {
+      "cnpj_fundo": "54.500.419/0001-31",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 569.439473480112
+    },
+    {
+      "cnpj_fundo": "53.127.942/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 16.3008414909102
+    },
+    {
+      "cnpj_fundo": "13.022.994/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1721.10868342699
+    },
+    {
+      "cnpj_fundo": "12.516.185/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.8054735540205
+    },
+    {
+      "cnpj_fundo": "54.485.027/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 820.234363636957
+    },
+    {
+      "cnpj_fundo": "53.137.434/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 614.353879583333
+    },
+    {
+      "cnpj_fundo": "53.178.634/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 88.37999722
+    },
+    {
+      "cnpj_fundo": "54.483.412/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.682731
+    },
+    {
+      "cnpj_fundo": "53.095.823/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.3265940666667
+    },
+    {
+      "cnpj_fundo": "53.179.110/0001-29",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 314.328592410219
+    },
+    {
+      "cnpj_fundo": "54.422.883/0001-57",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 104.267603
+    },
+    {
+      "cnpj_fundo": "53.191.611/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 879.982017947543
+    },
+    {
+      "cnpj_fundo": "13.020.465/0001-56",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -43341.5129660732
+    },
+    {
+      "cnpj_fundo": "54.419.040/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1503.22127965911
+    },
+    {
+      "cnpj_fundo": "53.193.237/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.404153
+    },
+    {
+      "cnpj_fundo": "53.211.851/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 901.250191919097
+    },
+    {
+      "cnpj_fundo": "54.417.489/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2355.27051220295
+    },
+    {
+      "cnpj_fundo": "53.249.951/0001-65",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1148.52712245378
+    },
+    {
+      "cnpj_fundo": "12.681.340/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 105.67580327673
+    },
+    {
+      "cnpj_fundo": "53.190.891/0001-52",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1263.09151974275
+    },
+    {
+      "cnpj_fundo": "54.505.336/0001-35",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 141.69597309
+    },
+    {
+      "cnpj_fundo": "53.087.126/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 13.2888465272581
+    },
+    {
+      "cnpj_fundo": "54.505.439/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.8771785707335
+    },
+    {
+      "cnpj_fundo": "52.649.350/0001-87",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 97.885011
+    },
+    {
+      "cnpj_fundo": "52.649.680/0001-72",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 65.87750313
+    },
+    {
+      "cnpj_fundo": "13.371.132/0001-71",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 103.10241865877
+    },
+    {
+      "cnpj_fundo": "54.645.216/0001-33",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.238505
+    },
+    {
+      "cnpj_fundo": "52.713.882/0001-36",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.267954
+    },
+    {
+      "cnpj_fundo": "54.635.301/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 103.46833089
+    },
+    {
+      "cnpj_fundo": "52.714.934/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 95.100426
+    },
+    {
+      "cnpj_fundo": "52.890.292/0001-89",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.783189
+    },
+    {
+      "cnpj_fundo": "54.635.245/0001-14",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.986156
+    },
+    {
+      "cnpj_fundo": "52.904.581/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 958.280464268149
+    },
+    {
+      "cnpj_fundo": "13.320.290/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1980.057562
+    },
+    {
+      "cnpj_fundo": "54.620.584/0001-27",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 586.66191557858
+    },
+    {
+      "cnpj_fundo": "52.966.340/0001-75",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.8655345733617
+    },
+    {
+      "cnpj_fundo": "12.401.858/0001-47",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 113.619836
+    },
+    {
+      "cnpj_fundo": "54.564.113/0001-49",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 666.5891173
+    },
+    {
+      "cnpj_fundo": "53.072.782/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 96.7297534117662
+    },
+    {
+      "cnpj_fundo": "53.076.137/0001-96",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.031267
+    },
+    {
+      "cnpj_fundo": "54.557.596/0001-54",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 120.545454
+    },
+    {
+      "cnpj_fundo": "53.076.143/0001-43",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 77.761747
+    },
+    {
+      "cnpj_fundo": "13.125.823/0001-95",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3653.19114350666
+    },
+    {
+      "cnpj_fundo": "53.076.746/0001-45",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 922.792464689007
+    },
+    {
+      "cnpj_fundo": "54.386.365/0001-25",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1524.5116384534
+    },
+    {
+      "cnpj_fundo": "53.250.967/0001-98",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.972587
+    },
+    {
+      "cnpj_fundo": "53.251.006/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1163.53031165
+    },
+    {
+      "cnpj_fundo": "13.000.836/0001-38",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3805057.20469989
+    },
+    {
+      "cnpj_fundo": "53.463.715/0001-47",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 996.24305414
+    },
+    {
+      "cnpj_fundo": "12.809.972/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 74.3196095859785
+    },
+    {
+      "cnpj_fundo": "54.089.614/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 13.327541
+    },
+    {
+      "cnpj_fundo": "53.466.467/0001-98",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.8097450392018
+    },
+    {
+      "cnpj_fundo": "53.471.254/0001-54",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -13.948762
+    },
+    {
+      "cnpj_fundo": "12.969.125/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 418557.452162741
+    },
+    {
+      "cnpj_fundo": "54.088.529/0001-38",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 109.83973999
+    },
+    {
+      "cnpj_fundo": "53.507.204/0001-80",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 7.01222661016949
+    },
+    {
+      "cnpj_fundo": "54.064.962/0001-33",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 919.010073890749
+    },
+    {
+      "cnpj_fundo": "53.523.736/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.434276014
+    },
+    {
+      "cnpj_fundo": "53.645.729/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 16.3752623206681
+    },
+    {
+      "cnpj_fundo": "54.045.925/0001-88",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 722.28515886511
+    },
+    {
+      "cnpj_fundo": "53.654.501/0001-58",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.996213046278931
+    },
+    {
+      "cnpj_fundo": "53.656.482/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.70372504
+    },
+    {
+      "cnpj_fundo": "12.887.506/0001-43",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 409.774517603597
+    },
+    {
+      "cnpj_fundo": "54.010.546/0001-52",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 58.6818319495247
+    },
+    {
+      "cnpj_fundo": "53.724.231/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1919.321874
+    },
+    {
+      "cnpj_fundo": "12.811.222/0001-73",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 116.773250785721
+    },
+    {
+      "cnpj_fundo": "53.866.872/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 7.438894
+    },
+    {
+      "cnpj_fundo": "53.730.029/0001-95",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 104.328672696522
+    },
+    {
+      "cnpj_fundo": "53.764.894/0001-52",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.2717491761197
+    },
+    {
+      "cnpj_fundo": "54.089.708/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 76.5374959923966
+    },
+    {
+      "cnpj_fundo": "54.660.460/0001-75",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.129846640762
+    },
+    {
+      "cnpj_fundo": "53.391.653/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 115.517016
+    },
+    {
+      "cnpj_fundo": "54.134.474/0001-55",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1304.1087
+    },
+    {
+      "cnpj_fundo": "54.375.187/0001-37",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.58098809592244
+    },
+    {
+      "cnpj_fundo": "53.251.715/0001-83",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1147.67961615433
+    },
+    {
+      "cnpj_fundo": "54.315.465/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 58.9154107576415
+    },
+    {
+      "cnpj_fundo": "53.251.882/0001-24",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1142.15442687762
+    },
+    {
+      "cnpj_fundo": "53.260.548/0001-37",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 6.83079787119931
+    },
+    {
+      "cnpj_fundo": "54.306.150/0001-57",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1234.045167
+    },
+    {
+      "cnpj_fundo": "53.275.496/0001-72",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 27.5688911511829
+    },
+    {
+      "cnpj_fundo": "53.294.563/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 185.352111
+    },
+    {
+      "cnpj_fundo": "12.989.974/0001-29",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.46559701305154
+    },
+    {
+      "cnpj_fundo": "54.275.309/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 964.315044902574
+    },
+    {
+      "cnpj_fundo": "53.305.536/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.888878
+    },
+    {
+      "cnpj_fundo": "12.804.013/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 111.151829986659
+    },
+    {
+      "cnpj_fundo": "54.250.610/0001-72",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.37063842
+    },
+    {
+      "cnpj_fundo": "53.309.565/0001-11",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1043.48461
+    },
+    {
+      "cnpj_fundo": "53.317.751/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 356.976392042847
+    },
+    {
+      "cnpj_fundo": "54.250.318/0001-50",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 58.64599878
+    },
+    {
+      "cnpj_fundo": "53.322.282/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 957.972123879845
+    },
+    {
+      "cnpj_fundo": "53.322.347/0001-17",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 12704.9088691975
+    },
+    {
+      "cnpj_fundo": "54.174.907/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 14.2872505390565
+    },
+    {
+      "cnpj_fundo": "53.372.824/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2298333.50295891
+    },
+    {
+      "cnpj_fundo": "12.978.943/0001-72",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 55.6412892718568
+    },
+    {
+      "cnpj_fundo": "53.391.567/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 88.290743
+    },
+    {
+      "cnpj_fundo": "58.268.583/0001-16",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 268.845362343069
+    },
+    {
+      "cnpj_fundo": "12.323.955/0001-69",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 31.9875765398507
+    },
+    {
+      "cnpj_fundo": "54.675.539/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 362.286860419096
+    },
+    {
+      "cnpj_fundo": "55.768.096/0001-24",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1046.95650141
+    },
+    {
+      "cnpj_fundo": "51.666.294/0001-26",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 110.266381
+    },
+    {
+      "cnpj_fundo": "51.672.980/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 859.455393195347
+    },
+    {
+      "cnpj_fundo": "13.726.079/0001-84",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 4090.76446692
+    },
+    {
+      "cnpj_fundo": "55.753.193/0001-43",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 937.225955186369
+    },
+    {
+      "cnpj_fundo": "51.734.924/0001-52",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.943413605575021
+    },
+    {
+      "cnpj_fundo": "55.729.232/0001-77",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.860652270375
+    },
+    {
+      "cnpj_fundo": "51.753.261/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1137.40216024198
+    },
+    {
+      "cnpj_fundo": "51.786.271/0001-55",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1194.838952
+    },
+    {
+      "cnpj_fundo": "51.665.327/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.68730127781196
+    },
+    {
+      "cnpj_fundo": "55.661.358/0001-57",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2112.39006932
+    },
+    {
+      "cnpj_fundo": "13.703.596/0001-38",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8186.63456269
+    },
+    {
+      "cnpj_fundo": "11.827.568/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.39092483254646
+    },
+    {
+      "cnpj_fundo": "55.611.150/0001-23",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.771926
+    },
+    {
+      "cnpj_fundo": "51.817.522/0001-11",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 982.297556051948
+    },
+    {
+      "cnpj_fundo": "55.435.378/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 873.505495727287
+    },
+    {
+      "cnpj_fundo": "51.868.778/0001-58",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.40494284630353
+    },
+    {
+      "cnpj_fundo": "51.870.412/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.46938283113424
+    },
+    {
+      "cnpj_fundo": "55.431.577/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.966399
+    },
+    {
+      "cnpj_fundo": "51.889.479/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1141.29237107436
+    },
+    {
+      "cnpj_fundo": "51.802.350/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.727278
+    },
+    {
+      "cnpj_fundo": "51.646.298/0001-42",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.0636975094916
+    },
+    {
+      "cnpj_fundo": "55.793.516/0001-22",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 88.60807637
+    },
+    {
+      "cnpj_fundo": "11.769.604/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 12.6760200973642
+    },
+    {
+      "cnpj_fundo": "51.326.818/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1063.641198
+    },
+    {
+      "cnpj_fundo": "56.008.757/0001-86",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 935.64772940546
+    },
+    {
+      "cnpj_fundo": "51.381.999/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1590.18589804905
+    },
+    {
+      "cnpj_fundo": "51.385.048/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1097.56235427588
+    },
+    {
+      "cnpj_fundo": "51.385.174/0001-50",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.5052413
+    },
+    {
+      "cnpj_fundo": "11.728.688/0001-47",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 166.003651097124
+    },
+    {
+      "cnpj_fundo": "55.985.359/0001-57",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10000.0
+    },
+    {
+      "cnpj_fundo": "55.985.307/0001-80",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.986063
+    },
+    {
+      "cnpj_fundo": "51.392.366/0001-94",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 783.423909814678
+    },
+    {
+      "cnpj_fundo": "13.920.018/0001-53",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2039.26043480295
+    },
+    {
+      "cnpj_fundo": "55.985.251/0001-64",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -8.051787
+    },
+    {
+      "cnpj_fundo": "51.407.683/0001-37",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2064.69159584696
+    },
+    {
+      "cnpj_fundo": "51.413.518/0001-98",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -10.358773
+    },
+    {
+      "cnpj_fundo": "55.969.466/0001-91",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3382.15772771851
+    },
+    {
+      "cnpj_fundo": "51.416.131/0001-95",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 825.797175060286
+    },
+    {
+      "cnpj_fundo": "51.472.985/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 11.0606592010499
+    },
+    {
+      "cnpj_fundo": "55.948.693/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1105.17600713501
+    },
+    {
+      "cnpj_fundo": "51.476.870/0001-72",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 155.818463692784
+    },
+    {
+      "cnpj_fundo": "13.842.683/0001-76",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 593.10897790085
+    },
+    {
+      "cnpj_fundo": "55.944.877/0001-22",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 498.869894778586
+    },
+    {
+      "cnpj_fundo": "51.601.636/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.86984204
+    },
+    {
+      "cnpj_fundo": "51.890.054/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.603865
+    },
+    {
+      "cnpj_fundo": "55.346.193/0001-29",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1171.37107084648
+    },
+    {
+      "cnpj_fundo": "51.951.316/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.451051522684727
+    },
+    {
+      "cnpj_fundo": "51.991.587/0001-89",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 980.156889154202
+    },
+    {
+      "cnpj_fundo": "55.115.058/0001-72",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.73790025
+    },
+    {
+      "cnpj_fundo": "52.355.865/0001-74",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.999024352801987
+    },
+    {
+      "cnpj_fundo": "52.356.865/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1098.06840248756
+    },
+    {
+      "cnpj_fundo": "55.089.373/0001-72",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.86707642
+    },
+    {
+      "cnpj_fundo": "52.357.468/0001-31",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.53947701717069
+    },
+    {
+      "cnpj_fundo": "52.366.833/0001-74",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.04162926411625
+    },
+    {
+      "cnpj_fundo": "55.074.554/0001-25",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.815768
+    },
+    {
+      "cnpj_fundo": "52.371.756/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.51915384
+    },
+    {
+      "cnpj_fundo": "13.509.993/0001-73",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 223111.93095546
+    },
+    {
+      "cnpj_fundo": "12.005.956/0001-65",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 163.147342607251
+    },
+    {
+      "cnpj_fundo": "55.034.258/0001-09",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 11.713882
+    },
+    {
+      "cnpj_fundo": "52.446.271/0001-79",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 75.365677
+    },
+    {
+      "cnpj_fundo": "54.869.435/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 96.03676
+    },
+    {
+      "cnpj_fundo": "52.521.137/0001-95",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 74.822331
+    },
+    {
+      "cnpj_fundo": "52.551.605/0001-74",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.2434009
+    },
+    {
+      "cnpj_fundo": "54.866.214/0001-74",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.46861974242335
+    },
+    {
+      "cnpj_fundo": "52.609.938/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -0.299750220654913
+    },
+    {
+      "cnpj_fundo": "13.500.306/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 736.244885898647
+    },
+    {
+      "cnpj_fundo": "54.698.848/0001-65",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 5.44895502300402
+    },
+    {
+      "cnpj_fundo": "52.610.191/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 59.3571833584824
+    },
+    {
+      "cnpj_fundo": "52.610.289/0001-64",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 28.8570159678564
+    },
+    {
+      "cnpj_fundo": "13.551.286/0001-45",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 6.365056
+    },
+    {
+      "cnpj_fundo": "52.635.194/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 111.25323796
+    },
+    {
+      "cnpj_fundo": "52.355.764/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.948637986108429
+    },
+    {
+      "cnpj_fundo": "52.355.496/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 5.086525844
+    },
+    {
+      "cnpj_fundo": "55.315.760/0001-80",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3012.362187
+    },
+    {
+      "cnpj_fundo": "51.991.713/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 958.749341904762
+    },
+    {
+      "cnpj_fundo": "11.839.593/0001-09",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.396095
+    },
+    {
+      "cnpj_fundo": "55.314.271/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 625.78051
+    },
+    {
+      "cnpj_fundo": "52.101.897/0001-43",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.0375969
+    },
+    {
+      "cnpj_fundo": "13.584.584/0001-31",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 34.6353405815949
+    },
+    {
+      "cnpj_fundo": "52.153.014/0001-49",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.972146
+    },
+    {
+      "cnpj_fundo": "55.314.110/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1539.547488
+    },
+    {
+      "cnpj_fundo": "52.219.978/0001-42",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 106.165416564156
+    },
+    {
+      "cnpj_fundo": "55.302.190/0001-93",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 134.34314278
+    },
+    {
+      "cnpj_fundo": "52.227.760/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.434046
+    },
+    {
+      "cnpj_fundo": "52.241.939/0001-41",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2264.76898346
+    },
+    {
+      "cnpj_fundo": "55.296.764/0001-68",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.26669984512967
+    },
+    {
+      "cnpj_fundo": "52.270.671/0001-76",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 93.7121696064
+    },
+    {
+      "cnpj_fundo": "13.555.918/0001-49",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 788.468814514627
+    },
+    {
+      "cnpj_fundo": "52.321.885/0001-24",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 38865.8658394131
+    },
+    {
+      "cnpj_fundo": "55.293.694/0001-94",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1029.20341028598
+    },
+    {
+      "cnpj_fundo": "52.324.762/0001-47",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 7.87873277141316
+    },
+    {
+      "cnpj_fundo": "11.945.604/0001-27",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 18.4270944413269
+    },
+    {
+      "cnpj_fundo": "55.177.440/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1095.29397185014
+    },
+    {
+      "cnpj_fundo": "52.353.292/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.268973406959
+    },
+    {
+      "cnpj_fundo": "55.154.961/0001-42",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 60.8202027657526
+    },
+    {
+      "cnpj_fundo": "36.501.233/0001-15",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.44071616190068
+    },
+    {
+      "cnpj_fundo": "10.869.155/0001-12",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2605.56281
+    },
+    {
+      "cnpj_fundo": "44.705.818/0001-85",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 128064.81223523
+    },
+    {
+      "cnpj_fundo": "40.054.913/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 23.8376145066607
+    },
+    {
+      "cnpj_fundo": "61.250.889/0001-50",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1007.870232
+    },
+    {
+      "cnpj_fundo": "40.063.899/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1445.1647613775
+    },
+    {
+      "cnpj_fundo": "40.067.483/0001-66",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1849.45628344291
+    },
+    {
+      "cnpj_fundo": "08.693.497/0001-82",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 529.524632277
+    },
+    {
+      "cnpj_fundo": "61.248.346/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.963459862387915
+    },
+    {
+      "cnpj_fundo": "40.102.445/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1104.124017
+    },
+    {
+      "cnpj_fundo": "40.189.596/0001-34",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 110.687993007819
+    },
+    {
+      "cnpj_fundo": "61.247.681/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 86.83332354
+    },
+    {
+      "cnpj_fundo": "61.271.000/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 764.261199694423
+    },
+    {
+      "cnpj_fundo": "17.282.011/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 959.688636
+    },
+    {
+      "cnpj_fundo": "61.245.120/0001-43",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.016390596
+    },
+    {
+      "cnpj_fundo": "40.346.049/0001-15",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 120.518521650496
+    },
+    {
+      "cnpj_fundo": "40.414.001/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.993987
+    },
+    {
+      "cnpj_fundo": "61.238.364/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.407456454031
+    },
+    {
+      "cnpj_fundo": "40.575.940/0001-23",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 13.65159161
+    },
+    {
+      "cnpj_fundo": "40.837.664/0001-24",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 26957.0965927801
+    },
+    {
+      "cnpj_fundo": "61.232.706/0001-73",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.2352098327657
+    },
+    {
+      "cnpj_fundo": "17.161.979/0001-82",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 216.765553068609
+    },
+    {
+      "cnpj_fundo": "40.886.241/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 114.535949
+    },
+    {
+      "cnpj_fundo": "40.225.262/0001-79",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 170.968960459156
+    },
+    {
+      "cnpj_fundo": "40.054.838/0001-82",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.535327
+    },
+    {
+      "cnpj_fundo": "17.308.805/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 213.377613
+    },
+    {
+      "cnpj_fundo": "40.041.723/0001-53",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 103.75166389
+    },
+    {
+      "cnpj_fundo": "61.455.116/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 20409.270703125
+    },
+    {
+      "cnpj_fundo": "39.753.295/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.65174365
+    },
+    {
+      "cnpj_fundo": "61.453.937/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.1315120193101
+    },
+    {
+      "cnpj_fundo": "17.329.029/0001-14",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 12.8504407242583
+    },
+    {
+      "cnpj_fundo": "39.863.059/0001-49",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.49389328579863
+    },
+    {
+      "cnpj_fundo": "61.424.730/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.3910129485835
+    },
+    {
+      "cnpj_fundo": "40.010.015/0001-55",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1365344.06398368
+    },
+    {
+      "cnpj_fundo": "40.011.225/0001-68",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 85.846426
+    },
+    {
+      "cnpj_fundo": "61.305.996/0001-38",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.05006
+    },
+    {
+      "cnpj_fundo": "40.011.234/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 105.450288
+    },
+    {
+      "cnpj_fundo": "40.011.251/0001-96",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 89.074693
+    },
+    {
+      "cnpj_fundo": "61.305.758/0001-22",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.626851
+    },
+    {
+      "cnpj_fundo": "17.311.079/0001-74",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 39.6743383622197
+    },
+    {
+      "cnpj_fundo": "40.011.279/0001-23",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1047.271503
+    },
+    {
+      "cnpj_fundo": "08.431.747/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 20.3802126505186
+    },
+    {
+      "cnpj_fundo": "61.293.720/0001-87",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 30.7602023582351
+    },
+    {
+      "cnpj_fundo": "40.011.324/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.377169
+    },
+    {
+      "cnpj_fundo": "61.272.325/0001-18",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 106.95846138
+    },
+    {
+      "cnpj_fundo": "40.041.603/0001-56",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.0695283948173
+    },
+    {
+      "cnpj_fundo": "40.041.711/0001-29",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2.04217951545594
+    },
+    {
+      "cnpj_fundo": "61.272.053/0001-56",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 116.71413658249
+    },
+    {
+      "cnpj_fundo": "08.696.175/0001-97",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 200.064082803221
+    },
+    {
+      "cnpj_fundo": "39.714.024/0001-48",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 281.962933885962
+    },
+    {
+      "cnpj_fundo": "61.112.477/0001-53",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 967.632215718284
+    },
+    {
+      "cnpj_fundo": "61.103.762/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.10490181457
+    },
+    {
+      "cnpj_fundo": "41.088.458/0001-21",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.759587
+    },
+    {
+      "cnpj_fundo": "08.924.783/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 80.79761
+    },
+    {
+      "cnpj_fundo": "60.750.887/0001-67",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 69635.8979833333
+    },
+    {
+      "cnpj_fundo": "41.088.534/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 47.134811
+    },
+    {
+      "cnpj_fundo": "41.114.606/0001-35",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 105.866589662181
+    },
+    {
+      "cnpj_fundo": "60.619.652/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.136543
+    },
+    {
+      "cnpj_fundo": "41.199.975/0001-78",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 29.488306
+    },
+    {
+      "cnpj_fundo": "41.218.404/0001-33",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 53.3208285429473
+    },
+    {
+      "cnpj_fundo": "17.025.970/0001-44",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 16.5765616159603
+    },
+    {
+      "cnpj_fundo": "60.801.196/0001-45",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.345225
+    },
+    {
+      "cnpj_fundo": "60.619.575/0001-19",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1373.008005
+    },
+    {
+      "cnpj_fundo": "60.551.924/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.3910136211919
+    },
+    {
+      "cnpj_fundo": "41.219.454/0001-35",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 25.6300608580804
+    },
+    {
+      "cnpj_fundo": "41.251.077/0001-11",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 11.257517
+    },
+    {
+      "cnpj_fundo": "60.535.430/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.175199596285
+    },
+    {
+      "cnpj_fundo": "41.251.337/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 155.790500904527
+    },
+    {
+      "cnpj_fundo": "41.251.371/0001-23",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.385849468823
+    },
+    {
+      "cnpj_fundo": "08.971.868/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 145.595113725541
+    },
+    {
+      "cnpj_fundo": "60.522.814/0001-18",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 789.581539412019
+    },
+    {
+      "cnpj_fundo": "17.007.443/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 78.117554
+    },
+    {
+      "cnpj_fundo": "41.219.028/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 527.532233303359
+    },
+    {
+      "cnpj_fundo": "17.098.794/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 85.0994451248921
+    },
+    {
+      "cnpj_fundo": "41.081.374/0001-66",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.53043597775139
+    },
+    {
+      "cnpj_fundo": "60.868.732/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 137.645042
+    },
+    {
+      "cnpj_fundo": "40.887.170/0001-54",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 93.7929695051113
+    },
+    {
+      "cnpj_fundo": "40.944.707/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 910.515986978426
+    },
+    {
+      "cnpj_fundo": "61.090.977/0001-31",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 106.939063531399
+    },
+    {
+      "cnpj_fundo": "40.944.736/0001-32",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 4652.471415
+    },
+    {
+      "cnpj_fundo": "17.156.502/0001-09",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.54702093619875
+    },
+    {
+      "cnpj_fundo": "41.076.380/0001-25",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.687132
+    },
+    {
+      "cnpj_fundo": "61.008.232/0001-80",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 7.64799914928121
+    },
+    {
+      "cnpj_fundo": "41.076.564/0001-95",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 83.832307
+    },
+    {
+      "cnpj_fundo": "61.007.289/0001-65",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.02682838539662
+    },
+    {
+      "cnpj_fundo": "41.076.710/0001-82",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 96.930311
+    },
+    {
+      "cnpj_fundo": "41.076.748/0001-55",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 126.821221
+    },
+    {
+      "cnpj_fundo": "08.706.065/0001-69",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 149.1652
+    },
+    {
+      "cnpj_fundo": "60.958.603/0001-22",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 97.8408726246075
+    },
+    {
+      "cnpj_fundo": "41.076.823/0001-88",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 80.073385
+    },
+    {
+      "cnpj_fundo": "17.144.039/0001-85",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 72.1424281625442
+    },
+    {
+      "cnpj_fundo": "60.922.008/0001-37",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 11.611758
+    },
+    {
+      "cnpj_fundo": "41.076.851/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.795987
+    },
+    {
+      "cnpj_fundo": "41.080.968/0001-52",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 67.235615
+    },
+    {
+      "cnpj_fundo": "60.871.972/0001-83",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1150.208913
+    },
+    {
+      "cnpj_fundo": "41.081.336/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1091.21753607433
+    },
+    {
+      "cnpj_fundo": "41.081.356/0001-84",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.2373332036632
+    },
+    {
+      "cnpj_fundo": "40.886.521/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 137.193715316045
+    },
+    {
+      "cnpj_fundo": "39.591.218/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1623.13447881
+    },
+    {
+      "cnpj_fundo": "61.458.257/0001-86",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 50474.39682692
+    },
+    {
+      "cnpj_fundo": "08.417.532/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3975.8170134764
+    },
+    {
+      "cnpj_fundo": "36.771.692/0001-19",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.372534
+    },
+    {
+      "cnpj_fundo": "36.814.809/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.48616003089463
+    },
+    {
+      "cnpj_fundo": "61.912.292/0001-23",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 103.217260291822
+    },
+    {
+      "cnpj_fundo": "36.846.817/0001-22",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 159.971759
+    },
+    {
+      "cnpj_fundo": "36.885.948/0001-19",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2862.39785653456
+    },
+    {
+      "cnpj_fundo": "17.786.606/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -156.526952056799
+    },
+    {
+      "cnpj_fundo": "61.911.799/0001-62",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.038094300037
+    },
+    {
+      "cnpj_fundo": "36.885.989/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2164.77951688487
+    },
+    {
+      "cnpj_fundo": "07.583.627/0001-61",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 22481.853298
+    },
+    {
+      "cnpj_fundo": "61.918.522/0001-61",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 94.9966689946667
+    },
+    {
+      "cnpj_fundo": "61.876.419/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 92256.206
+    },
+    {
+      "cnpj_fundo": "36.969.658/0001-53",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 132.313227776956
+    },
+    {
+      "cnpj_fundo": "61.865.925/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 38.3959666900748
+    },
+    {
+      "cnpj_fundo": "37.087.810/0001-37",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 94.98586946
+    },
+    {
+      "cnpj_fundo": "37.112.770/0001-36",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 94.6417959199618
+    },
+    {
+      "cnpj_fundo": "61.848.349/0001-72",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.1204601008081
+    },
+    {
+      "cnpj_fundo": "17.655.115/0001-17",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2110.76033704348
+    },
+    {
+      "cnpj_fundo": "37.180.091/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 74.20791001024
+    },
+    {
+      "cnpj_fundo": "61.839.325/0001-57",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 15000.5893613669
+    },
+    {
+      "cnpj_fundo": "37.262.531/0001-62",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 878.456530288477
+    },
+    {
+      "cnpj_fundo": "36.930.464/0001-44",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 123.71584307
+    },
+    {
+      "cnpj_fundo": "36.741.215/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2.74783826339391
+    },
+    {
+      "cnpj_fundo": "61.922.643/0001-87",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.137850124444
+    },
+    {
+      "cnpj_fundo": "17.854.016/0001-64",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 5.98231384745815
+    },
+    {
+      "cnpj_fundo": "62.145.710/0001-67",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 759.0473
+    },
+    {
+      "cnpj_fundo": "36.517.660/0001-91",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 96.0068211215354
+    },
+    {
+      "cnpj_fundo": "07.122.725/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2044.193525
+    },
+    {
+      "cnpj_fundo": "62.105.992/0001-79",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 106.858896465658
+    },
+    {
+      "cnpj_fundo": "36.532.530/0001-28",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 22995.4102694444
+    },
+    {
+      "cnpj_fundo": "18.085.673/0001-57",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.976596
+    },
+    {
+      "cnpj_fundo": "36.642.219/0001-31",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 88.286414
+    },
+    {
+      "cnpj_fundo": "62.082.124/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 84.9653026232561
+    },
+    {
+      "cnpj_fundo": "36.642.275/0001-76",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 84.586283
+    },
+    {
+      "cnpj_fundo": "62.064.773/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.202083922027
+    },
+    {
+      "cnpj_fundo": "36.642.293/0001-58",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 95.330394
+    },
+    {
+      "cnpj_fundo": "36.642.311/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 122.235867
+    },
+    {
+      "cnpj_fundo": "17.870.926/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 91.7306567477501
+    },
+    {
+      "cnpj_fundo": "62.021.906/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.577669368
+    },
+    {
+      "cnpj_fundo": "36.655.973/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.171157
+    },
+    {
+      "cnpj_fundo": "62.017.234/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.0081945405542
+    },
+    {
+      "cnpj_fundo": "36.669.535/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 95.21214064
+    },
+    {
+      "cnpj_fundo": "07.224.019/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 884.435226
+    },
+    {
+      "cnpj_fundo": "61.974.505/0001-41",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 991.398941351351
+    },
+    {
+      "cnpj_fundo": "36.673.421/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 105.50998542
+    },
+    {
+      "cnpj_fundo": "36.731.458/0001-68",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1792.50925005036
+    },
+    {
+      "cnpj_fundo": "37.262.752/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 313.923360766412
+    },
+    {
+      "cnpj_fundo": "61.820.010/0001-68",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.156890931657
+    },
+    {
+      "cnpj_fundo": "37.266.902/0001-84",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10568.6196001684
+    },
+    {
+      "cnpj_fundo": "07.789.135/0001-27",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 119.551956242246
+    },
+    {
+      "cnpj_fundo": "38.294.086/0001-85",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 96.663344
+    },
+    {
+      "cnpj_fundo": "61.594.920/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.1127699982799
+    },
+    {
+      "cnpj_fundo": "38.294.329/0001-85",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.640747
+    },
+    {
+      "cnpj_fundo": "61.537.964/0001-68",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2186.20593293764
+    },
+    {
+      "cnpj_fundo": "38.376.805/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 157.902701288062
+    },
+    {
+      "cnpj_fundo": "38.456.508/0001-71",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 110.75205929
+    },
+    {
+      "cnpj_fundo": "08.098.114/0001-28",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 86.4966797531871
+    },
+    {
+      "cnpj_fundo": "61.530.579/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 989.139494615385
+    },
+    {
+      "cnpj_fundo": "17.554.274/0001-25",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 115.823319626217
+    },
+    {
+      "cnpj_fundo": "38.456.598/0001-09",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 278.85664701
+    },
+    {
+      "cnpj_fundo": "61.518.537/0001-32",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 107.76696038875
+    },
+    {
+      "cnpj_fundo": "38.498.758/0001-74",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 83.77964682
+    },
+    {
+      "cnpj_fundo": "38.658.984/0001-75",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 95.65093243
+    },
+    {
+      "cnpj_fundo": "61.516.444/0001-79",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.01586673892226
+    },
+    {
+      "cnpj_fundo": "39.317.176/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2191.04841750518
+    },
+    {
+      "cnpj_fundo": "61.516.271/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.8558351892115
+    },
+    {
+      "cnpj_fundo": "39.332.032/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1089.69905961893
+    },
+    {
+      "cnpj_fundo": "17.374.696/0001-19",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 111.433599320607
+    },
+    {
+      "cnpj_fundo": "39.347.413/0001-82",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 128.271052355843
+    },
+    {
+      "cnpj_fundo": "61.458.298/0001-72",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 82091.87790884
+    },
+    {
+      "cnpj_fundo": "39.583.723/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 3062.76605269667
+    },
+    {
+      "cnpj_fundo": "38.293.921/0001-62",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.896149
+    },
+    {
+      "cnpj_fundo": "41.256.643/0001-88",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.75675033030083
+    },
+    {
+      "cnpj_fundo": "61.667.274/0001-23",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 926.46616577
+    },
+    {
+      "cnpj_fundo": "38.293.897/0001-61",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 93.37713
+    },
+    {
+      "cnpj_fundo": "61.816.615/0001-85",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.62646
+    },
+    {
+      "cnpj_fundo": "37.295.919/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.27051025
+    },
+    {
+      "cnpj_fundo": "17.655.102/0001-48",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1618179.17634739
+    },
+    {
+      "cnpj_fundo": "37.295.952/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 898.968733306869
+    },
+    {
+      "cnpj_fundo": "61.796.062/0001-46",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.04233044745763
+    },
+    {
+      "cnpj_fundo": "37.433.832/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 55.777866
+    },
+    {
+      "cnpj_fundo": "61.793.651/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.141192
+    },
+    {
+      "cnpj_fundo": "37.899.356/0001-19",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.978426
+    },
+    {
+      "cnpj_fundo": "37.899.400/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.118786478397
+    },
+    {
+      "cnpj_fundo": "61.781.547/0001-66",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1993.67290636387
+    },
+    {
+      "cnpj_fundo": "37.899.479/0001-50",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 92.9171843591646
+    },
+    {
+      "cnpj_fundo": "17.590.518/0001-25",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 70.095190768421
+    },
+    {
+      "cnpj_fundo": "37.931.298/0001-63",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 52.7019469065796
+    },
+    {
+      "cnpj_fundo": "61.769.663/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.8205338686833
+    },
+    {
+      "cnpj_fundo": "61.762.309/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 92.7768957587644
+    },
+    {
+      "cnpj_fundo": "37.950.819/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.187302
+    },
+    {
+      "cnpj_fundo": "08.014.513/0001-63",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 172.915329
+    },
+    {
+      "cnpj_fundo": "61.761.762/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.997481830436776
+    },
+    {
+      "cnpj_fundo": "38.082.796/0001-41",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.16359462004058
+    },
+    {
+      "cnpj_fundo": "38.293.862/0001-22",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 96.489955
+    },
+    {
+      "cnpj_fundo": "61.702.958/0001-19",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 314054.039202674
+    },
+    {
+      "cnpj_fundo": "17.568.605/0001-86",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.262501
+    },
+    {
+      "cnpj_fundo": "60.513.922/0001-24",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.297351498119
+    },
+    {
+      "cnpj_fundo": "41.269.052/0001-45",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.582273
+    },
+    {
+      "cnpj_fundo": "41.320.997/0001-44",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 47.4541359359025
+    },
+    {
+      "cnpj_fundo": "58.580.017/0001-45",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 479.41819451274
+    },
+    {
+      "cnpj_fundo": "43.671.250/0001-66",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1982.25717818944
+    },
+    {
+      "cnpj_fundo": "43.671.358/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1046.48403198228
+    },
+    {
+      "cnpj_fundo": "58.568.605/0001-63",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 41.33227241
+    },
+    {
+      "cnpj_fundo": "43.740.825/0001-55",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2969.75159342953
+    },
+    {
+      "cnpj_fundo": "43.741.150/0001-69",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1541.05010980318
+    },
+    {
+      "cnpj_fundo": "58.564.425/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 108.5177132343
+    },
+    {
+      "cnpj_fundo": "15.570.431/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 69.8572961571429
+    },
+    {
+      "cnpj_fundo": "43.741.171/0001-84",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 7.98503273927081
+    },
+    {
+      "cnpj_fundo": "43.619.218/0001-31",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 146.107941556558
+    },
+    {
+      "cnpj_fundo": "58.564.382/0001-66",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 109.630225291933
+    },
+    {
+      "cnpj_fundo": "10.375.382/0001-91",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 21.0199304333979
+    },
+    {
+      "cnpj_fundo": "58.561.581/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 105.762224380933
+    },
+    {
+      "cnpj_fundo": "43.790.197/0001-12",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1111.33081117066
+    },
+    {
+      "cnpj_fundo": "43.862.625/0001-75",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 48.9528839285714
+    },
+    {
+      "cnpj_fundo": "58.561.306/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 92.8468218916857
+    },
+    {
+      "cnpj_fundo": "43.867.361/0001-42",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2.12566746793252
+    },
+    {
+      "cnpj_fundo": "15.538.445/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 54.1650644048943
+    },
+    {
+      "cnpj_fundo": "43.867.799/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.97426847286552
+    },
+    {
+      "cnpj_fundo": "58.561.237/0001-21",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 122.767900680746
+    },
+    {
+      "cnpj_fundo": "43.741.195/0001-33",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.504418234335
+    },
+    {
+      "cnpj_fundo": "15.576.907/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.681255022814
+    },
+    {
+      "cnpj_fundo": "58.643.797/0001-25",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.78687731323148
+    },
+    {
+      "cnpj_fundo": "10.347.985/0001-80",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 73.9391051433121
+    },
+    {
+      "cnpj_fundo": "59.139.645/0001-52",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1180.38682891979
+    },
+    {
+      "cnpj_fundo": "43.010.543/0001-00",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.415741
+    },
+    {
+      "cnpj_fundo": "15.799.397/0001-09",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 68.458464
+    },
+    {
+      "cnpj_fundo": "59.137.587/0001-28",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 86.425686
+    },
+    {
+      "cnpj_fundo": "43.010.601/0001-98",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 129.434819
+    },
+    {
+      "cnpj_fundo": "09.552.812/0001-14",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.233657
+    },
+    {
+      "cnpj_fundo": "59.137.499/0001-26",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 586.5677875
+    },
+    {
+      "cnpj_fundo": "43.010.844/0001-26",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.677337
+    },
+    {
+      "cnpj_fundo": "43.011.068/0001-89",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 989.732285
+    },
+    {
+      "cnpj_fundo": "59.090.726/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.147339
+    },
+    {
+      "cnpj_fundo": "43.101.312/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 12.4474751325779
+    },
+    {
+      "cnpj_fundo": "43.164.799/0001-64",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.320245567448669
+    },
+    {
+      "cnpj_fundo": "15.798.220/0001-80",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 6512.97219762589
+    },
+    {
+      "cnpj_fundo": "59.030.677/0001-15",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.26520155830086
+    },
+    {
+      "cnpj_fundo": "43.564.551/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 172.66535005
+    },
+    {
+      "cnpj_fundo": "58.927.139/0001-65",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": -49052.691
+    },
+    {
+      "cnpj_fundo": "43.565.147/0001-31",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1189.77052311212
+    },
+    {
+      "cnpj_fundo": "43.617.647/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 107.568540801713
+    },
+    {
+      "cnpj_fundo": "58.863.998/0001-38",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 11.4342324256901
+    },
+    {
+      "cnpj_fundo": "43.617.702/0001-21",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 103.951900401678
+    },
+    {
+      "cnpj_fundo": "43.619.174/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 618.576339050671
+    },
+    {
+      "cnpj_fundo": "43.951.744/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.94583506347414
+    },
+    {
+      "cnpj_fundo": "58.561.054/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 54.2874192156034
+    },
+    {
+      "cnpj_fundo": "43.951.785/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2.06172989746059
+    },
+    {
+      "cnpj_fundo": "43.951.817/0001-58",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.44694650196453
+    },
+    {
+      "cnpj_fundo": "44.584.965/0001-44",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.73264648063609
+    },
+    {
+      "cnpj_fundo": "44.585.121/0001-18",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 471.508441793713
+    },
+    {
+      "cnpj_fundo": "58.410.974/0001-23",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 132.688682875
+    },
+    {
+      "cnpj_fundo": "44.625.562/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.97941790650371
+    },
+    {
+      "cnpj_fundo": "44.625.612/0001-45",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 106.392502
+    },
+    {
+      "cnpj_fundo": "58.378.463/0001-71",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 103.63235821
+    },
+    {
+      "cnpj_fundo": "44.625.657/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.6265365157728
+    },
+    {
+      "cnpj_fundo": "15.447.110/0001-73",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2.278113
+    },
+    {
+      "cnpj_fundo": "10.522.648/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 583.04024975909
+    },
+    {
+      "cnpj_fundo": "58.372.239/0001-72",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 973.160855805858
+    },
+    {
+      "cnpj_fundo": "44.669.639/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 134.126727846489
+    },
+    {
+      "cnpj_fundo": "58.366.499/0001-35",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.55851152234719
+    },
+    {
+      "cnpj_fundo": "44.669.674/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2659.47293568
+    },
+    {
+      "cnpj_fundo": "44.674.528/0001-11",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.94357611
+    },
+    {
+      "cnpj_fundo": "58.350.082/0001-84",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 954.00624
+    },
+    {
+      "cnpj_fundo": "44.680.435/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 154.142149503766
+    },
+    {
+      "cnpj_fundo": "44.680.449/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 713.172996907877
+    },
+    {
+      "cnpj_fundo": "15.447.108/0001-02",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 87.052981
+    },
+    {
+      "cnpj_fundo": "58.316.418/0001-92",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1006.426054
+    },
+    {
+      "cnpj_fundo": "44.683.052/0001-85",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 492.828977885809
+    },
+    {
+      "cnpj_fundo": "58.290.688/0001-71",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.847089
+    },
+    {
+      "cnpj_fundo": "58.478.226/0001-82",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 123.966994
+    },
+    {
+      "cnpj_fundo": "43.010.485/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 125.596247
+    },
+    {
+      "cnpj_fundo": "15.461.076/0001-91",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 58.6598292154379
+    },
+    {
+      "cnpj_fundo": "58.478.291/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.47328957142857
+    },
+    {
+      "cnpj_fundo": "58.548.730/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1535.29956233
+    },
+    {
+      "cnpj_fundo": "43.951.851/0001-22",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.274033541709019
+    },
+    {
+      "cnpj_fundo": "15.489.509/0001-17",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 170.968353741812
+    },
+    {
+      "cnpj_fundo": "10.427.246/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 16.24676
+    },
+    {
+      "cnpj_fundo": "58.544.087/0001-48",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.786964223667571
+    },
+    {
+      "cnpj_fundo": "43.951.875/0001-81",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 935.145498454502
+    },
+    {
+      "cnpj_fundo": "43.951.941/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2.2707776210215
+    },
+    {
+      "cnpj_fundo": "58.523.711/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 94.77231772
+    },
+    {
+      "cnpj_fundo": "43.951.970/0001-85",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2.21470573967314
+    },
+    {
+      "cnpj_fundo": "43.985.938/0001-10",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.67209194520858
+    },
+    {
+      "cnpj_fundo": "58.523.596/0001-94",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 902.709990436422
+    },
+    {
+      "cnpj_fundo": "44.002.561/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1203.96304349
+    },
+    {
+      "cnpj_fundo": "15.463.207/0001-70",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 77143.025001372
+    },
+    {
+      "cnpj_fundo": "58.501.860/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.55040921
+    },
+    {
+      "cnpj_fundo": "44.107.380/0001-33",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 118.814271894235
+    },
+    {
+      "cnpj_fundo": "44.302.072/0001-69",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 37.75945504
+    },
+    {
+      "cnpj_fundo": "58.496.557/0001-45",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 4709.04331397114
+    },
+    {
+      "cnpj_fundo": "44.395.062/0001-15",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.648791582526935
+    },
+    {
+      "cnpj_fundo": "10.456.799/0001-89",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 12284.1726384513
+    },
+    {
+      "cnpj_fundo": "44.428.541/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.674239765734778
+    },
+    {
+      "cnpj_fundo": "44.514.162/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 4.40192234523809
+    },
+    {
+      "cnpj_fundo": "44.527.494/0001-32",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.13489151647303
+    },
+    {
+      "cnpj_fundo": "44.728.323/0001-71",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 106.317680597738
+    },
+    {
+      "cnpj_fundo": "43.009.610/0001-69",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 95.427003
+    },
+    {
+      "cnpj_fundo": "43.008.884/0001-33",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 117.545718
+    },
+    {
+      "cnpj_fundo": "60.127.177/0001-85",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.778155
+    },
+    {
+      "cnpj_fundo": "41.969.537/0001-41",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.35650902660646
+    },
+    {
+      "cnpj_fundo": "09.072.017/0001-29",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 147.391023802551
+    },
+    {
+      "cnpj_fundo": "60.117.144/0001-54",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 57.125918
+    },
+    {
+      "cnpj_fundo": "41.978.140/0001-16",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 88.2792999020126
+    },
+    {
+      "cnpj_fundo": "41.978.154/0001-30",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 126.284069372599
+    },
+    {
+      "cnpj_fundo": "60.079.651/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.7641839266678
+    },
+    {
+      "cnpj_fundo": "41.978.168/0001-53",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 134.715379741419
+    },
+    {
+      "cnpj_fundo": "16.841.067/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 302.405872732114
+    },
+    {
+      "cnpj_fundo": "41.969.521/0001-39",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1251.6782806185
+    },
+    {
+      "cnpj_fundo": "42.031.201/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 244.344976335107
+    },
+    {
+      "cnpj_fundo": "42.066.916/0001-94",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 83.1506674649589
+    },
+    {
+      "cnpj_fundo": "60.027.987/0001-60",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.037038
+    },
+    {
+      "cnpj_fundo": "42.085.661/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.28296598493175
+    },
+    {
+      "cnpj_fundo": "42.273.236/0001-41",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.6060486274433
+    },
+    {
+      "cnpj_fundo": "59.987.139/0001-13",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1289.94957172526
+    },
+    {
+      "cnpj_fundo": "42.273.290/0001-97",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1818.8705111163
+    },
+    {
+      "cnpj_fundo": "16.802.360/0001-47",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 873.927591986389
+    },
+    {
+      "cnpj_fundo": "09.150.967/0001-24",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 65.6356667855322
+    },
+    {
+      "cnpj_fundo": "59.891.409/0001-98",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.82472331141837
+    },
+    {
+      "cnpj_fundo": "60.077.386/0001-61",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.222812
+    },
+    {
+      "cnpj_fundo": "16.915.968/0001-88",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 96.6037195558823
+    },
+    {
+      "cnpj_fundo": "60.176.399/0001-98",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 968.744580998017
+    },
+    {
+      "cnpj_fundo": "41.833.876/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 614.86962055531
+    },
+    {
+      "cnpj_fundo": "60.480.984/0001-87",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 113.923158931034
+    },
+    {
+      "cnpj_fundo": "41.325.993/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 497.254362447454
+    },
+    {
+      "cnpj_fundo": "41.394.946/0001-67",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 302.540805
+    },
+    {
+      "cnpj_fundo": "60.452.726/0001-97",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 2384.92050049745
+    },
+    {
+      "cnpj_fundo": "16.929.519/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 8.6961105820716
+    },
+    {
+      "cnpj_fundo": "60.413.964/0001-93",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 72.50182253
+    },
+    {
+      "cnpj_fundo": "41.650.310/0001-39",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.002331723919261
+    },
+    {
+      "cnpj_fundo": "60.373.688/0001-87",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 114.653051192593
+    },
+    {
+      "cnpj_fundo": "41.650.319/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 640.648940419579
+    },
+    {
+      "cnpj_fundo": "09.006.914/0001-34",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 71.702399
+    },
+    {
+      "cnpj_fundo": "60.355.424/0001-09",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.0802066858429
+    },
+    {
+      "cnpj_fundo": "41.673.349/0001-71",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 87.0763778584245
+    },
+    {
+      "cnpj_fundo": "41.673.359/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1218.43951277559
+    },
+    {
+      "cnpj_fundo": "16.924.913/0001-34",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.0631044571938169
+    },
+    {
+      "cnpj_fundo": "60.329.826/0001-20",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.873852
+    },
+    {
+      "cnpj_fundo": "41.776.296/0001-14",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 610.396754567277
+    },
+    {
+      "cnpj_fundo": "60.220.343/0001-93",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 165.06106962
+    },
+    {
+      "cnpj_fundo": "41.778.415/0001-78",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 158.52011638
+    },
+    {
+      "cnpj_fundo": "41.820.693/0001-46",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1213.55422474147
+    },
+    {
+      "cnpj_fundo": "60.195.941/0001-50",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.11477925
+    },
+    {
+      "cnpj_fundo": "41.833.763/0001-09",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 161.106942636317
+    },
+    {
+      "cnpj_fundo": "42.273.325/0001-98",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 84.3871075467352
+    },
+    {
+      "cnpj_fundo": "42.408.956/0001-77",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 27.1819302567471
+    },
+    {
+      "cnpj_fundo": "59.891.323/0001-65",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 29.1455671306628
+    },
+    {
+      "cnpj_fundo": "42.432.327/0001-82",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.77731987822802
+    },
+    {
+      "cnpj_fundo": "59.658.166/0001-42",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 12.644362
+    },
+    {
+      "cnpj_fundo": "42.754.342/0001-47",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.78298268825
+    },
+    {
+      "cnpj_fundo": "59.604.698/0001-05",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.088219087096
+    },
+    {
+      "cnpj_fundo": "42.754.362/0001-18",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 101.379606721611
+    },
+    {
+      "cnpj_fundo": "42.869.853/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 112.25996593
+    },
+    {
+      "cnpj_fundo": "59.436.431/0001-48",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.0348392187618
+    },
+    {
+      "cnpj_fundo": "59.337.307/0001-25",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 97.639359
+    },
+    {
+      "cnpj_fundo": "42.869.869/0001-17",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 110.12436168935
+    },
+    {
+      "cnpj_fundo": "16.671.412/0001-93",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 79.5424526753268
+    },
+    {
+      "cnpj_fundo": "42.869.879/0001-52",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 109.378768787752
+    },
+    {
+      "cnpj_fundo": "59.306.587/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 105.419018235425
+    },
+    {
+      "cnpj_fundo": "42.869.892/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 934.888464944449
+    },
+    {
+      "cnpj_fundo": "59.255.025/0001-89",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1051.9291448
+    },
+    {
+      "cnpj_fundo": "42.888.583/0001-89",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.357803
+    },
+    {
+      "cnpj_fundo": "42.922.127/0001-08",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.3674728294978
+    },
+    {
+      "cnpj_fundo": "09.517.273/0001-82",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 98.96372719
+    },
+    {
+      "cnpj_fundo": "59.202.651/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 103.676165052889
+    },
+    {
+      "cnpj_fundo": "42.923.317/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1010.31474415
+    },
+    {
+      "cnpj_fundo": "16.543.270/0001-89",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 45.1199190618646
+    },
+    {
+      "cnpj_fundo": "59.196.234/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 106.718949303699
+    },
+    {
+      "cnpj_fundo": "43.008.233/0001-43",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 10.349451
+    },
+    {
+      "cnpj_fundo": "09.326.861/0001-39",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 54.5656481216972
+    },
+    {
+      "cnpj_fundo": "59.158.574/0001-35",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.5013365721054
+    },
+    {
+      "cnpj_fundo": "42.737.077/0001-99",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 81.6578221147167
+    },
+    {
+      "cnpj_fundo": "59.663.265/0001-12",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1010.118515149
+    },
+    {
+      "cnpj_fundo": "42.463.823/0001-01",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1121.38824601492
+    },
+    {
+      "cnpj_fundo": "59.890.241/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 48.0845990714897
+    },
+    {
+      "cnpj_fundo": "42.502.802/0001-40",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.42227824583333
+    },
+    {
+      "cnpj_fundo": "16.802.320/0001-03",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 20.2064329797852
+    },
+    {
+      "cnpj_fundo": "59.718.930/0001-28",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.436114
+    },
+    {
+      "cnpj_fundo": "42.502.842/0001-91",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.812665551564
+    },
+    {
+      "cnpj_fundo": "42.516.999/0001-76",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1.01915983380835
+    },
+    {
+      "cnpj_fundo": "59.693.395/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 1054.50725608923
+    },
+    {
+      "cnpj_fundo": "42.517.145/0001-04",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 817.136192756222
+    },
+    {
+      "cnpj_fundo": "09.276.964/0001-31",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 385.462670829663
+    },
+    {
+      "cnpj_fundo": "42.537.492/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 123.978614
+    },
+    {
+      "cnpj_fundo": "42.537.540/0001-59",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 180.162651
+    },
+    {
+      "cnpj_fundo": "59.678.586/0001-90",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 978.191965886094
+    },
+    {
+      "cnpj_fundo": "16.706.958/0001-32",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 102.381180312785
+    },
+    {
+      "cnpj_fundo": "42.537.601/0001-88",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 147.47448777
+    },
+    {
+      "cnpj_fundo": "59.678.443/0001-89",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 100.09418313232
+    },
+    {
+      "cnpj_fundo": "42.592.868/0001-78",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.055907193557047
+    },
+    {
+      "cnpj_fundo": "42.592.916/0001-28",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.94591672
+    },
+    {
+      "cnpj_fundo": "59.669.570/0001-11",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 99.57282664
+    },
+    {
+      "cnpj_fundo": "42.628.319/0001-06",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 0.974265347473833
+    },
+    {
+      "cnpj_fundo": "42.737.059/0001-07",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 93.8821689017798
+    },
+    {
+      "cnpj_fundo": "16.685.929/0001-31",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 538.001371566044
+    },
+    {
+      "cnpj_fundo": "97.521.225/0001-25",
+      "competencia": "2026-05-01",
+      "valor_patrimonial_cota": 9.372101
+    }
+  ]
+}
