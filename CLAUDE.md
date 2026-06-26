@@ -19,11 +19,22 @@ Produto final: portal web alimentado por pipelines que rodam sozinhos, sem infra
 ## Decisões TRAVADAS — não relitigar sem sinalização
 
 ### Metodologia de Dividend Yield
-- Proventos atribuídos pela **data-com** (não data de pagamento).
+> **Revisado em 2026-06-26 (sinalizado pelo Felipe).** Antes atribuíamos por **data-com**
+> (fonte B3/brapi/yfinance). Mudança: a tese é de **longo prazo**, não pontual, e as fontes
+> de mercado não cravam o original. Passamos a usar o **dado oficial da CVM (ITR/DFP)**
+> atribuído pela **competência do período**, fechando janelas (ano + TTM de 4 trimestres).
+
+- Proventos atribuídos pela **competência do período da CVM** (não mais data-com).
+- **Numerador (DY)** = dividendos + JCP **pagos no período** — linha de financiamento da
+  **DFC** (`6.03.x`). Em R$, escala `MIL` (×1000). Base caixa, atribuição limpa por período.
+- **Numerador (payout)** = proventos **declarados/propostos sobre o resultado do exercício**
+  (DMPL), que casam com o lucro do mesmo ano. Sabor diferente do DY, de propósito.
+- **Granularidade**: DY no **nível da empresa** = proventos totais ÷ valor de mercado
+  (preço × ações de `composicao_capital`). Evita ratear provento entre ON/PN.
 - Denominador = **preço negociado, ajustado só por split/grupamento, NUNCA por dividendo**
-  (preço ajustado-por-provento infla o DY histórico).
-- **DY corrente** = soma dos proventos dos últimos 12 meses ÷ preço atual.
-- **DY histórico** = somas anuais sobre o preço médio do ano; reportar **média E mediana**
+  (preço ajustado-por-provento infla o DY histórico). Vem do pipeline de preços (Fase 1).
+- **DY corrente** = proventos TTM (4 últimos trimestres do ITR) ÷ valor de mercado atual.
+- **DY histórico** = somas anuais ÷ preço médio do ano; reportar **média E mediana**
   (divergência grande = provento extraordinário).
 - **Flag de yield trap**: DY corrente > 1,5× a mediana histórica do papel.
 
@@ -61,10 +72,13 @@ GitHub Actions (cron) → Python (pandas) ingestão+normalização
   citava Vercel — Felipe optou por Netlify para o MVP).
 
 ### Fontes de dados
-- **CVM dados abertos** — fonte de verdade dos fundamentos (ITR/DFP para ações;
-  INF_MENSAL/INF_TRIMESTRAL para FII/FIAgro). Autoritativa.
-- **B3** — proventos com data-com (eventos). Sem API pública decente → tratar.
-- **brapi / yfinance** — preço de mercado diário (a CVM só dá o patrimonial).
+- **CVM dados abertos** — fonte de verdade e **autoritativa de proventos + fundamentos**
+  (ITR/DFP para ações; INF_MENSAL/INF_TRIMESTRAL para FII/FIAgro). Proventos saem da DFC
+  (pagos) e DMPL (declarados), não mais da B3.
+- **brapi / yfinance** — só **preço de mercado** (a CVM dá o patrimonial). yfinance série
+  split-adj/div-unadj; brapi spot.
+- **B3 / IPE-RAD** — eventos corporativos e fatos relevantes (data-com exata, comunicados).
+  Sem API decente → fica para a Fase de fatos relevantes, não é mais a fonte do DY.
 
 ## Convenções operacionais
 - **Git: tudo em `main`.** MVP, deploy contínuo no Netlify. Sem branches, sem PR, até o
@@ -88,10 +102,13 @@ GitHub Actions (cron) → Python (pandas) ingestão+normalização
 0. **Fundação** (normalize CVM, parser FII config-driven, métricas puras de DY). ✅ feito
 1. **Pipeline de preços** (brapi + yfinance, série ajustada só por split, P/VP, preço médio
    anual, export, Action diária). ✅ feito
-2. Proventos com data-com (B3) → completa o DY de mercado das ações.
-3. Fundamentos ITR/DFP (ações) → parsing de `CD_CONTA` (plano difere entre financeira e
-   não-financeira — tratar os dois).
-4. Score composto → short-list ranqueada.
+2. **Fundamentos + proventos via CVM ITR/DFP (ações)** — espinha da tese. Ingestão
+   config-driven dos membros DFC (proventos pagos), DMPL (proventos declarados), DRE
+   (lucro) e `composicao_capital` (ações). Parsing por `CD_CONTA` tratando os dois planos
+   (financeira × não-financeira). DY oficial por competência cai como subproduto. (Funde
+   as antigas Fases 2+3 — ver revisão da metodologia de DY.)
+4. Score composto → short-list ranqueada (consistência do histórico + saúde atual com
+   tendência).
 5. Dashboard Next.js/Netlify.
 6. Alertas (e-mail/Telegram pela Action) + import de carteira via CSV.
 7. Fatos relevantes da watchlist (feed IPE/RAD da CVM).
