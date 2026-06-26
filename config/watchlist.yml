@@ -16,12 +16,15 @@ acoes:
   - { ticker: ABEV3, nome: "Ambev ON",            cnpj: null }
   - { ticker: ITSA4, nome: "Itaúsa PN",           cnpj: null }
 
+# cnpj preenchido via JOIN ticker→ISIN→CNPJ no membro `geral` do INF_MENSAL (CVM),
+# cruzado contra o cadastro de VP (1314 fundos). P/VP resultante validado em 0,90–1,05.
+# Nomes refletem o cadastro CVM atual (ex.: HGLG migrou p/ Pátria; XPML era Peninsula).
 fiis:
-  - { ticker: MXRF11, nome: "Maxi Renda",            cnpj: null }
-  - { ticker: HGLG11, nome: "CSHG Logística",        cnpj: null }
-  - { ticker: KNCR11, nome: "Kinea Rendimentos",     cnpj: null }
-  - { ticker: KNRI11, nome: "Kinea Renda Imob.",     cnpj: null }
-  - { ticker: XPML11, nome: "XP Malls",              cnpj: null }
-  - { ticker: HGRU11, nome: "CSHG Renda Urbana",     cnpj: null }
-  - { ticker: VISC11, nome: "Vinci Shopping Centers", cnpj: null }
-  - { ticker: BTLG11, nome: "BTG Logística",         cnpj: null }
+  - { ticker: MXRF11, nome: "Maxi Renda",             cnpj: "97.521.225/0001-25" }
+  - { ticker: HGLG11, nome: "Pátria Log (ex-CSHG)",   cnpj: "11.728.688/0001-47" }
+  - { ticker: KNCR11, nome: "Kinea Rendimentos",      cnpj: "16.706.958/0001-32" }
+  - { ticker: KNRI11, nome: "Kinea Renda Imob.",      cnpj: "12.005.956/0001-65" }
+  - { ticker: XPML11, nome: "XP Malls",               cnpj: "28.757.546/0001-00" }
+  - { ticker: HGRU11, nome: "Pátria Renda Urbana",    cnpj: "29.641.226/0001-53" }
+  - { ticker: VISC11, nome: "Vinci Shopping Centers", cnpj: "17.554.274/0001-25" }
+  - { ticker: BTLG11, nome: "BTG Logística",          cnpj: "11.839.593/0001-09" }
