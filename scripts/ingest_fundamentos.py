@@ -96,6 +96,13 @@ def main() -> int:
     acoes = [a for a in (wl.get("acoes") or []) if a.get("cd_cvm")]
     specs = load_contas_config()
 
+    # Cache de âncora de ações (fallback quando o yfinance estiver indisponível).
+    anchor_path = Path("config/shares_anchor.yml")
+    anchor_cache: dict = {}
+    if anchor_path.exists():
+        cfg = yaml.safe_load(anchor_path.read_text(encoding="utf-8")) or {}
+        anchor_cache = cfg.get("acoes") or {}
+
     prices = {}
     if args.prices.exists():
         for r in json.loads(args.prices.read_text(encoding="utf-8")).get("data", []):
@@ -196,7 +203,8 @@ def main() -> int:
                "ebitda": ebitda.get(cd, {})}
         rec = _build_record(a, prov.get(cd, {}), lucro.get(cd, {}), pl.get(cd, {}),
                             shares_raw.get(cd, {}), prices.get(tk, {}),
-                            ytd_cur.get(cd), ytd_pri.get(cd), lev, prov_decl.get(cd, {}))
+                            ytd_cur.get(cd), ytd_pri.get(cd), lev, prov_decl.get(cd, {}),
+                            anchor_cache.get(tk))
         records.append(rec)
 
     meta = {
@@ -215,6 +223,7 @@ def _build_record(
     a: dict, prov: dict, lucro: dict, pl: dict, shares_raw: dict, price: dict,
     ytd_cur: tuple[float, int] | None = None, ytd_pri: float | None = None,
     lev: dict | None = None, prov_decl: dict | None = None,
+    anchor_cached: float | None = None,
 ) -> dict:
     tk = a["ticker"]
     notes: list[str] = []
@@ -225,8 +234,14 @@ def _build_record(
     # depois). A âncora é a contagem atual; cada ano é classificado contra ela.
     latest_share_year = max(shares_raw) if shares_raw else None
     anchor = fetch_shares_outstanding(tk) if latest_share_year is not None else None
-    if latest_share_year is not None and anchor is None:
-        notes.append("sem âncora de ações (yfinance): escala assumida 1, baixa confiança")
+    if anchor is None and anchor_cached:
+        anchor = float(anchor_cached)  # fallback: cache committado (config/shares_anchor.yml)
+    # Sem âncora (nem yfinance, nem cache), a escala da CVM (unidade × milhar) é ambígua:
+    # NÃO dá para confiar em nada que dependa da contagem de ações (DY, P/VP, DPS). Marcamos
+    # esses campos como N/A em vez de emitir número 1000× errado.
+    trust_shares = anchor is not None
+    if latest_share_year is not None and not trust_shares:
+        notes.append("sem âncora de ações (yfinance/cache): DY e P/VP indisponíveis")
     shares = {y: v * resolve_share_scale(v, anchor) for y, v in shares_raw.items()}
     scales = {resolve_share_scale(v, anchor) for v in shares_raw.values()}
     if len(scales) > 1:
@@ -295,7 +310,7 @@ def _build_record(
     pl_latest = max(vpa) if vpa else None
     pvp = (current_price / vpa[pl_latest]) if (pl_latest and current_price) else None
 
-    return {
+    rec = {
         "ticker": tk,
         "nome": a.get("nome"),
         "cd_cvm": a["cd_cvm"],
@@ -322,13 +337,24 @@ def _build_record(
             None if pd.isna(g := metrics.dividend_growth(dps)) else g
         ),
         "yield_trap": metrics.yield_trap_flag(current_dy, hist.median),
-        "acoes_circulacao": shares.get(latest_share_year) if latest_share_year else None,
+        "acoes_circulacao": (
+            shares.get(latest_share_year) if trust_shares and latest_share_year else None
+        ),
         "escala_acoes_recente": (
             resolve_share_scale(shares_raw[latest_share_year], anchor)
-            if latest_share_year else None
+            if trust_shares and latest_share_year else None
         ),
         "notes": notes,
     }
+    # Guard: sem âncora confiável, zera tudo que depende da escala de ações (não inventa).
+    if not trust_shares:
+        for k in ("dps_por_ano", "dy_historico_por_ano", "vpa_por_ano"):
+            rec[k] = {}
+        for k in ("dy_historico_media", "dy_historico_mediana", "dy_corrente", "pvp",
+                  "crescimento_dps_cagr"):
+            rec[k] = None
+        rec["yield_trap"] = False
+    return rec
 
 
 if __name__ == "__main__":

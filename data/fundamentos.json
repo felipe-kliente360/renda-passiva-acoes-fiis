@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-27T16:35:36.090869+00:00",
+    "generated_at": "2026-06-27T17:21:20.891590+00:00",
     "count": 20,
     "metodologia": "proventos por competência CVM (DFP); DY nível empresa; denominador split-adj (Fase 1); escala de ações ancorada no yfinance",
     "anos": [
@@ -40,7 +40,7 @@
         "2025": 110129000000.0
       },
       "dps_por_ano": {
-        "2020": 475.9969583418716,
+        "2020": 0.4759969583418716,
         "2021": 5.531423393146004,
         "2022": 14.88784143346713,
         "2023": 7.567539510970571,
@@ -112,7 +112,7 @@
         "2025": 417587000000.0
       },
       "vpa_por_ano": {
-        "2020": 23853.51161025501,
+        "2020": 23.85351161025501,
         "2021": 29.8662211817279,
         "2022": 27.93463491624058,
         "2023": 29.546827231294234,
@@ -127,12 +127,12 @@
         "min_years": 8,
         "passes": true
       },
-      "crescimento_dps_cagr": -0.6254805168186997,
+      "crescimento_dps_cagr": 0.4909889176646556,
       "yield_trap": false,
       "acoes_circulacao": 12888732761.0,
       "escala_acoes_recente": 1.0,
       "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
+        "escala de ações variou entre anos no arquivo da CVM (corrigida por ano)"
       ]
     },
     {
@@ -166,23 +166,23 @@
         "2025": 13814000000.0
       },
       "dps_por_ano": {
-        "2020": 3647.0326678182137,
-        "2021": 15143.14045925535,
-        "2022": 7619.095630279018,
-        "2023": 6504.174327779501,
-        "2024": 4840.561104968234,
-        "2025": 4678.38695795683
+        "2020": 3.6470326678182134,
+        "2021": 15.143140459255351,
+        "2022": 7.619095630279018,
+        "2023": 6.504174327779501,
+        "2024": 4.840561104968234,
+        "2025": 4.67838695795683
       },
       "dy_historico_por_ano": {
-        "2021": 170.10882129699755,
-        "2022": 94.78359185948831,
-        "2023": 87.90320452840567,
-        "2024": 77.97635856605399,
-        "2025": 81.69406257742565
+        "2021": 0.17010882129699756,
+        "2022": 0.09478359185948831,
+        "2023": 0.08790320452840567,
+        "2024": 0.07797635856605399,
+        "2025": 0.08169406257742566
       },
-      "dy_historico_media": 102.49320776567424,
-      "dy_historico_mediana": 87.90320452840567,
-      "dy_corrente": 69.15662099489046,
+      "dy_historico_media": 0.10249320776567424,
+      "dy_historico_mediana": 0.08790320452840567,
+      "dy_corrente": 0.06915662099489046,
       "dy_corrente_base": "ttm_itr",
       "ttm_proventos": 23071000000.0,
       "payout_por_ano": {
@@ -238,14 +238,14 @@
         "2025": 188926000000.0
       },
       "vpa_por_ano": {
-        "2020": 35280.530987769576,
-        "2021": 40717.68489118044,
-        "2022": 43473.25654382993,
-        "2023": 46123.659082378144,
-        "2024": 50066.53048220544,
-        "2025": 44257.6202703396
+        "2020": 35.28053098776957,
+        "2021": 40.71768489118044,
+        "2022": 43.47325654382993,
+        "2023": 46.12365908237815,
+        "2024": 50.06653048220544,
+        "2025": 44.2576202703396
       },
-      "pvp": 0.0017657976077935277,
+      "pvp": 1.7657976077935276,
       "divida_liquida_ebitda": 1.2763876204972096,
       "recorrencia": {
         "years_paid": 10,
@@ -255,11 +255,9 @@
       },
       "crescimento_dps_cagr": 0.05106916957502161,
       "yield_trap": false,
-      "acoes_circulacao": 4268779.0,
-      "escala_acoes_recente": 1.0,
-      "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
-      ]
+      "acoes_circulacao": 4268779000.0,
+      "escala_acoes_recente": 1000.0,
+      "notes": []
     },
     {
       "ticker": "ITUB4",
@@ -292,23 +290,23 @@
         "2025": 44857000000.0
       },
       "dps_por_ano": {
-        "2020": 1183.3086691188498,
-        "2021": 640.804753427697,
-        "2022": 684.2252511155647,
-        "2023": 1055.5199624141867,
-        "2024": 2186.4834208771313,
-        "2025": 4380.2561895299
+        "2020": 1.18330866911885,
+        "2021": 0.640804753427697,
+        "2022": 0.6842252511155646,
+        "2023": 1.0555199624141867,
+        "2024": 2.1864834208771313,
+        "2025": 4.3802561895299
       },
       "dy_historico_por_ano": {
-        "2021": 27.34269286956211,
-        "2022": 30.219277975055004,
-        "2023": 43.76309232449755,
-        "2024": 73.18266677281049,
-        "2025": 126.74112714411268
+        "2021": 0.02734269286956211,
+        "2022": 0.030219277975055005,
+        "2023": 0.04376309232449755,
+        "2024": 0.07318266677281049,
+        "2025": 0.12674112714411268
       },
-      "dy_historico_media": 60.24977141720757,
-      "dy_historico_mediana": 43.76309232449755,
-      "dy_corrente": 68.29692217739257,
+      "dy_historico_media": 0.06024977141720757,
+      "dy_historico_mediana": 0.04376309232449755,
+      "dy_corrente": 0.06829692217739257,
       "dy_corrente_base": "ttm_itr",
       "ttm_proventos": 31810000000.0,
       "payout_por_ano": {
@@ -364,14 +362,14 @@
         "2025": 215076000000.0
       },
       "vpa_por_ano": {
-        "2020": 15828.494814368965,
-        "2021": 16817.77606905599,
-        "2022": 18094.62551574524,
-        "2023": 20303.560931440265,
-        "2024": 22700.281378688895,
-        "2025": 19505.33096377426
+        "2020": 15.828494814368964,
+        "2021": 16.81777606905599,
+        "2022": 18.094625515745243,
+        "2023": 20.303560931440266,
+        "2024": 22.700281378688896,
+        "2025": 19.50533096377426
       },
-      "pvp": 0.0021655618188919264,
+      "pvp": 2.1655618188919266,
       "divida_liquida_ebitda": null,
       "recorrencia": {
         "years_paid": 10,
@@ -379,13 +377,11 @@
         "min_years": 8,
         "passes": true
       },
-      "crescimento_dps_cagr": 0.29921280750081936,
+      "crescimento_dps_cagr": 0.29921280750081913,
       "yield_trap": true,
-      "acoes_circulacao": 11026524.0,
-      "escala_acoes_recente": 1.0,
-      "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
-      ]
+      "acoes_circulacao": 11026524000.0,
+      "escala_acoes_recente": 1000.0,
+      "notes": []
     },
     {
       "ticker": "BBDC4",
@@ -417,20 +413,20 @@
         "2025": 23672706000.0
       },
       "dps_por_ano": {
-        "2020": 162.08767173706786,
-        "2022": 342.56013645587564,
-        "2023": 838.9188483175893,
+        "2020": 0.16208767173706787,
+        "2022": 0.34256013645587563,
+        "2023": 0.8389188483175893,
         "2024": 0.6173453372954231,
         "2025": 1.1188445251525057
       },
       "dy_historico_por_ano": {
-        "2022": 18.50776052909089,
-        "2023": 55.928975643545435,
+        "2022": 0.01850776052909089,
+        "2023": 0.05592897564354544,
         "2024": 0.0441545242047617,
         "2025": 0.07266715279656179
       },
-      "dy_historico_media": 18.63838946240941,
-      "dy_historico_mediana": 9.290213840943727,
+      "dy_historico_media": 0.04781460329348995,
+      "dy_historico_mediana": 0.05004174992415357,
       "dy_corrente": 0.05771549935530955,
       "dy_corrente_base": "ttm_itr",
       "ttm_proventos": 10939399000.0,
@@ -486,10 +482,10 @@
         "2025": 178415153000.0
       },
       "vpa_por_ano": {
-        "2020": 16481.21475945917,
-        "2021": 15457.58929170381,
-        "2022": 14826.064098963485,
-        "2023": 15629.421913012102,
+        "2020": 16.48121475945917,
+        "2021": 15.457589291703812,
+        "2022": 14.826064098963485,
+        "2023": 15.629421913012102,
         "2024": 15.892226508643102,
         "2025": 16.8681998779703
       },
@@ -501,12 +497,12 @@
         "min_years": 8,
         "passes": true
       },
-      "crescimento_dps_cagr": -0.6303387298442373,
+      "crescimento_dps_cagr": 0.47164802324922617,
       "yield_trap": false,
       "acoes_circulacao": 10577012028.0,
       "escala_acoes_recente": 1.0,
       "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
+        "escala de ações variou entre anos no arquivo da CVM (corrigida por ano)"
       ]
     },
     {
@@ -631,9 +627,7 @@
       "yield_trap": false,
       "acoes_circulacao": 5034561292.0,
       "escala_acoes_recente": 1.0,
-      "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
-      ]
+      "notes": []
     },
     {
       "ticker": "BBAS3",
@@ -757,9 +751,7 @@
       "yield_trap": false,
       "acoes_circulacao": 5708463641.0,
       "escala_acoes_recente": 1.0,
-      "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
-      ]
+      "notes": []
     },
     {
       "ticker": "ABEV3",
@@ -792,23 +784,23 @@
         "2025": 15503400000.0
       },
       "dps_por_ano": {
-        "2020": 196.36629749827057,
-        "2021": 689.0156975790011,
-        "2022": 763.6736992459853,
-        "2023": 761.37000094416,
-        "2024": 256.5438378417902,
-        "2025": 1426.2583752622063
+        "2020": 0.19636629749827056,
+        "2021": 0.6890156975790012,
+        "2022": 0.7636736992459853,
+        "2023": 0.76137000094416,
+        "2024": 0.2565438378417902,
+        "2025": 1.4262583752622062
       },
       "dy_historico_por_ano": {
-        "2021": 41.71921766024531,
-        "2022": 51.507139727851765,
-        "2023": 54.24312063672067,
-        "2024": 20.465323553677663,
-        "2025": 110.79042926333221
+        "2021": 0.04171921766024532,
+        "2022": 0.05150713972785176,
+        "2023": 0.05424312063672067,
+        "2024": 0.02046532355367766,
+        "2025": 0.11079042926333221
       },
-      "dy_historico_media": 55.745046168365526,
-      "dy_historico_mediana": 51.507139727851765,
-      "dy_corrente": 57.46191526657579,
+      "dy_historico_media": 0.05574504616836553,
+      "dy_historico_mediana": 0.05150713972785176,
+      "dy_corrente": 0.057461915266575785,
       "dy_corrente_base": "ttm_itr",
       "ttm_proventos": 15012757000.0,
       "payout_por_ano": {
@@ -864,14 +856,14 @@
         "2025": 88774781000.0
       },
       "vpa_por_ano": {
-        "2020": 4776.074354389585,
-        "2021": 5338.292393086099,
-        "2022": 5293.433474772634,
-        "2023": 5088.6733878753475,
-        "2024": 6331.47658452999,
-        "2025": 5684.6689846384525
+        "2020": 4.776074354389586,
+        "2021": 5.338292393086099,
+        "2022": 5.293433474772635,
+        "2023": 5.088673387875347,
+        "2024": 6.33147658452999,
+        "2025": 5.684668984638453
       },
-      "pvp": 0.0029430032931460764,
+      "pvp": 2.9430032931460763,
       "divida_liquida_ebitda": -0.5040841704298703,
       "recorrencia": {
         "years_paid": 10,
@@ -881,11 +873,9 @@
       },
       "crescimento_dps_cagr": 0.48670996102344777,
       "yield_trap": false,
-      "acoes_circulacao": 15616526.0,
-      "escala_acoes_recente": 1.0,
-      "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
-      ]
+      "acoes_circulacao": 15616526000.0,
+      "escala_acoes_recente": 1000.0,
+      "notes": []
     },
     {
       "ticker": "ITSA4",
@@ -918,23 +908,23 @@
         "2025": 16487000000.0
       },
       "dps_por_ano": {
-        "2020": 543.2291638800758,
-        "2021": 377.9912310568023,
-        "2022": 396.9526079198797,
-        "2023": 441.60865611059637,
-        "2024": 755.9723057349022,
-        "2025": 1686.3272539865193
+        "2020": 0.5432291638800758,
+        "2021": 0.37799123105680227,
+        "2022": 0.3969526079198797,
+        "2023": 0.4416086561105964,
+        "2024": 0.7559723057349023,
+        "2025": 1.6863272539865193
       },
       "dy_historico_por_ano": {
-        "2021": 46.06686992491654,
-        "2022": 51.82841220853587,
-        "2023": 54.979298691009376,
-        "2024": 79.22729149573068,
-        "2025": 162.31116667488146
+        "2021": 0.046066869924916536,
+        "2022": 0.05182841220853587,
+        "2023": 0.05497929869100938,
+        "2024": 0.07922729149573068,
+        "2025": 0.16231116667488146
       },
-      "dy_historico_media": 78.88260779901478,
-      "dy_historico_mediana": 54.979298691009376,
-      "dy_corrente": 84.23857828541898,
+      "dy_historico_media": 0.07888260779901479,
+      "dy_historico_mediana": 0.05497929869100938,
+      "dy_corrente": 0.08423857828541899,
       "dy_corrente_base": "ttm_itr",
       "ttm_proventos": 12712000000.0,
       "payout_por_ano": {
@@ -990,14 +980,14 @@
         "2025": 93379000000.0
       },
       "vpa_por_ano": {
-        "2020": 7208.932784753915,
-        "2021": 7878.085303836945,
-        "2022": 7889.059425382496,
-        "2023": 8428.422169354837,
-        "2024": 8762.213412383908,
-        "2025": 8328.972424098549
+        "2020": 7.208932784753915,
+        "2021": 7.878085303836945,
+        "2022": 7.889059425382496,
+        "2023": 8.428422169354837,
+        "2024": 8.762213412383907,
+        "2025": 8.32897242409855
       },
-      "pvp": 0.0016160456960095841,
+      "pvp": 1.616045696009584,
       "divida_liquida_ebitda": 0.3480908152734778,
       "recorrencia": {
         "years_paid": 10,
@@ -1007,11 +997,9 @@
       },
       "crescimento_dps_cagr": 0.2542720837256274,
       "yield_trap": true,
-      "acoes_circulacao": 11211347.0,
-      "escala_acoes_recente": 1.0,
-      "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
-      ]
+      "acoes_circulacao": 11211347000.0,
+      "escala_acoes_recente": 1000.0,
+      "notes": []
     },
     {
       "ticker": "TAEE11",
@@ -1043,14 +1031,7 @@
         "2024": 1693915000.0,
         "2025": 1579863000.0
       },
-      "dps_por_ano": {
-        "2020": 1070.3291833454766,
-        "2021": 1501.2196455335622,
-        "2022": 1618.1798302268899,
-        "2023": 971.478388422995,
-        "2024": 973.9244526108929,
-        "2025": 987.4174767802906
-      },
+      "dps_por_ano": {},
       "dy_historico_por_ano": {},
       "dy_historico_media": null,
       "dy_historico_mediana": null,
@@ -1109,14 +1090,7 @@
         "2024": 6939504000.0,
         "2025": 7608982000.0
       },
-      "vpa_por_ano": {
-        "2020": 5830.596508746518,
-        "2021": 6468.0942470079735,
-        "2022": 6357.518212437965,
-        "2023": 6462.824759046229,
-        "2024": 6714.585528550156,
-        "2025": 7362.364864145711
-      },
+      "vpa_por_ano": {},
       "pvp": null,
       "divida_liquida_ebitda": 3.6551870467337326,
       "recorrencia": {
@@ -1125,12 +1099,12 @@
         "min_years": 8,
         "passes": true
       },
-      "crescimento_dps_cagr": -0.01599639717839374,
+      "crescimento_dps_cagr": null,
       "yield_trap": false,
-      "acoes_circulacao": 1033497.0,
-      "escala_acoes_recente": 1.0,
+      "acoes_circulacao": null,
+      "escala_acoes_recente": null,
       "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
+        "sem âncora de ações (yfinance/cache): DY e P/VP indisponíveis (escala da CVM ambígua)"
       ]
     },
     {
@@ -1163,14 +1137,7 @@
         "2024": 2809631000.0,
         "2025": 2688614000.0
       },
-      "dps_por_ano": {
-        "2020": 0.22888532702856648,
-        "2021": 1.415765358162616,
-        "2022": 0.7921529039946684,
-        "2023": 0.2515650850456565,
-        "2024": 0.5329207964672232,
-        "2025": 0.42054391422533066
-      },
+      "dps_por_ano": {},
       "dy_historico_por_ano": {},
       "dy_historico_media": null,
       "dy_historico_mediana": null,
@@ -1229,14 +1196,7 @@
         "2024": 25636935000.0,
         "2025": 23091978000.0
       },
-      "vpa_por_ano": {
-        "2020": 7.400007399818111,
-        "2021": 8.103343484482993,
-        "2022": 7.721838096547528,
-        "2023": 8.110359763705157,
-        "2024": 8.61134325992218,
-        "2025": 7.774892670260257
-      },
+      "vpa_por_ano": {},
       "pvp": null,
       "divida_liquida_ebitda": 2.5869842897781288,
       "recorrencia": {
@@ -1245,12 +1205,12 @@
         "min_years": 8,
         "passes": true
       },
-      "crescimento_dps_cagr": 0.12937632649502406,
+      "crescimento_dps_cagr": null,
       "yield_trap": false,
-      "acoes_circulacao": 2970070325.0,
-      "escala_acoes_recente": 1.0,
+      "acoes_circulacao": null,
+      "escala_acoes_recente": null,
       "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
+        "sem âncora de ações (yfinance/cache): DY e P/VP indisponíveis (escala da CVM ambígua)"
       ]
     },
     {
@@ -1283,14 +1243,7 @@
         "2024": 4279349000.0,
         "2025": 2582841000.0
       },
-      "dps_por_ano": {
-        "2020": 1.5208675219205072,
-        "2021": 3.4226094580385267,
-        "2022": 2.801756684973108,
-        "2023": 2.9164298299258706,
-        "2024": 1.3898277315586796,
-        "2025": 2.3998527474644122
-      },
+      "dps_por_ano": {},
       "dy_historico_por_ano": {},
       "dy_historico_media": null,
       "dy_historico_mediana": null,
@@ -1349,14 +1302,7 @@
         "2024": 12280398000.0,
         "2025": 13914493000.0
       },
-      "vpa_por_ano": {
-        "2020": 9.488582898284596,
-        "2021": 9.722180790176346,
-        "2022": 10.344264064364328,
-        "2023": 12.030734486365178,
-        "2024": 15.050840163860588,
-        "2025": 12.181132083373672
-      },
+      "vpa_por_ano": {},
       "pvp": null,
       "divida_liquida_ebitda": 3.302763163116331,
       "recorrencia": {
@@ -1365,12 +1311,12 @@
         "min_years": 8,
         "passes": true
       },
-      "crescimento_dps_cagr": 0.09551579061284876,
+      "crescimento_dps_cagr": null,
       "yield_trap": false,
-      "acoes_circulacao": 1142298836.0,
-      "escala_acoes_recente": 1.0,
+      "acoes_circulacao": null,
+      "escala_acoes_recente": null,
       "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
+        "sem âncora de ações (yfinance/cache): DY e P/VP indisponíveis (escala da CVM ambígua)"
       ]
     },
     {
@@ -1403,14 +1349,7 @@
         "2024": 5547948000.0,
         "2025": 6167906000.0
       },
-      "dps_por_ano": {
-        "2020": 3115.4176050572987,
-        "2021": 2922.7830724809146,
-        "2022": 3.431961708073543,
-        "2023": 2.319163195773012,
-        "2024": 1.5567874112459619,
-        "2025": 0.6845029578286431
-      },
+      "dps_por_ano": {},
       "dy_historico_por_ano": {},
       "dy_historico_media": null,
       "dy_historico_mediana": null,
@@ -1469,14 +1408,7 @@
         "2024": 69799495000.0,
         "2025": 69002726000.0
       },
-      "vpa_por_ano": {
-        "2020": 41202.36658069606,
-        "2021": 41746.44262340051,
-        "2022": 41.15029305844575,
-        "2023": 42.13239377330921,
-        "2024": 42.90910521103722,
-        "2025": 21.592999387053414
-      },
+      "vpa_por_ano": {},
       "pvp": null,
       "divida_liquida_ebitda": 0.5367889331914512,
       "recorrencia": {
@@ -1485,12 +1417,12 @@
         "min_years": 8,
         "passes": true
       },
-      "crescimento_dps_cagr": -0.814488083590408,
+      "crescimento_dps_cagr": null,
       "yield_trap": false,
-      "acoes_circulacao": 3195606352.0,
-      "escala_acoes_recente": 1.0,
+      "acoes_circulacao": null,
+      "escala_acoes_recente": null,
       "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
+        "sem âncora de ações (yfinance/cache): DY e P/VP indisponíveis (escala da CVM ambígua)"
       ]
     },
     {
@@ -1523,14 +1455,7 @@
         "2024": 8703353000.0,
         "2025": 9017329000.0
       },
-      "dps_por_ano": {
-        "2020": 2.786016917833954,
-        "2021": 0.9969892474794174,
-        "2022": 1.9660935695140367,
-        "2023": 3.5212278666433563,
-        "2024": 2.675343810005052,
-        "2025": 4.2621452996475
-      },
+      "dps_por_ano": {},
       "dy_historico_por_ano": {},
       "dy_historico_media": null,
       "dy_historico_mediana": null,
@@ -1589,14 +1514,7 @@
         "2024": 9695421000.0,
         "2025": 10384393000.0
       },
-      "vpa_por_ano": {
-        "2020": 3.200187325605209,
-        "2021": 3.646749699687086,
-        "2022": 3.8042772782785113,
-        "2023": 4.965677331153221,
-        "2024": 4.9945862504174565,
-        "2025": 5.3494298605760395
-      },
+      "vpa_por_ano": {},
       "pvp": null,
       "divida_liquida_ebitda": null,
       "recorrencia": {
@@ -1605,12 +1523,12 @@
         "min_years": 8,
         "passes": true
       },
-      "crescimento_dps_cagr": 0.08875183591284674,
+      "crescimento_dps_cagr": null,
       "yield_trap": false,
-      "acoes_circulacao": 1941214909.0,
-      "escala_acoes_recente": 1.0,
+      "acoes_circulacao": null,
+      "escala_acoes_recente": null,
       "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
+        "sem âncora de ações (yfinance/cache): DY e P/VP indisponíveis (escala da CVM ambígua)"
       ]
     },
     {
@@ -1638,14 +1556,7 @@
         "2024": 0.0,
         "2025": 4291560000.0
       },
-      "dps_por_ano": {
-        "2020": 614.7333333333333,
-        "2021": 611.6933333333334,
-        "2022": 648.57,
-        "2023": 1010.1253333333333,
-        "2024": 1080.338,
-        "2025": 1261.8223333333333
-      },
+      "dps_por_ano": {},
       "dy_historico_por_ano": {},
       "dy_historico_media": null,
       "dy_historico_mediana": null,
@@ -1699,14 +1610,7 @@
         "2024": 12889324000.0,
         "2025": 13550484000.0
       },
-      "vpa_por_ano": {
-        "2020": 3028.469,
-        "2021": 3519.5896666666667,
-        "2022": 3629.704,
-        "2023": 4195.293333333333,
-        "2024": 4296.441333333333,
-        "2025": 4516.828
-      },
+      "vpa_por_ano": {},
       "pvp": null,
       "divida_liquida_ebitda": 0.002110803540769258,
       "recorrencia": {
@@ -1715,12 +1619,12 @@
         "min_years": 8,
         "passes": false
       },
-      "crescimento_dps_cagr": 0.15468171709776524,
+      "crescimento_dps_cagr": null,
       "yield_trap": false,
-      "acoes_circulacao": 3000000.0,
-      "escala_acoes_recente": 1.0,
+      "acoes_circulacao": null,
+      "escala_acoes_recente": null,
       "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
+        "sem âncora de ações (yfinance/cache): DY e P/VP indisponíveis (escala da CVM ambígua)"
       ]
     },
     {
@@ -1753,14 +1657,7 @@
         "2024": 1831011000.0,
         "2025": 0.0
       },
-      "dps_por_ano": {
-        "2020": 0.04065449606861051,
-        "2021": 0.0731948355633647,
-        "2022": 0.3017068247913638,
-        "2023": 0.24616699271506,
-        "2024": 0.2926383620158451,
-        "2025": 0.1829161814427487
-      },
+      "dps_por_ano": {},
       "dy_historico_por_ano": {},
       "dy_historico_media": null,
       "dy_historico_mediana": null,
@@ -1819,14 +1716,7 @@
         "2024": 8637200000.0,
         "2025": 14401101000.0
       },
-      "vpa_por_ano": {
-        "2020": 0.7993733131672497,
-        "2021": 1.2902368657454606,
-        "2022": 2.102545062169814,
-        "2023": 2.4893194835319115,
-        "2024": 1.420759986983508,
-        "2025": 2.347204104801389
-      },
+      "vpa_por_ano": {},
       "pvp": null,
       "divida_liquida_ebitda": 3.9296908636363903,
       "recorrencia": {
@@ -1835,12 +1725,12 @@
         "min_years": 8,
         "passes": true
       },
-      "crescimento_dps_cagr": 0.35091713054027385,
+      "crescimento_dps_cagr": null,
       "yield_trap": false,
-      "acoes_circulacao": 6135427665.0,
-      "escala_acoes_recente": 1.0,
+      "acoes_circulacao": null,
+      "escala_acoes_recente": null,
       "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
+        "sem âncora de ações (yfinance/cache): DY e P/VP indisponíveis (escala da CVM ambígua)"
       ]
     },
     {
@@ -1866,10 +1756,10 @@
       "recorrencia": {},
       "crescimento_dps_cagr": null,
       "yield_trap": false,
-      "acoes_circulacao": 1511205519.0,
-      "escala_acoes_recente": 1.0,
+      "acoes_circulacao": null,
+      "escala_acoes_recente": null,
       "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
+        "sem âncora de ações (yfinance/cache): DY e P/VP indisponíveis (escala da CVM ambígua)"
       ]
     },
     {
@@ -1886,11 +1776,7 @@
         "2024": 0.0,
         "2025": 0.0
       },
-      "dps_por_ano": {
-        "2023": 1.2050608738174635,
-        "2024": 1.358943070359676,
-        "2025": 3.3757646128069925
-      },
+      "dps_por_ano": {},
       "dy_historico_por_ano": {},
       "dy_historico_media": null,
       "dy_historico_mediana": null,
@@ -1917,11 +1803,7 @@
         "2024": 36928054000.0,
         "2025": 42401124000.0
       },
-      "vpa_por_ano": {
-        "2023": 43.682435842049266,
-        "2024": 54.02709701035787,
-        "2025": 60.554051628598174
-      },
+      "vpa_por_ano": {},
       "pvp": null,
       "divida_liquida_ebitda": 2.3958808331740205,
       "recorrencia": {
@@ -1930,12 +1812,12 @@
         "min_years": 8,
         "passes": false
       },
-      "crescimento_dps_cagr": 0.6737152961613944,
+      "crescimento_dps_cagr": null,
       "yield_trap": false,
-      "acoes_circulacao": 700219438.0,
-      "escala_acoes_recente": 1.0,
+      "acoes_circulacao": null,
+      "escala_acoes_recente": null,
       "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
+        "sem âncora de ações (yfinance/cache): DY e P/VP indisponíveis (escala da CVM ambígua)"
       ]
     },
     {
@@ -1968,14 +1850,7 @@
         "2024": 7117146000.0,
         "2025": 4897409000.0
       },
-      "dps_por_ano": {
-        "2020": 393.9847236932935,
-        "2021": 836.7246387599537,
-        "2022": 951.5488349371172,
-        "2023": 828.4473023483032,
-        "2024": 1501.2007626153484,
-        "2025": 1387.18878924676
-      },
+      "dps_por_ano": {},
       "dy_historico_por_ano": {},
       "dy_historico_media": null,
       "dy_historico_mediana": null,
@@ -2034,14 +1909,7 @@
         "2024": 27383079000.0,
         "2025": 28581703000.0
       },
-      "vpa_por_ano": {
-        "2020": 11512.130409809719,
-        "2021": 11497.393825644189,
-        "2022": 9899.12225491644,
-        "2023": 11204.232171868078,
-        "2024": 9572.220540416585,
-        "2025": 9991.219925877815
-      },
+      "vpa_por_ano": {},
       "pvp": null,
       "divida_liquida_ebitda": 2.120265595522014,
       "recorrencia": {
@@ -2050,12 +1918,12 @@
         "min_years": 8,
         "passes": true
       },
-      "crescimento_dps_cagr": 0.28626732523514264,
+      "crescimento_dps_cagr": null,
       "yield_trap": false,
-      "acoes_circulacao": 2860682.0,
-      "escala_acoes_recente": 1.0,
+      "acoes_circulacao": null,
+      "escala_acoes_recente": null,
       "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
+        "sem âncora de ações (yfinance/cache): DY e P/VP indisponíveis (escala da CVM ambígua)"
       ]
     },
     {
@@ -2088,14 +1956,7 @@
         "2024": 4566317000.0,
         "2025": 1387020000.0
       },
-      "dps_por_ano": {
-        "2020": 0.161545515217159,
-        "2021": 3.1302569971159717,
-        "2022": 3.541614847586472,
-        "2023": 1.533748859800972,
-        "2024": 0.8114531376392516,
-        "2025": 0.6509262468716007
-      },
+      "dps_por_ano": {},
       "dy_historico_por_ano": {},
       "dy_historico_media": null,
       "dy_historico_mediana": null,
@@ -2154,14 +2015,7 @@
         "2024": 58173786000.0,
         "2025": 53798489000.0
       },
-      "vpa_por_ano": {
-        "2020": 18.27293366476933,
-        "2021": 25.10082261057864,
-        "2022": 27.830786708944984,
-        "2023": 28.14417394524496,
-        "2024": 28.498492030406872,
-        "2025": 27.23775682629494
-      },
+      "vpa_por_ano": {},
       "pvp": null,
       "divida_liquida_ebitda": 1.1118640464534715,
       "recorrencia": {
@@ -2170,12 +2024,12 @@
         "min_years": 8,
         "passes": true
       },
-      "crescimento_dps_cagr": 0.32143977731269,
+      "crescimento_dps_cagr": null,
       "yield_trap": false,
-      "acoes_circulacao": 1975143891.0,
-      "escala_acoes_recente": 1.0,
+      "acoes_circulacao": null,
+      "escala_acoes_recente": null,
       "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
+        "sem âncora de ações (yfinance/cache): DY e P/VP indisponíveis (escala da CVM ambígua)"
       ]
     },
     {
@@ -2208,14 +2062,7 @@
         "2024": 5457652000.0,
         "2025": 5484324000.0
       },
-      "dps_por_ano": {
-        "2020": 1.8367288738761554,
-        "2021": 3.730508515115811,
-        "2022": 3.360663118816014,
-        "2023": 3.098679316002462,
-        "2024": 3.0198642584531936,
-        "2025": 3.05468035341222
-      },
+      "dps_por_ano": {},
       "dy_historico_por_ano": {},
       "dy_historico_media": null,
       "dy_historico_mediana": null,
@@ -2274,14 +2121,7 @@
         "2024": 21795029000.0,
         "2025": 23504509000.0
       },
-      "vpa_por_ano": {
-        "2020": 12.354717418142473,
-        "2021": 14.585214355954228,
-        "2022": 15.222283717127617,
-        "2023": 17.35619521674397,
-        "2024": 18.915118261553413,
-        "2025": 20.398714193715755
-      },
+      "vpa_por_ano": {},
       "pvp": null,
       "divida_liquida_ebitda": 1.9942781158766096,
       "recorrencia": {
@@ -2290,12 +2130,12 @@
         "min_years": 8,
         "passes": true
       },
-      "crescimento_dps_cagr": 0.10709309914647669,
+      "crescimento_dps_cagr": null,
       "yield_trap": false,
-      "acoes_circulacao": 1152254440.0,
-      "escala_acoes_recente": 1.0,
+      "acoes_circulacao": null,
+      "escala_acoes_recente": null,
       "notes": [
-        "sem âncora de ações (yfinance): escala assumida 1, baixa confiança"
+        "sem âncora de ações (yfinance/cache): DY e P/VP indisponíveis (escala da CVM ambígua)"
       ]
     }
   ]
