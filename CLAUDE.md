@@ -87,10 +87,10 @@ GitHub Actions (cron) → Python (pandas) ingestão+normalização
   `--no-yfinance` lendo esse cache. **Trava anti-clobber** em todos os scripts da CVM:
   se nenhum período baixa, abortam (exit 1) sem escrever — `bash -e` derruba o passo antes
   do commit, então um run sem CVM (caso do GH) nunca sobrescreve artefato bom.
-  - No GH funcionam: `prices.yml` (yfinance) e `anchors.yml` (yfinance). Os crons de
-    `fundamentos.yml`/`ingest.yml` no GH ficam vermelhos (sem CVM) mas são inofensivos.
-    **Pendente decisão do Felipe**: desativar esses 2 crons no GH e gerar a CVM aqui (opção
-    recomendada) vs. manter vermelhos vs. proxy/mirror/runner-BR.
+  - No GH funcionam (com cron): `prices.yml` (diário, yfinance) e `anchors.yml` (trimestral,
+    yfinance). **TRAVADO 2026-06-27 (opção A do Felipe)**: `fundamentos.yml` e `ingest.yml`
+    ficaram **só com `workflow_dispatch` (sem cron)** — gerariam só vermelho no GH. A geração
+    da CVM (fundamentos + ingest FII/FIAgro/IPE) roda **neste ambiente** e commita o artefato.
 
 ### Fontes de dados
 - **CVM dados abertos** — fonte de verdade e **autoritativa de proventos + fundamentos**

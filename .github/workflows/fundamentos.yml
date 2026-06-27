@@ -1,10 +1,15 @@
 name: Fundamentos de ações (trimestral)
 
-# DFP/ITR da CVM saem em janelas trimestrais/anuais. Cron trimestral + disparo manual.
-# Reconstrói a série histórica inteira (anos antigos são imutáveis; baixar é barato).
+# DFP/ITR da CVM saem em janelas trimestrais/anuais. Reconstrói a série histórica inteira
+# (anos antigos são imutáveis; baixar é barato).
+#
+# SEM cron (decisão Felipe 2026-06-27, opção A): o runner do GitHub NÃO alcança
+# dados.cvm.gov.br (Errno 101 Network is unreachable), então um run agendado aqui só
+# falharia (a trava anti-clobber impede sobrescrever dado bom, mas o run fica vermelho à
+# toa). A geração de fundamentos roda no ambiente que alcança a CVM e commita o artefato;
+# o yfinance é coletado à parte pelo anchors.yml. workflow_dispatch fica para um teste
+# manual eventual. Ver CLAUDE.md → "GOTCHA de rede dos runners".
 on:
-  schedule:
-    - cron: "0 7 10 1,4,7,10 *" # dia 10 de jan/abr/jul/out, 07:00 UTC
   workflow_dispatch:
     inputs:
       start_year:

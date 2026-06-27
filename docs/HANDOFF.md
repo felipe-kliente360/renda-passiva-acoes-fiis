@@ -137,7 +137,7 @@ sobrescreveu `main` (restaurado em `26cbe53`).
   `ingest_fii_fundos`, `ingest_fiagro`, `ingest_ipe`: se nenhum período da CVM baixa,
   abortam (exit 1) sem escrever → `bash -e` derruba o passo antes do commit.
 
-**Onde rodar o quê**: GH = `prices.yml` + `anchors.yml` (yfinance). CVM (fundamentos +
-ingest FII/FIAgro/IPE) = **gerar neste ambiente** (alcança a CVM) e commitar.
-**Pendente decisão do Felipe**: desativar crons de `fundamentos.yml`/`ingest.yml` no GH
-(recomendado) vs. mantê-los vermelhos vs. proxy/mirror/self-hosted runner BR.
+**Onde rodar o quê**: GH = `prices.yml` + `anchors.yml` (yfinance, com cron). CVM
+(fundamentos + ingest FII/FIAgro/IPE) = **gerar neste ambiente** (alcança a CVM) e commitar.
+**TRAVADO 2026-06-27 (opção A do Felipe)**: `fundamentos.yml` e `ingest.yml` ficaram **só
+com `workflow_dispatch`, sem cron** — não geram mais run vermelho à toa no GH.

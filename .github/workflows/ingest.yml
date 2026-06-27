@@ -1,9 +1,13 @@
 name: Ingestão de fundamentos (mensal)
 
-# Fundamentos da CVM mudam mensal/trimestralmente. Cron mensal + disparo manual.
+# FII/FIAgro/IPE da CVM mudam mensal/trimestralmente.
+#
+# SEM cron (decisão Felipe 2026-06-27, opção A): o runner do GitHub NÃO alcança
+# dados.cvm.gov.br (Errno 101 Network is unreachable), então um run agendado aqui só
+# falharia (as travas anti-clobber impedem sobrescrever dado bom, mas o run fica vermelho à
+# toa). A ingestão FII/FIAgro/IPE roda no ambiente que alcança a CVM e commita os artefatos.
+# workflow_dispatch fica para um teste manual eventual. Ver CLAUDE.md → "GOTCHA de rede".
 on:
-  schedule:
-    - cron: "0 6 5 * *" # dia 5 de cada mês, 06:00 UTC
   workflow_dispatch:
 
 permissions:
