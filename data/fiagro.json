@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-27T13:18:40.395252+00:00",
+    "generated_at": "2026-06-27T13:35:35.342496+00:00",
     "count": 28,
     "fonte": "CVM INF_MENSAL FIAgro (Dividend_Yield_Mes) + brapi (universo/spot)",
     "universo": "auto-detectado: fi-agro da brapi ∩ ISIN→ticker da CVM",
@@ -38,7 +38,16 @@
       "num_cotistas": 106843,
       "pl_atual": 1644517339.67,
       "vp_cota_atual": 10.27,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 0.935,
+      "liquidez_pl": 0.178,
+      "composicao": {
+        "cra": 0.676,
+        "cri": 0.009,
+        "cpr": 0.015
+      }
     },
     {
       "ticker": "SNAG11",
@@ -70,7 +79,15 @@
       "num_cotistas": 131472,
       "pl_atual": 906918112.22,
       "vp_cota_atual": 10.14,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 1.0,
+      "liquidez_pl": 0.081,
+      "composicao": {
+        "cra": 0.589,
+        "imoveis_rurais": 0.065
+      }
     },
     {
       "ticker": "RZAG11",
@@ -102,7 +119,14 @@
       "num_cotistas": 89255,
       "pl_atual": 663772571.32,
       "vp_cota_atual": 9.76,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 1.0,
+      "liquidez_pl": 0.011,
+      "composicao": {
+        "cra": 0.899
+      }
     },
     {
       "ticker": "VGIA11",
@@ -134,7 +158,16 @@
       "num_cotistas": 174817,
       "pl_atual": 1027230341.97,
       "vp_cota_atual": 9.69,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 0.794,
+      "liquidez_pl": 0.001,
+      "composicao": {
+        "cra": 0.658,
+        "cpr": 0.054,
+        "debentures": 0.03
+      }
     },
     {
       "ticker": "FGAA11",
@@ -166,7 +199,16 @@
       "num_cotistas": 52107,
       "pl_atual": 425475188.77,
       "vp_cota_atual": 9.46,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 0.603,
+      "liquidez_pl": 0.015,
+      "composicao": {
+        "cra": 0.672,
+        "cri": 0.035,
+        "cpr": 0.195
+      }
     },
     {
       "ticker": "XPCA11",
@@ -198,7 +240,15 @@
       "num_cotistas": 94254,
       "pl_atual": 487325339.56,
       "vp_cota_atual": 10.71,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 0.949,
+      "liquidez_pl": 0.065,
+      "composicao": {
+        "cra": 0.651,
+        "cri": 0.018
+      }
     },
     {
       "ticker": "KNCA11",
@@ -230,7 +280,16 @@
       "num_cotistas": 91213,
       "pl_atual": 2176651191.41,
       "vp_cota_atual": 100.77,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 0.774,
+      "liquidez_pl": 0.102,
+      "composicao": {
+        "cra": 0.721,
+        "cri": 0.036,
+        "cpr": 0.067
+      }
     },
     {
       "ticker": "AAZQ11",
@@ -262,7 +321,15 @@
       "num_cotistas": 30949,
       "pl_atual": 206934777.0,
       "vp_cota_atual": 8.61,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 0.953,
+      "liquidez_pl": 0.059,
+      "composicao": {
+        "cra": 0.661,
+        "cri": 0.016
+      }
     },
     {
       "ticker": "CPTR11",
@@ -294,7 +361,15 @@
       "num_cotistas": 21287,
       "pl_atual": 198071876.54,
       "vp_cota_atual": 9.99,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 0.818,
+      "liquidez_pl": 0.072,
+      "composicao": {
+        "cra": 0.694,
+        "cri": 0.078
+      }
     },
     {
       "ticker": "DCRA11",
@@ -326,7 +401,14 @@
       "num_cotistas": 14509,
       "pl_atual": 66354143.03,
       "vp_cota_atual": 9.85,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 1.0,
+      "liquidez_pl": 0.209,
+      "composicao": {
+        "cra": 0.837
+      }
     },
     {
       "ticker": "SNFZ11",
@@ -358,7 +440,15 @@
       "num_cotistas": 12073,
       "pl_atual": 120395441.7,
       "vp_cota_atual": 9.96,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "terras",
+      "inadimplencia": null,
+      "diversificacao_hhi": 1.0,
+      "liquidez_pl": 0.009,
+      "composicao": {
+        "cra": 0.211,
+        "imoveis_rurais": 0.789
+      }
     },
     {
       "ticker": "AGRX11",
@@ -390,7 +480,15 @@
       "num_cotistas": 19643,
       "pl_atual": 185862251.96,
       "vp_cota_atual": 10.38,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 0.966,
+      "liquidez_pl": 0.167,
+      "composicao": {
+        "cra": 0.847,
+        "cpr": 0.015
+      }
     },
     {
       "ticker": "BBGO11",
@@ -422,7 +520,14 @@
       "num_cotistas": 11757,
       "pl_atual": 379748380.06,
       "vp_cota_atual": 94.81,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0008,
+      "diversificacao_hhi": 1.0,
+      "liquidez_pl": 0.334,
+      "composicao": {
+        "cra": 0.966
+      }
     },
     {
       "ticker": "EGAF11",
@@ -454,7 +559,14 @@
       "num_cotistas": 12644,
       "pl_atual": 310127971.92,
       "vp_cota_atual": 99.02,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 1.0,
+      "liquidez_pl": 0.056,
+      "composicao": {
+        "cra": 0.899
+      }
     },
     {
       "ticker": "JGPX11",
@@ -486,7 +598,14 @@
       "num_cotistas": 5902,
       "pl_atual": 203790923.2,
       "vp_cota_atual": 95.17,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 1.0,
+      "liquidez_pl": 0.06,
+      "composicao": {
+        "cra": 0.925
+      }
     },
     {
       "ticker": "VCRA11",
@@ -518,7 +637,15 @@
       "num_cotistas": 9776,
       "pl_atual": 471637374.73,
       "vp_cota_atual": 102.67,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 0.944,
+      "liquidez_pl": 0.057,
+      "composicao": {
+        "cra": 0.934,
+        "cri": 0.028
+      }
     },
     {
       "ticker": "OIAG11",
@@ -550,7 +677,15 @@
       "num_cotistas": 13325,
       "pl_atual": 89222665.96,
       "vp_cota_atual": 9.88,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 0.747,
+      "liquidez_pl": 0.087,
+      "composicao": {
+        "cra": 0.282,
+        "cri": 0.049
+      }
     },
     {
       "ticker": "GCRA11",
@@ -582,7 +717,15 @@
       "num_cotistas": 6624,
       "pl_atual": 152804038.05,
       "vp_cota_atual": 0.0,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 0.634,
+      "liquidez_pl": 0.018,
+      "composicao": {
+        "cra": 0.573,
+        "cri": 0.182
+      }
     },
     {
       "ticker": "CRAA11",
@@ -614,7 +757,15 @@
       "num_cotistas": 11321,
       "pl_atual": 239773184.58,
       "vp_cota_atual": 101.18,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 0.976,
+      "liquidez_pl": 0.0,
+      "composicao": {
+        "cra": 0.983,
+        "cri": 0.012
+      }
     },
     {
       "ticker": "PLCA11",
@@ -646,7 +797,15 @@
       "num_cotistas": 2420,
       "pl_atual": 53777395.34,
       "vp_cota_atual": 96.54,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 0.926,
+      "liquidez_pl": 0.125,
+      "composicao": {
+        "cra": 0.901,
+        "cri": 0.036
+      }
     },
     {
       "ticker": "KDOL11",
@@ -678,7 +837,12 @@
       "num_cotistas": 1578,
       "pl_atual": 62560171.03,
       "vp_cota_atual": 93.24,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": null,
+      "liquidez_pl": 0.022,
+      "composicao": {}
     },
     {
       "ticker": "GRWA11",
@@ -710,7 +874,15 @@
       "num_cotistas": 2099,
       "pl_atual": 28278548.57,
       "vp_cota_atual": 10.25,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 0.939,
+      "liquidez_pl": 0.071,
+      "composicao": {
+        "cra": 0.825,
+        "cri": 0.027
+      }
     },
     {
       "ticker": "BTAG11",
@@ -742,7 +914,12 @@
       "num_cotistas": 4738,
       "pl_atual": 165502746.32,
       "vp_cota_atual": 105.02,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": null,
+      "diversificacao_hhi": null,
+      "liquidez_pl": 0.002,
+      "composicao": {}
     },
     {
       "ticker": "KOPA11",
@@ -774,7 +951,14 @@
       "num_cotistas": 3498,
       "pl_atual": 140155422.69,
       "vp_cota_atual": 395.16,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 1.0,
+      "liquidez_pl": 0.023,
+      "composicao": {
+        "cra": 0.524
+      }
     },
     {
       "ticker": "NEXG11",
@@ -806,7 +990,14 @@
       "num_cotistas": 661,
       "pl_atual": 123187427.01,
       "vp_cota_atual": 99.95,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.0,
+      "diversificacao_hhi": 1.0,
+      "liquidez_pl": 0.044,
+      "composicao": {
+        "cra": 0.595
+      }
     },
     {
       "ticker": "LSAG11",
@@ -838,7 +1029,14 @@
       "num_cotistas": 2589,
       "pl_atual": 98794610.7,
       "vp_cota_atual": 97.88,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": 0.002,
+      "diversificacao_hhi": 1.0,
+      "liquidez_pl": 0.031,
+      "composicao": {
+        "cra": 0.896
+      }
     },
     {
       "ticker": "LAFI11",
@@ -869,7 +1067,14 @@
       "num_cotistas": 1278,
       "pl_atual": 93495669.86,
       "vp_cota_atual": 0.0,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "terras",
+      "inadimplencia": null,
+      "diversificacao_hhi": null,
+      "liquidez_pl": 0.033,
+      "composicao": {
+        "imoveis_rurais": 1.0
+      }
     },
     {
       "ticker": "HGAG11",
@@ -901,7 +1106,12 @@
       "num_cotistas": 973,
       "pl_atual": 5828419.86,
       "vp_cota_atual": 23.48,
-      "yield_trap": false
+      "yield_trap": false,
+      "tipo": "credito",
+      "inadimplencia": null,
+      "diversificacao_hhi": null,
+      "liquidez_pl": 0.002,
+      "composicao": {}
     }
   ]
 }

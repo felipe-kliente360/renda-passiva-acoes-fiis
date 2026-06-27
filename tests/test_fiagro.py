@@ -5,6 +5,7 @@ from conftest import DATA_DIR
 from pipeline.fiagro import (
     aggregate_fund,
     clean_fiagro_dy,
+    credit_profile,
     parse_fiagro_inf_mensal,
     ticker_from_isin,
 )
@@ -149,6 +150,33 @@ def test_aggregate_fund_saude_financeira():
     assert agg["alavancagem"] == pytest.approx(0.1, abs=1e-3)
     assert agg["vp_cota_var"] > 0
     assert agg["pl_crescimento_aa"] > 0
+
+
+def test_credit_profile_credito_vs_terras_e_inadimplencia():
+    # Fundo de crédito: CRA+CPR dominam, um pouco vencido.
+    cred = pd.DataFrame({
+        "competencia": pd.to_datetime(["2026-01-01", "2026-02-01"]),
+        "total_investido": [1000.0, 1000.0],
+        "imoveis_rurais": [0.0, 0.0],
+        "cra": [600.0, 600.0], "cri": [0.0, 0.0], "cpr": [400.0, 400.0],
+        "debentures": [0.0, 0.0],
+        "vencidos": [0.0, 50.0], "a_vencer": [1000.0, 950.0],
+        "patrimonio_liquido": [1000.0, 1000.0], "necessidades_liquidez": [100.0, 100.0],
+    })
+    p = credit_profile(cred)
+    assert p["tipo"] == "credito"
+    assert p["inadimplencia"] == pytest.approx(50 / 1000)        # 50/(950+50)
+    assert p["diversificacao_hhi"] == pytest.approx(0.6**2 + 0.4**2)  # CRA 60%, CPR 40%
+    assert p["liquidez_pl"] == pytest.approx(0.1)
+    assert p["composicao"]["cra"] == pytest.approx(0.6)
+
+    # Fundo de terras: imóveis rurais dominam.
+    terras = pd.DataFrame({
+        "competencia": pd.to_datetime(["2026-02-01"]),
+        "total_investido": [1000.0], "imoveis_rurais": [800.0],
+        "cra": [200.0], "cri": [0.0], "cpr": [0.0], "debentures": [0.0],
+    })
+    assert credit_profile(terras)["tipo"] == "terras"
 
 
 def test_aggregate_fund_vazio():

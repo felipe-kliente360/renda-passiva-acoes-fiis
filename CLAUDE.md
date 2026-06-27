@@ -149,7 +149,16 @@ saúde financeira no tempo + projeção), com **listas separadas** (decisão do 
   **próprio fundo** (~5 anos), trap per-fundo.
 - Score em `pipeline.score.fund_composite_score` (+ `fund_sustainability_multiplier`):
   mesmos 40/30/30, sustentabilidade adaptada (alavancagem/cota/taxa/recorrência no lugar de
-  payout/ROE/dívida). Roda no workflow mensal `ingest.yml`. Front com as duas short-lists.
+  payout/ROE/dívida). Recorrência escala pela **janela disponível** (fundo novo que pagou
+  todo mês = 1,0). Roda no workflow mensal `ingest.yml`. Front com as duas short-lists.
+- **Classificação por TIPO** (decisão do Felipe — não comparar peras com maçãs):
+  FII tijolo/papel/FoF via composição do ativo (`fii.classify_fii_tipo`, membro
+  `ativo_passivo`); FIAgro crédito/terras via `Imoveis_Rurais` × instrumentos de crédito
+  (`fiagro.credit_profile`). Baseline cross-sectional do FIAgro é **por tipo**.
+- **Camada de crédito do FIAgro** (núcleo fundamentalista dos fundos de recebíveis):
+  inadimplência (`Vencidos/(A_Vencer+Vencidos)`), diversificação (HHI de CRA/CRI/CPR/deb),
+  liquidez (`Necessidades_Liquidez/PL`), composição. **FII** ganhou nº de cotistas e
+  separação de amortização (`Amortizacao_Cotas_Mes` = devolução de capital, não yield).
 
 **Refinamentos** (todos ✅ nesta leva): DMPL (payout declarado via mutações do PL,
 `proventos_declarados`/`payout_declarado_por_ano`; Bradesco N/A — DMPL anômala); DY

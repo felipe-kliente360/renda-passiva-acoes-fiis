@@ -29,7 +29,7 @@ from pipeline.columns import load_columns_config  # noqa: E402
 from pipeline.cvm import download_fii_inf_mensal  # noqa: E402
 from pipeline.export import export_json, export_parquet  # noqa: E402
 from pipeline.fiagro import aggregate_fund  # noqa: E402
-from pipeline.fii import DATASET, parse_fii_enriched  # noqa: E402
+from pipeline.fii import DATASET, classify_fii_tipo, parse_fii_enriched  # noqa: E402
 from pipeline.normalize import list_zip_members, read_cvm_csv_from_zip  # noqa: E402
 from pipeline.score import fund_composite_score  # noqa: E402
 
@@ -58,6 +58,7 @@ def main() -> int:
     spec = load_columns_config()[DATASET]
 
     frames: list[pd.DataFrame] = []
+    last_zip: Path | None = None
     for year in range(args.start, args.end + 1):
         zip_path = DEFAULT_RAW / f"inf_mensal_fii_{year}.zip"
         if not args.no_download and not zip_path.exists():
@@ -73,6 +74,7 @@ def main() -> int:
             continue
         parsed = parse_fii_enriched(read_cvm_csv_from_zip(zip_path, member), spec)
         frames.append(parsed[parsed["cnpj_fundo"].isin(cnpjs)])
+        last_zip = zip_path
         print(f"[{year}] ok")
 
     allm = (
@@ -81,12 +83,32 @@ def main() -> int:
         else pd.DataFrame(columns=["cnpj_fundo", "competencia", "dy_mes"])
     )
 
+    # Classificação tijolo/papel/FoF pela composição do ativo (membro ativo_passivo do
+    # informe mais recente). Lido uma vez; o tipo é estrutural, não muda mês a mês.
+    ap_df = None
+    if last_zip is not None:
+        ap_member = next(
+            (m for m in list_zip_members(last_zip)
+             if "ativo_passivo" in m and m.endswith(".csv")), None
+        )
+        if ap_member:
+            ap_df = read_cvm_csv_from_zip(last_zip, ap_member)
+
+    def _latest(sub: pd.DataFrame, col: str):
+        if col not in sub.columns:
+            return None
+        s = sub[col].dropna()
+        return float(s.iloc[-1]) if not s.empty else None
+
     records = []
     for f in fiis:
         sub = allm[allm["cnpj_fundo"] == f["cnpj"]].sort_values("competencia")
         agg = aggregate_fund(sub)
-        records.append({"ticker": f["ticker"], "nome": f.get("nome"),
-                        "cnpj": f["cnpj"], **agg})
+        tipo = classify_fii_tipo(ap_df, f["cnpj"]) if ap_df is not None else None
+        cotistas = _latest(sub, "numero_cotistas")
+        records.append({"ticker": f["ticker"], "nome": f.get("nome"), "cnpj": f["cnpj"],
+                        "tipo": tipo, "num_cotistas": int(cotistas) if cotistas else None,
+                        "amortizacao_recente": _latest(sub, "amortizacao_mes"), **agg})
 
     meta = {
         "fonte": "CVM INF_MENSAL FII (Percentual_Dividend_Yield_Mes + saúde patrimonial)",
@@ -122,11 +144,14 @@ def main() -> int:
         )
         rows.append({
             "ticker": r["ticker"], "nome": r.get("nome"), "score": bd.score,
+            "tipo": r.get("tipo"),
             "recurrence": bd.recurrence, "yield": bd.yield_, "growth": bd.growth,
             "sustainability": bd.sustainability, "yield_trap": bd.yield_trap,
             "dy_ttm": r.get("dy_ttm"), "dy_mediana": r.get("dy_mediana"),
             "pvp": pvp_by_ticker.get(r["ticker"]), "alavancagem": r.get("alavancagem"),
             "vp_cota_var": r.get("vp_cota_var"), "meses_disponiveis": r.get("meses_disponiveis"),
+            "num_cotistas": r.get("num_cotistas"),
+            "amortizacao_recente": r.get("amortizacao_recente"),
             "crescimento": r.get("crescimento"), "crescimento_base": r.get("crescimento_base"),
         })
     rows.sort(key=lambda x: x["score"], reverse=True)

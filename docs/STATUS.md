@@ -7,8 +7,8 @@ Atualizado em: 2026-06-27
 |---|---|---|
 | `pipeline/normalize.py` | Leitura CVM (ISO-8859-1, `;`, decimal por-dataset), ZIP/CSV, `to_numeric_ptbr` | `test_normalize.py` |
 | `pipeline/columns.py` | Resolução config-driven de colunas + escolha de membro do ZIP | `test_columns.py` |
-| `pipeline/fii.py` | INF_MENSAL → VP da cota + DY mensal/TTM/histórico/trap + `parse_fii_enriched` (DY+PL+passivo+taxa) | `test_fii.py` |
-| `pipeline/fiagro.py` | INF_MENSAL FIAgro: parser + `ticker_from_isin` + `clean_fiagro_dy` (gotcha de escala) + `aggregate_fund` (genérica FII/FIAgro: DY/projeção/saúde/confiança) | `test_fiagro.py` |
+| `pipeline/fii.py` | INF_MENSAL → VP + DY + `parse_fii_enriched` (DY+PL+passivo+taxa+amortização+cotistas) + `classify_fii_tipo` (tijolo/papel/FoF) | `test_fii.py` |
+| `pipeline/fiagro.py` | INF_MENSAL FIAgro: parser + `ticker_from_isin` + `clean_fiagro_dy` (gotcha) + `aggregate_fund` (genérica FII/FIAgro) + `credit_profile` (tipo crédito/terras, inadimplência, diversificação HHI, liquidez) | `test_fiagro.py` |
 | `pipeline/fundamentos.py` | ITR/DFP: proventos pagos, lucro+PL (controladora), ações, escala, TTM | `test_fundamentos.py` |
 | `pipeline/metrics.py` | DY TTM, DY histórico (média/mediana), payout, recorrência, growth, flag yield trap | `test_metrics.py` |
 | `pipeline/score.py` | Score composto 40/30/30 × sustentabilidade, corte por yield trap, rank + `fund_composite_score`/`fund_sustainability_multiplier` (fundos) | `test_score.py` |

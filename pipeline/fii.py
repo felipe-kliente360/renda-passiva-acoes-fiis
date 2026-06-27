@@ -103,6 +103,8 @@ def parse_fii_enriched(df: pd.DataFrame, spec: DatasetSpec | None = None) -> pd.
     out["dy_mes"] = _num("dividend_yield_mes")
     out["patrimonio_liquido"] = _num("patrimonio_liquido")
     out["taxa_administracao"] = _num("taxa_administracao")
+    out["amortizacao_mes"] = _num("amortizacao_cotas_mes")
+    out["numero_cotistas"] = _num("numero_cotistas")
 
     vp = _num("valor_patrimonial_cota")
     cotas = _num("cotas_emitidas")
@@ -114,6 +116,60 @@ def parse_fii_enriched(df: pd.DataFrame, spec: DatasetSpec | None = None) -> pd.
     ativo = _num("valor_ativo")
     out["total_passivo"] = (ativo - pl).where(ativo.notna() & pl.notna())
     return out.dropna(subset=["competencia"]).reset_index(drop=True)
+
+
+# Buckets de composição do membro `ativo_passivo` (nomes estáveis) para classificar o FII.
+_FII_IMOVEIS = (
+    "Direitos_Bens_Imoveis", "Terrenos", "Imoveis_Renda_Acabados", "Imoveis_Renda_Construcao",
+    "Imoveis_Venda_Acabados", "Imoveis_Venda_Construcao", "Outros_Direitos_Reais",
+)
+_FII_PAPEL = (
+    "CRI", "CRI_CRA", "LCI", "LCI_LCA", "Letras_Hipotecarias", "LIG", "Debentures",
+    "Titulos_Privados", "Cedulas_Debentures",
+)
+_FII_COTAS = ("FII", "FIP", "FDIC", "Outras_Cotas_FI", "Fundo_Acoes")
+
+
+def classify_fii_tipo(
+    ativo_passivo: pd.DataFrame, cnpj: str, *, decimal: str = "."
+) -> str | None:
+    """Classifica o FII (tijolo/papel/FoF/híbrido) pela composição mais recente do ativo.
+
+    Lê o membro `ativo_passivo` do INF_MENSAL: soma os imóveis, os recebíveis/papel (CRI,
+    LCI, debêntures...) e as cotas de fundos (FoF), e classifica pelo bucket dominante
+    (≥60% = puro; senão 'híbrido'). Retorna None se o fundo não estiver no arquivo.
+    """
+    col_cnpj = next(
+        (c for c in ("CNPJ_Fundo_Classe", "CNPJ_Fundo", "CNPJ_FUNDO") if c in ativo_passivo),
+        None,
+    )
+    if col_cnpj is None:
+        return None
+    sub = ativo_passivo[ativo_passivo[col_cnpj].astype("string").str.strip() == cnpj]
+    if sub.empty:
+        return None
+    if "Data_Referencia" in sub.columns:
+        sub = sub.assign(_d=pd.to_datetime(sub["Data_Referencia"], errors="coerce"))
+        row = sub.sort_values("_d").iloc[-1]
+    else:
+        row = sub.iloc[-1]
+
+    def bucket(cols: tuple[str, ...]) -> float:
+        total = 0.0
+        for c in cols:
+            if c in row.index:
+                v = to_numeric_ptbr(pd.Series([row[c]]), decimal=decimal).iloc[0]
+                if pd.notna(v):
+                    total += float(v)
+        return total
+
+    imoveis, papel, cotas = bucket(_FII_IMOVEIS), bucket(_FII_PAPEL), bucket(_FII_COTAS)
+    base = imoveis + papel + cotas
+    if base <= 0:
+        return None
+    shares = {"tijolo": imoveis / base, "papel": papel / base, "fof": cotas / base}
+    tipo, share = max(shares.items(), key=lambda kv: kv[1])
+    return tipo if share >= 0.60 else "híbrido"
 
 
 def aggregate_fii_dy(monthly: pd.DataFrame, *, trap_multiple: float = 1.5) -> dict:

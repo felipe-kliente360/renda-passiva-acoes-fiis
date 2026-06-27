@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-27T13:18:42.349950+00:00",
+    "generated_at": "2026-06-27T13:38:25.167242+00:00",
     "count": 8,
     "fonte": "CVM INF_MENSAL FII (Percentual_Dividend_Yield_Mes + saúde patrimonial)",
     "baseline_yield": "histórico do próprio fundo (mediana dos anos completos)"
@@ -10,6 +10,9 @@
       "ticker": "MXRF11",
       "nome": "Maxi Renda",
       "cnpj": "97.521.225/0001-25",
+      "tipo": "papel",
+      "num_cotistas": 1468513,
+      "amortizacao_recente": 0.0,
       "dy_ttm": 0.124848,
       "dy_ttm_estimado": false,
       "dy_por_ano": {
@@ -35,7 +38,6 @@
       "pl_crescimento_aa": 0.18673823777927454,
       "vp_cota_var": -0.07081034224579219,
       "taxa_admin_aa": 0.009107,
-      "num_cotistas": null,
       "pl_atual": 4313692471.65,
       "vp_cota_atual": 9.372101,
       "yield_trap": false
@@ -44,6 +46,9 @@
       "ticker": "HGLG11",
       "nome": "Pátria Log (ex-CSHG)",
       "cnpj": "11.728.688/0001-47",
+      "tipo": "tijolo",
+      "num_cotistas": 573386,
+      "amortizacao_recente": 0.0,
       "dy_ttm": 0.079313,
       "dy_ttm_estimado": false,
       "dy_por_ano": {
@@ -69,7 +74,6 @@
       "pl_crescimento_aa": 0.19635779977601286,
       "vp_cota_var": 0.21454035302807473,
       "taxa_admin_aa": 0.005625,
-      "num_cotistas": null,
       "pl_atual": 7570056166.4,
       "vp_cota_atual": 166.003651097124,
       "yield_trap": false
@@ -78,6 +82,9 @@
       "ticker": "KNCR11",
       "nome": "Kinea Rendimentos",
       "cnpj": "16.706.958/0001-32",
+      "tipo": "papel",
+      "num_cotistas": 558989,
+      "amortizacao_recente": 0.0,
       "dy_ttm": 0.14116499999999998,
       "dy_ttm_estimado": false,
       "dy_por_ano": {
@@ -103,7 +110,6 @@
       "pl_crescimento_aa": 0.17462635070413485,
       "vp_cota_var": -0.022902745397077262,
       "taxa_admin_aa": 0.010087,
-      "num_cotistas": null,
       "pl_atual": 10963961899.61,
       "vp_cota_atual": 102.381180312785,
       "yield_trap": false
@@ -112,6 +118,9 @@
       "ticker": "KNRI11",
       "nome": "Kinea Renda Imob.",
       "cnpj": "12.005.956/0001-65",
+      "tipo": "tijolo",
+      "num_cotistas": 313130,
+      "amortizacao_recente": 0.0,
       "dy_ttm": 0.076734,
       "dy_ttm_estimado": false,
       "dy_por_ano": {
@@ -137,7 +146,6 @@
       "pl_crescimento_aa": 0.043700979609644384,
       "vp_cota_var": 0.08190788482292044,
       "taxa_admin_aa": 0.01034,
-      "num_cotistas": null,
       "pl_atual": 4601415318.82,
       "vp_cota_atual": 163.147342607251,
       "yield_trap": false
@@ -146,6 +154,9 @@
       "ticker": "XPML11",
       "nome": "XP Malls",
       "cnpj": "28.757.546/0001-00",
+      "tipo": "tijolo",
+      "num_cotistas": 733101,
+      "amortizacao_recente": 0.0,
       "dy_ttm": 0.093823,
       "dy_ttm_estimado": false,
       "dy_por_ano": {
@@ -171,7 +182,6 @@
       "pl_crescimento_aa": 0.28085658186066415,
       "vp_cota_var": 0.012467733435082451,
       "taxa_admin_aa": 0.0072250000000000005,
-      "num_cotistas": null,
       "pl_atual": 7081112753.36,
       "vp_cota_atual": 110.112376,
       "yield_trap": false
@@ -180,6 +190,9 @@
       "ticker": "HGRU11",
       "nome": "Pátria Renda Urbana",
       "cnpj": "29.641.226/0001-53",
+      "tipo": "tijolo",
+      "num_cotistas": 232223,
+      "amortizacao_recente": 0.0,
       "dy_ttm": 0.097554,
       "dy_ttm_estimado": false,
       "dy_por_ano": {
@@ -205,7 +218,6 @@
       "pl_crescimento_aa": 0.11092114990443562,
       "vp_cota_var": 0.19017695370301557,
       "taxa_admin_aa": 0.006871313315521498,
-      "num_cotistas": null,
       "pl_atual": 2995424135.35,
       "vp_cota_atual": 128.901843605549,
       "yield_trap": false
@@ -214,6 +226,9 @@
       "ticker": "VISC11",
       "nome": "Vinci Shopping Centers",
       "cnpj": "17.554.274/0001-25",
+      "tipo": "tijolo",
+      "num_cotistas": 350230,
+      "amortizacao_recente": null,
       "dy_ttm": 0.082174,
       "dy_ttm_estimado": false,
       "dy_por_ano": {
@@ -239,7 +254,6 @@
       "pl_crescimento_aa": 0.15727674051489784,
       "vp_cota_var": -0.0477823417121791,
       "taxa_admin_aa": 0.0106597513113326,
-      "num_cotistas": null,
       "pl_atual": 3339028785.11,
       "vp_cota_atual": 115.823319626217,
       "yield_trap": false
@@ -248,6 +262,9 @@
       "ticker": "BTLG11",
       "nome": "BTG Logística",
       "cnpj": "11.839.593/0001-09",
+      "tipo": "tijolo",
+      "num_cotistas": 501290,
+      "amortizacao_recente": 0.0,
       "dy_ttm": 0.09089100000000001,
       "dy_ttm_estimado": false,
       "dy_por_ano": {
@@ -273,7 +290,6 @@
       "pl_crescimento_aa": 0.31800814321362963,
       "vp_cota_var": 0.021923831254291315,
       "taxa_admin_aa": 0.008657,
-      "num_cotistas": null,
       "pl_atual": 7105228967.29,
       "vp_cota_atual": 102.396095,
       "yield_trap": false

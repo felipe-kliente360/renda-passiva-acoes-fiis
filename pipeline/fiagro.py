@@ -64,7 +64,20 @@ _NUMERIC_FIELDS = (
     "total_passivo",
     "valor_ativo",
     "taxa_administracao",
+    # camada de crédito / composição
+    "total_investido",
+    "imoveis_rurais",
+    "cra",
+    "cri",
+    "cpr",
+    "debentures",
+    "vencidos",
+    "a_vencer",
+    "necessidades_liquidez",
 )
+
+# Instrumentos de crédito do agro (para diversificação e classificação de tipo).
+_CREDIT_INSTRUMENTS = ("cra", "cri", "cpr", "debentures")
 
 
 def ticker_from_isin(isin: str | None) -> str | None:
@@ -337,4 +350,55 @@ def aggregate_fund(monthly: pd.DataFrame, *, trap_multiple: float = 1.5) -> dict
         "pl_atual": pl_atual,
         "vp_cota_atual": vp_atual,
         "yield_trap": trap,
+    }
+
+
+def credit_profile(monthly: pd.DataFrame) -> dict:
+    """Perfil de crédito/composição do FIAgro na competência mais recente.
+
+    - tipo: 'terras' se imóveis rurais dominam (>50% do investido), senão 'credito'.
+    - inadimplencia: Vencidos / (A_Vencer + Vencidos) — núcleo da qualidade de crédito.
+    - diversificacao_hhi: HHI dos instrumentos de crédito (1 = um só papel; →0 diversificado).
+    - liquidez_pl: colchão de liquidez / PL.
+    - composicao: participação de cada bucket no investido.
+    Campos sem dado ficam None — não inventa.
+    """
+    empty = {"tipo": None, "inadimplencia": None, "diversificacao_hhi": None,
+             "liquidez_pl": None, "composicao": {}}
+    m = monthly.dropna(subset=["competencia"]).sort_values("competencia")
+    if m.empty:
+        return empty
+    last = m.iloc[-1]
+
+    def g(c: str) -> float:
+        v = last.get(c)
+        return float(v) if v is not None and not pd.isna(v) else 0.0
+
+    instrs = {k: g(k) for k in _CREDIT_INSTRUMENTS}
+    imoveis = g("imoveis_rurais")
+    credito_total = sum(instrs.values())
+    base = g("total_investido") or (credito_total + imoveis)
+    if base <= 0:
+        return empty
+
+    tipo = "terras" if imoveis / base > 0.5 else "credito"
+    venc, aver = g("vencidos"), g("a_vencer")
+    inad = venc / (venc + aver) if (venc + aver) > 0 else None
+    hhi = (
+        sum((v / credito_total) ** 2 for v in instrs.values())
+        if credito_total > 0 else None
+    )
+    pl = g("patrimonio_liquido")
+    liq = g("necessidades_liquidez") / pl if pl > 0 else None
+    composicao = {
+        k: round(v / base, 3)
+        for k, v in {**instrs, "imoveis_rurais": imoveis}.items()
+        if v > 0
+    }
+    return {
+        "tipo": tipo,
+        "inadimplencia": None if inad is None else round(inad, 4),
+        "diversificacao_hhi": None if hhi is None else round(hhi, 3),
+        "liquidez_pl": None if liq is None else round(liq, 3),
+        "composicao": composicao,
     }

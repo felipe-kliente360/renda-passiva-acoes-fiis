@@ -82,6 +82,11 @@ export type FundScoreRow = {
   sustainability: number;
   yield_trap: boolean;
   confianca?: "alta" | "baixa";
+  tipo?: string | null;
+  inadimplencia?: number | null;
+  diversificacao_hhi?: number | null;
+  liquidez_pl?: number | null;
+  num_cotistas?: number | null;
   dy_ttm?: number | null;
   dy_ttm_estimado?: boolean;
   dy_mediana?: number | null;

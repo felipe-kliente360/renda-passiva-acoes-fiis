@@ -4,6 +4,7 @@ from conftest import DATA_DIR
 
 from pipeline.fii import (
     aggregate_fii_dy,
+    classify_fii_tipo,
     latest_vp_por_fundo,
     parse_fii_enriched,
     parse_fii_inf_mensal,
@@ -61,6 +62,20 @@ def test_parse_fii_enriched_extrai_dy_passivo_taxa():
     assert out["total_passivo"].iloc[0] == pytest.approx(100000.0)
     assert out["taxa_administracao"].iloc[0] == pytest.approx(0.0008)
     assert out["valor_patrimonial_cota"].iloc[0] == pytest.approx(100.0)
+
+
+def test_classify_fii_tipo_tijolo_papel_hibrido():
+    ap = pd.DataFrame({
+        "CNPJ_Fundo_Classe": ["1", "2", "3"],
+        "Data_Referencia": ["2026-02-01", "2026-02-01", "2026-02-01"],
+        "Imoveis_Renda_Acabados": ["900.00", "0.00", "500.00"],
+        "CRI": ["0.00", "950.00", "450.00"],
+        "FII": ["100.00", "50.00", "50.00"],
+    })
+    assert classify_fii_tipo(ap, "1") == "tijolo"   # imóveis dominam
+    assert classify_fii_tipo(ap, "2") == "papel"    # CRI domina
+    assert classify_fii_tipo(ap, "3") == "híbrido"  # imóveis ~ papel, nenhum ≥60%
+    assert classify_fii_tipo(ap, "999") is None     # fora do arquivo
 
 
 def _monthly(dy_por_mes):

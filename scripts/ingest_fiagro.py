@@ -34,7 +34,12 @@ from pipeline.cvm import (  # noqa: E402
     iter_fiagro_periods,
 )
 from pipeline.export import export_json, export_parquet  # noqa: E402
-from pipeline.fiagro import DATASET, aggregate_fund, parse_fiagro_inf_mensal  # noqa: E402
+from pipeline.fiagro import (  # noqa: E402
+    DATASET,
+    aggregate_fund,
+    credit_profile,
+    parse_fiagro_inf_mensal,
+)
 from pipeline.normalize import read_cvm_csv_from_zip  # noqa: E402
 from pipeline.prices import fetch_brapi_fund_list, price_to_book  # noqa: E402
 from pipeline.score import fund_composite_score  # noqa: E402
@@ -113,6 +118,7 @@ def main() -> int:
         cnpj = cnpjs.idxmax() if not cnpjs.empty else None
         sub = grp[grp["cnpj_fundo"] == cnpj].sort_values("competencia")
         agg = aggregate_fund(sub)
+        prof = credit_profile(sub)  # tipo (crédito/terras) + inadimplência + diversificação
         cotistas = agg.get("num_cotistas") or 0
         if cotistas < args.min_cotistas:
             continue  # fundo registrado mas sem dispersão real -> fora da shortlist
@@ -127,6 +133,7 @@ def main() -> int:
             "preco": spot.get("close"),
             "pvp": None if (pvp is not None and pd.isna(pvp)) else pvp,
             **agg,
+            **prof,
         })
 
     records.sort(key=lambda r: r.get("volume_brapi") or 0, reverse=True)
@@ -143,15 +150,23 @@ def main() -> int:
     # Baseline do yield é CROSS-SECTIONAL (mediana dos pares confiáveis): com ~1 ano de
     # história, um baseline per-fundo seria circular. Honesto e documentado — o trap aqui
     # é "muito acima dos pares", não "muito acima do próprio histórico" (que exige anos).
+    # Baseline POR TIPO (crédito × terras): comparar um FIAgro de terras com fundos de
+    # crédito distorce — eles têm perfil de yield diferente. Mediana dos pares do MESMO tipo;
+    # cai para a mediana global se o tipo tiver poucos pares confiáveis.
     confiaveis = [
         r for r in records
         if (r.get("meses_disponiveis") or 0) >= MIN_MESES_RANK
         and not r.get("dy_constante")
         and (r.get("dy_ttm") or 0) > 0
     ]
-    peer_median = (
-        median([r["dy_ttm"] for r in confiaveis]) if confiaveis else None
-    )
+    global_median = median([r["dy_ttm"] for r in confiaveis]) if confiaveis else None
+    by_tipo: dict[str, list[float]] = {}
+    for r in confiaveis:
+        by_tipo.setdefault(r.get("tipo") or "credito", []).append(r["dy_ttm"])
+    tipo_median = {t: median(v) for t, v in by_tipo.items() if len(v) >= 3}
+
+    def baseline_for(r: dict) -> float | None:
+        return tipo_median.get(r.get("tipo") or "credito", global_median)
 
     rows: list[dict] = []
     excluidos = 0
@@ -161,11 +176,12 @@ def main() -> int:
             continue
         # Confiança: DY-placeholder constante ou quase sem pagamentos = baixa.
         conf_baixa = bool(r.get("dy_constante") or (r.get("meses_pagando") or 0) < 4)
+        base = baseline_for(r)
         bd = fund_composite_score(
             r["ticker"],
             months_paid_12m=int(r.get("meses_com_pagamento_12m") or 0),
             dy_ttm=r.get("dy_ttm"),
-            dy_baseline=peer_median,
+            dy_baseline=base,
             crescimento=r.get("crescimento"),
             leverage=r.get("alavancagem"),
             vp_cota_var=r.get("vp_cota_var"),
@@ -178,12 +194,16 @@ def main() -> int:
         score = round(bd.score * (CONF_DAMPER if conf_baixa else 1.0), 1)
         rows.append({
             "ticker": r["ticker"], "nome": r.get("nome"), "score": score,
+            "tipo": r.get("tipo"),
             "recurrence": bd.recurrence, "yield": bd.yield_, "growth": bd.growth,
             "sustainability": bd.sustainability, "yield_trap": bd.yield_trap,
             "confianca": "baixa" if conf_baixa else "alta",
             "dy_ttm": r.get("dy_ttm"), "dy_ttm_estimado": r.get("dy_ttm_estimado"),
-            "dy_baseline_pares": peer_median, "pvp": r.get("pvp"),
+            "dy_baseline_pares": base, "pvp": r.get("pvp"),
             "alavancagem": r.get("alavancagem"), "vp_cota_var": r.get("vp_cota_var"),
+            "inadimplencia": r.get("inadimplencia"),
+            "diversificacao_hhi": r.get("diversificacao_hhi"),
+            "liquidez_pl": r.get("liquidez_pl"),
             "meses_disponiveis": r.get("meses_disponiveis"),
             "crescimento": r.get("crescimento"), "crescimento_base": r.get("crescimento_base"),
             "volume_brapi": r.get("volume_brapi"),
@@ -194,8 +214,9 @@ def main() -> int:
 
     score_meta = {
         "metodologia": "score de fundos 40/30/30 × sustentabilidade (alavancagem/cota/taxa)",
-        "baseline_yield": "cross-sectional (mediana dos pares) — história curta do FIAgro",
-        "peer_median_dy_ttm": peer_median,
+        "baseline_yield": "cross-sectional POR TIPO (crédito × terras); fallback mediana global",
+        "median_dy_ttm_por_tipo": {t: round(v, 4) for t, v in tipo_median.items()},
+        "median_dy_ttm_global": global_median,
         "min_meses_rank": MIN_MESES_RANK,
         "excluidos_por_historico_curto": excluidos,
         "damper_baixa_confianca": CONF_DAMPER,
@@ -206,13 +227,14 @@ def main() -> int:
 
     print(f"\nFIAgro negociados com dados: {len(records)} "
           f"(ranqueados: {len(rows)}; excluídos <{MIN_MESES_RANK} meses: {excluidos})")
-    pm = f"{peer_median * 100:.1f}%" if peer_median else "—"
-    print(f"baseline cross-sectional (mediana pares DY TTM): {pm}")
-    print("Shortlist (rank — ticker — score — DY TTM — meses — confiança):")
+    print("baseline por tipo (DY TTM): "
+          + ", ".join(f"{t}={v * 100:.1f}%" for t, v in tipo_median.items()))
+    print("Shortlist (rank — ticker — tipo — score — DY TTM — inadimpl. — conf):")
     for row in rows:
         ttm = f"{row['dy_ttm'] * 100:.1f}%" if row.get("dy_ttm") is not None else "—"
-        print(f"  {row['rank']:>2}. {row['ticker']:8} {row['score']:>5}  DY_TTM={ttm:>7}  "
-              f"meses={row['meses_disponiveis']:>2}  conf={row['confianca']:5}"
+        inad = f"{row['inadimplencia'] * 100:.1f}%" if row.get("inadimplencia") is not None else "—"
+        print(f"  {row['rank']:>2}. {row['ticker']:8} {(row.get('tipo') or '—'):8} "
+              f"{row['score']:>5}  DY_TTM={ttm:>7}  inad={inad:>6}  conf={row['confianca']:5}"
               f"{'  TRAP' if row['yield_trap'] else ''}")
     print(f"Escrito: {json_path} e {score_path}")
     return 0

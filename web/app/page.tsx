@@ -49,11 +49,13 @@ function FundShortlist({
   baselineKey,
   baselineLabel,
   showConfianca = false,
+  showCredito = false,
 }: {
   rows: FundScoreRow[];
   baselineKey: "dy_mediana" | "dy_baseline_pares";
   baselineLabel: string;
   showConfianca?: boolean;
+  showCredito?: boolean;
 }) {
   return (
     <div className="tablecard">
@@ -62,12 +64,14 @@ function FundShortlist({
           <tr>
             <th>#</th>
             <th>Ativo</th>
+            <th>Tipo</th>
             <th>Score</th>
             <th>DY 12m</th>
             <th>{baselineLabel}</th>
             <th>P/VP</th>
             <th>Cresc.</th>
             <th>Alav.</th>
+            {showCredito && <th>Inadimpl.</th>}
             {showConfianca && <th>Confiança</th>}
             <th>Flags</th>
           </tr>
@@ -80,6 +84,7 @@ function FundShortlist({
                 <span className="tk">{r.ticker}</span>
                 <div className="name">{r.nome}</div>
               </td>
+              <td>{r.tipo ? <span className="chip">{r.tipo}</span> : "—"}</td>
               <td>
                 <span className={`score-pill ${scoreClass(r.score)}`}>{r.score}</span>
               </td>
@@ -91,6 +96,13 @@ function FundShortlist({
               <td>{num(r.pvp)}</td>
               <td>{r.crescimento === null || r.crescimento === undefined ? "—" : pctSigned(r.crescimento)}</td>
               <td className="muted">{r.alavancagem === null || r.alavancagem === undefined ? "—" : `${(r.alavancagem * 100).toFixed(0)}%`}</td>
+              {showCredito && (
+                <td className="muted">
+                  {r.inadimplencia === null || r.inadimplencia === undefined
+                    ? "—"
+                    : pct(r.inadimplencia)}
+                </td>
+              )}
               {showConfianca && (
                 <td>
                   <span className={`chip ${r.confianca === "baixa" ? "trap" : "ok"}`}>
@@ -213,7 +225,8 @@ export default function Home() {
           Mesma análise das ações, adaptada a fundos: DY oficial da CVM, crescimento (CAGR do
           DY), alavancagem (passivo/PL), preservação da cota e taxa de administração.{" "}
           <strong>Baseline = histórico do próprio fundo</strong> (~5 anos de DY mensal); o trap é
-          per-fundo.
+          per-fundo. <strong>Tipo</strong> (tijolo/papel/FoF) classificado pela composição do
+          ativo no informe da CVM.
         </p>
         <FundShortlist
           rows={fiiScore.data}
@@ -229,13 +242,16 @@ export default function Home() {
           O FIAgro só tem dado mensal desde <strong>2025-05 (~1 ano)</strong>: o DY 12m pode ser{" "}
           <em>anualizado</em> (est.) e o baseline é <strong>cross-sectional</strong> (mediana dos
           pares), não histórico. A coluna <em>confiança</em> rebaixa DY com cara de placeholder
-          (constante) e histórico muito curto.
+          (constante) e histórico muito curto. <strong>Tipo</strong> (crédito/terras) e{" "}
+          <strong>inadimplência</strong> (Vencidos/carteira) saem da composição do informe; o
+          baseline de yield é por tipo.
         </p>
         <FundShortlist
           rows={fiagroScore.data}
           baselineKey="dy_baseline_pares"
           baselineLabel="DY pares"
           showConfianca
+          showCredito
         />
       </section>
 

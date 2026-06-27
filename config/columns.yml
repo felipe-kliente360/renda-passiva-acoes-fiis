@@ -43,6 +43,14 @@ fii_inf_mensal:
       # Despesa de taxa de administração no mês (drag sobre o rendimento), no complemento.
       candidates: ["Percentual_Despesas_Taxa_Administracao"]
       required: false
+    amortizacao_cotas_mes:
+      # Amortização de cotas no mês = DEVOLUÇÃO de capital, não rendimento. Separar do DY.
+      candidates: ["Percentual_Amortizacao_Cotas_Mes"]
+      required: false
+    numero_cotistas:
+      # Dispersão/liquidez do fundo (no complemento do FII).
+      candidates: ["Total_Numero_Cotistas", "Numero_Cotistas"]
+      required: false
 
 # Informe mensal de FIAgro (INF_MENSAL FIAgro) — DY de rendimentos + saúde patrimonial.
 # DATASET PRÓPRIO da CVM (não confundir com os "agro" do INF_MENSAL de FII, que são FIIs do
@@ -99,6 +107,37 @@ fiagro_inf_mensal:
     taxa_administracao:
       # Despesa de taxa de administração no mês (drag sobre o rendimento).
       candidates: ["Percentual_Despesas_Taxa_Administracao"]
+      required: false
+    # --- Camada de crédito / composição (classifica crédito × terras e mede qualidade) ---
+    total_investido:
+      candidates: ["Total_Investido"]
+      required: false
+    imoveis_rurais:
+      # Domina nos FIAgros de TERRAS/imobiliário (≠ crédito). Classifica o tipo.
+      candidates: ["Imoveis_Rurais"]
+      required: false
+    cra:
+      candidates: ["CRA"]
+      required: false
+    cri:
+      candidates: ["CRI"]
+      required: false
+    cpr:
+      candidates: ["CPR"]
+      required: false
+    debentures:
+      candidates: ["Debentures"]
+      required: false
+    vencidos:
+      # Inadimplência: Vencidos / (A_Vencer + Vencidos). Núcleo da análise de crédito.
+      candidates: ["Vencidos"]
+      required: false
+    a_vencer:
+      candidates: ["A_Vencer"]
+      required: false
+    necessidades_liquidez:
+      # Caixa/liquidez para honrar obrigações — colchão do fundo.
+      candidates: ["Total_Necessidades_Liquidez"]
       required: false
 
 # Fatos relevantes / comunicados (IPE — dados.cvm.gov.br/dados/CIA_ABERTA/DOC/IPE/).
