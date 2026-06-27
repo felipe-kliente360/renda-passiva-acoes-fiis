@@ -26,19 +26,35 @@ python scripts/inspect_zip.py data/raw/inf_mensal_fii_2026.zip
 
 # Preços diários da watchlist (Fase 1) — brapi (spot) + yfinance (série)
 python scripts/fetch_prices.py --fii-vp data/fii_vp.json --out data/prices
+
+# Fundamentos de ações via CVM ITR/DFP — proventos, lucro, P/VP, DY, payout (Fase 2)
+python scripts/ingest_fundamentos.py --start 2015 --end 2026 --out data/fundamentos
+
+# Score composto → short-list ranqueada (Fase 4)
+python scripts/build_score.py --out data/score
 ```
 
 Sem rede, `fetch_prices` lista os tickers indisponíveis em vez de inventar cotação.
 
+## Front (Fase 5)
+
+```bash
+cd web && npm install && npm run build   # static export -> web/out
+```
+
+Next.js com `output: export`: lê os JSON de `data/` no build e gera HTML estático. Deploy
+no Netlify free tier via `netlify.toml` (base `web`, publish `web/out`).
+
 ## Estrutura
 - `pipeline/` — lógica pura e testável (rede isolada em `cvm.py`/`prices.py`)
 - `scripts/` — entry points
-- `config/` — YAML (colunas CVM, watchlist)
+- `config/` — YAML (colunas CVM, contas ITR/DFP, watchlist)
 - `tests/` — suíte offline com amostras sintéticas
 - `data/` — artefatos gerados (commitados pelas Actions)
-- `.github/workflows/` — `ingest.yml` (mensal), `prices.yml` (diário)
+- `web/` — portal Next.js (static export)
+- `.github/workflows/` — `ingest.yml` (FII mensal), `prices.yml` (diário), `fundamentos.yml` (trimestral)
 
 ## Metodologia
-DY pela data-com, preço ajustado **só por split** (nunca por dividendo), DY histórico
-com média e mediana, flag de yield trap. Detalhes em
-[`docs/prices-methodology.md`](docs/prices-methodology.md). Decisões travadas em `CLAUDE.md`.
+Proventos pela **competência da CVM** (ITR/DFP), preço ajustado **só por split** (nunca por
+dividendo), DY histórico com média e mediana, flag de yield trap, score composto. Detalhes
+em [`docs/prices-methodology.md`](docs/prices-methodology.md) e decisões travadas em `CLAUDE.md`.

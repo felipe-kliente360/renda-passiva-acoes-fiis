@@ -8,17 +8,20 @@ Atualizado em: 2026-06-26
 | `pipeline/normalize.py` | Leitura CVM (ISO-8859-1, `;`, decimal por-dataset), ZIP/CSV, `to_numeric_ptbr` | `test_normalize.py` |
 | `pipeline/columns.py` | Resolução config-driven de colunas + escolha de membro do ZIP | `test_columns.py` |
 | `pipeline/fii.py` | Parser INF_MENSAL → VP da cota (direto ou derivado PL/cotas) | `test_fii.py` |
-| `pipeline/fundamentos.py` | ITR/DFP long-format: proventos pagos, lucro (controladora), ações, escala | `test_fundamentos.py` |
+| `pipeline/fundamentos.py` | ITR/DFP: proventos pagos, lucro+PL (controladora), ações, escala, TTM | `test_fundamentos.py` |
 | `pipeline/metrics.py` | DY TTM, DY histórico (média/mediana), payout, recorrência, growth, flag yield trap | `test_metrics.py` |
+| `pipeline/score.py` | Score composto 40/30/30 × sustentabilidade, corte por yield trap, rank | `test_score.py` |
 | `pipeline/prices.py` | `split_adjust`, `reconstruct_*`, preço médio anual, P/VP, `fetch_shares_outstanding` | `test_prices.py` |
 | `pipeline/export.py` | Export JSON + Parquet com metadados/proveniência | `test_export.py` |
 | `pipeline/cvm.py` | Downloaders CVM (FII INF_MENSAL, DFP, ITR; rede isolada) | — (I/O de rede) |
 
-Scripts: `scripts/inspect_zip.py` (valida colunas reais), `scripts/ingest_fii.py`
-(FII), `scripts/fetch_prices.py` (preços), `scripts/ingest_fundamentos.py` (DY/payout ações).
-Workflows: `ingest.yml` (FII, mensal), `prices.yml` (diário), `fundamentos.yml` (trimestral).
+Scripts: `inspect_zip.py`, `ingest_fii.py`, `fetch_prices.py`,
+`ingest_fundamentos.py` (DY/payout/P/VP/TTM ações), `build_score.py` (short-list).
+Workflows: `ingest.yml` (FII, mensal), `prices.yml` (diário), `fundamentos.yml`
+(trimestral, gera fundamentos + score).
+Front: `web/` (Next.js static export → Netlify; `netlify.toml`).
 
-`pytest`: 49 testes passando offline.
+`pytest`: 57 testes passando offline.
 
 ## Validado contra dados reais (2026-06-26)
 - **Pipeline real rodado localmente** (rede aberta): `ingest_fii --download` →
@@ -49,5 +52,7 @@ Workflows: `ingest.yml` (FII, mensal), `prices.yml` (diário), `fundamentos.yml`
   div-unadj). brapi é o primário do PREÇO SPOT. Sinalizado ao Felipe.
 
 ## Próximo (roadmap)
-Fase 4: score composto (consistência do histórico + saúde atual com tendência). Possível
-refinamento da Fase 2: TTM via ITR e P/VP de ações (book value do BPP). Ver CLAUDE.md.
+Fases 0–5 feitas (fundação, preços, fundamentos+proventos CVM, score, dashboard). Falta
+o **deploy efetivo no Netlify** (conectar o repo; build `web` → `web/out`). Depois:
+Fase 6 (alertas + import de carteira CSV), Fase 7 (fatos relevantes IPE/RAD). Refinamentos
+de fundamentos pendentes: dívida líquida/EBITDA e DMPL (proventos declarados). Ver CLAUDE.md.

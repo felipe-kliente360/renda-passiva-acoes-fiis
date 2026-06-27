@@ -106,12 +106,16 @@ GitHub Actions (cron) → Python (pandas) ingestão+normalização
    (DFP 2015–2025): proventos pagos (DFC), lucro atribuível à controladora (DRE), ações
    (`composicao_capital`, escala por ano via âncora yfinance), DY histórico/corrente,
    payout, recorrência, CAGR e flag yield trap → `data/fundamentos.json`. Config-driven
-   por `config/contas.yml`, tratando os dois planos (financeira × não-financeira). DMPL
-   (proventos declarados) e TTM via ITR ficam como refinamentos. (Funde as antigas Fases
-   2+3 — ver revisão da metodologia de DY.)
-4. Score composto → short-list ranqueada (consistência do histórico + saúde atual com
-   tendência).
-5. Dashboard Next.js/Netlify.
+   por `config/contas.yml`, tratando os dois planos (financeira × não-financeira). ✅ inclui
+   refinamentos: **P/VP de ações** (book value do BPP, controladora) e **DY corrente por TTM
+   via ITR** (ponte ano-cheio + YTD). (Funde as antigas Fases 2+3 — ver revisão da
+   metodologia de DY.) Pendente: dívida líquida/EBITDA; DMPL (proventos declarados).
+4. **Score composto** → short-list ranqueada. ✅ feito (`pipeline/score.py`,
+   `data/score.json`): 40% recorrência + 30% yield-vs-baseline + 30% crescimento ×
+   sustentabilidade (payout, ROE), corte por yield trap.
+5. **Dashboard Next.js/Netlify**. ✅ feito (`web/`, static export → `web/out`,
+   `netlify.toml`). Lê os JSON de `data/` no build; sem runtime. Falta o deploy efetivo
+   no Netlify (conectar o repo).
 6. Alertas (e-mail/Telegram pela Action) + import de carteira via CSV.
 7. Fatos relevantes da watchlist (feed IPE/RAD da CVM).
 
