@@ -1,17 +1,28 @@
-# Âncora de ações em circulação (sharesOutstanding) — CACHE para desambiguar a escala
-# caótica da CVM (`composicao_capital` mistura unidades × milhares) quando o yfinance
-# estiver INDISPONÍVEL (ex.: ambiente sem acesso ao Yahoo). A CVM continua sendo a CONTAGEM;
-# esta âncora só decide a UNIDADE (×1 vs ×1000), via fundamentos.resolve_share_scale.
+# Âncora de ações em circulação (sharesOutstanding) — CACHE para desambiguar a
+# escala caótica da CVM (`composicao_capital` mistura unidades × milhares). A CVM
+# continua sendo a CONTAGEM; esta âncora só decide a UNIDADE (×1 vs ×1000), via
+# fundamentos.resolve_share_scale. Sem âncora E sem yfinance, o pipeline marca
+# DY/P-VP como N/A (não inventa escala — ver guard em scripts/ingest_fundamentos).
 #
-# Sem yfinance E sem âncora aqui, o pipeline marca DY/P/VP como N/A (não inventa escala —
-# ver guard em scripts/ingest_fundamentos). Valores extraídos de um run com yfinance OK
-# (validado: DY de ABEV3 ~5,7%, não 5746%). Atualizar ao incluir novos tickers.
+# GERADO por scripts/fetch_anchors.py (workflow anchors.yml, roda no GH onde o
+# yfinance funciona). MERGE: tickers sem resposta preservam o valor anterior.
 acoes:
-  PETR4: 12888732761
-  VALE3: 4268779000
-  ITUB4: 11026524000
-  BBDC4: 10577012028
-  B3SA3: 5034561292
-  BBAS3: 5708463641
-  ABEV3: 15616526000
-  ITSA4: 11211347000
+  ABEV3: 15515697304
+  B3SA3: 5007596482
+  BBAS3: 5708689674
+  BBDC4: 5277491247
+  BBSE3: 1941248544
+  CMIG4: 1904080104
+  CPFE3: 1152254440
+  CXSE3: 3000000000
+  EGIE3: 1142298836
+  GGBR4: 1250654550
+  ITSA4: 7353398785
+  ITUB4: 5404129565
+  KLBN11: 1214936096
+  PETR4: 5446501379
+  SAPR11: 302241103
+  SBSP3: 3506794012
+  TAEE11: 344498907
+  VALE3: 4257407053
+  VIVT3: 3195606352
