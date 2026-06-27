@@ -36,7 +36,7 @@ jobs:
           START_YEAR: ${{ github.event.inputs.start_year || '2015' }}
         run: |
           python scripts/ingest_fundamentos.py \
-            --start "$START_YEAR" --end "$(date -u +%Y)" --out data/fundamentos
+            --start "$START_YEAR" --end "$(date -u +%Y)" --no-yfinance --out data/fundamentos
 
       - name: Montar score composto (short-list)
         run: python scripts/build_score.py --out data/score

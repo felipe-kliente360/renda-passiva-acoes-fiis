@@ -90,6 +90,12 @@ def main() -> int:
     ap.add_argument("--prices", type=Path, default=Path("data/prices.json"))
     ap.add_argument("--out", type=Path, default=Path("data/fundamentos"))
     ap.add_argument("--no-download", action="store_true", help="usar ZIPs já em data/raw")
+    ap.add_argument(
+        "--no-yfinance",
+        action="store_true",
+        help="não buscar a âncora ao vivo no yfinance; usar só o cache config/shares_anchor.yml "
+        "(ambiente que alcança a CVM mas não o Yahoo — ver fetch_anchors.py)",
+    )
     args = ap.parse_args()
 
     wl = yaml.safe_load(args.watchlist.read_text(encoding="utf-8"))
@@ -204,7 +210,7 @@ def main() -> int:
         rec = _build_record(a, prov.get(cd, {}), lucro.get(cd, {}), pl.get(cd, {}),
                             shares_raw.get(cd, {}), prices.get(tk, {}),
                             ytd_cur.get(cd), ytd_pri.get(cd), lev, prov_decl.get(cd, {}),
-                            anchor_cache.get(tk))
+                            anchor_cache.get(tk), no_yfinance=args.no_yfinance)
         records.append(rec)
 
     # Trava anti-clobber: se NENHUMA ação trouxe proventos, a CVM não foi alcançada
@@ -236,6 +242,7 @@ def _build_record(
     ytd_cur: tuple[float, int] | None = None, ytd_pri: float | None = None,
     lev: dict | None = None, prov_decl: dict | None = None,
     anchor_cached: float | None = None,
+    no_yfinance: bool = False,
 ) -> dict:
     tk = a["ticker"]
     notes: list[str] = []
@@ -245,7 +252,11 @@ def _build_record(
     # trocar de unidade no meio do histórico — ex.: Bradesco em milhares até 2023, unidades
     # depois). A âncora é a contagem atual; cada ano é classificado contra ela.
     latest_share_year = max(shares_raw) if shares_raw else None
-    anchor = fetch_shares_outstanding(tk) if latest_share_year is not None else None
+    anchor = (
+        fetch_shares_outstanding(tk)
+        if latest_share_year is not None and not no_yfinance
+        else None
+    )
     if anchor is None and anchor_cached:
         anchor = float(anchor_cached)  # fallback: cache committado (config/shares_anchor.yml)
     # Sem âncora (nem yfinance, nem cache), a escala da CVM (unidade × milhar) é ambígua:
