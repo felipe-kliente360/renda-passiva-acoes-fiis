@@ -66,6 +66,7 @@ def main() -> int:
             roe_recent=_roe_recente(rec),
             yield_trap=bool(rec.get("yield_trap")),
             min_years=int(recur.get("min_years", 8)),
+            net_debt_ebitda=rec.get("divida_liquida_ebitda"),
         )
         breakdowns.append(bd)
 
@@ -79,6 +80,7 @@ def main() -> int:
         row["dy_mediana_hist"] = f.get("dy_historico_mediana")
         row["pvp"] = f.get("pvp")
         row["roe_recente"] = _roe_recente(f)
+        row["divida_liquida_ebitda"] = f.get("divida_liquida_ebitda")
 
     meta = {"metodologia": "score 40/30/30 (recorrência/yield/crescimento) × sustentabilidade"}
     json_path = export_json(ranked, args.out.with_suffix(".json"), meta=meta)

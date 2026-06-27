@@ -49,6 +49,7 @@ class ContaSpec:
     ds_includes: list[str]
     ds_excludes: list[str]
     absolute: bool
+    max_dots: int | None = None  # limita a profundidade do CD_CONTA (só linhas-mãe)
 
 
 def load_contas_config(path: str | Path | None = None) -> dict[str, ContaSpec]:
@@ -64,6 +65,7 @@ def load_contas_config(path: str | Path | None = None) -> dict[str, ContaSpec]:
             ds_includes=[_norm(s) for s in c.get("ds_includes", [])],
             ds_excludes=[_norm(s) for s in c.get("ds_excludes", [])],
             absolute=bool(c.get("absolute", False)),
+            max_dots=c.get("max_dots"),
         )
     return specs
 
@@ -101,7 +103,10 @@ def extract_concept(
     ds_norm = w[COLS["ds_conta"]].map(_norm)
     sec = cd.str.startswith(spec.section_prefix) if spec.section_prefix else True
     hit = ds_norm.map(lambda s: _matches(s, spec.ds_includes, spec.ds_excludes))
-    w = w[sec & hit]
+    mask = sec & hit
+    if spec.max_dots is not None:
+        mask = mask & (cd.str.count(r"\.") <= spec.max_dots)
+    w = w[mask]
     if w.empty:
         return _empty_concept()
 

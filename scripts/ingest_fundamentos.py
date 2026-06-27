@@ -54,9 +54,23 @@ def _member(zip_path: Path, contains: str) -> str | None:
     return (con or members or [None])[0]
 
 
+def _read_member(zip_path: Path, contains: str):
+    """Lê o membro do ZIP que contém `contains` (consolidado preferido), ou None."""
+    m = _member(zip_path, contains)
+    return read_cvm_csv_from_zip(zip_path, m) if m else None
+
+
 def _by_key(df: pd.DataFrame, key_col: str, key_val: str, val_col: str = "valor") -> float | None:
     sub = df[df[key_col].astype("string").str.zfill(6) == str(key_val).zfill(6)]
     return float(sub[val_col].iloc[0]) if not sub.empty else None
+
+
+def _acc(store: dict, src, cd: str, year: int, key: str, *, col: str = "valor",
+         kcol: str = "cd_cvm") -> None:
+    """Acumula store[cd][year] = valor extraído de `src` pela chave, se houver."""
+    v = _by_key(src, kcol, key, col) if src is not None else None
+    if v is not None:
+        store.setdefault(cd, {})[year] = v
 
 
 def _latest_ytd(df: pd.DataFrame, cd_cvm: str) -> tuple[float, int] | None:
@@ -87,11 +101,14 @@ def main() -> int:
         for r in json.loads(args.prices.read_text(encoding="utf-8")).get("data", []):
             prices[r["ticker"]] = r
 
-    # Acumula por (cd_cvm/cnpj, ano): proventos pagos, lucro, ações cruas.
+    # Acumula por (cd_cvm/cnpj, ano).
     prov: dict[str, dict[int, float]] = {}
     lucro: dict[str, dict[int, float]] = {}
     pl: dict[str, dict[int, float]] = {}
     shares_raw: dict[str, dict[int, float]] = {}
+    divida: dict[str, dict[int, float]] = {}
+    caixa: dict[str, dict[int, float]] = {}
+    ebitda: dict[str, dict[int, float]] = {}
 
     for year in range(args.start, args.end + 1):
         zip_path = DEFAULT_RAW / f"dfp_cia_aberta_{year}.zip"
@@ -105,38 +122,41 @@ def main() -> int:
             print(f"[{year}] ZIP ausente, pulando.", file=sys.stderr)
             continue
 
-        m_dfc, m_dre, m_bpp, m_comp = (
-            _member(zip_path, "DFC_MI"),
-            _member(zip_path, "DRE"),
-            _member(zip_path, "BPP"),
-            _member(zip_path, "composicao_capital"),
+        df_dfc, df_dre, df_bpp, df_bpa, df_comp = (
+            _read_member(zip_path, "DFC_MI"),
+            _read_member(zip_path, "DRE"),
+            _read_member(zip_path, "BPP"),
+            _read_member(zip_path, "BPA"),
+            _read_member(zip_path, "composicao_capital"),
         )
-        prov_y = (
-            extract_concept(read_cvm_csv_from_zip(zip_path, m_dfc), specs["proventos_pagos"])
-            if m_dfc else None
-        )
-        lucro_y = lucro_liquido(read_cvm_csv_from_zip(zip_path, m_dre), specs) if m_dre else None
-        pl_y = patrimonio_liquido(read_cvm_csv_from_zip(zip_path, m_bpp), specs) if m_bpp else None
+
+        def _ex(df, key):  # extrai um conceito do df do ano (ou None)
+            return extract_concept(df, specs[key]) if df is not None else None
+
+        prov_y = _ex(df_dfc, "proventos_pagos")
+        dep_y = _ex(df_dfc, "depreciacao_amortizacao")
+        lucro_y = lucro_liquido(df_dre, specs) if df_dre is not None else None
+        ebit_y = _ex(df_dre, "ebit")
+        pl_y = patrimonio_liquido(df_bpp, specs) if df_bpp is not None else None
+        div_y = _ex(df_bpp, "divida_bruta")
+        cx_y = _ex(df_bpa, "caixa_equivalentes")
         # composicao_capital só existe em DFPs recentes; ações por ano ficam limitadas a eles.
-        acoes_y = total_acoes(read_cvm_csv_from_zip(zip_path, m_comp)) if m_comp else None
+        acoes_y = total_acoes(df_comp) if df_comp is not None else None
 
         for a in acoes:
             cd, cnpj = a["cd_cvm"], a.get("cnpj")
-            p = _by_key(prov_y, "cd_cvm", cd) if prov_y is not None else None
-            ll = _by_key(lucro_y, "cd_cvm", cd) if lucro_y is not None else None
-            plv = _by_key(pl_y, "cd_cvm", cd) if pl_y is not None else None
-            sh = (
-                _by_key(acoes_y, "cnpj", cnpj, "acoes_circulacao")
-                if (acoes_y is not None and cnpj) else None
-            )
-            if p is not None:
-                prov.setdefault(cd, {})[year] = p
-            if ll is not None:
-                lucro.setdefault(cd, {})[year] = ll
-            if plv is not None:
-                pl.setdefault(cd, {})[year] = plv
-            if sh is not None:
-                shares_raw.setdefault(cd, {})[year] = sh
+            _acc(prov, prov_y, cd, year, cd)
+            _acc(lucro, lucro_y, cd, year, cd)
+            _acc(pl, pl_y, cd, year, cd)
+            _acc(divida, div_y, cd, year, cd)
+            _acc(caixa, cx_y, cd, year, cd)
+            if cnpj:
+                _acc(shares_raw, acoes_y, cd, year, cnpj, col="acoes_circulacao", kcol="cnpj")
+            # EBITDA = EBIT + D&A (só quando ambos existem -> não-financeira)
+            e = _by_key(ebit_y, "cd_cvm", cd) if ebit_y is not None else None
+            d = _by_key(dep_y, "cd_cvm", cd) if dep_y is not None else None
+            if e is not None and d is not None:
+                ebitda.setdefault(cd, {})[year] = e + d
         print(f"[{year}] ok")
 
     # TTM via ITR do ano corrente: YTD atual (ÚLTIMO) e do mesmo período do ano anterior
@@ -168,9 +188,11 @@ def main() -> int:
     records = []
     for a in acoes:
         cd, tk = a["cd_cvm"], a["ticker"]
+        lev = {"divida": divida.get(cd, {}), "caixa": caixa.get(cd, {}),
+               "ebitda": ebitda.get(cd, {})}
         rec = _build_record(a, prov.get(cd, {}), lucro.get(cd, {}), pl.get(cd, {}),
                             shares_raw.get(cd, {}), prices.get(tk, {}),
-                            ytd_cur.get(cd), ytd_pri.get(cd))
+                            ytd_cur.get(cd), ytd_pri.get(cd), lev)
         records.append(rec)
 
     meta = {
@@ -188,6 +210,7 @@ def main() -> int:
 def _build_record(
     a: dict, prov: dict, lucro: dict, pl: dict, shares_raw: dict, price: dict,
     ytd_cur: tuple[float, int] | None = None, ytd_pri: float | None = None,
+    lev: dict | None = None,
 ) -> dict:
     tk = a["ticker"]
     notes: list[str] = []
@@ -241,6 +264,17 @@ def _build_record(
     rec_y = latest_y or (max(avg_price.index) if len(avg_price) else 0)
     recur = metrics.recurrence(prov_total, asof_year=int(rec_y)) if rec_y else {}
 
+    # Dívida líquida / EBITDA do último ano com os três disponíveis (só não-financeira;
+    # banco não tem dívida/EBIT -> fica None e o score não penaliza).
+    lev = lev or {}
+    div, cx, eb = lev.get("divida", {}), lev.get("caixa", {}), lev.get("ebitda", {})
+    anos_lev = sorted(set(div) & set(eb), reverse=True)
+    divida_liquida_ebitda = None
+    for y in anos_lev:
+        if eb[y] and eb[y] > 0:
+            divida_liquida_ebitda = (div[y] - cx.get(y, 0.0)) / eb[y]
+            break
+
     # VPA (book value por ação) e P/VP corrente. PL e ações da mesma competência.
     vpa = {
         int(y): pl[y] / shares[y] for y in sorted(set(pl) & set(shares)) if shares.get(y, 0) > 0
@@ -265,6 +299,7 @@ def _build_record(
         "patrimonio_liquido_por_ano": {int(y): float(v) for y, v in sorted(pl.items())},
         "vpa_por_ano": vpa,
         "pvp": pvp,
+        "divida_liquida_ebitda": divida_liquida_ebitda,
         "recorrencia": recur,
         "crescimento_dps_cagr": (
             None if pd.isna(g := metrics.dividend_growth(dps)) else g

@@ -62,3 +62,37 @@ pl_consolidado:
   ds_includes: ["patrimonio liquido consolidado"]
   ds_excludes: ["atribuido", "nao control", "ajustes"]
   absolute: false
+
+# Alavancagem (dívida líquida / EBITDA) — só faz sentido em NÃO-financeira. Em banco, as
+# linhas abaixo simplesmente não existem (funding é depósito, não dívida; não há EBIT
+# operacional) -> o conceito sai vazio e o consumidor marca N/A. max_dots=2 pega só as
+# linhas-mãe da dívida (2.01.04, 2.02.01), evitando somar as filhas. Validado 2025:
+# Petrobras dívida bruta R$ 384bi, caixa 35,6bi, EBIT 145,6bi, D&A 84,4bi.
+divida_bruta:
+  statement: BPP
+  section_prefix: "2"
+  ds_includes: ["emprestimos e financiamentos"]
+  ds_excludes: []
+  absolute: true
+  max_dots: 2
+
+caixa_equivalentes:
+  statement: BPA
+  section_prefix: "1"
+  ds_includes: ["caixa e equivalentes de caixa"]
+  ds_excludes: []
+  absolute: true
+
+ebit:                       # Resultado Antes do Resultado Financeiro e dos Tributos
+  statement: DRE
+  section_prefix: "3"
+  ds_includes: ["antes do resultado financeiro"]
+  ds_excludes: []
+  absolute: false
+
+depreciacao_amortizacao:    # addback de D&A na DFC operacional (não confundir com 6.03)
+  statement: DFC_MI
+  section_prefix: "6.01"
+  ds_includes: ["deprecia"]
+  ds_excludes: []
+  absolute: true

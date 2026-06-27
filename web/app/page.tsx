@@ -61,6 +61,7 @@ export default function Home() {
                 <th>DY mediana</th>
                 <th>P/VP</th>
                 <th>ROE</th>
+                <th>Dív.líq/EBITDA</th>
                 <th>Recorr.</th>
                 <th>Proventos pagos (10a)</th>
                 <th>Flags</th>
@@ -84,6 +85,11 @@ export default function Home() {
                     <td className="muted">{pct(r.dy_mediana_hist)}</td>
                     <td>{num(r.pvp)}</td>
                     <td>{pct(r.roe_recente)}</td>
+                    <td className="muted">
+                      {r.divida_liquida_ebitda === null || r.divida_liquida_ebitda === undefined
+                        ? "—"
+                        : `${r.divida_liquida_ebitda.toFixed(2)}x`}
+                    </td>
                     <td className="muted">
                       {rec ? `${rec.years_paid}/${rec.window}` : "—"}
                     </td>

@@ -26,6 +26,7 @@ W_GROWTH = 0.30
 
 PAYOUT_MIN = 0.30
 PAYOUT_MAX = 0.80
+LEVERAGE_MAX = 3.0         # dívida líquida/EBITDA acima disso pesa na sustentabilidade
 YIELD_TRAP_PENALTY = 0.70  # multiplica o score quando o yield trap dispara
 
 
@@ -78,11 +79,13 @@ def sustainability_multiplier(
     window: int = 10,
     min_years: int = 8,
     roe_recent: float | None = None,
+    net_debt_ebitda: float | None = None,
 ) -> float:
     """Multiplicador 0.5..1.0 de sustentabilidade do pagamento.
 
     Parte de 1.0 e desconta: payout fora de 30–80%, recorrência abaixo de ≥min_years/window,
-    e ROE não-positivo. Cada falha custa ~0.15. Piso 0.5 (não zera o papel por um critério).
+    ROE não-positivo e alavancagem alta (dívida líq./EBITDA > LEVERAGE_MAX). Cada falha custa
+    ~0.15. Alavancagem N/A (banco) não penaliza. Piso 0.5 (não zera por um único critério).
     """
     m = 1.0
     if _isnum(payout_recent) and not (PAYOUT_MIN <= payout_recent <= PAYOUT_MAX):
@@ -90,6 +93,8 @@ def sustainability_multiplier(
     if years_paid < min_years:
         m -= 0.15
     if _isnum(roe_recent) and roe_recent <= 0:
+        m -= 0.15
+    if _isnum(net_debt_ebitda) and net_debt_ebitda > LEVERAGE_MAX:
         m -= 0.15
     return _clamp(m, 0.5, 1.0)
 
@@ -117,12 +122,15 @@ def composite_score(
     roe_recent: float | None,
     yield_trap: bool,
     min_years: int = 8,
+    net_debt_ebitda: float | None = None,
 ) -> ScoreBreakdown:
     """Combina os componentes (40/30/30) × sustentabilidade, com corte por yield trap."""
     rec = recurrence_score(years_paid, window)
     yld = yield_score(current_dy, hist_median)
     grw = growth_score(cagr)
-    sustain = sustainability_multiplier(payout_recent, years_paid, window, min_years, roe_recent)
+    sustain = sustainability_multiplier(
+        payout_recent, years_paid, window, min_years, roe_recent, net_debt_ebitda
+    )
     base = W_RECURRENCE * rec + W_YIELD * yld + W_GROWTH * grw
     score = base * sustain
     if yield_trap:

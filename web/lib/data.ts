@@ -31,6 +31,7 @@ export type ScoreRow = {
   dy_mediana_hist?: number | null;
   pvp?: number | null;
   roe_recente?: number | null;
+  divida_liquida_ebitda?: number | null;
 };
 
 export type Fundamento = {

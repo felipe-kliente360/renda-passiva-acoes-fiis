@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-27T00:54:20.039388+00:00",
+    "generated_at": "2026-06-27T01:26:47.838073+00:00",
     "count": 8,
     "metodologia": "proventos por competência CVM (DFP); DY nível empresa; denominador split-adj (Fase 1); escala de ações ancorada no yfinance",
     "anos": [
@@ -94,6 +94,7 @@
         "2025": 32.399383845056974
       },
       "pvp": 1.1747136977052928,
+      "divida_liquida_ebitda": 1.5147511477462436,
       "recorrencia": {
         "years_paid": 8,
         "window": 10,
@@ -193,6 +194,7 @@
         "2025": 44.2576202703396
       },
       "pvp": 1.7657976077935276,
+      "divida_liquida_ebitda": 1.2763876204972096,
       "recorrencia": {
         "years_paid": 10,
         "window": 10,
@@ -290,6 +292,7 @@
         "2025": 19.50533096377426
       },
       "pvp": 2.1655618188919266,
+      "divida_liquida_ebitda": null,
       "recorrencia": {
         "years_paid": 10,
         "window": 10,
@@ -383,6 +386,7 @@
         "2025": 16.8681998779703
       },
       "pvp": 1.0623540274559637,
+      "divida_liquida_ebitda": null,
       "recorrencia": {
         "years_paid": 9,
         "window": 10,
@@ -482,6 +486,7 @@
         "2025": 3.4688382933684223
       },
       "pvp": 4.3011518019785955,
+      "divida_liquida_ebitda": 1.899013958599642,
       "recorrencia": {
         "years_paid": 10,
         "window": 10,
@@ -579,6 +584,7 @@
         "2025": 33.14511344892352
       },
       "pvp": 0.6136651239384576,
+      "divida_liquida_ebitda": null,
       "recorrencia": {
         "years_paid": 10,
         "window": 10,
@@ -676,6 +682,7 @@
         "2025": 5.684668984638453
       },
       "pvp": 2.9430032931460763,
+      "divida_liquida_ebitda": -0.5040841704298703,
       "recorrencia": {
         "years_paid": 10,
         "window": 10,
@@ -773,6 +780,7 @@
         "2025": 8.32897242409855
       },
       "pvp": 1.616045696009584,
+      "divida_liquida_ebitda": 0.3480908152734778,
       "recorrencia": {
         "years_paid": 10,
         "window": 10,

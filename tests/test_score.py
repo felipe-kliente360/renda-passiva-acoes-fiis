@@ -41,6 +41,11 @@ def test_sustainability_multiplier_desconta_falhas():
     assert sustainability_multiplier(0.95, 10, roe_recent=-0.01) == pytest.approx(0.7)
     # três falhas (payout, recorrência, ROE) -> 1.0 - 0.45 = 0.55 (ainda acima do piso)
     assert sustainability_multiplier(1.5, 2, roe_recent=-0.1) == pytest.approx(0.55)
+    # alavancagem alta penaliza; N/A (banco) e caixa líquido não
+    sm = sustainability_multiplier
+    assert sm(0.5, 10, roe_recent=0.15, net_debt_ebitda=4.0) == pytest.approx(0.85)
+    assert sm(0.5, 10, roe_recent=0.15, net_debt_ebitda=None) == 1.0
+    assert sm(0.5, 10, roe_recent=0.15, net_debt_ebitda=-0.5) == 1.0
 
 
 def test_composite_aplica_pesos_e_corte_de_trap():

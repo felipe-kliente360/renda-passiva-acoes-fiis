@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-27T00:56:28.259432+00:00",
+    "generated_at": "2026-06-27T01:26:48.350672+00:00",
     "count": 8,
     "metodologia": "score 40/30/30 (recorrência/yield/crescimento) × sustentabilidade"
   },
@@ -18,7 +18,8 @@
       "dy_corrente": 0.05771549935530955,
       "dy_mediana_hist": 0.05004174992415357,
       "pvp": 1.0623540274559637,
-      "roe_recente": 0.13268327046189848
+      "roe_recente": 0.13268327046189848,
+      "divida_liquida_ebitda": null
     },
     {
       "ticker": "ABEV3",
@@ -33,7 +34,8 @@
       "dy_corrente": 0.057461915266575785,
       "dy_mediana_hist": 0.05150713972785176,
       "pvp": 2.9430032931460763,
-      "roe_recente": 0.17463743447590144
+      "roe_recente": 0.17463743447590144,
+      "divida_liquida_ebitda": -0.5040841704298703
     },
     {
       "ticker": "PETR4",
@@ -48,7 +50,8 @@
       "dy_corrente": 0.08206583726349477,
       "dy_mediana_hist": 0.20370509766116804,
       "pvp": 1.1747136977052928,
-      "roe_recente": 0.2637270796265209
+      "roe_recente": 0.2637270796265209,
+      "divida_liquida_ebitda": 1.5147511477462436
     },
     {
       "ticker": "VALE3",
@@ -63,7 +66,8 @@
       "dy_corrente": 0.06915662099489046,
       "dy_mediana_hist": 0.08790320452840567,
       "pvp": 1.7657976077935276,
-      "roe_recente": 0.07311857552692588
+      "roe_recente": 0.07311857552692588,
+      "divida_liquida_ebitda": 1.2763876204972096
     },
     {
       "ticker": "B3SA3",
@@ -78,7 +82,8 @@
       "dy_corrente": 0.028038496155088542,
       "dy_mediana_hist": 0.033676273431366435,
       "pvp": 4.3011518019785955,
-      "roe_recente": 0.2625743390189657
+      "roe_recente": 0.2625743390189657,
+      "divida_liquida_ebitda": 1.899013958599642
     },
     {
       "ticker": "BBAS3",
@@ -93,7 +98,8 @@
       "dy_corrente": 0.04075219906133136,
       "dy_mediana_hist": 0.1483058115010151,
       "pvp": 0.6136651239384576,
-      "roe_recente": 0.07239729572280829
+      "roe_recente": 0.07239729572280829,
+      "divida_liquida_ebitda": null
     },
     {
       "ticker": "ITSA4",
@@ -108,7 +114,8 @@
       "dy_corrente": 0.08423857828541899,
       "dy_mediana_hist": 0.05497929869100938,
       "pvp": 1.616045696009584,
-      "roe_recente": 0.1765600402660127
+      "roe_recente": 0.1765600402660127,
+      "divida_liquida_ebitda": 0.3480908152734778
     },
     {
       "ticker": "ITUB4",
@@ -123,7 +130,8 @@
       "dy_corrente": 0.06829692217739257,
       "dy_mediana_hist": 0.04376309232449755,
       "pvp": 2.1655618188919266,
-      "roe_recente": 0.208563484535699
+      "roe_recente": 0.208563484535699,
+      "divida_liquida_ebitda": null
     }
   ]
 }
