@@ -20,6 +20,15 @@ function scoreClass(s: number) {
   return s >= 75 ? "s-hi" : s >= 55 ? "s-mid" : "s-lo";
 }
 
+// Valor do ano mais recente de um dicionário {ano: valor} (ex.: payout declarado).
+function latestYearValue(d?: Record<string, number | null>): number | null {
+  if (!d) return null;
+  const years = Object.keys(d).filter((y) => d[y] !== null);
+  if (!years.length) return null;
+  const y = years.sort((a, b) => Number(b) - Number(a))[0];
+  return d[y];
+}
+
 function Sparkline({ series }: { series: Record<string, number> }) {
   const entries = Object.entries(series).sort((a, b) => Number(a[0]) - Number(b[0]));
   const vals = entries.map(([, v]) => v);
@@ -142,6 +151,7 @@ export default function Home() {
                 <th>DY mediana</th>
                 <th>P/VP</th>
                 <th>ROE</th>
+                <th>Payout decl.</th>
                 <th>Dív.líq/EBITDA</th>
                 <th>Recorr.</th>
                 <th>Proventos pagos (10a)</th>
@@ -166,6 +176,9 @@ export default function Home() {
                     <td className="muted">{pct(r.dy_mediana_hist)}</td>
                     <td>{num(r.pvp)}</td>
                     <td>{pct(r.roe_recente)}</td>
+                    <td className="muted" title="Proventos declarados (DMPL) ÷ lucro do exercício">
+                      {pct(latestYearValue(f?.payout_declarado_por_ano))}
+                    </td>
                     <td className="muted">
                       {r.divida_liquida_ebitda === null || r.divida_liquida_ebitda === undefined
                         ? "—"

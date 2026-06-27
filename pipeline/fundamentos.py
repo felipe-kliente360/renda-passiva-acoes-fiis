@@ -50,6 +50,10 @@ class ContaSpec:
     ds_excludes: list[str]
     absolute: bool
     max_dots: int | None = None  # limita a profundidade do CD_CONTA (só linhas-mãe)
+    # DMPL: COLUNA_DF (componente do PL) a somar. Os proventos saem dos lucros/reservas;
+    # somar essas colunas dá a controladora nos DOIS planos (a coluna agregada "Patrimônio
+    # Líquido" não existe limpa no plano financeiro). Casa por substring normalizada.
+    coluna_df_includes: list[str] | None = None
 
 
 def load_contas_config(path: str | Path | None = None) -> dict[str, ContaSpec]:
@@ -66,6 +70,11 @@ def load_contas_config(path: str | Path | None = None) -> dict[str, ContaSpec]:
             ds_excludes=[_norm(s) for s in c.get("ds_excludes", [])],
             absolute=bool(c.get("absolute", False)),
             max_dots=c.get("max_dots"),
+            coluna_df_includes=(
+                [_norm(s) for s in c["coluna_df_includes"]]
+                if c.get("coluna_df_includes")
+                else None
+            ),
         )
     return specs
 
@@ -106,6 +115,17 @@ def extract_concept(
     mask = sec & hit
     if spec.max_dots is not None:
         mask = mask & (cd.str.count(r"\.") <= spec.max_dots)
+    if spec.coluna_df_includes is not None:
+        # DMPL é long-format por COMPONENTE do PL (COLUNA_DF): sem filtrar, somaríamos o
+        # mesmo provento em Reservas + Lucros + PL agregado + Consolidado. Soma só as colunas
+        # de lucros/reservas (de onde se distribui) → controladora nos dois planos.
+        coluna = (
+            w["COLUNA_DF"].map(_norm)
+            if "COLUNA_DF" in w.columns
+            else pd.Series("", index=w.index)
+        )
+        col_hit = coluna.map(lambda s: any(inc in s for inc in spec.coluna_df_includes))
+        mask = mask & col_hit
     w = w[mask]
     if w.empty:
         return _empty_concept()

@@ -23,6 +23,26 @@ proventos_pagos:            # numerador do DY — dividendos + JCP PAGOS no per�
   ds_excludes: ["recebido", "nao controlador"]
   absolute: true
 
+# Proventos DECLARADOS/propostos sobre o resultado do exercício — numerador do PAYOUT
+# (sabor diferente do DY, que usa proventos PAGOS via DFC). Vêm da DMPL (mutações do PL),
+# que é long-format por COMPONENTE do PL: a MESMA linha de dividendo aparece em Reservas,
+# Lucros Acumulados, PL e PL Consolidado. Por isso filtramos `coluna_df: Patrimônio Líquido`
+# (= atribuído à controladora, casa com o lucro da controladora). Dividendos/JCP entram como
+# REDUÇÃO do PL (valor negativo) → absolute. Seção 5.04 (distribuições). Validado: Petrobras
+# 2024 ≈ 100,9bi declarados (DMPL).
+proventos_declarados:
+  statement: DMPL
+  section_prefix: "5.04"
+  ds_includes: ["dividendo", "juros sobre o capital", "juros sobre capital", "remuneracao aos acionistas"]
+  ds_excludes: ["recebido", "nao control", "revers"]
+  # Soma as colunas de lucros/reservas (de onde a distribuição sai). Funciona nos dois
+  # planos: Petrobras (não-fin) 2024 ≈ 100,9bi; BB (banco) ≈ 22,8bi (a coluna agregada
+  # "Patrimônio Líquido" vem zerada/suja no plano financeiro). max_dots evita somar a
+  # linha-mãe 5.04.07 junto com a filha 5.04.07.01 (mesmo valor → dobro).
+  coluna_df_includes: ["reservas de lucro", "lucros ou prejuizos acumulados"]
+  max_dots: 2
+  absolute: true
+
 # Lucro líquido (denominador do payout). O número correto é o ATRIBUÍDO À CONTROLADORA,
 # não o consolidado total (que inclui minoritários). A DS_CONTA é idêntica nos dois planos
 # mesmo com código diferente — banco: 3.09.01, não-financeira: 3.11.01 — por isso casamos

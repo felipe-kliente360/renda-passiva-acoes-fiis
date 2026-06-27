@@ -109,6 +109,7 @@ def main() -> int:
     divida: dict[str, dict[int, float]] = {}
     caixa: dict[str, dict[int, float]] = {}
     ebitda: dict[str, dict[int, float]] = {}
+    prov_decl: dict[str, dict[int, float]] = {}  # proventos DECLARADOS (DMPL) por ano
 
     for year in range(args.start, args.end + 1):
         zip_path = DEFAULT_RAW / f"dfp_cia_aberta_{year}.zip"
@@ -122,18 +123,20 @@ def main() -> int:
             print(f"[{year}] ZIP ausente, pulando.", file=sys.stderr)
             continue
 
-        df_dfc, df_dre, df_bpp, df_bpa, df_comp = (
+        df_dfc, df_dre, df_bpp, df_bpa, df_comp, df_dmpl = (
             _read_member(zip_path, "DFC_MI"),
             _read_member(zip_path, "DRE"),
             _read_member(zip_path, "BPP"),
             _read_member(zip_path, "BPA"),
             _read_member(zip_path, "composicao_capital"),
+            _read_member(zip_path, "DMPL"),
         )
 
         def _ex(df, key):  # extrai um conceito do df do ano (ou None)
             return extract_concept(df, specs[key]) if df is not None else None
 
         prov_y = _ex(df_dfc, "proventos_pagos")
+        decl_y = _ex(df_dmpl, "proventos_declarados")
         dep_y = _ex(df_dfc, "depreciacao_amortizacao")
         lucro_y = lucro_liquido(df_dre, specs) if df_dre is not None else None
         ebit_y = _ex(df_dre, "ebit")
@@ -146,6 +149,7 @@ def main() -> int:
         for a in acoes:
             cd, cnpj = a["cd_cvm"], a.get("cnpj")
             _acc(prov, prov_y, cd, year, cd)
+            _acc(prov_decl, decl_y, cd, year, cd)
             _acc(lucro, lucro_y, cd, year, cd)
             _acc(pl, pl_y, cd, year, cd)
             _acc(divida, div_y, cd, year, cd)
@@ -192,7 +196,7 @@ def main() -> int:
                "ebitda": ebitda.get(cd, {})}
         rec = _build_record(a, prov.get(cd, {}), lucro.get(cd, {}), pl.get(cd, {}),
                             shares_raw.get(cd, {}), prices.get(tk, {}),
-                            ytd_cur.get(cd), ytd_pri.get(cd), lev)
+                            ytd_cur.get(cd), ytd_pri.get(cd), lev, prov_decl.get(cd, {}))
         records.append(rec)
 
     meta = {
@@ -210,10 +214,11 @@ def main() -> int:
 def _build_record(
     a: dict, prov: dict, lucro: dict, pl: dict, shares_raw: dict, price: dict,
     ytd_cur: tuple[float, int] | None = None, ytd_pri: float | None = None,
-    lev: dict | None = None,
+    lev: dict | None = None, prov_decl: dict | None = None,
 ) -> dict:
     tk = a["ticker"]
     notes: list[str] = []
+    prov_decl = prov_decl or {}
 
     # escala das ações: âncora yfinance desambigua unidade x milhar, POR ANO (a CVM chega a
     # trocar de unidade no meio do histórico — ex.: Bradesco em milhares até 2023, unidades
@@ -261,6 +266,14 @@ def _build_record(
         int(y): metrics.payout_ratio(prov[y], lucro[y])
         for y in sorted(set(prov) & set(lucro))
     }
+    # Payout DECLARADO (DMPL): proventos declarados/propostos sobre o resultado ÷ lucro do
+    # MESMO ano — sabor que casa com o lucro do exercício (vs. o payout por caixa via DFC).
+    payout_declarado = {
+        int(y): metrics.payout_ratio(prov_decl[y], lucro[y])
+        for y in sorted(set(prov_decl) & set(lucro))
+    }
+    if prov and not prov_decl:
+        notes.append("proventos declarados (DMPL) indisponíveis: filada fora de lucros/reservas")
     rec_y = latest_y or (max(avg_price.index) if len(avg_price) else 0)
     recur = metrics.recurrence(prov_total, asof_year=int(rec_y)) if rec_y else {}
 
@@ -296,6 +309,10 @@ def _build_record(
         "dy_corrente_base": base_corrente,
         "ttm_proventos": ttm,
         "payout_por_ano": {y: (None if pd.isna(v) else v) for y, v in payout.items()},
+        "proventos_declarados_por_ano": {int(y): float(v) for y, v in sorted(prov_decl.items())},
+        "payout_declarado_por_ano": {
+            y: (None if pd.isna(v) else v) for y, v in payout_declarado.items()
+        },
         "patrimonio_liquido_por_ano": {int(y): float(v) for y, v in sorted(pl.items())},
         "vpa_por_ano": vpa,
         "pvp": pvp,

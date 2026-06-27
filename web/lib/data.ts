@@ -43,6 +43,8 @@ export type Fundamento = {
   dy_corrente?: number | null;
   dy_corrente_base?: string;
   payout_por_ano: Record<string, number | null>;
+  proventos_declarados_por_ano?: Record<string, number>;
+  payout_declarado_por_ano?: Record<string, number | null>;
   pvp?: number | null;
   recorrencia?: { years_paid?: number; window?: number; passes?: boolean };
   crescimento_dps_cagr?: number | null;

@@ -17,6 +17,18 @@ DFC = DATA_DIR / "dfp_dfc_sample.csv"
 DRE = DATA_DIR / "dfp_dre_sample.csv"
 BPP = DATA_DIR / "dfp_bpp_sample.csv"
 COMP = DATA_DIR / "dfp_composicao_capital_sample.csv"
+DMPL = DATA_DIR / "dfp_dmpl_sample.csv"
+
+
+def test_proventos_declarados_soma_colunas_de_lucros_e_dedup_max_dots():
+    df = read_cvm_csv(DMPL)
+    spec = load_contas_config()["proventos_declarados"]
+    out = extract_concept(df, spec)
+    assert len(out) == 1
+    # Dividendos: Reservas(-30k) + Lucros(-10k) = -40k; JCP 5.04.07 Reservas(-20k).
+    # Exclui a coluna agregada "Patrimônio Líquido" (-40k) e "Não Controladores" (-5k);
+    # max_dots=2 exclui a filha 5.04.07.01 (-20k duplicada). Total |60k| × MIL = 60.000.000.
+    assert out["valor"].iloc[0] == pytest.approx(60_000_000.0)
 
 
 def _proventos():
