@@ -1,11 +1,29 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "divbr — renda passiva na B3",
+  applicationName: "Império Yield",
+  title: "Império Yield — renda passiva na B3",
   description:
-    "Inteligência de renda passiva na B3 (ações e FIIs) a partir de dados oficiais da CVM. " +
-    "Isto paga, e vai continuar pagando?",
+    "Inteligência de renda passiva na B3 (ações, FIIs e FIAgros) a partir de dados oficiais " +
+    "da CVM, B3 e BCB. Isto paga, e vai continuar pagando?",
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-touch-icon.png",
+  },
+  appleWebApp: {
+    capable: true,
+    title: "Império Yield",
+    statusBarStyle: "black-translucent",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0d1117",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

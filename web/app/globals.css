@@ -28,7 +28,8 @@ a { color: var(--accent); text-decoration: none; }
 .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 20px 64px; }
 
 header.hero { margin-bottom: 8px; }
-.hero h1 { font-size: 28px; margin: 0 0 4px; letter-spacing: -0.02em; }
+.hero h1 { font-size: 28px; margin: 0 0 4px; letter-spacing: -0.02em; display: flex; align-items: center; gap: 10px; }
+.hero h1 .logo { width: 30px; height: 30px; flex: none; }
 .hero h1 .dot { color: var(--accent); }
 .hero p { color: var(--muted); margin: 0; font-size: 15px; }
 
@@ -161,9 +162,15 @@ td.empty { text-align: center; padding: 28px; }
 }
 @keyframes fade { from { opacity: 0 } }
 @keyframes slidein { from { transform: translateX(30px); opacity: .4 } }
-.drawer-x { position: absolute; top: 12px; right: 14px; background: none; border: none; color: var(--muted); font-size: 26px; line-height: 1; cursor: pointer; }
-.drawer-x:hover { color: var(--text); }
-.drawer-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+.drawer-x {
+  position: absolute; top: 10px; right: 12px; z-index: 2;
+  width: 30px; height: 30px; border-radius: 8px;
+  background: var(--panel-2); border: 1px solid var(--border); color: var(--muted);
+  font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.drawer-x:hover { color: var(--text); border-color: var(--accent-dim); }
+/* padding-right reserva espaço para o botão X não cobrir o score */
+.drawer-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 6px; padding-right: 40px; }
 .tk.big { font-size: 22px; font-weight: 800; margin-right: 8px; }
 .veredito { color: var(--text); font-size: 14px; margin: 8px 0 18px; }
 .drawer h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 20px 0 8px; }

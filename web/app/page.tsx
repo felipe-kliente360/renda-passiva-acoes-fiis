@@ -81,7 +81,8 @@ export default function Home() {
       fatos: fatosByTk.get(r.ticker)?.slice(0, 6),
       notes: f?.notes,
     };
-    return { ...r, classe: "acoes", ticker: r.ticker, nome: r.nome ?? undefined, score: r.score, detail };
+    const alerta_politica = (fatosByTk.get(r.ticker) ?? []).some((x) => x.alerta_politica);
+    return { ...r, classe: "acoes", ticker: r.ticker, nome: r.nome ?? undefined, score: r.score, alerta_politica, detail };
   });
 
   // ----- Fundos (FII / FIAgro): junta score + detalhe (séries) -----
@@ -136,7 +137,16 @@ export default function Home() {
   return (
     <main className="wrap">
       <header className="hero">
-        <h1>div<span className="dot">br</span></h1>
+        <h1>
+          <svg className="logo" viewBox="0 0 512 512" aria-hidden="true">
+            <path fill="var(--accent)" d="M104 356 L104 244 L182 298 L256 190 L330 298 L408 244 L408 356 Z" />
+            <rect fill="var(--accent)" x="104" y="368" width="304" height="46" rx="12" />
+            <circle fill="var(--warn)" cx="104" cy="244" r="21" />
+            <circle fill="var(--warn)" cx="256" cy="188" r="25" />
+            <circle fill="var(--warn)" cx="408" cy="244" r="21" />
+          </svg>
+          Império <span className="dot">Yield</span>
+        </h1>
         <p>Renda passiva na B3 a partir de dados oficiais da CVM, B3 e BCB.</p>
       </header>
 
@@ -147,7 +157,7 @@ export default function Home() {
         Clique numa linha para o dossiê completo (timelines, breakdown do score, fundamentos).
       </div>
 
-      <Workspace acoes={acoes} fiis={fiis} fiagros={fiagros} fatos={fatos.data} macro={macro} />
+      <Workspace acoes={acoes} fiis={fiis} fiagros={fiagros} macro={macro} />
 
       <footer>
         Fontes: CVM (proventos/fundamentos), B3/FNET (vacância, fatos relevantes), brapi/yfinance

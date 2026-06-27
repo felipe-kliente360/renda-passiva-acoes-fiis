@@ -298,30 +298,27 @@ function Drawer({ row, onClose }: { row: Row | null; onClose: () => void }) {
 // --------------------------------------------------------------------------- #
 // Workspace (abas)
 // --------------------------------------------------------------------------- #
-const TABS: { id: Row["classe"] | "fatos"; label: string }[] = [
+const TABS: { id: Row["classe"]; label: string }[] = [
   { id: "acoes", label: "Ações" },
   { id: "fiis", label: "FIIs" },
   { id: "fiagros", label: "FIAgros" },
-  { id: "fatos", label: "Fatos relevantes" },
 ];
 
 const SUB: Record<string, string> = {
-  acoes: "Proventos por competência da CVM (DFP); DY no nível da empresa; payout pago (DFC) e declarado (DMPL).",
+  acoes: "Proventos por competência da CVM (DFP); DY no nível da empresa; payout pago (DFC) e declarado (DMPL). Clique para o dossiê (timelines + fatos relevantes).",
   fiis: "DY oficial da CVM; baseline = histórico do próprio fundo; tipo e vacância (tijolo, via FNET) quando disponível.",
   fiagros: "Universo auto-detectado (brapi ∩ CVM); histórico curto (~1 ano) — DY anualizado, baseline por tipo, confiança.",
-  fatos: "Comunicados de proventos e fatos relevantes das ações (IPE-RAD). ⚠ política = mexe na política de proventos.",
 };
 
 export default function Workspace({
-  acoes, fiis, fiagros, fatos, macro,
+  acoes, fiis, fiagros, macro,
 }: {
   acoes: Row[]; fiis: Row[]; fiagros: Row[];
-  fatos: { data: string; ticker?: string | null; cd_cvm: string; categoria: string; assunto?: string | null; link?: string | null; alerta_politica?: boolean }[];
   macro: Macro;
 }) {
-  const [tab, setTab] = useState<Row["classe"] | "fatos">("acoes");
+  const [tab, setTab] = useState<Row["classe"]>("acoes");
   const [sel, setSel] = useState<Row | null>(null);
-  const byTab: Record<string, Row[]> = { acoes, fiis, fiagros };
+  const byTab: Record<Row["classe"], Row[]> = { acoes, fiis, fiagros };
 
   return (
     <>
@@ -339,32 +336,13 @@ export default function Workspace({
         {TABS.map((t) => (
           <button key={t.id} className={`tab ${tab === t.id ? "on" : ""}`} onClick={() => setTab(t.id)}>
             {t.label}
-            <span className="tab-n">{t.id === "fatos" ? fatos.length : byTab[t.id]?.length ?? 0}</span>
+            <span className="tab-n">{byTab[t.id]?.length ?? 0}</span>
           </button>
         ))}
       </nav>
       <p className="sub">{SUB[tab]}</p>
 
-      {tab !== "fatos" ? (
-        <Table rows={byTab[tab]} classe={tab} onPick={setSel} />
-      ) : (
-        <div className="tablecard">
-          <table>
-            <thead><tr><th>Data</th><th>Ativo</th><th>Categoria</th><th>Assunto</th><th>Doc.</th></tr></thead>
-            <tbody>
-              {fatos.slice(0, 60).map((f, i) => (
-                <tr key={i}>
-                  <td className="muted">{f.data}</td>
-                  <td><span className="tk">{f.ticker ?? f.cd_cvm}</span></td>
-                  <td>{f.categoria}{f.alerta_politica ? <Chip kind="trap">⚠ política</Chip> : null}</td>
-                  <td className="muted">{f.assunto || "—"}</td>
-                  <td>{f.link ? <a href={f.link} target="_blank" rel="noopener noreferrer">abrir</a> : "—"}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+      <Table rows={byTab[tab]} classe={tab} onPick={setSel} />
 
       <Drawer row={sel} onClose={() => setSel(null)} />
     </>
