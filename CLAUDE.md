@@ -57,6 +57,14 @@ Produto final: portal web alimentado por pipelines que rodam sozinhos, sem infra
 - Nomes de coluna podem ter mudado após a Resolução 175 → **validar contra arquivo real,
   nunca fixar no código** (config-driven via `config/columns.yml`). Ex.: `CNPJ_Fundo`
   (2020) → `CNPJ_Fundo_Classe` (2026).
+- **INF_MENSAL de FIAgro** é dataset PRÓPRIO (`dados.cvm.gov.br/dados/FIAGRO/DOC/`), com
+  arquivos **MENSAIS** (`inf_mensal_fiagro_AAAAMM.zip`, não anual), cobertura só de
+  **2025-05+**, CSV único (sem membro `complemento`), identidade por `CNPJ_Classe`.
+- **GOTCHA do `Dividend_Yield_Mes` do FIAgro** (≠ do FII apesar do nome): convive com 3
+  convenções no mesmo arquivo — valores ~0,9–1,5 (que VARIAM) em **percentual** (÷100);
+  ≤0,05 já em **fração** (0,01 = 1%/mês, mas costumam vir "chapados" = placeholder, baixa
+  confiança); absurdos (milhões) são **R$ distribuído mal-arquivado** → NaN; negativos →
+  NaN. Tratado em `pipeline/fiagro.clean_fiagro_dy`. Validado em 2025-05..2026-05.
 
 ### Arquitetura
 ```
@@ -117,16 +125,33 @@ GitHub Actions (cron) → Python (pandas) ingestão+normalização
    `data/score.json`): 40% recorrência + 30% yield-vs-baseline + 30% crescimento ×
    sustentabilidade (payout, ROE, **dívida líq./EBITDA ≤ 3x** — N/A em banco), corte por
    yield trap.
-5. **Dashboard Next.js/Netlify**. ✅ feito (`web/`, static export → `web/out`,
-   `netlify.toml`). Lê os JSON de `data/` no build; sem runtime. Falta o deploy efetivo
-   no Netlify (conectar o repo — `publish` é relativo ao `base`, então é `out`).
-6. Alertas (e-mail/Telegram pela Action) + import de carteira via CSV. **Pendente.**
+5. **Dashboard Next.js/Netlify**. ✅ feito e **NO AR** em
+   https://renda-passiva-acoes-fiis.netlify.app/ (static export → `web/out`, `netlify.toml`).
+   Lê os JSON de `data/` no build; sem runtime.
+6. Alertas (e-mail/Telegram pela Action) + import de carteira via CSV. **HOLD** (sinalizado).
 7. Fatos relevantes da watchlist (feed IPE/RAD da CVM — dataset aberto `ipe_cia_aberta`,
    sem infra nova). **Pendente.**
 
-**Refinamentos pendentes**: DMPL (proventos declarados → payout alternativo) e **FI-Agro**
-(dataset próprio `dados.cvm.gov.br/dados/FIAGRO/DOC/` — validar à parte, cobertura menos
-consolidada). Retomada detalhada em `docs/HANDOFF.md`.
+### Fundos estilo-ações (FII + FIAgro) ✅ feito
+A análise de fundos foi elevada ao mesmo rigor das ações (DY de longo prazo + constância +
+saúde financeira no tempo + projeção), com **listas separadas** (decisão do Felipe):
+- **FIAgro** — `scripts/ingest_fiagro.py` → `data/fiagro.json` + `data/fiagro_score.json`.
+  Universo **auto-detectado**: fi-agro negociados da brapi (volume/spot) ∩ ticker
+  reconstruído do ISIN da cota (mnemônico `[2:6]+11`). Histórico curto (~1 ano): DY 12m
+  anualizado quando <12 meses, baseline **cross-sectional** (mediana dos pares), e flag de
+  **confiança** que rebaixa DY-placeholder constante. Ver gotcha do `Dividend_Yield_Mes`.
+- **FII** — `scripts/ingest_fii_fundos.py` → `data/fii_fundos.json` + `data/fii_score.json`.
+  Reusa `pipeline.fiagro.aggregate_fund`: DY + CAGR do DY + saúde (alavancagem = passivo/PL
+  via `Valor_Ativo−PL`, preservação da cota, taxa de adm) + P/VP. Baseline = histórico do
+  **próprio fundo** (~5 anos), trap per-fundo.
+- Score em `pipeline.score.fund_composite_score` (+ `fund_sustainability_multiplier`):
+  mesmos 40/30/30, sustentabilidade adaptada (alavancagem/cota/taxa/recorrência no lugar de
+  payout/ROE/dívida). Roda no workflow mensal `ingest.yml`. Front com as duas short-lists.
+
+**Refinamentos pendentes**: DMPL (proventos declarados → payout alternativo das ações);
+DY histórico de ações além de ~5 anos (estender período de preços); investigar XPML11
+(2,6% TTM vs 8,9% mediana — provável mês faltante no INF_MENSAL 2026). Retomada em
+`docs/HANDOFF.md`.
 
 ## Estado atual do código
 Ver `docs/STATUS.md` para o mapa vivo de módulos prontos / pendentes, e

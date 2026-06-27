@@ -1,28 +1,38 @@
 # Estado do código (mapa vivo)
 
-Atualizado em: 2026-06-26
+Atualizado em: 2026-06-27
 
 ## Pronto e testado (offline)
 | Módulo | Função | Testes |
 |---|---|---|
 | `pipeline/normalize.py` | Leitura CVM (ISO-8859-1, `;`, decimal por-dataset), ZIP/CSV, `to_numeric_ptbr` | `test_normalize.py` |
 | `pipeline/columns.py` | Resolução config-driven de colunas + escolha de membro do ZIP | `test_columns.py` |
-| `pipeline/fii.py` | INF_MENSAL → VP da cota + DY mensal/TTM/histórico/trap (`aggregate_fii_dy`) | `test_fii.py` |
+| `pipeline/fii.py` | INF_MENSAL → VP da cota + DY mensal/TTM/histórico/trap + `parse_fii_enriched` (DY+PL+passivo+taxa) | `test_fii.py` |
+| `pipeline/fiagro.py` | INF_MENSAL FIAgro: parser + `ticker_from_isin` + `clean_fiagro_dy` (gotcha de escala) + `aggregate_fund` (genérica FII/FIAgro: DY/projeção/saúde/confiança) | `test_fiagro.py` |
 | `pipeline/fundamentos.py` | ITR/DFP: proventos pagos, lucro+PL (controladora), ações, escala, TTM | `test_fundamentos.py` |
 | `pipeline/metrics.py` | DY TTM, DY histórico (média/mediana), payout, recorrência, growth, flag yield trap | `test_metrics.py` |
-| `pipeline/score.py` | Score composto 40/30/30 × sustentabilidade, corte por yield trap, rank | `test_score.py` |
+| `pipeline/score.py` | Score composto 40/30/30 × sustentabilidade, corte por yield trap, rank + `fund_composite_score`/`fund_sustainability_multiplier` (fundos) | `test_score.py` |
 | `pipeline/prices.py` | `split_adjust`, `reconstruct_*`, preço médio anual, P/VP, `fetch_shares_outstanding` | `test_prices.py` |
 | `pipeline/export.py` | Export JSON + Parquet com metadados/proveniência | `test_export.py` |
 | `pipeline/cvm.py` | Downloaders CVM (FII INF_MENSAL, DFP, ITR; rede isolada) | — (I/O de rede) |
 
 Scripts: `inspect_zip.py`, `ingest_fii.py` (VP), `ingest_fii_dy.py` (DY de FII),
-`fetch_prices.py`, `ingest_fundamentos.py` (DY/payout/P/VP/TTM/alavancagem ações),
-`build_score.py` (short-list).
-Workflows: `ingest.yml` (FII VP+DY, mensal), `prices.yml` (diário), `fundamentos.yml`
-(trimestral, gera fundamentos + score).
-Front: `web/` (Next.js static export → Netlify; `netlify.toml`).
+`ingest_fii_fundos.py` (FII estilo-ações: DY/projeção/saúde/score), `ingest_fiagro.py`
+(FIAgro auto-detectado + shortlist), `fetch_prices.py`, `ingest_fundamentos.py`
+(DY/payout/P/VP/TTM/alavancagem ações), `build_score.py` (short-list de ações).
+Workflows: `ingest.yml` (FII VP+DY+score **e FIAgro**, mensal), `prices.yml` (diário),
+`fundamentos.yml` (trimestral, gera fundamentos + score de ações).
+Front: `web/` (Next.js static export → Netlify; **no ar**) — short-lists separadas de
+ações, FIIs e FIAgros.
 
-`pytest`: 60 testes passando offline. Retomada completa em `docs/HANDOFF.md`.
+`pytest`: **81 testes** passando offline. Retomada completa em `docs/HANDOFF.md`.
+
+## Validado contra dados reais (2026-06-27)
+- **FIAgro rodado de verdade** (rede aberta): 37 fi-agro da brapi ∩ informe CVM →
+  28 com dados, 26 ranqueados. Topo: RZAG/KNCA/XPCA/SNAG/VCRA (~11–13% DY, variam). Gotcha
+  de escala do `Dividend_Yield_Mes` (3 convenções) tratado e validado em 2025-05..2026-05.
+- **FII estilo-ações rodado**: short-list KNCR/VISC/BTLG no topo; XPML11 expõe o outlier
+  conhecido (2,6% TTM vs 8,9% mediana). Front buildado (static export) com as 3 short-lists.
 
 ## Validado contra dados reais (2026-06-26)
 - **Pipeline real rodado localmente** (rede aberta): `ingest_fii --download` →

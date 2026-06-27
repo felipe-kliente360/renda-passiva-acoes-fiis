@@ -32,14 +32,24 @@ jobs:
       - name: DY de FII (rendimentos via INF_MENSAL)
         run: python scripts/ingest_fii_dy.py --start 2020 --end "$(date -u +%Y)" --out data/fii_dy
 
+      - name: FII estilo-ações (DY + projeção + saúde + score)
+        run: python scripts/ingest_fii_fundos.py --start 2020 --end "$(date -u +%Y)" --out data/fii_fundos
+
+      - name: FIAgro (shortlist auto-detectada via brapi ∩ CVM)
+        run: python scripts/ingest_fiagro.py --out data/fiagro
+
       - name: Commitar artefatos atualizados
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/fii_vp.json data/fii_vp.parquet data/fii_dy.json data/fii_dy.parquet
+          git add data/fii_vp.json data/fii_vp.parquet data/fii_dy.json data/fii_dy.parquet \
+                  data/fii_fundos.json data/fii_fundos.parquet \
+                  data/fii_score.json data/fii_score.parquet \
+                  data/fiagro.json data/fiagro.parquet \
+                  data/fiagro_score.json data/fiagro_score.parquet
           if git diff --staged --quiet; then
             echo "Sem mudanças nos artefatos."
           else
-            git commit -m "chore(data): atualiza VP + DY de FII (ingestão mensal)"
+            git commit -m "chore(data): atualiza FII (VP/DY/score) + FIAgro (ingestão mensal)"
             git push
           fi

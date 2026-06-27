@@ -21,9 +21,11 @@ de FII).** Falta: deploy efetivo no Netlify (ação do Felipe), DMPL, FI-Agro, F
 ```bash
 .venv/bin/python scripts/ingest_fii.py --download --out data/fii_vp           # VP de FII
 .venv/bin/python scripts/ingest_fii_dy.py --start 2020 --end 2026 --out data/fii_dy  # DY de FII
+.venv/bin/python scripts/ingest_fii_fundos.py --start 2020 --end 2026 --out data/fii_fundos  # FII estilo-ações + score
+.venv/bin/python scripts/ingest_fiagro.py --out data/fiagro                    # FIAgro auto-detectado + shortlist
 .venv/bin/python scripts/fetch_prices.py --fii-vp data/fii_vp.json --out data/prices # preços + P/VP FII
 .venv/bin/python scripts/ingest_fundamentos.py --start 2015 --end 2026 --out data/fundamentos  # ações
-.venv/bin/python scripts/build_score.py --out data/score                       # short-list
+.venv/bin/python scripts/build_score.py --out data/score                       # short-list ações
 cd web && npm install && npm run build                                         # front -> web/out
 ```
 `--no-download` reusa os ZIPs em `data/raw/` (gitignored). `inspect_zip.py` valida colunas reais.
@@ -38,26 +40,29 @@ cd web && npm install && npm run build                                         #
 - **4 Score** — `pipeline/score.py` + `data/score.json` ranqueado.
 - **5 Dashboard** — `web/` (Next.js static export), `netlify.toml`.
 - **DY de FII** — `data/fii_dy.json` (TTM, histórico, mediana, trap) via DY mensal oficial.
+- **Fundos estilo-ações (FII + FIAgro)** — `pipeline/fiagro.py` (`aggregate_fund` genérica),
+  `pipeline/score.py` (`fund_composite_score`). FIAgro auto-detectado (brapi ∩ ISIN da CVM),
+  histórico curto tratado com honestidade (DY anualizado, baseline cross-sectional,
+  confiança). FII reusa `aggregate_fund` com baseline histórico próprio (~5 anos) + P/VP.
+  Artefatos: `data/fiagro.json`/`fiagro_score.json`, `data/fii_fundos.json`/`fii_score.json`.
+  Front com short-lists separadas. Roda no `ingest.yml` mensal.
 
 ## 5. Pendente (com a especificação para retomar)
-1. **Deploy Netlify** (ação do Felipe): conectar o repo; `netlify.toml` já configurado
-   (base `web`, publish `out` — relativo ao base!, Node 20).
-2. **FI-Agro** — dataset PRÓPRIO da CVM em `https://dados.cvm.gov.br/dados/FIAGRO/DOC/`
-   (os "agro" no INF_MENSAL de FII são FIIs do setor, não FIAgros). Precisa de uma passada
-   de inspeção própria (cobertura menos consolidada — validar campos, não assumir paridade
-   com FII). Provável reuso do parser FII se o layout casar.
-3. **DMPL — proventos declarados/propostos** (payout que casa com o lucro do exercício).
+- ✅ **Deploy Netlify** — FEITO, no ar em https://renda-passiva-acoes-fiis.netlify.app/.
+- ✅ **FI-Agro** — FEITO (ver §4). Auto-detectado via brapi ∩ ISIN da CVM; shortlist no front.
+1. **DMPL — proventos declarados/propostos** (payout que casa com o lucro do exercício).
    A DMPL é matriz (linhas=movimentos, colunas=componentes do PL); o "Dividendos/JCP"
    aparece como movimento na coluna de Lucros Acumulados. Não iniciado. Sabor diferente do
    payout atual (que usa proventos PAGOS via DFC).
-4. **DY histórico de ações** cobre só ~5 anos (série de preços yfinance `period=5y`);
+2. **DY histórico de ações** cobre só ~5 anos (série de preços yfinance `period=5y`);
    proventos/payout vão a 2015. Para aprofundar o DY, estender o período de preços.
-5. **XPML11 DY de FII = 2,6% TTM** vs mediana 8,9% — outlier a investigar (provável mês
-   faltante no INF_MENSAL 2026 daquele fundo).
-6. **Fase 6** — alertas (e-mail/Telegram pela Action) + import de carteira via CSV da B3
-   (sem scraping de login). **Fase 7** — feed de fatos relevantes IPE/RAD: dataset aberto
-   `ipe_cia_aberta_AAAA.zip` (índice estruturado com data/empresa/categoria/link). **Sem
-   infra nova** — só ingestão + JSON + front. Ler o corpo dos PDFs seria opcional/depois.
+3. **XPML11 DY de FII = 2,6% TTM** vs mediana 8,9% — outlier a investigar (provável mês
+   faltante no INF_MENSAL 2026 daquele fundo). Aparece também na nova short-list de FII.
+4. **FIAgros de DY ambíguo** (≤0,05 "chapado", ex.: PLCA/LSAG): hoje marcados confiança
+   baixa e rebaixados. Se quiser cravar, validar a distribuição real fundo a fundo (B3/RI).
+5. **Fase 6 (HOLD)** — alertas (e-mail/Telegram) + import de carteira CSV da B3. **Fase 7** —
+   feed IPE/RAD: dataset aberto `ipe_cia_aberta_AAAA.zip` (data/empresa/categoria/link),
+   sem infra nova.
 
 ## 6. Memórias de cálculo (gotchas validados no dado REAL — não relitigar)
 - **Decimal varia por dataset.** FII INF_MENSAL e DFP/ITR usam **PONTO** (não vírgula). O
@@ -85,6 +90,14 @@ cd web && npm install && npm run build                                         #
   DRE) + D&A (DFC `6.01`, "deprecia"). Validado: PETR4 1,51x, ABEV3 −0,50x (caixa líquido).
 - **DY de FII** = `Percentual_Dividend_Yield_Mes` (fração decimal mensal, ex. MXRF 0,0101).
   TTM = soma dos 12 últimos; histórico = soma anual (só anos completos na mediana).
+- **DY de FIAgro** = `Dividend_Yield_Mes` (≠ do FII!): 3 escalas no mesmo arquivo —
+  percentual (~1,07 → ÷100), fração (≤0,05), R$ mal-arquivado (milhões → NaN), negativo →
+  NaN. `clean_fiagro_dy` resolve. Histórico curto (2025-05+): TTM anualiza pela média
+  quando <12 meses; baseline cross-sectional (mediana dos pares); DY constante (cv≈0) =
+  placeholder → confiança baixa. Ticker reconstruído do ISIN (`[2:6]+11`), validado vs brapi.
+- **`aggregate_fund` é genérica** (FII e FIAgro): DY, projeção (CAGR de anos completos OU
+  tendência 6m), saúde (alavancagem=passivo/PL, `vp_cota_var`, taxa de adm). FII deriva
+  passivo de `Valor_Ativo−PL` (não vem direto no complemento).
 - **Preço**: yfinance `Close` (`auto_adjust=False`) = split-adj/div-unadj = denominador
   correto. brapi é spot; degrada sem inventar.
 
@@ -101,6 +114,8 @@ cd web && npm install && npm run build                                         #
 
 ## 8. Artefatos em `data/`
 `fii_vp.json` (VP de 1314 FIIs) · `fii_dy.json` (DY dos FIIs da watchlist) ·
+`fii_fundos.json` + `fii_score.json` (FII estilo-ações + short-list) ·
+`fiagro.json` + `fiagro_score.json` (FIAgro auto-detectado + short-list) ·
 `prices.json` (16 tickers, P/VP dos FIIs) · `fundamentos.json` (8 ações) ·
-`score.json` (short-list ranqueada). Gerados pelas Actions: `ingest.yml` (FII, mensal),
-`prices.yml` (diário), `fundamentos.yml` (trimestral, fundamentos+score).
+`score.json` (short-list de ações). Gerados pelas Actions: `ingest.yml` (FII + FIAgro,
+mensal), `prices.yml` (diário), `fundamentos.yml` (trimestral, fundamentos+score de ações).
