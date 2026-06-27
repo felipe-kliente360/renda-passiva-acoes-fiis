@@ -50,5 +50,6 @@ jobs:
             echo "Sem mudanças nos artefatos."
           else
             git commit -m "chore(data): atualiza fundamentos + score de ações (trimestral)"
+            git pull --rebase origin main || true   # evita corrida de push entre workflows
             git push
           fi

@@ -64,5 +64,6 @@ jobs:
             echo "Sem mudanças nos artefatos."
           else
             git commit -m "chore(data): atualiza FII (VP/DY/score) + FIAgro (ingestão mensal)"
+            git pull --rebase origin main || true   # evita corrida de push entre workflows
             git push
           fi
