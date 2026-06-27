@@ -10,12 +10,14 @@ dividendos/JCP/rendimentos.
 ## Como o produto pensa
 
 ### Dividend Yield (metodologia)
-- Proventos atribuídos pela **data-com**.
+- Proventos pela **competência da CVM** (ITR/DFP; revisado — antes era data-com).
 - Denominador = preço negociado **ajustado só por split, nunca por dividendo**.
-- **DY corrente** = proventos 12m ÷ preço atual.
+- **DY corrente** = proventos 12m (TTM) ÷ valor de mercado atual; **DY no nível da empresa**.
 - **DY histórico** = soma anual ÷ preço médio do ano; reporta média **e** mediana.
 - **Yield trap**: DY corrente > 1,5× a mediana histórica → sinal de alerta. Toda
   "oportunidade" é cruzada com esse flag.
+
+> Explicação completa (conceitos, análises, lógica de decisão) no [`README.md`](README.md).
 
 ### Score composto (short-list)
 - Recorrência/segurança do pagamento — 40%
@@ -28,10 +30,12 @@ dividendos/JCP/rendimentos.
 GitHub Actions (cron) roda o pipeline Python → artefatos estáticos JSON/Parquet
 versionados no repo → front Next.js (deploy Netlify) lê com ISR. Sem banco.
 
-Fontes: **CVM** (fundamentos, autoritativa), **B3** (proventos/data-com), **brapi/yfinance**
-(preço de mercado). Detalhes vivos em `docs/STATUS.md` e metodologia de preços em
-`docs/prices-methodology.md`.
+Fontes: **CVM** (proventos + fundamentos, autoritativa), **brapi/yfinance** (preço/volume de
+mercado), **BCB/SGS** (macro: CDI/Selic/IPCA). Detalhes vivos em `docs/STATUS.md`, metodologia
+de preços em `docs/prices-methodology.md`, e o guia completo no [`README.md`](README.md).
 
 ## Roadmap
-Fundação ✅ → Preços (Fase 1) ✅ → Proventos B3 → Fundamentos ITR/DFP → Score →
-Dashboard → Alertas + import de carteira (CSV) → Fatos relevantes (IPE/RAD).
+Fundação → Preços → Fundamentos ITR/DFP (+DMPL) → Score → Dashboard (no ar) → Fundos
+estilo-ações (FII + FIAgro, por tipo + crédito) → Macro/spread + liquidez → Fatos relevantes
+(IPE/RAD) **✅ tudo feito**. Pendente: alertas + import de carteira CSV (**HOLD**); vacância
+de FII via FNET (futuro).
