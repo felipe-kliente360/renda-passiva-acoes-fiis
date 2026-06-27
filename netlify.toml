@@ -3,7 +3,8 @@
 [build]
   base = "web"
   command = "npm run build"
-  publish = "web/out"
+  # publish é relativo ao base (web), então aqui é só "out" -> resolve em web/out.
+  publish = "out"
 
 [build.environment]
   NODE_VERSION = "20"
