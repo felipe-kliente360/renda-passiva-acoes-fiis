@@ -54,8 +54,9 @@ cd web && npm install && npm run build                                         #
    A DMPL é matriz (linhas=movimentos, colunas=componentes do PL); o "Dividendos/JCP"
    aparece como movimento na coluna de Lucros Acumulados. Não iniciado. Sabor diferente do
    payout atual (que usa proventos PAGOS via DFC).
-2. **DY histórico de ações** cobre só ~5 anos (série de preços yfinance `period=5y`);
-   proventos/payout vão a 2015. Para aprofundar o DY, estender o período de preços.
+2. **DY histórico de ações** — período do yfinance estendido de `5y` para `10y`
+   (`pipeline/prices.fetch_yfinance`), p/ alcançar ~2015 como os proventos. Ativa no
+   próximo run de `prices.yml` (yfinance não roda neste ambiente: curl_cffi × proxy TLS).
 3. **XPML11 DY de FII = 2,6% TTM** vs mediana 8,9% — outlier a investigar (provável mês
    faltante no INF_MENSAL 2026 daquele fundo). Aparece também na nova short-list de FII.
 4. **FIAgros de DY ambíguo** (≤0,05 "chapado", ex.: PLCA/LSAG): hoje marcados confiança

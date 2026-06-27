@@ -169,9 +169,11 @@ def market_symbol(ticker: str) -> str:
     return ticker if ticker.endswith(".SA") else f"{ticker}.SA"
 
 
-def fetch_yfinance(ticker: str, period: str = "5y") -> FetchResult | None:
+def fetch_yfinance(ticker: str, period: str = "10y") -> FetchResult | None:
     """Série histórica via yfinance. `Close` (auto_adjust=False) = split-adj/div-unadj.
 
+    Período default 10y para o DY histórico de ações alcançar ~2015 (mesma janela dos
+    proventos/payout da CVM); antes era 5y e limitava o DY/ano a ~2021+.
     Retorna None se o yfinance não estiver instalado ou a rede falhar.
     """
     try:
