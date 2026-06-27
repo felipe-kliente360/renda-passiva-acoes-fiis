@@ -1,0 +1,9 @@
+# Deploy do portal divbr no Netlify (free tier). Static export do Next.js: o Netlify
+# roda o build e serve a pasta estática (web/out). O build lê os JSON de data/ na raiz.
+[build]
+  base = "web"
+  command = "npm run build"
+  publish = "web/out"
+
+[build.environment]
+  NODE_VERSION = "20"
