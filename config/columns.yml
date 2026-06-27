@@ -30,3 +30,8 @@ fii_inf_mensal:
       # Quando presente, usar direto. Quando ausente, derivar = PL / cotas_emitidas.
       candidates: ["Valor_Patrimonial_Cotas", "Valor_Patrimonial_Cota", "VL_PATRIM_COTA"]
       required: false
+    dividend_yield_mes:
+      # DY MENSAL oficial do FII (fração decimal, ex.: 0.0101 = 1,01%/mês). Insumo do DY
+      # de FII (TTM = soma dos 12 últimos; histórico = soma anual). Validado no real (MXRF).
+      candidates: ["Percentual_Dividend_Yield_Mes"]
+      required: false

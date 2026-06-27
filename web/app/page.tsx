@@ -1,4 +1,4 @@
-import { getScore, getFundamentos, getFiis, type Fundamento } from "@/lib/data";
+import { getScore, getFundamentos, getFiis, getFiiDy, type Fundamento } from "@/lib/data";
 
 const pct = (v?: number | null, d = 1) =>
   v === null || v === undefined || Number.isNaN(v) ? "—" : `${(v * 100).toFixed(d)}%`;
@@ -27,6 +27,7 @@ export default function Home() {
   const score = getScore();
   const fundamentos = getFundamentos();
   const fiis = getFiis();
+  const fiiDy = getFiiDy();
   const fByTk = new Map<string, Fundamento>(fundamentos.data.map((f) => [f.ticker, f]));
   const generated =
     (score.meta?.generated_at as string) || (fundamentos.meta?.generated_at as string) || "";
@@ -113,7 +114,10 @@ export default function Home() {
 
       <section>
         <h2>FIIs monitorados</h2>
-        <p className="sub">Preço de mercado e P/VP (VP da cota do informe mensal da CVM).</p>
+        <p className="sub">
+          Preço e P/VP (VP da cota do informe mensal da CVM) + DY 12m e mediana histórica
+          (DY mensal oficial da CVM).
+        </p>
         <div className="tablecard">
           <table>
             <thead>
@@ -121,19 +125,34 @@ export default function Home() {
                 <th>Ativo</th>
                 <th>Preço</th>
                 <th>P/VP</th>
+                <th>DY 12m</th>
+                <th>DY mediana</th>
+                <th>Flags</th>
               </tr>
             </thead>
             <tbody>
-              {fiis.data.map((r) => (
-                <tr key={r.ticker}>
-                  <td>
-                    <span className="tk">{r.ticker}</span>
-                    <div className="name">{r.nome}</div>
-                  </td>
-                  <td>{num(r.current_price)}</td>
-                  <td>{num(r.pvp)}</td>
-                </tr>
-              ))}
+              {fiis.data.map((r) => {
+                const dy = fiiDy.get(r.ticker);
+                return (
+                  <tr key={r.ticker}>
+                    <td>
+                      <span className="tk">{r.ticker}</span>
+                      <div className="name">{r.nome}</div>
+                    </td>
+                    <td>{num(r.current_price)}</td>
+                    <td>{num(r.pvp)}</td>
+                    <td>{pct(dy?.dy_ttm)}</td>
+                    <td className="muted">{pct(dy?.dy_mediana)}</td>
+                    <td>
+                      {dy?.yield_trap ? (
+                        <span className="chip trap">yield trap</span>
+                      ) : (
+                        <span className="chip">—</span>
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

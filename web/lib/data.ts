@@ -58,6 +58,14 @@ export type FiiPrice = {
   pvp?: number | null;
 };
 
+export type FiiDy = {
+  ticker: string;
+  dy_ttm?: number | null;
+  dy_mediana?: number | null;
+  meses_com_pagamento_12m?: number;
+  yield_trap?: boolean;
+};
+
 export function getScore() {
   return read<Payload<ScoreRow>>("score.json", { data: [] });
 }
@@ -67,4 +75,8 @@ export function getFundamentos() {
 export function getFiis() {
   const p = read<Payload<FiiPrice>>("prices.json", { data: [] });
   return { meta: p.meta, data: p.data.filter((r) => r.tipo === "fii") };
+}
+export function getFiiDy() {
+  const p = read<Payload<FiiDy>>("fii_dy.json", { data: [] });
+  return new Map(p.data.map((r) => [r.ticker, r]));
 }

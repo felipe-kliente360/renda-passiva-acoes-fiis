@@ -2,7 +2,11 @@ import pandas as pd
 import pytest
 from conftest import DATA_DIR
 
-from pipeline.fii import latest_vp_por_fundo, parse_fii_inf_mensal
+from pipeline.fii import (
+    aggregate_fii_dy,
+    latest_vp_por_fundo,
+    parse_fii_inf_mensal,
+)
 from pipeline.normalize import read_cvm_csv
 
 SAMPLE = DATA_DIR / "fii_inf_mensal_sample.csv"
@@ -46,3 +50,37 @@ def test_missing_required_column_raises():
     df = pd.DataFrame({"foo": ["x"], "Data_Referencia": ["2024-01-31"]})
     with pytest.raises(ValueError, match="obrigatórias"):
         parse_fii_inf_mensal(df)
+
+
+def _monthly(dy_por_mes):
+    return pd.DataFrame({
+        "competencia": pd.to_datetime([d for d, _ in dy_por_mes]),
+        "dy_mes": [v for _, v in dy_por_mes],
+    })
+
+
+def test_aggregate_fii_dy_ttm_e_mediana():
+    # 2 anos completos a 1%/mês = 12% ao ano; TTM (últimos 12) = 12%.
+    meses = [(f"2024-{m:02d}-01", 0.01) for m in range(1, 13)]
+    meses += [(f"2025-{m:02d}-01", 0.01) for m in range(1, 13)]
+    agg = aggregate_fii_dy(_monthly(meses))
+    assert agg["dy_ttm"] == pytest.approx(0.12)
+    assert agg["dy_mediana"] == pytest.approx(0.12)
+    assert agg["meses_com_pagamento_12m"] == 12
+    assert agg["yield_trap"] is False
+
+
+def test_aggregate_fii_dy_detecta_trap():
+    # baseline 1%/mês (12%/ano) em 2023 e 2024; últimos 12 (2025) a 2%/mês (24%).
+    # mediana dos anos completos = 12%; TTM 24% > 1,5 × 12% -> trap.
+    meses = [(f"{y}-{m:02d}-01", 0.01) for y in (2023, 2024) for m in range(1, 13)]
+    meses += [(f"2025-{m:02d}-01", 0.02) for m in range(1, 13)]
+    agg = aggregate_fii_dy(_monthly(meses))
+    assert agg["dy_ttm"] == pytest.approx(0.24)
+    assert agg["dy_mediana"] == pytest.approx(0.12)
+    assert agg["yield_trap"] is True
+
+
+def test_aggregate_fii_dy_vazio():
+    agg = aggregate_fii_dy(pd.DataFrame(columns=["competencia", "dy_mes"]))
+    assert agg["dy_ttm"] is None and agg["yield_trap"] is False
