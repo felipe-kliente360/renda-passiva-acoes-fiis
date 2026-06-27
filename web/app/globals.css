@@ -44,6 +44,21 @@ header.hero { margin-bottom: 8px; }
 }
 .guide strong { color: var(--text); }
 
+.macro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 18px;
+  margin: -12px 0 28px;
+  padding: 10px 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.macro strong { color: var(--text); font-variant-numeric: tabular-nums; }
+
 section { margin: 32px 0; }
 section h2 { font-size: 18px; margin: 0 0 4px; }
 section .sub { color: var(--muted); font-size: 13px; margin: 0 0 14px; }

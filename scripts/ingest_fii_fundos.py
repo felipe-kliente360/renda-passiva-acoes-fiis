@@ -31,6 +31,7 @@ from pipeline.export import export_json, export_parquet  # noqa: E402
 from pipeline.fiagro import aggregate_fund  # noqa: E402
 from pipeline.fii import DATASET, classify_fii_tipo, parse_fii_enriched  # noqa: E402
 from pipeline.normalize import list_zip_members, read_cvm_csv_from_zip  # noqa: E402
+from pipeline.prices import fetch_brapi_fund_list  # noqa: E402
 from pipeline.score import fund_composite_score  # noqa: E402
 
 DEFAULT_RAW = Path("data/raw")
@@ -117,15 +118,25 @@ def main() -> int:
     json_path = export_json(records, args.out.with_suffix(".json"), meta=meta)
     export_parquet(records, args.out.with_suffix(".parquet"))
 
+    import json
+
     # P/VP do pipeline de preços (Fase 1), por ticker — sinal de valuation na shortlist.
     pvp_by_ticker: dict[str, float] = {}
     prices_path = args.out.parent / "prices.json"
     if prices_path.exists():
-        import json
-
         for p in json.loads(prices_path.read_text(encoding="utf-8")).get("data", []):
             if p.get("pvp") is not None:
                 pvp_by_ticker[p["ticker"]] = p["pvp"]
+
+    # Contexto macro (CDI 12m) p/ spread; e liquidez de mercado (volume) via brapi.
+    cdi_12m = None
+    macro_path = args.out.parent / "macro.json"
+    if macro_path.exists():
+        md = json.loads(macro_path.read_text(encoding="utf-8")).get("data") or []
+        cdi_12m = md[0].get("cdi_12m") if md else None
+    vol_by_ticker = {
+        f["ticker"]: f.get("volume") for f in (fetch_brapi_fund_list("fii") or [])
+    }
 
     # Score de fundos: baseline = mediana histórica do PRÓPRIO fundo (FII tem ~5 anos).
     rows: list[dict] = []
@@ -152,6 +163,11 @@ def main() -> int:
             "vp_cota_var": r.get("vp_cota_var"), "meses_disponiveis": r.get("meses_disponiveis"),
             "num_cotistas": r.get("num_cotistas"),
             "amortizacao_recente": r.get("amortizacao_recente"),
+            "spread_cdi": (
+                r["dy_ttm"] - cdi_12m
+                if (r.get("dy_ttm") is not None and cdi_12m is not None) else None
+            ),
+            "volume_brapi": vol_by_ticker.get(r["ticker"]),
             "crescimento": r.get("crescimento"), "crescimento_base": r.get("crescimento_base"),
         })
     rows.sort(key=lambda x: x["score"], reverse=True)

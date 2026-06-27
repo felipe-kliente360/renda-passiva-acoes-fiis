@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "generated_at": "2026-06-27T13:47:35.616944+00:00",
+    "count": 1,
+    "fonte": "BCB/SGS (CDI 12m, Selic meta, IPCA 12m)"
+  },
+  "data": [
+    {
+      "cdi_12m": 0.14788708315510624,
+      "selic_meta": 0.1425,
+      "ipca_12m": 0.0472,
+      "as_of": "25/06/2026"
+    }
+  ]
+}

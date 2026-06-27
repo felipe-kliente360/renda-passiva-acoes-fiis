@@ -159,6 +159,12 @@ saúde financeira no tempo + projeção), com **listas separadas** (decisão do 
   inadimplência (`Vencidos/(A_Vencer+Vencidos)`), diversificação (HHI de CRA/CRI/CPR/deb),
   liquidez (`Necessidades_Liquidez/PL`), composição. **FII** ganhou nº de cotistas e
   separação de amortização (`Amortizacao_Cotas_Mes` = devolução de capital, não yield).
+- **Camada macro (BCB/SGS)** — `pipeline/macro.py` + `scripts/fetch_macro.py` →
+  `data/macro.json` (CDI 12m composto, Selic meta, IPCA 12m; API pública sem auth). Gera o
+  **spread sobre CDI** (`DY TTM − CDI 12m`) dos fundos — é **contexto aditivo**, NÃO entra
+  no score nem altera a metodologia travada de DY. **Liquidez de mercado** (volume diário
+  da brapi) exibida nas duas short-lists. Fontes de mercado ficam em brapi/BCB; aggregators
+  (Status Invest etc.) são evitados por fragilidade/ToS e pela decisão "CVM autoritativa".
 
 **Refinamentos** (todos ✅ nesta leva): DMPL (payout declarado via mutações do PL,
 `proventos_declarados`/`payout_declarado_por_ano`; Bradesco N/A — DMPL anômala); DY

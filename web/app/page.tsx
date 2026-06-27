@@ -4,6 +4,7 @@ import {
   getFiiScore,
   getFiagroScore,
   getFatosRelevantes,
+  getMacro,
   type Fundamento,
   type FundScoreRow,
 } from "@/lib/data";
@@ -16,6 +17,12 @@ const pctSigned = (v?: number | null, d = 1) =>
   v === null || v === undefined || Number.isNaN(v)
     ? "—"
     : `${v >= 0 ? "+" : ""}${(v * 100).toFixed(d)}%`;
+const fmtVol = (v?: number | null) => {
+  if (v === null || v === undefined || Number.isNaN(v) || v <= 0) return "—";
+  if (v >= 1e6) return `${(v / 1e6).toFixed(1)}M`;
+  if (v >= 1e3) return `${(v / 1e3).toFixed(0)}k`;
+  return `${v}`;
+};
 
 function scoreClass(s: number) {
   return s >= 75 ? "s-hi" : s >= 55 ? "s-mid" : "s-lo";
@@ -69,9 +76,11 @@ function FundShortlist({
             <th>DY 12m</th>
             <th>{baselineLabel}</th>
             <th>P/VP</th>
+            <th title="DY 12m − CDI 12m (contexto, não score)">Spread CDI</th>
             <th>Cresc.</th>
             <th>Alav.</th>
             {showCredito && <th>Inadimpl.</th>}
+            <th title="Volume diário negociado (brapi)">Liq.</th>
             {showConfianca && <th>Confiança</th>}
             <th>Flags</th>
           </tr>
@@ -94,6 +103,7 @@ function FundShortlist({
               </td>
               <td className="muted">{pct(r[baselineKey])}</td>
               <td>{num(r.pvp)}</td>
+              <td className="muted">{pctSigned(r.spread_cdi)}</td>
               <td>{r.crescimento === null || r.crescimento === undefined ? "—" : pctSigned(r.crescimento)}</td>
               <td className="muted">{r.alavancagem === null || r.alavancagem === undefined ? "—" : `${(r.alavancagem * 100).toFixed(0)}%`}</td>
               {showCredito && (
@@ -103,6 +113,7 @@ function FundShortlist({
                     : pct(r.inadimplencia)}
                 </td>
               )}
+              <td className="muted">{fmtVol(r.volume_brapi)}</td>
               {showConfianca && (
                 <td>
                   <span className={`chip ${r.confianca === "baixa" ? "trap" : "ok"}`}>
@@ -131,6 +142,7 @@ export default function Home() {
   const fiiScore = getFiiScore();
   const fiagroScore = getFiagroScore();
   const fatos = getFatosRelevantes();
+  const macro = getMacro();
   const fByTk = new Map<string, Fundamento>(fundamentos.data.map((f) => [f.ticker, f]));
   const generated =
     (score.meta?.generated_at as string) || (fundamentos.meta?.generated_at as string) || "";
@@ -150,6 +162,16 @@ export default function Home() {
         baseline histórico <strong>(30%)</strong> e crescimento do dividendo <strong>(30%)</strong>,
         ajustado por sustentabilidade (payout, ROE) e com corte de <em>yield trap</em>.
       </div>
+
+      {(macro.cdi_12m ?? macro.selic_meta ?? macro.ipca_12m) != null && (
+        <div className="macro">
+          <span>Contexto (BCB):</span>
+          <strong>CDI 12m {pct(macro.cdi_12m)}</strong>
+          <strong>Selic {pct(macro.selic_meta)}</strong>
+          <strong>IPCA 12m {pct(macro.ipca_12m)}</strong>
+          <span className="muted">— base do spread sobre CDI dos fundos de crédito/papel</span>
+        </div>
+      )}
 
       <section>
         <h2>Short-list de ações</h2>

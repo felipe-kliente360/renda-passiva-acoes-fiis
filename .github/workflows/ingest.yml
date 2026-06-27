@@ -26,6 +26,9 @@ jobs:
       - name: Instalar dependências
         run: pip install -r requirements.txt
 
+      - name: Contexto macro (BCB/SGS — Selic/CDI/IPCA, p/ spread)
+        run: python scripts/fetch_macro.py --out data/macro.json
+
       - name: Baixar e ingerir informe mensal de FII (VP da cota)
         run: python scripts/ingest_fii.py --download --out data/fii_vp
 
@@ -50,7 +53,8 @@ jobs:
                   data/fii_score.json data/fii_score.parquet \
                   data/fiagro.json data/fiagro.parquet \
                   data/fiagro_score.json data/fiagro_score.parquet \
-                  data/fatos_relevantes.json data/fatos_relevantes.parquet
+                  data/fatos_relevantes.json data/fatos_relevantes.parquet \
+                  data/macro.json
           if git diff --staged --quiet; then
             echo "Sem mudanças nos artefatos."
           else

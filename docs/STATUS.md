@@ -13,6 +13,7 @@ Atualizado em: 2026-06-27
 | `pipeline/metrics.py` | DY TTM, DY histórico (média/mediana), payout, recorrência, growth, flag yield trap | `test_metrics.py` |
 | `pipeline/score.py` | Score composto 40/30/30 × sustentabilidade, corte por yield trap, rank + `fund_composite_score`/`fund_sustainability_multiplier` (fundos) | `test_score.py` |
 | `pipeline/ipe.py` | Índice IPE-RAD: parser + `fatos_relevantes` (filtra watchlist + categorias de proventos/materialidade) | `test_ipe.py` |
+| `pipeline/macro.py` | BCB/SGS: `fetch_macro_snapshot` (CDI 12m composto, Selic, IPCA) + `accumulate_daily` (puro). Base do spread sobre CDI | `test_macro.py` |
 | `pipeline/prices.py` | `split_adjust`, `reconstruct_*`, preço médio anual, P/VP, `fetch_shares_outstanding` | `test_prices.py` |
 | `pipeline/export.py` | Export JSON + Parquet com metadados/proveniência | `test_export.py` |
 | `pipeline/cvm.py` | Downloaders CVM (FII INF_MENSAL, DFP, ITR; rede isolada) | — (I/O de rede) |

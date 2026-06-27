@@ -87,6 +87,8 @@ export type FundScoreRow = {
   diversificacao_hhi?: number | null;
   liquidez_pl?: number | null;
   num_cotistas?: number | null;
+  spread_cdi?: number | null;
+  volume_brapi?: number | null;
   dy_ttm?: number | null;
   dy_ttm_estimado?: boolean;
   dy_mediana?: number | null;
@@ -115,6 +117,17 @@ export function getScore() {
 }
 export function getFatosRelevantes() {
   return read<Payload<FatoRelevante>>("fatos_relevantes.json", { data: [] });
+}
+
+export type Macro = {
+  cdi_12m?: number | null;
+  selic_meta?: number | null;
+  ipca_12m?: number | null;
+  as_of?: string | null;
+};
+export function getMacro(): Macro {
+  const p = read<Payload<Macro>>("macro.json", { data: [] });
+  return p.data[0] ?? {};
 }
 export function getFiiScore() {
   return read<Payload<FundScoreRow>>("fii_score.json", { data: [] });

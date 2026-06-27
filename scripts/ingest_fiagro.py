@@ -168,6 +168,14 @@ def main() -> int:
     def baseline_for(r: dict) -> float | None:
         return tipo_median.get(r.get("tipo") or "credito", global_median)
 
+    # Contexto macro: CDI 12m para o spread (FIAgro de crédito é produto CDI+).
+    cdi_12m = None
+    macro_path = args.out.parent / "macro.json"
+    if macro_path.exists():
+        import json
+        md = json.loads(macro_path.read_text(encoding="utf-8")).get("data") or []
+        cdi_12m = md[0].get("cdi_12m") if md else None
+
     rows: list[dict] = []
     excluidos = 0
     for r in records:
@@ -204,6 +212,10 @@ def main() -> int:
             "inadimplencia": r.get("inadimplencia"),
             "diversificacao_hhi": r.get("diversificacao_hhi"),
             "liquidez_pl": r.get("liquidez_pl"),
+            "spread_cdi": (
+                r["dy_ttm"] - cdi_12m
+                if (r.get("dy_ttm") is not None and cdi_12m is not None) else None
+            ),
             "meses_disponiveis": r.get("meses_disponiveis"),
             "crescimento": r.get("crescimento"), "crescimento_base": r.get("crescimento_base"),
             "volume_brapi": r.get("volume_brapi"),
