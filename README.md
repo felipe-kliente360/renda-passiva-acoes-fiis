@@ -24,6 +24,9 @@ python scripts/ingest_fii.py --download --out data/fii_vp
 # Validar colunas reais da CVM contra config/columns.yml antes de confiar
 python scripts/inspect_zip.py data/raw/inf_mensal_fii_2026.zip
 
+# DY de FII (rendimentos) via DY mensal oficial do INF_MENSAL
+python scripts/ingest_fii_dy.py --start 2020 --end 2026 --out data/fii_dy
+
 # Preços diários da watchlist (Fase 1) — brapi (spot) + yfinance (série)
 python scripts/fetch_prices.py --fii-vp data/fii_vp.json --out data/prices
 

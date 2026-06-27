@@ -110,14 +110,25 @@ GitHub Actions (cron) → Python (pandas) ingestão+normalização
    refinamentos: **P/VP de ações** (book value do BPP, controladora) e **DY corrente por TTM
    via ITR** (ponte ano-cheio + YTD). (Funde as antigas Fases 2+3 — ver revisão da
    metodologia de DY.) Pendente: dívida líquida/EBITDA; DMPL (proventos declarados).
+3. **DY de FII (rendimentos)** ✅ feito — `Percentual_Dividend_Yield_Mes` do INF_MENSAL
+   (DY mensal oficial). `scripts/ingest_fii_dy.py` → `data/fii_dy.json`: TTM (soma dos 12
+   meses), histórico anual, mediana/média, recorrência e flag yield trap.
 4. **Score composto** → short-list ranqueada. ✅ feito (`pipeline/score.py`,
    `data/score.json`): 40% recorrência + 30% yield-vs-baseline + 30% crescimento ×
-   sustentabilidade (payout, ROE), corte por yield trap.
+   sustentabilidade (payout, ROE, **dívida líq./EBITDA ≤ 3x** — N/A em banco), corte por
+   yield trap.
 5. **Dashboard Next.js/Netlify**. ✅ feito (`web/`, static export → `web/out`,
    `netlify.toml`). Lê os JSON de `data/` no build; sem runtime. Falta o deploy efetivo
-   no Netlify (conectar o repo).
-6. Alertas (e-mail/Telegram pela Action) + import de carteira via CSV.
-7. Fatos relevantes da watchlist (feed IPE/RAD da CVM).
+   no Netlify (conectar o repo — `publish` é relativo ao `base`, então é `out`).
+6. Alertas (e-mail/Telegram pela Action) + import de carteira via CSV. **Pendente.**
+7. Fatos relevantes da watchlist (feed IPE/RAD da CVM — dataset aberto `ipe_cia_aberta`,
+   sem infra nova). **Pendente.**
+
+**Refinamentos pendentes**: DMPL (proventos declarados → payout alternativo) e **FI-Agro**
+(dataset próprio `dados.cvm.gov.br/dados/FIAGRO/DOC/` — validar à parte, cobertura menos
+consolidada). Retomada detalhada em `docs/HANDOFF.md`.
 
 ## Estado atual do código
-Ver `docs/STATUS.md` para o mapa vivo de módulos prontos / pendentes.
+Ver `docs/STATUS.md` para o mapa vivo de módulos prontos / pendentes, e
+`docs/HANDOFF.md` para a retomada completa (feito, pendente, memórias de cálculo/gotchas
+validados no dado real, decisões e como rodar tudo).
