@@ -45,3 +45,20 @@ lucro_consolidado:          # fallback quando não há abertura por controladora
   ds_includes: ["consolidado do periodo"]
   ds_excludes: ["atribuido", "nao control", "operacoes descontinuadas", "por acao"]
   absolute: false
+
+# Patrimônio líquido (book value) -> VPA e P/VP. Mesmo padrão controladora>consolidado do
+# lucro. No BPP o código varia (Petrobras 2.03, Itaú 2.08, BB 2.07). Validado 2025:
+# BB controladora 189,2bi (consol. 193,6); Petrobras/Itaú sem abertura -> consolidado.
+pl_controladora:
+  statement: BPP
+  section_prefix: "2"
+  ds_includes: ["patrimonio liquido atribuido ao control", "atribuido ao controlador", "atribuido aos socios control"]
+  ds_excludes: ["nao control", "ajustes"]
+  absolute: false
+
+pl_consolidado:
+  statement: BPP
+  section_prefix: "2"
+  ds_includes: ["patrimonio liquido consolidado"]
+  ds_excludes: ["atribuido", "nao control", "ajustes"]
+  absolute: false

@@ -141,26 +141,48 @@ def _empty_concept() -> pd.DataFrame:
     )
 
 
+def _coalesce_concept(
+    df: pd.DataFrame, primary: ContaSpec, fallback: ContaSpec, fonte_col: str, *, ordem: str
+) -> pd.DataFrame:
+    """Extrai `primary` por empresa e completa com `fallback` só onde faltou.
+
+    Padrão "controladora preferida, consolidado de reserva". `fonte_col` registra a origem
+    ('controladora' / 'consolidado'). Saída tidy do extract_concept.
+    """
+    contr = extract_concept(df, primary, ordem=ordem).assign(**{fonte_col: "controladora"})
+    conso = extract_concept(df, fallback, ordem=ordem)
+    keys = ["cnpj", "cd_cvm", "denom", "dt_fim_exerc"]
+    falta = conso.merge(contr[keys], on=keys, how="left", indicator=True)
+    falta = falta[falta["_merge"] == "left_only"].drop(columns="_merge")
+    falta = falta.assign(**{fonte_col: "consolidado"})
+    return pd.concat([contr, falta], ignore_index=True).reset_index(drop=True)
+
+
 def lucro_liquido(
     df_dre: pd.DataFrame, specs: dict[str, ContaSpec] | None = None, *, ordem: str = "ÚLTIMO"
 ) -> pd.DataFrame:
     """Lucro líquido por empresa/exercício, preferindo o ATRIBUÍDO À CONTROLADORA.
 
     Cai no consolidado do período só onde não há abertura por controladora (empresas sem
-    minoritários). Coluna `fonte_lucro` registra qual saiu. Mesma saída tidy do
-    extract_concept (cnpj, cd_cvm, denom, dt_fim_exerc, valor).
+    minoritários). Coluna `fonte_lucro` registra qual saiu.
     """
     specs = specs or load_contas_config()
-    contr = extract_concept(df_dre, specs["lucro_controladora"], ordem=ordem)
-    conso = extract_concept(df_dre, specs["lucro_consolidado"], ordem=ordem)
-    contr = contr.assign(fonte_lucro="controladora")
-    keys = ["cnpj", "cd_cvm", "denom", "dt_fim_exerc"]
-    # consolidado só para chaves ausentes na controladora
-    falta = conso.merge(contr[keys], on=keys, how="left", indicator=True)
-    falta = falta[falta["_merge"] == "left_only"].drop(columns="_merge")
-    falta = falta.assign(fonte_lucro="consolidado")
-    out = pd.concat([contr, falta], ignore_index=True)
-    return out.reset_index(drop=True)
+    return _coalesce_concept(
+        df_dre, specs["lucro_controladora"], specs["lucro_consolidado"], "fonte_lucro", ordem=ordem
+    )
+
+
+def patrimonio_liquido(
+    df_bpp: pd.DataFrame, specs: dict[str, ContaSpec] | None = None, *, ordem: str = "ÚLTIMO"
+) -> pd.DataFrame:
+    """Patrimônio líquido (book value) por empresa, preferindo o ATRIBUÍDO À CONTROLADORA.
+
+    Insumo do VPA e do P/VP de ações. Mesmo padrão do lucro. `fonte_pl` registra a origem.
+    """
+    specs = specs or load_contas_config()
+    return _coalesce_concept(
+        df_bpp, specs["pl_controladora"], specs["pl_consolidado"], "fonte_pl", ordem=ordem
+    )
 
 
 def resolve_share_scale(cvm_raw: float, anchor_shares: float | None) -> float:

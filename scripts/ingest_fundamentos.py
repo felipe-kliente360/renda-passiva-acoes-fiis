@@ -36,6 +36,7 @@ from pipeline.fundamentos import (  # noqa: E402
     extract_concept,
     load_contas_config,
     lucro_liquido,
+    patrimonio_liquido,
     resolve_share_scale,
     total_acoes,
 )
@@ -79,6 +80,7 @@ def main() -> int:
     # Acumula por (cd_cvm/cnpj, ano): proventos pagos, lucro, ações cruas.
     prov: dict[str, dict[int, float]] = {}
     lucro: dict[str, dict[int, float]] = {}
+    pl: dict[str, dict[int, float]] = {}
     shares_raw: dict[str, dict[int, float]] = {}
 
     for year in range(args.start, args.end + 1):
@@ -93,9 +95,10 @@ def main() -> int:
             print(f"[{year}] ZIP ausente, pulando.", file=sys.stderr)
             continue
 
-        m_dfc, m_dre, m_comp = (
+        m_dfc, m_dre, m_bpp, m_comp = (
             _member(zip_path, "DFC_MI"),
             _member(zip_path, "DRE"),
+            _member(zip_path, "BPP"),
             _member(zip_path, "composicao_capital"),
         )
         prov_y = (
@@ -103,6 +106,7 @@ def main() -> int:
             if m_dfc else None
         )
         lucro_y = lucro_liquido(read_cvm_csv_from_zip(zip_path, m_dre), specs) if m_dre else None
+        pl_y = patrimonio_liquido(read_cvm_csv_from_zip(zip_path, m_bpp), specs) if m_bpp else None
         # composicao_capital só existe em DFPs recentes; ações por ano ficam limitadas a eles.
         acoes_y = total_acoes(read_cvm_csv_from_zip(zip_path, m_comp)) if m_comp else None
 
@@ -110,6 +114,7 @@ def main() -> int:
             cd, cnpj = a["cd_cvm"], a.get("cnpj")
             p = _by_key(prov_y, "cd_cvm", cd) if prov_y is not None else None
             ll = _by_key(lucro_y, "cd_cvm", cd) if lucro_y is not None else None
+            plv = _by_key(pl_y, "cd_cvm", cd) if pl_y is not None else None
             sh = (
                 _by_key(acoes_y, "cnpj", cnpj, "acoes_circulacao")
                 if (acoes_y is not None and cnpj) else None
@@ -118,6 +123,8 @@ def main() -> int:
                 prov.setdefault(cd, {})[year] = p
             if ll is not None:
                 lucro.setdefault(cd, {})[year] = ll
+            if plv is not None:
+                pl.setdefault(cd, {})[year] = plv
             if sh is not None:
                 shares_raw.setdefault(cd, {})[year] = sh
         print(f"[{year}] ok")
@@ -125,8 +132,8 @@ def main() -> int:
     records = []
     for a in acoes:
         cd, tk = a["cd_cvm"], a["ticker"]
-        rec = _build_record(a, prov.get(cd, {}), lucro.get(cd, {}), shares_raw.get(cd, {}),
-                            prices.get(tk, {}))
+        rec = _build_record(a, prov.get(cd, {}), lucro.get(cd, {}), pl.get(cd, {}),
+                            shares_raw.get(cd, {}), prices.get(tk, {}))
         records.append(rec)
 
     meta = {
@@ -141,7 +148,9 @@ def main() -> int:
     return 0
 
 
-def _build_record(a: dict, prov: dict, lucro: dict, shares_raw: dict, price: dict) -> dict:
+def _build_record(
+    a: dict, prov: dict, lucro: dict, pl: dict, shares_raw: dict, price: dict
+) -> dict:
     tk = a["ticker"]
     notes: list[str] = []
 
@@ -181,6 +190,13 @@ def _build_record(a: dict, prov: dict, lucro: dict, shares_raw: dict, price: dic
     rec_y = latest_y or (max(avg_price.index) if len(avg_price) else 0)
     recur = metrics.recurrence(prov_total, asof_year=int(rec_y)) if rec_y else {}
 
+    # VPA (book value por ação) e P/VP corrente. PL e ações da mesma competência.
+    vpa = {
+        int(y): pl[y] / shares[y] for y in sorted(set(pl) & set(shares)) if shares.get(y, 0) > 0
+    }
+    pl_latest = max(vpa) if vpa else None
+    pvp = (current_price / vpa[pl_latest]) if (pl_latest and current_price) else None
+
     return {
         "ticker": tk,
         "nome": a.get("nome"),
@@ -193,6 +209,9 @@ def _build_record(a: dict, prov: dict, lucro: dict, shares_raw: dict, price: dic
         "dy_historico_mediana": None if pd.isna(hist.median) else hist.median,
         "dy_corrente": None if pd.isna(current_dy) else current_dy,
         "payout_por_ano": {y: (None if pd.isna(v) else v) for y, v in payout.items()},
+        "patrimonio_liquido_por_ano": {int(y): float(v) for y, v in sorted(pl.items())},
+        "vpa_por_ano": vpa,
+        "pvp": pvp,
         "recorrencia": recur,
         "crescimento_dps_cagr": (
             None if pd.isna(g := metrics.dividend_growth(dps)) else g

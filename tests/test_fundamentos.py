@@ -6,6 +6,7 @@ from pipeline.fundamentos import (
     extract_concept,
     load_contas_config,
     lucro_liquido,
+    patrimonio_liquido,
     resolve_share_scale,
     total_acoes,
 )
@@ -13,6 +14,7 @@ from pipeline.normalize import read_cvm_csv
 
 DFC = DATA_DIR / "dfp_dfc_sample.csv"
 DRE = DATA_DIR / "dfp_dre_sample.csv"
+BPP = DATA_DIR / "dfp_bpp_sample.csv"
 COMP = DATA_DIR / "dfp_composicao_capital_sample.csv"
 
 
@@ -80,6 +82,16 @@ def test_lucro_uma_linha_por_empresa_exercicio():
     out = lucro_liquido(read_cvm_csv(DRE))
     assert out.groupby(["cnpj", "dt_fim_exerc"]).size().max() == 1
     assert set(out["dt_fim_exerc"].dt.year.unique()) == {2025}
+
+
+def test_patrimonio_liquido_prefere_controladora_e_cai_no_consolidado():
+    out = patrimonio_liquido(read_cvm_csv(BPP))
+    alfa = out[out["denom"] == "CIA ALFA SA"]
+    assert alfa["valor"].iloc[0] == pytest.approx(450_000_000.0)  # controladora, não 500k
+    assert alfa["fonte_pl"].iloc[0] == "controladora"
+    beta = out[out["denom"] == "BANCO BETA SA"]
+    assert beta["valor"].iloc[0] == pytest.approx(90_000_000.0)
+    assert beta["fonte_pl"].iloc[0] == "consolidado"
 
 
 def test_resolve_share_scale_detecta_milhares_e_unidades():
