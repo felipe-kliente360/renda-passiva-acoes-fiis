@@ -1,0 +1,651 @@
+{
+  "meta": {
+    "generated_at": "2026-06-27T12:07:38.063671+00:00",
+    "count": 64,
+    "fonte": "CVM IPE (ipe_cia_aberta) — índice de documentos protocolados (RAD)",
+    "categorias": "fato relevante, aviso aos acionistas, relatório de proventos",
+    "escopo": "watchlist de ações (8 empresas), 2025–2026"
+  },
+  "data": [
+    {
+      "cd_cvm": "7617",
+      "nome": "ITAUSA S.A.",
+      "data": "2026-06-17",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1535697&numSequencia=1060403&numVersao=1",
+      "ticker": "ITSA4"
+    },
+    {
+      "cd_cvm": "9512",
+      "nome": "PETRÓLEO BRASILEIRO  S.A.  - PETROBRAS",
+      "data": "2026-06-16",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1534933&numSequencia=1059639&numVersao=3",
+      "ticker": "PETR4"
+    },
+    {
+      "cd_cvm": "7617",
+      "nome": "ITAUSA S.A.",
+      "data": "2026-06-15",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Declaração de juros sobre capital próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1534704&numSequencia=1059410&numVersao=1",
+      "ticker": "ITSA4"
+    },
+    {
+      "cd_cvm": "4170",
+      "nome": "VALE S.A.",
+      "data": "2026-06-11",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Vale informa sobre correspondência recebida da sua acionista Previ",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1533887&numSequencia=1058593&numVersao=1",
+      "ticker": "VALE3"
+    },
+    {
+      "cd_cvm": "4170",
+      "nome": "VALE S.A.",
+      "data": "2026-06-09",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Modificação de Projeções Divulgadas",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1532207&numSequencia=1056913&numVersao=2",
+      "ticker": "VALE3"
+    },
+    {
+      "cd_cvm": "7617",
+      "nome": "ITAUSA S.A.",
+      "data": "2026-06-03",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Processo de Investimento na Copasa MG",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1530614&numSequencia=1055320&numVersao=1",
+      "ticker": "ITSA4"
+    },
+    {
+      "cd_cvm": "9512",
+      "nome": "PETRÓLEO BRASILEIRO  S.A.  - PETROBRAS",
+      "data": "2026-06-02",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Petrobras informa sobre adesão à nova subvenção econômica",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1529607&numSequencia=1054313&numVersao=1",
+      "ticker": "PETR4"
+    },
+    {
+      "cd_cvm": "19348",
+      "nome": "ITAÚ UNIBANCO HOLDING S.A.",
+      "data": "2026-06-01",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1529076&numSequencia=1053782&numVersao=1",
+      "ticker": "ITUB4"
+    },
+    {
+      "cd_cvm": "1023",
+      "nome": "BANCO DO BRASIL S.A.",
+      "data": "2026-05-29",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1528514&numSequencia=1053220&numVersao=1",
+      "ticker": "BBAS3"
+    },
+    {
+      "cd_cvm": "19348",
+      "nome": "ITAÚ UNIBANCO HOLDING S.A.",
+      "data": "2026-05-28",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Pagamento de Juros sobre o Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1528166&numSequencia=1052872&numVersao=1",
+      "ticker": "ITUB4"
+    },
+    {
+      "cd_cvm": "7617",
+      "nome": "ITAUSA S.A.",
+      "data": "2026-05-25",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Participação em Processo de Investimento na Copasa",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1526621&numSequencia=1051327&numVersao=1",
+      "ticker": "ITSA4"
+    },
+    {
+      "cd_cvm": "1023",
+      "nome": "BANCO DO BRASIL S.A.",
+      "data": "2026-05-20",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1524938&numSequencia=1049644&numVersao=1",
+      "ticker": "BBAS3"
+    },
+    {
+      "cd_cvm": "1023",
+      "nome": "BANCO DO BRASIL S.A.",
+      "data": "2026-05-20",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "JCP Antecipação 2T26",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1525224&numSequencia=1049930&numVersao=1",
+      "ticker": "BBAS3"
+    },
+    {
+      "cd_cvm": "9512",
+      "nome": "PETRÓLEO BRASILEIRO  S.A.  - PETROBRAS",
+      "data": "2026-05-20",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Petrobras informa sobre adesão à nova subvenção econômica",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1525282&numSequencia=1049988&numVersao=1",
+      "ticker": "PETR4"
+    },
+    {
+      "cd_cvm": "21610",
+      "nome": "B3 S.A. - BRASIL, BOLSA, BALCÃO",
+      "data": "2026-05-19",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Eleição do Diretor-Presidente da B3",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1524111&numSequencia=1048817&numVersao=1",
+      "ticker": "B3SA3"
+    },
+    {
+      "cd_cvm": "9512",
+      "nome": "PETRÓLEO BRASILEIRO  S.A.  - PETROBRAS",
+      "data": "2026-05-14",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1522009&numSequencia=1046715&numVersao=2",
+      "ticker": "PETR4"
+    },
+    {
+      "cd_cvm": "9512",
+      "nome": "PETRÓLEO BRASILEIRO  S.A.  - PETROBRAS",
+      "data": "2026-05-14",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1521941&numSequencia=1046647&numVersao=2",
+      "ticker": "PETR4"
+    },
+    {
+      "cd_cvm": "1023",
+      "nome": "BANCO DO BRASIL S.A.",
+      "data": "2026-05-13",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Projeções 1T26",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1521599&numSequencia=1046305&numVersao=1",
+      "ticker": "BBAS3"
+    },
+    {
+      "cd_cvm": "1023",
+      "nome": "BANCO DO BRASIL S.A.",
+      "data": "2026-05-13",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Remuneração Complementar aos Acionistas 1T26",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1521597&numSequencia=1046303&numVersao=1",
+      "ticker": "BBAS3"
+    },
+    {
+      "cd_cvm": "4170",
+      "nome": "VALE S.A.",
+      "data": "2026-05-12",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Modificação de Projeções Divulgadas",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1520311&numSequencia=1045017&numVersao=1",
+      "ticker": "VALE3"
+    },
+    {
+      "cd_cvm": "7617",
+      "nome": "ITAUSA S.A.",
+      "data": "2026-05-11",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Programa de recompra de ações de emissão própria",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1520242&numSequencia=1044948&numVersao=1",
+      "ticker": "ITSA4"
+    },
+    {
+      "cd_cvm": "9512",
+      "nome": "PETRÓLEO BRASILEIRO  S.A.  - PETROBRAS",
+      "data": "2026-05-11",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Petrobras informa sobre remuneração aos acionistas",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1520177&numSequencia=1044883&numVersao=1",
+      "ticker": "PETR4"
+    },
+    {
+      "cd_cvm": "19348",
+      "nome": "ITAÚ UNIBANCO HOLDING S.A.",
+      "data": "2026-05-08",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Alteração do portal de divulgação de notícias",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1518428&numSequencia=1043134&numVersao=1",
+      "ticker": "ITUB4"
+    },
+    {
+      "cd_cvm": "23264",
+      "nome": "AMBEV S.A.",
+      "data": "2026-05-08",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1518748&numSequencia=1043454&numVersao=2",
+      "ticker": "ABEV3"
+    },
+    {
+      "cd_cvm": "23264",
+      "nome": "AMBEV S.A.",
+      "data": "2026-05-07",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1517648&numSequencia=1042354&numVersao=3",
+      "ticker": "ABEV3"
+    },
+    {
+      "cd_cvm": "23264",
+      "nome": "AMBEV S.A.",
+      "data": "2026-05-05",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Pagamento e Distribuição JCP",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1515586&numSequencia=1040292&numVersao=1",
+      "ticker": "ABEV3"
+    },
+    {
+      "cd_cvm": "23264",
+      "nome": "AMBEV S.A.",
+      "data": "2026-05-05",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Pagamento e Distribuição JCP",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1515656&numSequencia=1040362&numVersao=2",
+      "ticker": "ABEV3"
+    },
+    {
+      "cd_cvm": "9512",
+      "nome": "PETRÓLEO BRASILEIRO  S.A.  - PETROBRAS",
+      "data": "2026-04-30",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Relatório de Produção e Vendas 1T26",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1513705&numSequencia=1038411&numVersao=1",
+      "ticker": "PETR4"
+    },
+    {
+      "cd_cvm": "9512",
+      "nome": "PETRÓLEO BRASILEIRO  S.A.  - PETROBRAS",
+      "data": "2026-04-27",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Petrobras amplia presença na Bacia de Campos com a aquisição de parte do ring-fence de Argonauta",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1509255&numSequencia=1033961&numVersao=1",
+      "ticker": "PETR4"
+    },
+    {
+      "cd_cvm": "7617",
+      "nome": "ITAUSA S.A.",
+      "data": "2026-04-14",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Ajustes contábeis nas Demonstrações Financeiras auditadas da Aegea",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1504583&numSequencia=1029289&numVersao=1",
+      "ticker": "ITSA4"
+    },
+    {
+      "cd_cvm": "23264",
+      "nome": "AMBEV S.A.",
+      "data": "2026-04-02",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Alteração de Indicação de Membro Suplente ao Conselho Fiscal por Minoritário",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1500958&numSequencia=1025664&numVersao=1",
+      "ticker": "ABEV3"
+    },
+    {
+      "cd_cvm": "21610",
+      "nome": "B3 S.A. - BRASIL, BOLSA, BALCÃO",
+      "data": "2026-03-31",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1498976&numSequencia=1023682&numVersao=1",
+      "ticker": "B3SA3"
+    },
+    {
+      "cd_cvm": "21610",
+      "nome": "B3 S.A. - BRASIL, BOLSA, BALCÃO",
+      "data": "2026-03-31",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1499092&numSequencia=1023798&numVersao=2",
+      "ticker": "B3SA3"
+    },
+    {
+      "cd_cvm": "4170",
+      "nome": "VALE S.A.",
+      "data": "2026-03-31",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Atualização de projeções do negócio de Metais Básicos",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1498645&numSequencia=1023351&numVersao=1",
+      "ticker": "VALE3"
+    },
+    {
+      "cd_cvm": "21610",
+      "nome": "B3 S.A. - BRASIL, BOLSA, BALCÃO",
+      "data": "2026-03-30",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1498141&numSequencia=1022847&numVersao=1",
+      "ticker": "B3SA3"
+    },
+    {
+      "cd_cvm": "23264",
+      "nome": "AMBEV S.A.",
+      "data": "2026-03-30",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Aumento de capital por subscrição privada deliberado em RCA",
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1498472&numSequencia=1023178&numVersao=1",
+      "ticker": "ABEV3"
+    },
+    {
+      "cd_cvm": "906",
+      "nome": "BANCO BRADESCO S.A.",
+      "data": "2026-03-26",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1495468&numSequencia=1020174&numVersao=1",
+      "ticker": "BBDC4"
+    },
+    {
+      "cd_cvm": "906",
+      "nome": "BANCO BRADESCO S.A.",
+      "data": "2026-03-25",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Pagamento de Juros sobre o Capital Próprio Intermediários",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1495078&numSequencia=1019784&numVersao=1",
+      "ticker": "BBDC4"
+    },
+    {
+      "cd_cvm": "21610",
+      "nome": "B3 S.A. - BRASIL, BOLSA, BALCÃO",
+      "data": "2026-03-19",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Alteração na Administração da B3",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1492775&numSequencia=1017481&numVersao=1",
+      "ticker": "B3SA3"
+    },
+    {
+      "cd_cvm": "7617",
+      "nome": "ITAUSA S.A.",
+      "data": "2026-03-16",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Pagamento de Juros sobre capital próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1490845&numSequencia=1015551&numVersao=1",
+      "ticker": "ITSA4"
+    },
+    {
+      "cd_cvm": "7617",
+      "nome": "ITAUSA S.A.",
+      "data": "2026-03-16",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1490853&numSequencia=1015559&numVersao=1",
+      "ticker": "ITSA4"
+    },
+    {
+      "cd_cvm": "19348",
+      "nome": "ITAÚ UNIBANCO HOLDING S.A.",
+      "data": "2026-03-09",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1487386&numSequencia=1012092&numVersao=1",
+      "ticker": "ITUB4"
+    },
+    {
+      "cd_cvm": "19348",
+      "nome": "ITAÚ UNIBANCO HOLDING S.A.",
+      "data": "2026-03-03",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Pagamento de frações de ações decorrente da bonificação em ações.",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1484755&numSequencia=1009461&numVersao=1",
+      "ticker": "ITUB4"
+    },
+    {
+      "cd_cvm": "1023",
+      "nome": "BANCO DO BRASIL S.A.",
+      "data": "2026-03-02",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1484075&numSequencia=1008781&numVersao=2",
+      "ticker": "BBAS3"
+    },
+    {
+      "cd_cvm": "906",
+      "nome": "BANCO BRADESCO S.A.",
+      "data": "2026-02-27",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Reorganização Societária para Consolidar os Negócios de Saúde da Organização Bradesco na Odontoprev",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1482951&numSequencia=1007657&numVersao=1",
+      "ticker": "BBDC4"
+    },
+    {
+      "cd_cvm": "19348",
+      "nome": "ITAÚ UNIBANCO HOLDING S.A.",
+      "data": "2026-02-26",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Pagamento de Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1482605&numSequencia=1007311&numVersao=1",
+      "ticker": "ITUB4"
+    },
+    {
+      "cd_cvm": "21610",
+      "nome": "B3 S.A. - BRASIL, BOLSA, BALCÃO",
+      "data": "2026-02-26",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Descumprimento da Projeção de Distribuição do Lucro Líquido para 2025",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1482622&numSequencia=1007328&numVersao=1",
+      "ticker": "B3SA3"
+    },
+    {
+      "cd_cvm": "1023",
+      "nome": "BANCO DO BRASIL S.A.",
+      "data": "2026-02-24",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1481183&numSequencia=1005889&numVersao=1",
+      "ticker": "BBAS3"
+    },
+    {
+      "cd_cvm": "1023",
+      "nome": "BANCO DO BRASIL S.A.",
+      "data": "2026-02-23",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1480540&numSequencia=1005246&numVersao=1",
+      "ticker": "BBAS3"
+    },
+    {
+      "cd_cvm": "4170",
+      "nome": "VALE S.A.",
+      "data": "2026-02-23",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Modificação de Projeções Divulgadas",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1480348&numSequencia=1005054&numVersao=1",
+      "ticker": "VALE3"
+    },
+    {
+      "cd_cvm": "23264",
+      "nome": "AMBEV S.A.",
+      "data": "2026-02-12",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1476842&numSequencia=1001548&numVersao=2",
+      "ticker": "ABEV3"
+    },
+    {
+      "cd_cvm": "23264",
+      "nome": "AMBEV S.A.",
+      "data": "2026-02-12",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Projeção CPV para 2026",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1476801&numSequencia=1001507&numVersao=1",
+      "ticker": "ABEV3"
+    },
+    {
+      "cd_cvm": "4170",
+      "nome": "VALE S.A.",
+      "data": "2026-02-09",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Vale atualiza sobre pedidos de bloqueio de recursos por  autoridades",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1475252&numSequencia=999958&numVersao=1",
+      "ticker": "VALE3"
+    },
+    {
+      "cd_cvm": "19348",
+      "nome": "ITAÚ UNIBANCO HOLDING S.A.",
+      "data": "2026-02-05",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1473734&numSequencia=998440&numVersao=2",
+      "ticker": "ITUB4"
+    },
+    {
+      "cd_cvm": "4170",
+      "nome": "VALE S.A.",
+      "data": "2026-02-05",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Vale informa sobre novos pedidos de bloqueio de recursos por autoridades",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1474036&numSequencia=998742&numVersao=1",
+      "ticker": "VALE3"
+    },
+    {
+      "cd_cvm": "906",
+      "nome": "BANCO BRADESCO S.A.",
+      "data": "2026-02-05",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Guidance",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1473839&numSequencia=998545&numVersao=1",
+      "ticker": "BBDC4"
+    },
+    {
+      "cd_cvm": "19348",
+      "nome": "ITAÚ UNIBANCO HOLDING S.A.",
+      "data": "2026-02-04",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Data de Pagamento de Juros sobre o Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1473196&numSequencia=997902&numVersao=1",
+      "ticker": "ITUB4"
+    },
+    {
+      "cd_cvm": "906",
+      "nome": "BANCO BRADESCO S.A.",
+      "data": "2026-02-03",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Informação sobre a data do pagamento de JCP Intermediários, divulgada no Fato Relevante de 18.6.2025.",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1472654&numSequencia=997360&numVersao=1",
+      "ticker": "BBDC4"
+    },
+    {
+      "cd_cvm": "906",
+      "nome": "BANCO BRADESCO S.A.",
+      "data": "2026-02-03",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1472754&numSequencia=997460&numVersao=3",
+      "ticker": "BBDC4"
+    },
+    {
+      "cd_cvm": "906",
+      "nome": "BANCO BRADESCO S.A.",
+      "data": "2026-01-23",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Retificação de Alíquota de Imposto de Renda e os Valores Líquidos por Ação",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1469605&numSequencia=994311&numVersao=1",
+      "ticker": "BBDC4"
+    },
+    {
+      "cd_cvm": "906",
+      "nome": "BANCO BRADESCO S.A.",
+      "data": "2026-01-15",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Atendimento ao disposto no §2º do Artigo 37 da Resolução CVM nº 81/22",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1467640&numSequencia=992346&numVersao=1",
+      "ticker": "BBDC4"
+    },
+    {
+      "cd_cvm": "4170",
+      "nome": "VALE S.A.",
+      "data": "2026-01-14",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1467212&numSequencia=991918&numVersao=3",
+      "ticker": "VALE3"
+    },
+    {
+      "cd_cvm": "21610",
+      "nome": "B3 S.A. - BRASIL, BOLSA, BALCÃO",
+      "data": "2026-01-07",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Data prevista para a assembleia",
+      "assunto": "Data prevista para a assembleia",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1464828&numSequencia=989534&numVersao=1",
+      "ticker": "B3SA3"
+    },
+    {
+      "cd_cvm": "21610",
+      "nome": "B3 S.A. - BRASIL, BOLSA, BALCÃO",
+      "data": "2025-12-30",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1462676&numSequencia=987382&numVersao=3",
+      "ticker": "B3SA3"
+    }
+  ]
+}

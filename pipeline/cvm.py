@@ -27,6 +27,9 @@ FIAGRO_INF_MENSAL_BASE = "https://dados.cvm.gov.br/dados/FIAGRO/DOC/INF_MENSAL/D
 # Primeiro mês disponível no portal (AAAAMM). Antes disso não há arquivo (404).
 FIAGRO_FIRST_PERIOD = (2025, 5)
 
+# Fatos relevantes / comunicados (IPE-RAD). Arquivos ANUAIS. Cobertura 2021+.
+IPE_BASE = "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/IPE/DADOS"
+
 DEFAULT_DEST = Path("data/raw")
 
 
@@ -43,6 +46,18 @@ def dfp_url(year: int) -> str:
 def itr_url(year: int) -> str:
     """URL do ZIP das ITR (demonstrações trimestrais) de companhias abertas."""
     return f"{ITR_BASE}/itr_cia_aberta_{year}.zip"
+
+
+def ipe_url(year: int) -> str:
+    """URL do ZIP do índice IPE (fatos relevantes/comunicados) de um ano."""
+    return f"{IPE_BASE}/ipe_cia_aberta_{year}.zip"
+
+
+def download_ipe(year: int | None = None, dest_dir: str | Path = DEFAULT_DEST) -> Path:
+    """Baixa o ZIP do índice IPE do ano (default: ano corrente)."""
+    year = year or date.today().year
+    dest = Path(dest_dir) / f"ipe_cia_aberta_{year}.zip"
+    return download(ipe_url(year), dest)
 
 
 def download(url: str, dest: str | Path, *, timeout: int = 60) -> Path:

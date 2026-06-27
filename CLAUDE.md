@@ -129,8 +129,11 @@ GitHub Actions (cron) → Python (pandas) ingestão+normalização
    https://renda-passiva-acoes-fiis.netlify.app/ (static export → `web/out`, `netlify.toml`).
    Lê os JSON de `data/` no build; sem runtime.
 6. Alertas (e-mail/Telegram pela Action) + import de carteira via CSV. **HOLD** (sinalizado).
-7. Fatos relevantes da watchlist (feed IPE/RAD da CVM — dataset aberto `ipe_cia_aberta`,
-   sem infra nova). **Pendente.**
+7. Fatos relevantes da watchlist (feed IPE/RAD da CVM — dataset aberto `ipe_cia_aberta`).
+   ✅ feito — `scripts/ingest_ipe.py` → `data/fatos_relevantes.json`: índice dos
+   documentos (fato relevante, aviso aos acionistas, relatório de proventos) das ações,
+   mais recentes com link pro RAD. `pipeline/ipe.py`. Front com a seção. Não lê o corpo
+   dos PDFs (opcional/depois). Roda no `ingest.yml` mensal.
 
 ### Fundos estilo-ações (FII + FIAgro) ✅ feito
 A análise de fundos foi elevada ao mesmo rigor das ações (DY de longo prazo + constância +
@@ -148,9 +151,10 @@ saúde financeira no tempo + projeção), com **listas separadas** (decisão do 
   mesmos 40/30/30, sustentabilidade adaptada (alavancagem/cota/taxa/recorrência no lugar de
   payout/ROE/dívida). Roda no workflow mensal `ingest.yml`. Front com as duas short-lists.
 
-**Refinamentos pendentes**: DMPL (proventos declarados → payout alternativo das ações);
-DY histórico de ações além de ~5 anos (estender período de preços); investigar XPML11
-(2,6% TTM vs 8,9% mediana — provável mês faltante no INF_MENSAL 2026). Retomada em
+**Refinamentos** (todos ✅ nesta leva): DMPL (payout declarado via mutações do PL,
+`proventos_declarados`/`payout_declarado_por_ano`; Bradesco N/A — DMPL anômala); DY
+histórico de ações estendido p/ 10y (alcança ~2015); XPML11 resolvido (DY mensal negativo
+de 2026-01 era anomalia → descartado). Pendente só o que está em HOLD (Fase 6). Detalhe em
 `docs/HANDOFF.md`.
 
 ## Estado atual do código

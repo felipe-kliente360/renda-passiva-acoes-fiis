@@ -100,3 +100,37 @@ fiagro_inf_mensal:
       # Despesa de taxa de administração no mês (drag sobre o rendimento).
       candidates: ["Percentual_Despesas_Taxa_Administracao"]
       required: false
+
+# Fatos relevantes / comunicados (IPE — dados.cvm.gov.br/dados/CIA_ABERTA/DOC/IPE/).
+# Índice estruturado dos documentos protocolados (data, empresa, categoria, assunto, link
+# para o RAD). Arquivos ANUAIS (ipe_cia_aberta_AAAA.zip), CSV único. Não lemos o corpo do
+# PDF — só o índice (Fase 7). Decimal irrelevante (sem números a converter).
+ipe_cia_aberta:
+  encoding: ISO-8859-1
+  sep: ";"
+  decimal: "."
+  fields:
+    cd_cvm:
+      candidates: ["Codigo_CVM", "CD_CVM"]
+      required: true
+    nome:
+      candidates: ["Nome_Companhia", "DENOM_CIA"]
+      required: false
+    data_entrega:
+      candidates: ["Data_Entrega", "Data_Referencia"]
+      required: true
+    categoria:
+      candidates: ["Categoria"]
+      required: true
+    tipo:
+      candidates: ["Tipo"]
+      required: false
+    especie:
+      candidates: ["Especie"]
+      required: false
+    assunto:
+      candidates: ["Assunto"]
+      required: false
+    link:
+      candidates: ["Link_Download"]
+      required: false

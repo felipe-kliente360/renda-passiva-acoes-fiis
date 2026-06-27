@@ -38,6 +38,9 @@ jobs:
       - name: FIAgro (shortlist auto-detectada via brapi ∩ CVM)
         run: python scripts/ingest_fiagro.py --out data/fiagro
 
+      - name: Fatos relevantes da watchlist (IPE-RAD)
+        run: python scripts/ingest_ipe.py --start 2025 --end "$(date -u +%Y)" --out data/fatos_relevantes
+
       - name: Commitar artefatos atualizados
         run: |
           git config user.name "github-actions[bot]"
@@ -46,7 +49,8 @@ jobs:
                   data/fii_fundos.json data/fii_fundos.parquet \
                   data/fii_score.json data/fii_score.parquet \
                   data/fiagro.json data/fiagro.parquet \
-                  data/fiagro_score.json data/fiagro_score.parquet
+                  data/fiagro_score.json data/fiagro_score.parquet \
+                  data/fatos_relevantes.json data/fatos_relevantes.parquet
           if git diff --staged --quiet; then
             echo "Sem mudanças nos artefatos."
           else

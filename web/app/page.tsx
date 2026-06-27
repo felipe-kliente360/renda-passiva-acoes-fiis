@@ -3,6 +3,7 @@ import {
   getFundamentos,
   getFiiScore,
   getFiagroScore,
+  getFatosRelevantes,
   type Fundamento,
   type FundScoreRow,
 } from "@/lib/data";
@@ -117,6 +118,7 @@ export default function Home() {
   const fundamentos = getFundamentos();
   const fiiScore = getFiiScore();
   const fiagroScore = getFiagroScore();
+  const fatos = getFatosRelevantes();
   const fByTk = new Map<string, Fundamento>(fundamentos.data.map((f) => [f.ticker, f]));
   const generated =
     (score.meta?.generated_at as string) || (fundamentos.meta?.generated_at as string) || "";
@@ -236,6 +238,50 @@ export default function Home() {
           showConfianca
         />
       </section>
+
+      {fatos.data.length > 0 && (
+        <section>
+          <h2>Fatos relevantes da watchlist</h2>
+          <p className="sub">
+            Avisos de proventos, fatos relevantes e relatórios de proventos das ações
+            monitoradas (índice IPE-RAD da CVM). Link abre o documento original.
+          </p>
+          <div className="tablecard">
+            <table>
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Ativo</th>
+                  <th>Categoria</th>
+                  <th>Assunto</th>
+                  <th>Doc.</th>
+                </tr>
+              </thead>
+              <tbody>
+                {fatos.data.slice(0, 30).map((r, i) => (
+                  <tr key={`${r.cd_cvm}-${r.data}-${i}`}>
+                    <td className="muted">{r.data}</td>
+                    <td>
+                      <span className="tk">{r.ticker ?? r.cd_cvm}</span>
+                    </td>
+                    <td>{r.categoria}</td>
+                    <td className="muted">{r.assunto || "—"}</td>
+                    <td>
+                      {r.link ? (
+                        <a href={r.link} target="_blank" rel="noopener noreferrer">
+                          abrir
+                        </a>
+                      ) : (
+                        "—"
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
 
       <footer>
         Fonte: CVM (dados abertos) para proventos e fundamentos; yfinance/brapi para preço de

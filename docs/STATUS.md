@@ -12,6 +12,7 @@ Atualizado em: 2026-06-27
 | `pipeline/fundamentos.py` | ITR/DFP: proventos pagos, lucro+PL (controladora), ações, escala, TTM | `test_fundamentos.py` |
 | `pipeline/metrics.py` | DY TTM, DY histórico (média/mediana), payout, recorrência, growth, flag yield trap | `test_metrics.py` |
 | `pipeline/score.py` | Score composto 40/30/30 × sustentabilidade, corte por yield trap, rank + `fund_composite_score`/`fund_sustainability_multiplier` (fundos) | `test_score.py` |
+| `pipeline/ipe.py` | Índice IPE-RAD: parser + `fatos_relevantes` (filtra watchlist + categorias de proventos/materialidade) | `test_ipe.py` |
 | `pipeline/prices.py` | `split_adjust`, `reconstruct_*`, preço médio anual, P/VP, `fetch_shares_outstanding` | `test_prices.py` |
 | `pipeline/export.py` | Export JSON + Parquet com metadados/proveniência | `test_export.py` |
 | `pipeline/cvm.py` | Downloaders CVM (FII INF_MENSAL, DFP, ITR; rede isolada) | — (I/O de rede) |
@@ -19,13 +20,14 @@ Atualizado em: 2026-06-27
 Scripts: `inspect_zip.py`, `ingest_fii.py` (VP), `ingest_fii_dy.py` (DY de FII),
 `ingest_fii_fundos.py` (FII estilo-ações: DY/projeção/saúde/score), `ingest_fiagro.py`
 (FIAgro auto-detectado + shortlist), `fetch_prices.py`, `ingest_fundamentos.py`
-(DY/payout/P/VP/TTM/alavancagem ações), `build_score.py` (short-list de ações).
+(DY/payout/P/VP/TTM/alavancagem + payout declarado via DMPL), `build_score.py` (short-list
+de ações), `ingest_ipe.py` (fatos relevantes IPE-RAD da watchlist).
 Workflows: `ingest.yml` (FII VP+DY+score **e FIAgro**, mensal), `prices.yml` (diário),
 `fundamentos.yml` (trimestral, gera fundamentos + score de ações).
 Front: `web/` (Next.js static export → Netlify; **no ar**) — short-lists separadas de
 ações, FIIs e FIAgros.
 
-`pytest`: **81 testes** passando offline. Retomada completa em `docs/HANDOFF.md`.
+`pytest`: **86 testes** passando offline. Retomada completa em `docs/HANDOFF.md`.
 
 ## Validado contra dados reais (2026-06-27)
 - **FIAgro rodado de verdade** (rede aberta): 37 fi-agro da brapi ∩ informe CVM →

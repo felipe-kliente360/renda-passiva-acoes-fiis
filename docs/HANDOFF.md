@@ -48,22 +48,22 @@ cd web && npm install && npm run build                                         #
   Front com short-lists separadas. Roda no `ingest.yml` mensal.
 
 ## 5. Pendente (com a especificação para retomar)
-- ✅ **Deploy Netlify** — FEITO, no ar em https://renda-passiva-acoes-fiis.netlify.app/.
-- ✅ **FI-Agro** — FEITO (ver §4). Auto-detectado via brapi ∩ ISIN da CVM; shortlist no front.
-1. **DMPL — proventos declarados/propostos** (payout que casa com o lucro do exercício).
-   A DMPL é matriz (linhas=movimentos, colunas=componentes do PL); o "Dividendos/JCP"
-   aparece como movimento na coluna de Lucros Acumulados. Não iniciado. Sabor diferente do
-   payout atual (que usa proventos PAGOS via DFC).
-2. **DY histórico de ações** — período do yfinance estendido de `5y` para `10y`
-   (`pipeline/prices.fetch_yfinance`), p/ alcançar ~2015 como os proventos. Ativa no
-   próximo run de `prices.yml` (yfinance não roda neste ambiente: curl_cffi × proxy TLS).
-3. **XPML11 DY de FII = 2,6% TTM** vs mediana 8,9% — outlier a investigar (provável mês
-   faltante no INF_MENSAL 2026 daquele fundo). Aparece também na nova short-list de FII.
-4. **FIAgros de DY ambíguo** (≤0,05 "chapado", ex.: PLCA/LSAG): hoje marcados confiança
-   baixa e rebaixados. Se quiser cravar, validar a distribuição real fundo a fundo (B3/RI).
-5. **Fase 6 (HOLD)** — alertas (e-mail/Telegram) + import de carteira CSV da B3. **Fase 7** —
-   feed IPE/RAD: dataset aberto `ipe_cia_aberta_AAAA.zip` (data/empresa/categoria/link),
-   sem infra nova.
+Tudo da última leva FEITO — restam só HOLD e gaps de dado conhecidos:
+- ✅ **Deploy Netlify**, **FI-Agro** (§4), **FII estilo-ações** (§4).
+- ✅ **DMPL — payout declarado**: `proventos_declarados` (DMPL, colunas de lucros/reservas,
+  config-driven) → `payout_declarado_por_ano`. Validado (PETR 2024 ≈ 100,6bi; 7/8 papéis).
+- ✅ **DY histórico de ações**: yfinance estendido p/ `10y` (ativa no próximo `prices.yml`;
+  yfinance não roda neste ambiente — curl_cffi × proxy TLS).
+- ✅ **XPML11**: DY mensal negativo de 2026-01 (−5,9%) era anomalia/clawback → `aggregate_fund`
+  descarta DY<0. TTM voltou a ~9,4%.
+- ✅ **Fase 7 — fatos relevantes (IPE/RAD)**: `pipeline/ipe.py` + `scripts/ingest_ipe.py` →
+  `data/fatos_relevantes.json`; front com a seção. Índice-only (sem corpo do PDF).
+
+Gaps conhecidos (dado, não código): **Bradesco** N/A no payout declarado (DMPL filada fora
+das colunas de lucros/reservas); **FIAgros de DY ambíguo** (≤0,05 "chapado", ex.: PLCA/LSAG)
+marcados confiança baixa — validar fundo a fundo se quiser cravar.
+
+**Fase 6 (HOLD, sinalizado)** — alertas (e-mail/Telegram) + import de carteira CSV da B3.
 
 ## 6. Memórias de cálculo (gotchas validados no dado REAL — não relitigar)
 - **Decimal varia por dataset.** FII INF_MENSAL e DFP/ITR usam **PONTO** (não vírgula). O

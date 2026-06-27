@@ -94,8 +94,22 @@ export type FundScoreRow = {
   crescimento_base?: string | null;
 };
 
+export type FatoRelevante = {
+  cd_cvm: string;
+  ticker?: string | null;
+  nome?: string | null;
+  data: string;
+  categoria: string;
+  tipo?: string | null;
+  assunto?: string | null;
+  link?: string | null;
+};
+
 export function getScore() {
   return read<Payload<ScoreRow>>("score.json", { data: [] });
+}
+export function getFatosRelevantes() {
+  return read<Payload<FatoRelevante>>("fatos_relevantes.json", { data: [] });
 }
 export function getFiiScore() {
   return read<Payload<FundScoreRow>>("fii_score.json", { data: [] });
