@@ -76,6 +76,19 @@ def test_fund_sustainability_desconta_falhas_de_fundo():
     assert fsm(months_paid_12m=6) == pytest.approx(0.88)
 
 
+def test_fund_composite_recorrencia_escala_pela_janela_disponivel():
+    # Fundo novo (9 meses) que pagou TODOS os 9: recorrência deve ser 1,0, não 9/12.
+    novo = fund_composite_score("NOVO11", months_paid_12m=9, dy_ttm=0.10, dy_baseline=0.10,
+                                crescimento=0.0, months_window=9)
+    assert novo.recurrence == pytest.approx(1.0)
+    # E a sustentabilidade não pune por "não ter existido" 12 meses (pagou 9/9).
+    assert novo.sustainability == pytest.approx(1.0)
+    # Já com janela cheia, pagar só 9/12 penaliza a recorrência.
+    velho = fund_composite_score("VELHO11", months_paid_12m=9, dy_ttm=0.10, dy_baseline=0.10,
+                                 crescimento=0.0, months_window=12)
+    assert velho.recurrence == pytest.approx(0.75)
+
+
 def test_fund_composite_usa_baseline_e_corte_de_trap():
     base = dict(months_paid_12m=12, dy_ttm=0.10, dy_baseline=0.10, crescimento=0.15,
                 leverage=0.1, vp_cota_var=0.02, taxa_admin_aa=0.01)

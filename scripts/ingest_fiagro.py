@@ -171,6 +171,7 @@ def main() -> int:
             vp_cota_var=r.get("vp_cota_var"),
             taxa_admin_aa=r.get("taxa_admin_aa"),
             yield_trap=bool(r.get("yield_trap")),
+            months_window=min(12, int(r.get("meses_disponiveis") or 12)),
         )
         # Amortecedor de qualidade do dado (específico do FIAgro): DY-placeholder não pode
         # liderar a shortlist só por "parecer recorrente". Não é mérito do fundo.

@@ -114,12 +114,14 @@ def fund_sustainability_multiplier(
     vp_cota_var: float | None = None,
     taxa_admin_aa: float | None = None,
     months_paid_12m: int | None = None,
+    months_window: int = 12,
 ) -> float:
     """Multiplicador 0.5..1.0 de sustentabilidade para FUNDOS (FII/FIAgro).
 
     Parte de 1.0 e desconta ~0.12 por falha: alavancagem (passivo/PL) alta, VP da cota
-    derretendo, taxa de administração elevada e recorrência baixa de pagamento. Métricas
-    ausentes (None) não penalizam — honesto com histórico curto. Piso 0.5.
+    derretendo, taxa de administração elevada e recorrência baixa de pagamento. A checagem
+    de recorrência escala pela janela DISPONÍVEL (`months_window`) — um fundo novo que pagou
+    todo mês não é punido por "não ter existido". Métricas ausentes (None) não penalizam.
     """
     m = 1.0
     if _isnum(leverage) and leverage > FUND_LEVERAGE_MAX:
@@ -128,7 +130,8 @@ def fund_sustainability_multiplier(
         m -= 0.12
     if _isnum(taxa_admin_aa) and taxa_admin_aa > FUND_FEE_MAX:
         m -= 0.12
-    if months_paid_12m is not None and months_paid_12m < FUND_MIN_MONTHS_PAID:
+    min_paid = FUND_MIN_MONTHS_PAID * max(1, months_window) / 12
+    if months_paid_12m is not None and months_paid_12m < min_paid:
         m -= 0.12
     return _clamp(m, 0.5, 1.0)
 
@@ -144,14 +147,15 @@ def fund_composite_score(
     vp_cota_var: float | None = None,
     taxa_admin_aa: float | None = None,
     yield_trap: bool = False,
+    months_window: int = 12,
 ) -> ScoreBreakdown:
     """Score composto de FUNDO (mesma metodologia 40/30/30 × sustentabilidade das ações).
 
-    Recorrência = meses pagando nos últimos 12 (janela de 12). Yield = DY TTM vs baseline
-    (mediana de anos completos ou média mensal anualizada). Crescimento = CAGR/tendência do
-    DY. Multiplicador de sustentabilidade adaptado a fundos. Corte por yield trap.
+    Recorrência = meses pagando ÷ janela DISPONÍVEL (`months_window`, ≤12) — fundo novo que
+    pagou todo mês marca 1,0, sem ser punido por "não ter existido" 12 meses. Yield = DY TTM
+    vs baseline. Crescimento = CAGR/tendência do DY. Sustentabilidade adaptada. Corte por trap.
     """
-    rec = recurrence_score(months_paid_12m, window=12)
+    rec = recurrence_score(months_paid_12m, window=months_window)
     yld = yield_score(dy_ttm, dy_baseline)
     grw = growth_score(crescimento)
     sustain = fund_sustainability_multiplier(
@@ -159,6 +163,7 @@ def fund_composite_score(
         vp_cota_var=vp_cota_var,
         taxa_admin_aa=taxa_admin_aa,
         months_paid_12m=months_paid_12m,
+        months_window=months_window,
     )
     base = W_RECURRENCE * rec + W_YIELD * yld + W_GROWTH * grw
     score = base * sustain
