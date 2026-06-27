@@ -1,9 +1,20 @@
-import { getScore, getFundamentos, getFiis, getFiiDy, type Fundamento } from "@/lib/data";
+import {
+  getScore,
+  getFundamentos,
+  getFiiScore,
+  getFiagroScore,
+  type Fundamento,
+  type FundScoreRow,
+} from "@/lib/data";
 
 const pct = (v?: number | null, d = 1) =>
   v === null || v === undefined || Number.isNaN(v) ? "—" : `${(v * 100).toFixed(d)}%`;
 const num = (v?: number | null, d = 2) =>
   v === null || v === undefined || Number.isNaN(v) ? "—" : v.toFixed(d);
+const pctSigned = (v?: number | null, d = 1) =>
+  v === null || v === undefined || Number.isNaN(v)
+    ? "—"
+    : `${v >= 0 ? "+" : ""}${(v * 100).toFixed(d)}%`;
 
 function scoreClass(s: number) {
   return s >= 75 ? "s-hi" : s >= 55 ? "s-mid" : "s-lo";
@@ -23,11 +34,80 @@ function Sparkline({ series }: { series: Record<string, number> }) {
   );
 }
 
+function FundShortlist({
+  rows,
+  baselineKey,
+  baselineLabel,
+  showConfianca = false,
+}: {
+  rows: FundScoreRow[];
+  baselineKey: "dy_mediana" | "dy_baseline_pares";
+  baselineLabel: string;
+  showConfianca?: boolean;
+}) {
+  return (
+    <div className="tablecard">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Ativo</th>
+            <th>Score</th>
+            <th>DY 12m</th>
+            <th>{baselineLabel}</th>
+            <th>P/VP</th>
+            <th>Cresc.</th>
+            <th>Alav.</th>
+            {showConfianca && <th>Confiança</th>}
+            <th>Flags</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r.ticker}>
+              <td className="muted">{r.rank}</td>
+              <td>
+                <span className="tk">{r.ticker}</span>
+                <div className="name">{r.nome}</div>
+              </td>
+              <td>
+                <span className={`score-pill ${scoreClass(r.score)}`}>{r.score}</span>
+              </td>
+              <td>
+                {pct(r.dy_ttm)}
+                {r.dy_ttm_estimado ? <span className="muted"> est.</span> : ""}
+              </td>
+              <td className="muted">{pct(r[baselineKey])}</td>
+              <td>{num(r.pvp)}</td>
+              <td>{r.crescimento === null || r.crescimento === undefined ? "—" : pctSigned(r.crescimento)}</td>
+              <td className="muted">{r.alavancagem === null || r.alavancagem === undefined ? "—" : `${(r.alavancagem * 100).toFixed(0)}%`}</td>
+              {showConfianca && (
+                <td>
+                  <span className={`chip ${r.confianca === "baixa" ? "trap" : "ok"}`}>
+                    {r.confianca ?? "—"}
+                  </span>
+                </td>
+              )}
+              <td>
+                {r.yield_trap ? (
+                  <span className="chip trap">yield trap</span>
+                ) : (
+                  <span className="chip ok">recorrente</span>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 export default function Home() {
   const score = getScore();
   const fundamentos = getFundamentos();
-  const fiis = getFiis();
-  const fiiDy = getFiiDy();
+  const fiiScore = getFiiScore();
+  const fiagroScore = getFiagroScore();
   const fByTk = new Map<string, Fundamento>(fundamentos.data.map((f) => [f.ticker, f]));
   const generated =
     (score.meta?.generated_at as string) || (fundamentos.meta?.generated_at as string) || "";
@@ -113,49 +193,35 @@ export default function Home() {
       </section>
 
       <section>
-        <h2>FIIs monitorados</h2>
+        <h2>Short-list de FIIs</h2>
         <p className="sub">
-          Preço e P/VP (VP da cota do informe mensal da CVM) + DY 12m e mediana histórica
-          (DY mensal oficial da CVM).
+          Mesma análise das ações, adaptada a fundos: DY oficial da CVM, crescimento (CAGR do
+          DY), alavancagem (passivo/PL), preservação da cota e taxa de administração.{" "}
+          <strong>Baseline = histórico do próprio fundo</strong> (~5 anos de DY mensal); o trap é
+          per-fundo.
         </p>
-        <div className="tablecard">
-          <table>
-            <thead>
-              <tr>
-                <th>Ativo</th>
-                <th>Preço</th>
-                <th>P/VP</th>
-                <th>DY 12m</th>
-                <th>DY mediana</th>
-                <th>Flags</th>
-              </tr>
-            </thead>
-            <tbody>
-              {fiis.data.map((r) => {
-                const dy = fiiDy.get(r.ticker);
-                return (
-                  <tr key={r.ticker}>
-                    <td>
-                      <span className="tk">{r.ticker}</span>
-                      <div className="name">{r.nome}</div>
-                    </td>
-                    <td>{num(r.current_price)}</td>
-                    <td>{num(r.pvp)}</td>
-                    <td>{pct(dy?.dy_ttm)}</td>
-                    <td className="muted">{pct(dy?.dy_mediana)}</td>
-                    <td>
-                      {dy?.yield_trap ? (
-                        <span className="chip trap">yield trap</span>
-                      ) : (
-                        <span className="chip">—</span>
-                      )}
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
+        <FundShortlist
+          rows={fiiScore.data}
+          baselineKey="dy_mediana"
+          baselineLabel="DY mediana"
+        />
+      </section>
+
+      <section>
+        <h2>Short-list de FIAgros</h2>
+        <p className="sub">
+          Universo <strong>auto-detectado</strong> (fi-agro negociados na B3 ∩ informe da CVM).
+          O FIAgro só tem dado mensal desde <strong>2025-05 (~1 ano)</strong>: o DY 12m pode ser{" "}
+          <em>anualizado</em> (est.) e o baseline é <strong>cross-sectional</strong> (mediana dos
+          pares), não histórico. A coluna <em>confiança</em> rebaixa DY com cara de placeholder
+          (constante) e histórico muito curto.
+        </p>
+        <FundShortlist
+          rows={fiagroScore.data}
+          baselineKey="dy_baseline_pares"
+          baselineLabel="DY pares"
+          showConfianca
+        />
       </section>
 
       <footer>

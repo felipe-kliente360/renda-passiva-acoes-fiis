@@ -66,8 +66,40 @@ export type FiiDy = {
   yield_trap?: boolean;
 };
 
+// Score de FUNDOS (FII e FIAgro) — mesma metodologia 40/30/30 × sustentabilidade,
+// adaptada a fundos (alavancagem/cota/taxa/recorrência). FII traz baseline histórico
+// próprio (dy_mediana); FIAgro, baseline cross-sectional (dy_baseline_pares) e confiança.
+export type FundScoreRow = {
+  rank: number;
+  ticker: string;
+  nome?: string;
+  score: number;
+  recurrence: number;
+  yield: number;
+  growth: number;
+  sustainability: number;
+  yield_trap: boolean;
+  confianca?: "alta" | "baixa";
+  dy_ttm?: number | null;
+  dy_ttm_estimado?: boolean;
+  dy_mediana?: number | null;
+  dy_baseline_pares?: number | null;
+  pvp?: number | null;
+  alavancagem?: number | null;
+  vp_cota_var?: number | null;
+  meses_disponiveis?: number;
+  crescimento?: number | null;
+  crescimento_base?: string | null;
+};
+
 export function getScore() {
   return read<Payload<ScoreRow>>("score.json", { data: [] });
+}
+export function getFiiScore() {
+  return read<Payload<FundScoreRow>>("fii_score.json", { data: [] });
+}
+export function getFiagroScore() {
+  return read<Payload<FundScoreRow>>("fiagro_score.json", { data: [] });
 }
 export function getFundamentos() {
   return read<Payload<Fundamento>>("fundamentos.json", { data: [] });
