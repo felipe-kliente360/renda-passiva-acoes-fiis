@@ -35,6 +35,14 @@ fii_inf_mensal:
       # de FII (TTM = soma dos 12 últimos; histórico = soma anual). Validado no real (MXRF).
       candidates: ["Percentual_Dividend_Yield_Mes"]
       required: false
+    valor_ativo:
+      # Total de ativos do fundo — numerador da alavancagem (passivo = ativo − PL).
+      candidates: ["Valor_Ativo"]
+      required: false
+    taxa_administracao:
+      # Despesa de taxa de administração no mês (drag sobre o rendimento), no complemento.
+      candidates: ["Percentual_Despesas_Taxa_Administracao"]
+      required: false
 
 # Informe mensal de FIAgro (INF_MENSAL FIAgro) — DY de rendimentos + saúde patrimonial.
 # DATASET PRÓPRIO da CVM (não confundir com os "agro" do INF_MENSAL de FII, que são FIIs do

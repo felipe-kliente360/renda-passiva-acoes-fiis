@@ -77,6 +77,45 @@ def dy_mensal_por_fundo(df: pd.DataFrame, spec: DatasetSpec | None = None) -> pd
     return out.dropna(subset=["competencia", "dy_mes"])
 
 
+def parse_fii_enriched(df: pd.DataFrame, spec: DatasetSpec | None = None) -> pd.DataFrame:
+    """Série mensal ENRIQUECIDA do FII para a análise estilo-ações (alimenta aggregate_fund).
+
+    Saída por fundo/competência: cnpj_fundo, competencia, dy_mes (fração, já oficial),
+    patrimonio_liquido, valor_patrimonial_cota, total_passivo (= Valor_Ativo − PL),
+    taxa_administracao. Reúsa a resolução config-driven; campos ausentes ficam NaN.
+    """
+    spec = spec or load_columns_config()[DATASET]
+    resolved, _ = resolve_columns(spec, list(df.columns))
+
+    out = pd.DataFrame()
+    out["cnpj_fundo"] = df[resolved["cnpj_fundo"]].astype("string").str.strip()
+    out["competencia"] = pd.to_datetime(
+        df[resolved["competencia"]], errors="coerce", format="mixed"
+    )
+
+    def _num(field: str) -> pd.Series:
+        return (
+            to_numeric_ptbr(df[resolved[field]], decimal=spec.decimal)
+            if field in resolved
+            else pd.Series(np.nan, index=df.index, dtype="float64")
+        )
+
+    out["dy_mes"] = _num("dividend_yield_mes")
+    out["patrimonio_liquido"] = _num("patrimonio_liquido")
+    out["taxa_administracao"] = _num("taxa_administracao")
+
+    vp = _num("valor_patrimonial_cota")
+    cotas = _num("cotas_emitidas")
+    pl = out["patrimonio_liquido"]
+    derived = pl.where(cotas.gt(0)) / cotas.where(cotas.gt(0))
+    out["valor_patrimonial_cota"] = vp.where(vp.notna(), derived)
+
+    # Passivo do FII não vem direto no complemento: deriva de Valor_Ativo − PL.
+    ativo = _num("valor_ativo")
+    out["total_passivo"] = (ativo - pl).where(ativo.notna() & pl.notna())
+    return out.dropna(subset=["competencia"]).reset_index(drop=True)
+
+
 def aggregate_fii_dy(monthly: pd.DataFrame, *, trap_multiple: float = 1.5) -> dict:
     """Agrega o DY mensal de UM fundo em TTM, histórico anual, mediana e flag de trap.
 

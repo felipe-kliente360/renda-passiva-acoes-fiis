@@ -5,6 +5,7 @@ from conftest import DATA_DIR
 from pipeline.fii import (
     aggregate_fii_dy,
     latest_vp_por_fundo,
+    parse_fii_enriched,
     parse_fii_inf_mensal,
 )
 from pipeline.normalize import read_cvm_csv
@@ -50,6 +51,16 @@ def test_missing_required_column_raises():
     df = pd.DataFrame({"foo": ["x"], "Data_Referencia": ["2024-01-31"]})
     with pytest.raises(ValueError, match="obrigatórias"):
         parse_fii_inf_mensal(df)
+
+
+def test_parse_fii_enriched_extrai_dy_passivo_taxa():
+    df = read_cvm_csv(DATA_DIR / "fii_inf_mensal_enriched_sample.csv")
+    out = parse_fii_enriched(df).sort_values("competencia").reset_index(drop=True)
+    assert out["dy_mes"].tolist() == [0.009, 0.0095]
+    # passivo derivado = Valor_Ativo − PL = 1.100.000 − 1.000.000 = 100.000
+    assert out["total_passivo"].iloc[0] == pytest.approx(100000.0)
+    assert out["taxa_administracao"].iloc[0] == pytest.approx(0.0008)
+    assert out["valor_patrimonial_cota"].iloc[0] == pytest.approx(100.0)
 
 
 def _monthly(dy_por_mes):
