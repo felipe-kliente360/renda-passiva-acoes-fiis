@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-27T03:08:58.854334+00:00",
+    "generated_at": "2026-06-27T03:21:01.653850+00:00",
     "count": 28,
     "fonte": "CVM INF_MENSAL FIAgro (Dividend_Yield_Mes) + brapi (universo/spot)",
     "universo": "auto-detectado: fi-agro da brapi ∩ ISIN→ticker da CVM",

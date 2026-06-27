@@ -224,7 +224,12 @@ def aggregate_fund(monthly: pd.DataFrame, *, trap_multiple: float = 1.5) -> dict
     if "dy_mes" not in monthly and "dividend_yield_mes" in monthly:
         monthly = monthly.rename(columns={"dividend_yield_mes": "dy_mes"})
     m = monthly.dropna(subset=["competencia"]).sort_values("competencia")
-    m = m.dropna(subset=["dy_mes"]) if "dy_mes" in m else m
+    if "dy_mes" in m:
+        # DY de distribuição não é negativo: um mês negativo (ex.: XPML11 2026-01 = −5,9%)
+        # é correção/clawback mal-reportado, não rendimento. Trata como anomalia (descarta),
+        # senão um único mês afunda o TTM. Vale p/ FII e FIAgro.
+        m = m[m["dy_mes"].isna() | (m["dy_mes"] >= 0)]
+        m = m.dropna(subset=["dy_mes"])
     empty = {
         "dy_ttm": None, "dy_ttm_estimado": False, "dy_por_ano": {}, "dy_baseline": None,
         "dy_mediana": None,

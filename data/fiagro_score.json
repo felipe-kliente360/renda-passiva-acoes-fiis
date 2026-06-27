@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated_at": "2026-06-27T03:08:58.871118+00:00",
+    "generated_at": "2026-06-27T03:21:01.671832+00:00",
     "count": 26,
-    "metodologia": "score de fundos 40/30/30 × sustentabilidade (alavancagem/cota/taxa/recorrência)",
+    "metodologia": "score de fundos 40/30/30 × sustentabilidade (alavancagem/cota/taxa)",
     "baseline_yield": "cross-sectional (mediana dos pares) — história curta do FIAgro",
     "peer_median_dy_ttm": 0.09233999999999999,
     "min_meses_rank": 6,

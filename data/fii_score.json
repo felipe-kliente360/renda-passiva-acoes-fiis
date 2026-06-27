@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-27T03:12:35.876617+00:00",
+    "generated_at": "2026-06-27T03:20:48.124490+00:00",
     "count": 8,
     "metodologia": "score de fundos 40/30/30 × sustentabilidade (alavancagem/cota/taxa)",
     "fonte": "CVM INF_MENSAL FII (Percentual_Dividend_Yield_Mes + saúde patrimonial)",
@@ -27,6 +27,25 @@
       "rank": 1
     },
     {
+      "ticker": "XPML11",
+      "nome": "XP Malls",
+      "score": 100.0,
+      "recurrence": 1.0,
+      "yield": 1.0,
+      "growth": 1.0,
+      "sustainability": 1.0,
+      "yield_trap": false,
+      "dy_ttm": 0.093823,
+      "dy_mediana": 0.092955,
+      "pvp": 0.9442172169702625,
+      "alavancagem": 0.14721587281537854,
+      "vp_cota_var": 0.012467733435082451,
+      "meses_disponiveis": 73,
+      "crescimento": 0.179260850124217,
+      "crescimento_base": "cagr_anual",
+      "rank": 2
+    },
+    {
       "ticker": "VISC11",
       "nome": "Vinci Shopping Centers",
       "score": 100.0,
@@ -43,7 +62,7 @@
       "meses_disponiveis": 76,
       "crescimento": 0.17572140860836183,
       "crescimento_base": "cagr_anual",
-      "rank": 2
+      "rank": 3
     },
     {
       "ticker": "BTLG11",
@@ -62,7 +81,7 @@
       "meses_disponiveis": 77,
       "crescimento": 0.121752553315716,
       "crescimento_base": "cagr_anual",
-      "rank": 3
+      "rank": 4
     },
     {
       "ticker": "KNRI11",
@@ -81,7 +100,7 @@
       "meses_disponiveis": 77,
       "crescimento": 0.08046170932313479,
       "crescimento_base": "cagr_anual",
-      "rank": 4
+      "rank": 5
     },
     {
       "ticker": "HGRU11",
@@ -99,25 +118,6 @@
       "vp_cota_var": 0.19017695370301557,
       "meses_disponiveis": 77,
       "crescimento": 0.05031123838678764,
-      "crescimento_base": "cagr_anual",
-      "rank": 5
-    },
-    {
-      "ticker": "XPML11",
-      "nome": "XP Malls",
-      "score": 84.0,
-      "recurrence": 0.917,
-      "yield": 0.578,
-      "growth": 1.0,
-      "sustainability": 1.0,
-      "yield_trap": false,
-      "dy_ttm": 0.026279000000000007,
-      "dy_mediana": 0.08860299999999999,
-      "pvp": 0.9442172169702625,
-      "alavancagem": 0.14721587281537854,
-      "vp_cota_var": 0.012467733435082451,
-      "meses_disponiveis": 77,
-      "crescimento": 0.2855671810421143,
       "crescimento_base": "cagr_anual",
       "rank": 6
     },
