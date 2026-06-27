@@ -64,6 +64,31 @@ def _norm(s: object) -> str:
     return "".join(c for c in unicodedata.normalize("NFKD", t) if not unicodedata.combining(c))
 
 
+# Sinais de MUDANÇA na política de proventos (early warning do "vai continuar pagando?").
+# Conservador e HEURÍSTICO (só o assunto, não o corpo do PDF): só dispara quando há um termo
+# de mudança/negativo JUNTO de um termo de provento — declarações de rotina ("Remuneração
+# aos Acionistas", "Pagamento de JCP") NÃO disparam.
+_POLICY_NEG = ("reducao", "suspensao", "corte", "deixara de", "nao pagamento", "interrupcao")
+_POLICY_CHANGE = ("revisao", "alteracao", "mudanca", "nova politica", "atualizacao da politica")
+_POLICY_PROVENTO = ("dividendo", "provento", "remuneracao", "payout", "jcp", "juros sobre")
+
+
+def flag_policy_change(assunto: object) -> bool:
+    """True se o assunto sugere MUDANÇA na política de proventos (não pagamento de rotina).
+
+    Heurística: (termo negativo OU de mudança) + (termo de provento), ou menção explícita a
+    'política de remuneração/dividendos'. Pega o sinal para o usuário ABRIR o documento — não
+    afirma corte (isso exigiria ler o corpo).
+    """
+    n = _norm(assunto)
+    if "politica de remuneracao" in n or "politica de dividendos" in n:
+        return True
+    tem_provento = any(p in n for p in _POLICY_PROVENTO)
+    if not tem_provento:
+        return False
+    return any(t in n for t in _POLICY_NEG) or any(c in n for c in _POLICY_CHANGE)
+
+
 def fatos_relevantes(
     df: pd.DataFrame,
     cds: set[str],
@@ -90,14 +115,16 @@ def fatos_relevantes(
     out: list[dict] = []
     for cd, grp in sub.groupby("cd_cvm"):
         for _, r in grp.head(limit_por_empresa).iterrows():
+            assunto = None if pd.isna(r["assunto"]) else r["assunto"]
             out.append({
                 "cd_cvm": cd,
                 "nome": None if pd.isna(r["nome"]) else r["nome"],
                 "data": r["data"].date().isoformat(),
                 "categoria": r["categoria"],
                 "tipo": None if pd.isna(r["tipo"]) else r["tipo"],
-                "assunto": None if pd.isna(r["assunto"]) else r["assunto"],
+                "assunto": assunto,
                 "link": None if pd.isna(r["link"]) else r["link"],
+                "alerta_politica": flag_policy_change(assunto),
             })
     out.sort(key=lambda x: x["data"], reverse=True)
     return out

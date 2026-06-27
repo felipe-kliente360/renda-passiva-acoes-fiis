@@ -1,7 +1,7 @@
 import pandas as pd
 from conftest import DATA_DIR
 
-from pipeline.ipe import fatos_relevantes, parse_ipe
+from pipeline.ipe import fatos_relevantes, flag_policy_change, parse_ipe
 from pipeline.normalize import read_cvm_csv
 
 SAMPLE = DATA_DIR / "ipe_sample.csv"
@@ -33,6 +33,18 @@ def test_fatos_relevantes_limit_por_empresa():
     df = parse_ipe(read_cvm_csv(SAMPLE))
     recs = fatos_relevantes(df, {"9512"}, limit_por_empresa=1)
     assert len([r for r in recs if r["cd_cvm"] == "9512"]) == 1
+
+
+def test_flag_policy_change():
+    # rotina (NÃO sinaliza)
+    assert flag_policy_change("Remuneração Complementar aos Acionistas 1T26") is False
+    assert flag_policy_change("Pagamento de Juros sobre o Capital Próprio") is False
+    assert flag_policy_change("Projeções 2026") is False
+    # mudança de política (sinaliza)
+    assert flag_policy_change("Revisão da Política de Remuneração aos Acionistas") is True
+    assert flag_policy_change("Redução do dividendo mínimo obrigatório") is True
+    assert flag_policy_change("Suspensão do pagamento de proventos") is True
+    assert flag_policy_change("Nova Política de Dividendos") is True
 
 
 def test_fatos_relevantes_vazio():

@@ -143,6 +143,9 @@ export default function Home() {
   const fiagroScore = getFiagroScore();
   const fatos = getFatosRelevantes();
   const macro = getMacro();
+  const alertaPolitica = new Set<string>(
+    (fatos.meta?.alerta_politica_proventos as string[] | undefined) ?? []
+  );
   const fByTk = new Map<string, Fundamento>(fundamentos.data.map((f) => [f.ticker, f]));
   const generated =
     (score.meta?.generated_at as string) || (fundamentos.meta?.generated_at as string) || "";
@@ -225,6 +228,11 @@ export default function Home() {
                     </td>
                     <td>{f ? <Sparkline series={f.proventos_pagos_por_ano} /> : "—"}</td>
                     <td>
+                      {alertaPolitica.has(r.ticker) && (
+                        <span className="chip trap" title="Comunicado recente mexe na política de proventos — ler">
+                          ⚠ política
+                        </span>
+                      )}
                       {r.yield_trap ? (
                         <span className="chip trap">yield trap</span>
                       ) : rec?.passes ? (
@@ -282,7 +290,9 @@ export default function Home() {
           <h2>Fatos relevantes da watchlist</h2>
           <p className="sub">
             Avisos de proventos, fatos relevantes e relatórios de proventos das ações
-            monitoradas (índice IPE-RAD da CVM). Link abre o documento original.
+            monitoradas (índice IPE-RAD da CVM). Link abre o documento original. A flag{" "}
+            <strong>⚠ política</strong> marca comunicados que mexem na política de proventos
+            (early warning do &quot;vai continuar pagando?&quot;) — e também aparece na short-list de ações.
           </p>
           <div className="tablecard">
             <table>
@@ -302,7 +312,14 @@ export default function Home() {
                     <td>
                       <span className="tk">{r.ticker ?? r.cd_cvm}</span>
                     </td>
-                    <td>{r.categoria}</td>
+                    <td>
+                      {r.categoria}
+                      {r.alerta_politica && (
+                        <span className="chip trap" title="Mexe na política de proventos">
+                          {" "}⚠ política
+                        </span>
+                      )}
+                    </td>
                     <td className="muted">{r.assunto || "—"}</td>
                     <td>
                       {r.link ? (

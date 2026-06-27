@@ -110,6 +110,7 @@ export type FatoRelevante = {
   tipo?: string | null;
   assunto?: string | null;
   link?: string | null;
+  alerta_politica?: boolean;
 };
 
 export function getScore() {

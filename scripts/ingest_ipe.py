@@ -78,18 +78,27 @@ def main() -> int:
     for r in records:
         r["ticker"] = cd_to_ticker.get(r["cd_cvm"])
 
+    # Tickers com alerta de MUDANÇA na política de proventos (early warning) — o front cruza
+    # com a short-list de ações para marcar o papel.
+    tickers_alerta = sorted(
+        {r["ticker"] for r in records if r.get("alerta_politica") and r.get("ticker")}
+    )
+
     meta = {
         "fonte": "CVM IPE (ipe_cia_aberta) — índice de documentos protocolados (RAD)",
         "categorias": "fato relevante, aviso aos acionistas, relatório de proventos",
         "escopo": f"watchlist de ações ({len(cds)} empresas), {args.start}–{end}",
+        "alerta_politica_proventos": tickers_alerta,
     }
     json_path = export_json(records, args.out.with_suffix(".json"), meta=meta)
     export_parquet(records, args.out.with_suffix(".parquet"))
 
     print(f"\nFatos relevantes da watchlist: {len(records)} docs")
     for r in records[:12]:
+        flag = " ⚠política" if r.get("alerta_politica") else ""
         print(f"  {r['data']}  {r.get('ticker') or r['cd_cvm']:6}  {r['categoria'][:22]:22}  "
-              f"{(r['assunto'] or '')[:45]}")
+              f"{(r['assunto'] or '')[:42]}{flag}")
+    print(f"Alerta de política de proventos: {tickers_alerta or '—'}")
     print(f"Escrito: {json_path}")
     return 0
 
