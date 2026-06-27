@@ -1,357 +1,159 @@
+import Workspace, { type Detail, type Row } from "./components/Workspace";
 import {
   getScore,
   getFundamentos,
   getFiiScore,
+  getFiiFundos,
   getFiagroScore,
+  getFiagro,
   getFatosRelevantes,
   getMacro,
   type Fundamento,
   type FundScoreRow,
+  type FundoDetalhe,
 } from "@/lib/data";
 
 const pct = (v?: number | null, d = 1) =>
   v === null || v === undefined || Number.isNaN(v) ? "—" : `${(v * 100).toFixed(d)}%`;
-const num = (v?: number | null, d = 2) =>
-  v === null || v === undefined || Number.isNaN(v) ? "—" : v.toFixed(d);
-const pctSigned = (v?: number | null, d = 1) =>
-  v === null || v === undefined || Number.isNaN(v)
-    ? "—"
-    : `${v >= 0 ? "+" : ""}${(v * 100).toFixed(d)}%`;
-const fmtVol = (v?: number | null) => {
-  if (v === null || v === undefined || Number.isNaN(v) || v <= 0) return "—";
-  if (v >= 1e6) return `${(v / 1e6).toFixed(1)}M`;
-  if (v >= 1e3) return `${(v / 1e3).toFixed(0)}k`;
-  return `${v}`;
-};
+const n2 = (v?: number | null) =>
+  v === null || v === undefined || Number.isNaN(v) ? "—" : v.toFixed(2);
+const signed = (v?: number | null) =>
+  v === null || v === undefined || Number.isNaN(v) ? "—" : `${v >= 0 ? "+" : ""}${(v * 100).toFixed(1)}%`;
 
-function scoreClass(s: number) {
-  return s >= 75 ? "s-hi" : s >= 55 ? "s-mid" : "s-lo";
-}
-
-// Valor do ano mais recente de um dicionário {ano: valor} (ex.: payout declarado).
-function latestYearValue(d?: Record<string, number | null>): number | null {
+function latest(d?: Record<string, number | null>): number | null {
   if (!d) return null;
-  const years = Object.keys(d).filter((y) => d[y] !== null);
-  if (!years.length) return null;
-  const y = years.sort((a, b) => Number(b) - Number(a))[0];
-  return d[y];
+  const ys = Object.keys(d).filter((y) => d[y] !== null);
+  if (!ys.length) return null;
+  return d[ys.sort((a, b) => Number(b) - Number(a))[0]];
+}
+function clean(d?: Record<string, number | null>): Record<string, number> {
+  const o: Record<string, number> = {};
+  for (const [k, v] of Object.entries(d ?? {})) if (typeof v === "number") o[k] = v;
+  return o;
 }
 
-function Sparkline({ series }: { series: Record<string, number> }) {
-  const entries = Object.entries(series).sort((a, b) => Number(a[0]) - Number(b[0]));
-  const vals = entries.map(([, v]) => v);
-  if (!vals.length) return <span className="muted">—</span>;
-  const max = Math.max(...vals, 1e-9);
-  return (
-    <div className="spark" title={entries.map(([y, v]) => `${y}: ${(v / 1e9).toFixed(1)}bi`).join("  ")}>
-      {vals.map((v, i) => (
-        <i key={i} style={{ height: `${Math.max(2, (v / max) * 28)}px` }} />
-      ))}
-    </div>
-  );
-}
-
-function FundShortlist({
-  rows,
-  baselineKey,
-  baselineLabel,
-  showConfianca = false,
-  showCredito = false,
-  showVacancia = false,
-}: {
-  rows: FundScoreRow[];
-  baselineKey: "dy_mediana" | "dy_baseline_pares";
-  baselineLabel: string;
-  showConfianca?: boolean;
-  showCredito?: boolean;
-  showVacancia?: boolean;
-}) {
-  return (
-    <div className="tablecard">
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Ativo</th>
-            <th>Tipo</th>
-            <th>Score</th>
-            <th>DY 12m</th>
-            <th>{baselineLabel}</th>
-            <th>P/VP</th>
-            <th title="DY 12m − CDI 12m (contexto, não score)">Spread CDI</th>
-            <th>Cresc.</th>
-            <th>Alav.</th>
-            {showCredito && <th>Inadimpl.</th>}
-            {showVacancia && <th title="Vacância dos imóveis, ponderada pela receita (FNET)">Vacância</th>}
-            <th title="Volume diário negociado (brapi)">Liq.</th>
-            {showConfianca && <th>Confiança</th>}
-            <th>Flags</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r) => (
-            <tr key={r.ticker}>
-              <td className="muted">{r.rank}</td>
-              <td>
-                <span className="tk">{r.ticker}</span>
-                <div className="name">{r.nome}</div>
-              </td>
-              <td>{r.tipo ? <span className="chip">{r.tipo}</span> : "—"}</td>
-              <td>
-                <span className={`score-pill ${scoreClass(r.score)}`}>{r.score}</span>
-              </td>
-              <td>
-                {pct(r.dy_ttm)}
-                {r.dy_ttm_estimado ? <span className="muted"> est.</span> : ""}
-              </td>
-              <td className="muted">{pct(r[baselineKey])}</td>
-              <td>{num(r.pvp)}</td>
-              <td className="muted">{pctSigned(r.spread_cdi)}</td>
-              <td>{r.crescimento === null || r.crescimento === undefined ? "—" : pctSigned(r.crescimento)}</td>
-              <td className="muted">{r.alavancagem === null || r.alavancagem === undefined ? "—" : `${(r.alavancagem * 100).toFixed(0)}%`}</td>
-              {showCredito && (
-                <td className="muted">
-                  {r.inadimplencia === null || r.inadimplencia === undefined
-                    ? "—"
-                    : pct(r.inadimplencia)}
-                </td>
-              )}
-              {showVacancia && (
-                <td className="muted">
-                  {r.vacancia === null || r.vacancia === undefined ? "—" : pct(r.vacancia)}
-                </td>
-              )}
-              <td className="muted">{fmtVol(r.volume_brapi)}</td>
-              {showConfianca && (
-                <td>
-                  <span className={`chip ${r.confianca === "baixa" ? "trap" : "ok"}`}>
-                    {r.confianca ?? "—"}
-                  </span>
-                </td>
-              )}
-              <td>
-                {r.yield_trap ? (
-                  <span className="chip trap">yield trap</span>
-                ) : (
-                  <span className="chip ok">recorrente</span>
-                )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+function veredito(score: number, trap?: boolean, confBaixa?: boolean): string {
+  let base =
+    score >= 85 ? "Paga forte e de forma constante."
+    : score >= 70 ? "Pagador sólido."
+    : score >= 55 ? "Razoável — vale checar os pontos fracos."
+    : "Fraco para a tese de renda passiva.";
+  if (trap) base = "⚠ Yield muito acima do histórico — possível armadilha. " + base;
+  if (confBaixa) base = "Dado de baixa confiança (histórico curto / placeholder). " + base;
+  return base;
 }
 
 export default function Home() {
   const score = getScore();
   const fundamentos = getFundamentos();
-  const fiiScore = getFiiScore();
-  const fiagroScore = getFiagroScore();
-  const fatos = getFatosRelevantes();
-  const macro = getMacro();
-  const alertaPolitica = new Set<string>(
-    (fatos.meta?.alerta_politica_proventos as string[] | undefined) ?? []
-  );
   const fByTk = new Map<string, Fundamento>(fundamentos.data.map((f) => [f.ticker, f]));
-  const generated =
-    (score.meta?.generated_at as string) || (fundamentos.meta?.generated_at as string) || "";
+  const fatos = getFatosRelevantes();
+  const fatosByTk = new Map<string, typeof fatos.data>();
+  for (const f of fatos.data) {
+    const tk = f.ticker ?? f.cd_cvm;
+    if (!tk) continue;
+    if (!fatosByTk.has(tk)) fatosByTk.set(tk, []);
+    fatosByTk.get(tk)!.push(f);
+  }
+
+  // ----- Ações -----
+  const acoes: Row[] = score.data.map((r) => {
+    const f = fByTk.get(r.ticker);
+    const rec = f?.recorrencia;
+    const detail: Detail = {
+      veredito: veredito(r.score, r.yield_trap),
+      breakdown: { recurrence: r.recurrence, yield: r.yield, growth: r.growth, sustainability: r.sustainability },
+      series: {
+        dy: { label: "DY histórico (% a.a.)", data: clean(f?.dy_historico_por_ano) },
+        prov: { label: "Proventos pagos (R$)", data: clean(f?.proventos_pagos_por_ano), money: true },
+        payout: { label: "Payout declarado (DMPL)", data: clean(f?.payout_declarado_por_ano) },
+      },
+      fundamentos: [
+        { label: "DY atual", value: pct(r.dy_corrente) },
+        { label: "DY mediana (hist.)", value: pct(r.dy_mediana_hist) },
+        { label: "P/VP", value: n2(r.pvp) },
+        { label: "ROE", value: pct(r.roe_recente) },
+        { label: "Dív. líq./EBITDA", value: typeof r.divida_liquida_ebitda === "number" ? `${r.divida_liquida_ebitda.toFixed(2)}x` : "—", warn: (r.divida_liquida_ebitda ?? 0) > 3 },
+        { label: "Recorrência", value: rec ? `${rec.years_paid}/${rec.window} anos` : "—" },
+        { label: "Payout declarado", value: pct(latest(f?.payout_declarado_por_ano)) },
+        { label: "CAGR dividendo", value: signed(f?.crescimento_dps_cagr) },
+      ],
+      fatos: fatosByTk.get(r.ticker)?.slice(0, 6),
+      notes: f?.notes,
+    };
+    return { ...r, classe: "acoes", ticker: r.ticker, nome: r.nome ?? undefined, score: r.score, detail };
+  });
+
+  // ----- Fundos (FII / FIAgro): junta score + detalhe (séries) -----
+  const buildFundo = (
+    rows: FundScoreRow[],
+    detalhes: FundoDetalhe[],
+    classe: "fiis" | "fiagros"
+  ): Row[] => {
+    const byTk = new Map(detalhes.map((d) => [d.ticker, d]));
+    return rows.map((r) => {
+      const dt = byTk.get(r.ticker);
+      const comp = dt?.composicao
+        ? Object.entries(dt.composicao).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k.toUpperCase()} ${(v * 100).toFixed(0)}%`).join(" · ")
+        : null;
+      const fundamentos: { label: string; value: string; warn?: boolean }[] = [
+        { label: "DY 12m", value: pct(r.dy_ttm) + (r.dy_ttm_estimado ? " est." : "") },
+        { label: classe === "fiis" ? "DY mediana" : "DY pares", value: pct(classe === "fiis" ? r.dy_mediana : r.dy_baseline_pares) },
+        { label: "P/VP", value: n2(r.pvp) },
+        { label: "Alavancagem", value: pct(r.alavancagem, 0) },
+        { label: "Cresc. (cota não derrete)", value: signed(r.vp_cota_var) },
+        { label: "Taxa adm (a.a.)", value: pct(dt?.taxa_admin_aa) },
+        { label: "Spread sobre CDI", value: signed(r.spread_cdi) },
+        { label: "Nº cotistas", value: r.num_cotistas ? r.num_cotistas.toLocaleString("pt-BR") : "—" },
+        { label: "Liquidez (vol/dia)", value: r.volume_brapi ? r.volume_brapi.toLocaleString("pt-BR") : "—" },
+        { label: "Meses de histórico", value: r.meses_disponiveis ? String(r.meses_disponiveis) : "—" },
+      ];
+      if (classe === "fiis") {
+        fundamentos.splice(3, 0,
+          { label: "Vacância", value: pct(r.vacancia) },
+          { label: "Inadimpl. aluguel", value: pct(r.inadimplencia) });
+      } else {
+        fundamentos.splice(3, 0,
+          { label: "Inadimplência", value: pct(r.inadimplencia), warn: (r.inadimplencia ?? 0) > 0.03 },
+          { label: "Diversificação (HHI)", value: n2(r.diversificacao_hhi) });
+        if (comp) fundamentos.push({ label: "Composição", value: comp });
+      }
+      const detail: Detail = {
+        veredito: veredito(r.score, r.yield_trap, r.confianca === "baixa"),
+        breakdown: { recurrence: r.recurrence, yield: r.yield, growth: r.growth, sustainability: r.sustainability },
+        series: { dy: { label: "DY por ano", data: clean(dt?.dy_por_ano) } },
+        fundamentos,
+      };
+      return { ...r, classe, ticker: r.ticker, nome: r.nome ?? undefined, score: r.score, tipo: r.tipo, detail };
+    });
+  };
+
+  const fiis = buildFundo(getFiiScore().data, getFiiFundos().data, "fiis");
+  const fiagros = buildFundo(getFiagroScore().data, getFiagro().data, "fiagros");
+  const macro = getMacro();
+  const generated = (score.meta?.generated_at as string) || "";
 
   return (
     <main className="wrap">
       <header className="hero">
-        <h1>
-          div<span className="dot">br</span>
-        </h1>
-        <p>Renda passiva na B3 a partir de dados oficiais da CVM (ITR/DFP).</p>
+        <h1>div<span className="dot">br</span></h1>
+        <p>Renda passiva na B3 a partir de dados oficiais da CVM, B3 e BCB.</p>
       </header>
 
       <div className="guide">
-        <strong>Isto paga, e vai continuar pagando?</strong> O score não premia o maior yield do
-        trimestre — premia o fluxo que se sustenta: <strong>recorrência (40%)</strong>, yield vs.
-        baseline histórico <strong>(30%)</strong> e crescimento do dividendo <strong>(30%)</strong>,
-        ajustado por sustentabilidade (payout, ROE) e com corte de <em>yield trap</em>.
+        <strong>Isto paga, e vai continuar pagando?</strong> Ranqueamos pelo fluxo que se
+        sustenta: <strong>recorrência (40%)</strong>, yield vs. baseline <strong>(30%)</strong> e
+        crescimento <strong>(30%)</strong>, ajustado por sustentabilidade e com corte de yield trap.
+        Clique numa linha para o dossiê completo (timelines, breakdown do score, fundamentos).
       </div>
 
-      {(macro.cdi_12m ?? macro.selic_meta ?? macro.ipca_12m) != null && (
-        <div className="macro">
-          <span>Contexto (BCB):</span>
-          <strong>CDI 12m {pct(macro.cdi_12m)}</strong>
-          <strong>Selic {pct(macro.selic_meta)}</strong>
-          <strong>IPCA 12m {pct(macro.ipca_12m)}</strong>
-          <span className="muted">— base do spread sobre CDI dos fundos de crédito/papel</span>
-        </div>
-      )}
-
-      <section>
-        <h2>Short-list de ações</h2>
-        <p className="sub">Ranqueada pelo score composto. Proventos por competência da CVM.</p>
-        <div className="tablecard">
-          <table>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Ativo</th>
-                <th>Score</th>
-                <th>DY atual</th>
-                <th>DY mediana</th>
-                <th>P/VP</th>
-                <th>ROE</th>
-                <th>Payout decl.</th>
-                <th>Dív.líq/EBITDA</th>
-                <th>Recorr.</th>
-                <th>Proventos pagos (10a)</th>
-                <th>Flags</th>
-              </tr>
-            </thead>
-            <tbody>
-              {score.data.map((r) => {
-                const f = fByTk.get(r.ticker);
-                const rec = f?.recorrencia;
-                return (
-                  <tr key={r.ticker}>
-                    <td className="muted">{r.rank}</td>
-                    <td>
-                      <span className="tk">{r.ticker}</span>
-                      <div className="name">{r.nome}</div>
-                    </td>
-                    <td>
-                      <span className={`score-pill ${scoreClass(r.score)}`}>{r.score}</span>
-                    </td>
-                    <td>{pct(r.dy_corrente)}</td>
-                    <td className="muted">{pct(r.dy_mediana_hist)}</td>
-                    <td>{num(r.pvp)}</td>
-                    <td>{pct(r.roe_recente)}</td>
-                    <td className="muted" title="Proventos declarados (DMPL) ÷ lucro do exercício">
-                      {pct(latestYearValue(f?.payout_declarado_por_ano))}
-                    </td>
-                    <td className="muted">
-                      {r.divida_liquida_ebitda === null || r.divida_liquida_ebitda === undefined
-                        ? "—"
-                        : `${r.divida_liquida_ebitda.toFixed(2)}x`}
-                    </td>
-                    <td className="muted">
-                      {rec ? `${rec.years_paid}/${rec.window}` : "—"}
-                    </td>
-                    <td>{f ? <Sparkline series={f.proventos_pagos_por_ano} /> : "—"}</td>
-                    <td>
-                      {alertaPolitica.has(r.ticker) && (
-                        <span className="chip trap" title="Comunicado recente mexe na política de proventos — ler">
-                          ⚠ política
-                        </span>
-                      )}
-                      {r.yield_trap ? (
-                        <span className="chip trap">yield trap</span>
-                      ) : rec?.passes ? (
-                        <span className="chip ok">recorrente</span>
-                      ) : (
-                        <span className="chip">—</span>
-                      )}
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section>
-        <h2>Short-list de FIIs</h2>
-        <p className="sub">
-          Mesma análise das ações, adaptada a fundos: DY oficial da CVM, crescimento (CAGR do
-          DY), alavancagem (passivo/PL), preservação da cota e taxa de administração.{" "}
-          <strong>Baseline = histórico do próprio fundo</strong> (~5 anos de DY mensal); o trap é
-          per-fundo. <strong>Tipo</strong> (tijolo/papel/FoF) classificado pela composição do
-          ativo no informe da CVM. <strong>Vacância</strong> (tijolo) vem do Informe Trimestral
-          do FNET, ponderada pela receita dos imóveis — cobertura parcial (papel não tem).
-        </p>
-        <FundShortlist
-          rows={fiiScore.data}
-          baselineKey="dy_mediana"
-          baselineLabel="DY mediana"
-          showVacancia
-        />
-      </section>
-
-      <section>
-        <h2>Short-list de FIAgros</h2>
-        <p className="sub">
-          Universo <strong>auto-detectado</strong> (fi-agro negociados na B3 ∩ informe da CVM).
-          O FIAgro só tem dado mensal desde <strong>2025-05 (~1 ano)</strong>: o DY 12m pode ser{" "}
-          <em>anualizado</em> (est.) e o baseline é <strong>cross-sectional</strong> (mediana dos
-          pares), não histórico. A coluna <em>confiança</em> rebaixa DY com cara de placeholder
-          (constante) e histórico muito curto. <strong>Tipo</strong> (crédito/terras) e{" "}
-          <strong>inadimplência</strong> (Vencidos/carteira) saem da composição do informe; o
-          baseline de yield é por tipo.
-        </p>
-        <FundShortlist
-          rows={fiagroScore.data}
-          baselineKey="dy_baseline_pares"
-          baselineLabel="DY pares"
-          showConfianca
-          showCredito
-        />
-      </section>
-
-      {fatos.data.length > 0 && (
-        <section>
-          <h2>Fatos relevantes da watchlist</h2>
-          <p className="sub">
-            Avisos de proventos, fatos relevantes e relatórios de proventos das ações
-            monitoradas (índice IPE-RAD da CVM). Link abre o documento original. A flag{" "}
-            <strong>⚠ política</strong> marca comunicados que mexem na política de proventos
-            (early warning do &quot;vai continuar pagando?&quot;) — e também aparece na short-list de ações.
-          </p>
-          <div className="tablecard">
-            <table>
-              <thead>
-                <tr>
-                  <th>Data</th>
-                  <th>Ativo</th>
-                  <th>Categoria</th>
-                  <th>Assunto</th>
-                  <th>Doc.</th>
-                </tr>
-              </thead>
-              <tbody>
-                {fatos.data.slice(0, 30).map((r, i) => (
-                  <tr key={`${r.cd_cvm}-${r.data}-${i}`}>
-                    <td className="muted">{r.data}</td>
-                    <td>
-                      <span className="tk">{r.ticker ?? r.cd_cvm}</span>
-                    </td>
-                    <td>
-                      {r.categoria}
-                      {r.alerta_politica && (
-                        <span className="chip trap" title="Mexe na política de proventos">
-                          {" "}⚠ política
-                        </span>
-                      )}
-                    </td>
-                    <td className="muted">{r.assunto || "—"}</td>
-                    <td>
-                      {r.link ? (
-                        <a href={r.link} target="_blank" rel="noopener noreferrer">
-                          abrir
-                        </a>
-                      ) : (
-                        "—"
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
-      )}
+      <Workspace acoes={acoes} fiis={fiis} fiagros={fiagros} fatos={fatos.data} macro={macro} />
 
       <footer>
-        Fonte: CVM (dados abertos) para proventos e fundamentos; yfinance/brapi para preço de
-        mercado. Metodologia em <code>CLAUDE.md</code>. {generated ? `Gerado em ${generated}.` : ""}{" "}
-        Conteúdo informativo, não é recomendação de investimento.
+        Fontes: CVM (proventos/fundamentos), B3/FNET (vacância, fatos relevantes), brapi/yfinance
+        (preço/volume), BCB (macro). Metodologia em <code>README.md</code> / <code>CLAUDE.md</code>.
+        {generated ? ` Gerado em ${generated}.` : ""} Conteúdo informativo, não é recomendação de
+        investimento.
       </footer>
     </main>
   );

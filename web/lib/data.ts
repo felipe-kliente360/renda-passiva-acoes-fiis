@@ -137,6 +137,42 @@ export function getFiiScore() {
 export function getFiagroScore() {
   return read<Payload<FundScoreRow>>("fiagro_score.json", { data: [] });
 }
+
+// Detalhes por fundo (séries por ano, composição) para o dossiê do drawer.
+export type FundoDetalhe = {
+  ticker: string;
+  nome?: string;
+  dy_por_ano?: Record<string, number>;
+  dy_ttm?: number | null;
+  dy_mediana?: number | null;
+  dy_baseline?: number | null;
+  pl_atual?: number | null;
+  vp_cota_atual?: number | null;
+  vp_cota_var?: number | null;
+  pl_crescimento_aa?: number | null;
+  taxa_admin_aa?: number | null;
+  num_cotistas?: number | null;
+  meses_disponiveis?: number;
+  crescimento?: number | null;
+  crescimento_base?: string | null;
+  // FIAgro
+  composicao?: Record<string, number>;
+  inadimplencia?: number | null;
+  diversificacao_hhi?: number | null;
+  liquidez_pl?: number | null;
+};
+export function getFiiFundos() {
+  return read<Payload<FundoDetalhe>>("fii_fundos.json", { data: [] });
+}
+export function getFiagro() {
+  return read<Payload<FundoDetalhe>>("fiagro.json", { data: [] });
+}
+export function getFiiVacancia() {
+  return read<Payload<{ ticker: string; vacancia?: number | null; inadimplencia?: number | null; n_imoveis?: number; data_ref?: string }>>(
+    "fii_vacancia.json",
+    { data: [] }
+  );
+}
 export function getFundamentos() {
   return read<Payload<Fundamento>>("fundamentos.json", { data: [] });
 }
