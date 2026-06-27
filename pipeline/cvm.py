@@ -20,6 +20,12 @@ FII_INF_MENSAL_BASE = "https://dados.cvm.gov.br/dados/FII/DOC/INF_MENSAL/DADOS"
 # contra o índice vivo em 2026-06-26 (dfp_cia_aberta_AAAA.zip / itr_cia_aberta_AAAA.zip).
 DFP_BASE = "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS"
 ITR_BASE = "https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/ITR/DADOS"
+# Informe mensal de FIAgro — DATASET PRÓPRIO, arquivos MENSAIS (inf_mensal_fiagro_AAAAMM.zip).
+# Validado contra o índice vivo em 2026-06-27: cobertura começa em 202505. Difere do FII
+# (que é anual): aqui cada ZIP é um mês.
+FIAGRO_INF_MENSAL_BASE = "https://dados.cvm.gov.br/dados/FIAGRO/DOC/INF_MENSAL/DADOS"
+# Primeiro mês disponível no portal (AAAAMM). Antes disso não há arquivo (404).
+FIAGRO_FIRST_PERIOD = (2025, 5)
 
 DEFAULT_DEST = Path("data/raw")
 
@@ -63,6 +69,35 @@ def download_fii_inf_mensal(
     year = year or date.today().year
     dest = Path(dest_dir) / f"inf_mensal_fii_{year}.zip"
     return download(fii_inf_mensal_url(year), dest)
+
+
+def fiagro_inf_mensal_url(year: int, month: int) -> str:
+    """URL do ZIP do informe mensal de FIAgro de um mês (AAAAMM)."""
+    return f"{FIAGRO_INF_MENSAL_BASE}/inf_mensal_fiagro_{year}{month:02d}.zip"
+
+
+def iter_fiagro_periods(
+    start: tuple[int, int] = FIAGRO_FIRST_PERIOD,
+    end: tuple[int, int] | None = None,
+) -> list[tuple[int, int]]:
+    """Lista os (ano, mês) de start até end inclusive (default end = mês corrente)."""
+    end = end or (date.today().year, date.today().month)
+    periods: list[tuple[int, int]] = []
+    y, m = start
+    while (y, m) <= end:
+        periods.append((y, m))
+        m += 1
+        if m > 12:
+            y, m = y + 1, 1
+    return periods
+
+
+def download_fiagro_inf_mensal(
+    year: int, month: int, dest_dir: str | Path = DEFAULT_DEST
+) -> Path:
+    """Baixa o ZIP do informe mensal de FIAgro de um mês (AAAAMM)."""
+    dest = Path(dest_dir) / f"inf_mensal_fiagro_{year}{month:02d}.zip"
+    return download(fiagro_inf_mensal_url(year, month), dest)
 
 
 def download_dfp(year: int | None = None, dest_dir: str | Path = DEFAULT_DEST) -> Path:

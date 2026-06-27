@@ -35,3 +35,60 @@ fii_inf_mensal:
       # de FII (TTM = soma dos 12 últimos; histórico = soma anual). Validado no real (MXRF).
       candidates: ["Percentual_Dividend_Yield_Mes"]
       required: false
+
+# Informe mensal de FIAgro (INF_MENSAL FIAgro) — DY de rendimentos + saúde patrimonial.
+# DATASET PRÓPRIO da CVM (não confundir com os "agro" do INF_MENSAL de FII, que são FIIs do
+# setor). Layout pós-Resolução 175: identidade por CLASSE (CNPJ_Classe / Nome_Classe).
+# Peculiaridades validadas contra o arquivo real (inf_mensal_fiagro_202605.zip):
+#   - arquivos MENSAIS (inf_mensal_fiagro_AAAAMM.zip), não anuais; cobertura só de 2025-05+.
+#   - decimal = PONTO (ex.: "858.87"), igual ao FII.
+#   - CSV ÚNICO traz tudo (PL, cotas, VP da cota, DY mensal, taxas, passivo, composição);
+#     não há membro `complemento` separado como no FII. Há também um CSV `_subclasse_` (ignorado).
+#   - o DY mensal aqui é `Dividend_Yield_Mes` (SEM o prefixo `Percentual_` do FII).
+fiagro_inf_mensal:
+  encoding: ISO-8859-1
+  sep: ";"
+  decimal: "."
+  fields:
+    cnpj_fundo:
+      candidates: ["CNPJ_Classe", "CNPJ_Fundo_Classe", "CNPJ_Fundo"]
+      required: true
+    competencia:
+      candidates: ["Data_Referencia", "Data_Competencia", "DT_COMPTC"]
+      required: true
+    nome:
+      candidates: ["Nome_Classe", "Nome_Fundo_Classe", "Denominacao_Social"]
+      required: false
+    isin:
+      # ISIN da cota: a ponte para o ticker B3. O ticker é reconstruído por mnemônico
+      # (posições 3-6 do ISIN + "11") e VALIDADO contra a lista fi-agro da brapi. Ver fiagro.py.
+      candidates: ["Codigo_ISIN", "Codigo_Isin", "ISIN"]
+      required: false
+    patrimonio_liquido:
+      candidates: ["Patrimonio_Liquido", "Patrimonio_Liquido_Classe", "VL_PATRIM_LIQ"]
+      required: false
+    cotas_emitidas:
+      candidates: ["Cotas_Emitidas", "Numero_Cotas", "Quantidade_Cotas_Emitidas"]
+      required: false
+    valor_patrimonial_cota:
+      candidates: ["Valor_Patrimonial_Cotas", "Valor_Patrimonial_Cota", "VL_PATRIM_COTA"]
+      required: false
+    dividend_yield_mes:
+      # DY mensal oficial do FIAgro (fração decimal). SEM o prefixo Percentual_ do FII.
+      candidates: ["Dividend_Yield_Mes", "Percentual_Dividend_Yield_Mes"]
+      required: false
+    numero_cotistas:
+      # Proxy de liquidez/dispersão — separa os negociados dos fundos fechados (1-3 cotistas).
+      candidates: ["Numero_Cotistas"]
+      required: false
+    total_passivo:
+      # Numerador da alavancagem (Passivo / PL) — saúde financeira.
+      candidates: ["Total_Passivo"]
+      required: false
+    valor_ativo:
+      candidates: ["Valor_Ativo"]
+      required: false
+    taxa_administracao:
+      # Despesa de taxa de administração no mês (drag sobre o rendimento).
+      candidates: ["Percentual_Despesas_Taxa_Administracao"]
+      required: false

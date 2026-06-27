@@ -99,6 +99,82 @@ def sustainability_multiplier(
     return _clamp(m, 0.5, 1.0)
 
 
+# Sustentabilidade de FUNDOS (FII/FIAgro): payout/ROE/dívida-EBITDA das ações não se
+# aplicam. A "solidez de saúde financeira no tempo" da tese vira: alavancagem baixa,
+# cota que não derrete, taxa de administração razoável e recorrência do pagamento.
+FUND_LEVERAGE_MAX = 0.50      # passivo / PL acima disso pesa (fundo muito alavancado)
+FUND_VP_DROP_MAX = -0.05      # queda do VP da cota no período pior que -5% = capital derretendo
+FUND_FEE_MAX = 0.020          # taxa de administração anualizada acima de 2% a.a. = drag alto
+FUND_MIN_MONTHS_PAID = 10     # pagar em <10 dos últimos 12 meses fere a recorrência
+
+
+def fund_sustainability_multiplier(
+    *,
+    leverage: float | None = None,
+    vp_cota_var: float | None = None,
+    taxa_admin_aa: float | None = None,
+    months_paid_12m: int | None = None,
+) -> float:
+    """Multiplicador 0.5..1.0 de sustentabilidade para FUNDOS (FII/FIAgro).
+
+    Parte de 1.0 e desconta ~0.12 por falha: alavancagem (passivo/PL) alta, VP da cota
+    derretendo, taxa de administração elevada e recorrência baixa de pagamento. Métricas
+    ausentes (None) não penalizam — honesto com histórico curto. Piso 0.5.
+    """
+    m = 1.0
+    if _isnum(leverage) and leverage > FUND_LEVERAGE_MAX:
+        m -= 0.12
+    if _isnum(vp_cota_var) and vp_cota_var < FUND_VP_DROP_MAX:
+        m -= 0.12
+    if _isnum(taxa_admin_aa) and taxa_admin_aa > FUND_FEE_MAX:
+        m -= 0.12
+    if months_paid_12m is not None and months_paid_12m < FUND_MIN_MONTHS_PAID:
+        m -= 0.12
+    return _clamp(m, 0.5, 1.0)
+
+
+def fund_composite_score(
+    ticker: str,
+    *,
+    months_paid_12m: int,
+    dy_ttm: float | None,
+    dy_baseline: float | None,
+    crescimento: float | None,
+    leverage: float | None = None,
+    vp_cota_var: float | None = None,
+    taxa_admin_aa: float | None = None,
+    yield_trap: bool = False,
+) -> ScoreBreakdown:
+    """Score composto de FUNDO (mesma metodologia 40/30/30 × sustentabilidade das ações).
+
+    Recorrência = meses pagando nos últimos 12 (janela de 12). Yield = DY TTM vs baseline
+    (mediana de anos completos ou média mensal anualizada). Crescimento = CAGR/tendência do
+    DY. Multiplicador de sustentabilidade adaptado a fundos. Corte por yield trap.
+    """
+    rec = recurrence_score(months_paid_12m, window=12)
+    yld = yield_score(dy_ttm, dy_baseline)
+    grw = growth_score(crescimento)
+    sustain = fund_sustainability_multiplier(
+        leverage=leverage,
+        vp_cota_var=vp_cota_var,
+        taxa_admin_aa=taxa_admin_aa,
+        months_paid_12m=months_paid_12m,
+    )
+    base = W_RECURRENCE * rec + W_YIELD * yld + W_GROWTH * grw
+    score = base * sustain
+    if yield_trap:
+        score *= YIELD_TRAP_PENALTY
+    return ScoreBreakdown(
+        ticker=ticker,
+        score=round(100 * _clamp(score), 1),
+        recurrence=round(rec, 3),
+        yield_=round(yld, 3),
+        growth=round(grw, 3),
+        sustainability=round(sustain, 3),
+        yield_trap=yield_trap,
+    )
+
+
 @dataclass(frozen=True)
 class ScoreBreakdown:
     ticker: str

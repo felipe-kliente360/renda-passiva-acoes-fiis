@@ -271,6 +271,41 @@ def fetch_brapi(
         return None
 
 
+def fetch_brapi_fund_list(
+    subtype: str = "fi-agro", *, token: str | None = None
+) -> list[dict] | None:
+    """Lista os fundos negociados de um subtipo na B3 via brapi (ex.: 'fi-agro', 'fii').
+
+    Devolve [{ticker, close, volume}, ...] ordenado por volume desc. É a fonte
+    AUTORITATIVA do universo negociado (e do preço spot p/ P/VP) — o JOIN com a CVM é por
+    ticker reconstruído do ISIN. Retorna None se a rede/dependência falhar (não inventa).
+    """
+    try:
+        import requests
+    except ImportError:
+        return None
+    try:
+        params: dict[str, str] = {"type": "fund"}
+        if token:
+            params["token"] = token
+        resp = requests.get("https://brapi.dev/api/quote/list", params=params, timeout=30)
+        resp.raise_for_status()
+        stocks = resp.json().get("stocks") or []
+        out = [
+            {
+                "ticker": s.get("stock"),
+                "close": s.get("close"),
+                "volume": s.get("volume") or 0,
+            }
+            for s in stocks
+            if s.get("subType") == subtype and s.get("stock")
+        ]
+        out.sort(key=lambda r: r["volume"], reverse=True)
+        return out
+    except Exception:
+        return None
+
+
 def fetch_canonical(ticker: str, *, brapi_token: str | None = None) -> FetchResult | None:
     """Orquestra: série canônica via yfinance; spot via brapi (primário) com fallback.
 

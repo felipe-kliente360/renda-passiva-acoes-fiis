@@ -2,6 +2,8 @@ import pytest
 
 from pipeline.score import (
     composite_score,
+    fund_composite_score,
+    fund_sustainability_multiplier,
     growth_score,
     rank,
     recurrence_score,
@@ -59,6 +61,32 @@ def test_composite_aplica_pesos_e_corte_de_trap():
     assert bom.score > 95
     # trap corta o score (penalidade de 0.7)
     assert com_trap.score == pytest.approx(bom.score * 0.7, rel=1e-3)
+
+
+def test_fund_sustainability_desconta_falhas_de_fundo():
+    fsm = fund_sustainability_multiplier
+    # tudo saudável (baixa alavancagem, VP preservado, taxa baixa, paga 12/12)
+    assert fsm(leverage=0.1, vp_cota_var=0.02, taxa_admin_aa=0.01, months_paid_12m=12) == 1.0
+    # alavancado + cota derretendo -> dois descontos
+    assert fsm(leverage=0.8, vp_cota_var=-0.10, taxa_admin_aa=0.01,
+               months_paid_12m=12) == pytest.approx(0.76)
+    # métricas ausentes não penalizam (histórico curto)
+    assert fsm() == 1.0
+    # recorrência baixa penaliza
+    assert fsm(months_paid_12m=6) == pytest.approx(0.88)
+
+
+def test_fund_composite_usa_baseline_e_corte_de_trap():
+    base = dict(months_paid_12m=12, dy_ttm=0.10, dy_baseline=0.10, crescimento=0.15,
+                leverage=0.1, vp_cota_var=0.02, taxa_admin_aa=0.01)
+    bom = fund_composite_score("SNAG11", yield_trap=False, **base)
+    trap = fund_composite_score("SNAG11", yield_trap=True, **base)
+    assert bom.score > 95
+    assert trap.score == pytest.approx(bom.score * 0.7, rel=1e-3)
+    # crescimento None (FIAgro sem base) -> neutro, não zera o score
+    neutro = fund_composite_score("XPCA11", months_paid_12m=12, dy_ttm=0.10,
+                                  dy_baseline=0.10, crescimento=None)
+    assert 0.5 < neutro.score / 100 < 1.0
 
 
 def test_rank_ordena_desc_e_numera():
