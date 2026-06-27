@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated_at": "2026-06-27T01:50:40.140825+00:00",
-    "count": 8,
+    "generated_at": "2026-06-27T16:31:53.326042+00:00",
+    "count": 16,
     "fonte": "CVM INF_MENSAL (Percentual_Dividend_Yield_Mes)"
   },
   "data": [
@@ -154,6 +154,150 @@
       },
       "dy_mediana": 0.091418,
       "dy_media": 0.08834733333333333,
+      "meses_com_pagamento_12m": 12,
+      "yield_trap": false
+    },
+    {
+      "ticker": "GGRC11",
+      "nome": "Zagros Renda Imob.",
+      "cnpj": "26.614.291/0001-00",
+      "dy_ttm": 0.026890239999999996,
+      "dy_por_ano": {
+        "2024": 0.0,
+        "2025": 0.0,
+        "2026": 0.02689024
+      },
+      "dy_mediana": 0.0,
+      "dy_media": 0.0,
+      "meses_com_pagamento_12m": 3,
+      "yield_trap": false
+    },
+    {
+      "ticker": "GARE11",
+      "nome": "Guardian Logística",
+      "cnpj": "37.295.919/0001-60",
+      "dy_ttm": 0.08912746999999999,
+      "dy_por_ano": {
+        "2020": 0.013367,
+        "2021": 0.091775,
+        "2022": 0.089915,
+        "2023": 0.11632300000000001,
+        "2024": 0.08467661,
+        "2025": 0.07244559,
+        "2026": 0.04400656
+      },
+      "dy_mediana": 0.087295805,
+      "dy_media": 0.09084005,
+      "meses_com_pagamento_12m": 10,
+      "yield_trap": false
+    },
+    {
+      "ticker": "CPTS11",
+      "nome": "Capitânia Securities II",
+      "cnpj": "18.979.895/0001-13",
+      "dy_ttm": 0.117635,
+      "dy_por_ano": {
+        "2020": 0.08071300000000001,
+        "2021": 0.121809,
+        "2022": 0.12319,
+        "2023": 0.093556,
+        "2024": 0.101901,
+        "2025": 0.126417,
+        "2026": 0.048248
+      },
+      "dy_mediana": 0.11185500000000001,
+      "dy_media": 0.107931,
+      "meses_com_pagamento_12m": 12,
+      "yield_trap": false
+    },
+    {
+      "ticker": "KNSC11",
+      "nome": "Kinea Securities",
+      "cnpj": "35.864.448/0001-38",
+      "dy_ttm": 0.128588,
+      "dy_por_ano": {
+        "2020": 0.014124000000000001,
+        "2021": 0.140458,
+        "2022": 0.123267,
+        "2023": 0.113974,
+        "2024": 0.11486299999999999,
+        "2025": 0.13145099999999998,
+        "2026": 0.054532
+      },
+      "dy_mediana": 0.123267,
+      "dy_media": 0.12480259999999999,
+      "meses_com_pagamento_12m": 12,
+      "yield_trap": false
+    },
+    {
+      "ticker": "VGIR11",
+      "nome": "Valora CRI CDI",
+      "cnpj": "29.852.732/0001-91",
+      "dy_ttm": 0.01057,
+      "dy_por_ano": {
+        "2020": 0.058691,
+        "2021": 0.074508,
+        "2022": 0.148234,
+        "2023": 0.149954,
+        "2024": 0.128683,
+        "2025": 0.01057,
+        "2026": 0.0
+      },
+      "dy_mediana": 0.1015955,
+      "dy_media": 0.09510666666666667,
+      "meses_com_pagamento_12m": 1,
+      "yield_trap": false
+    },
+    {
+      "ticker": "VGHF11",
+      "nome": "Valora Hedge",
+      "cnpj": "36.771.692/0001-19",
+      "dy_ttm": 0.10713289,
+      "dy_por_ano": {
+        "2021": 0.09183876999999999,
+        "2022": 0.15947162,
+        "2023": 0.12843442,
+        "2024": 0.12114836,
+        "2025": 0.11996044,
+        "2026": 0.04042408
+      },
+      "dy_mediana": 0.12479139,
+      "dy_media": 0.13225371,
+      "meses_com_pagamento_12m": 12,
+      "yield_trap": false
+    },
+    {
+      "ticker": "SNEL11",
+      "nome": "Suno Energias Limpas",
+      "cnpj": "43.741.171/0001-84",
+      "dy_ttm": 0.049039,
+      "dy_por_ano": {
+        "2022": 0.0,
+        "2023": 0.0,
+        "2024": 0.022571,
+        "2025": 0.0,
+        "2026": 0.049039
+      },
+      "dy_mediana": 0.0,
+      "dy_media": 0.007523666666666667,
+      "meses_com_pagamento_12m": 4,
+      "yield_trap": false
+    },
+    {
+      "ticker": "JSAF11",
+      "nome": "JS Ativos Financeiros",
+      "cnpj": "42.085.661/0001-07",
+      "dy_ttm": 0.109344,
+      "dy_por_ano": {
+        "2021": 0.014782,
+        "2022": 0.1142,
+        "2023": 0.118709,
+        "2024": 0.12102399999999999,
+        "2025": 0.120697,
+        "2026": 0.042647000000000004
+      },
+      "dy_mediana": 0.119703,
+      "dy_media": 0.11865749999999999,
       "meses_com_pagamento_12m": 12,
       "yield_trap": false
     }

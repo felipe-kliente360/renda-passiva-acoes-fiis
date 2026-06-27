@@ -1,13 +1,57 @@
 {
   "meta": {
-    "generated_at": "2026-06-27T13:58:46.433004+00:00",
-    "count": 64,
+    "generated_at": "2026-06-27T16:31:54.942937+00:00",
+    "count": 160,
     "fonte": "CVM IPE (ipe_cia_aberta) — índice de documentos protocolados (RAD)",
     "categorias": "fato relevante, aviso aos acionistas, relatório de proventos",
-    "escopo": "watchlist de ações (8 empresas), 2025–2026",
+    "escopo": "watchlist de ações (20 empresas), 2025–2026",
     "alerta_politica_proventos": []
   },
   "data": [
+    {
+      "cd_cvm": "2453",
+      "nome": "CIA ENERG MINAS GERAIS - CEMIG",
+      "data": "2026-06-19",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1536499&numSequencia=1061205&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CMIG4"
+    },
+    {
+      "cd_cvm": "18627",
+      "nome": "CIA. DE SANEAMENTO DO PARANÁ - SANEPAR",
+      "data": "2026-06-18",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Eleição e Recondução da Diretoria Executiva",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1536287&numSequencia=1060993&numVersao=2",
+      "alerta_politica": false,
+      "ticker": "SAPR11"
+    },
+    {
+      "cd_cvm": "2453",
+      "nome": "CIA ENERG MINAS GERAIS - CEMIG",
+      "data": "2026-06-18",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Aviso aos Acionistas - Declaração de JCP",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1536174&numSequencia=1060880&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CMIG4"
+    },
+    {
+      "cd_cvm": "17671",
+      "nome": "TELEFÔNICA BRASIL S.A.",
+      "data": "2026-06-17",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1535706&numSequencia=1060412&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "VIVT3"
+    },
     {
       "cd_cvm": "7617",
       "nome": "ITAUSA S.A.",
@@ -18,6 +62,28 @@
       "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1535697&numSequencia=1060403&numVersao=1",
       "alerta_politica": false,
       "ticker": "ITSA4"
+    },
+    {
+      "cd_cvm": "17671",
+      "nome": "TELEFÔNICA BRASIL S.A.",
+      "data": "2026-06-16",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Incorporação Fibrasil",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1535336&numSequencia=1060042&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "VIVT3"
+    },
+    {
+      "cd_cvm": "18627",
+      "nome": "CIA. DE SANEAMENTO DO PARANÁ - SANEPAR",
+      "data": "2026-06-16",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Orientações para pagamento de JCP referente ao exercício de 2025",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1534891&numSequencia=1059597&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "SAPR11"
     },
     {
       "cd_cvm": "9512",
@@ -31,6 +97,28 @@
       "ticker": "PETR4"
     },
     {
+      "cd_cvm": "14443",
+      "nome": "CIA SANEAMENTO BÁSICO ESTADO SÃO PAULO",
+      "data": "2026-06-15",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Mudança de Diretoria",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1534737&numSequencia=1059443&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "SBSP3"
+    },
+    {
+      "cd_cvm": "17671",
+      "nome": "TELEFÔNICA BRASIL S.A.",
+      "data": "2026-06-15",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1534787&numSequencia=1059493&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "VIVT3"
+    },
+    {
       "cd_cvm": "7617",
       "nome": "ITAUSA S.A.",
       "data": "2026-06-15",
@@ -40,6 +128,17 @@
       "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1534704&numSequencia=1059410&numVersao=1",
       "alerta_politica": false,
       "ticker": "ITSA4"
+    },
+    {
+      "cd_cvm": "2453",
+      "nome": "CIA ENERG MINAS GERAIS - CEMIG",
+      "data": "2026-06-12",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Fato Relevante - Nova Composição da Diretoria Executiva",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1533939&numSequencia=1058645&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CMIG4"
     },
     {
       "cd_cvm": "4170",
@@ -53,6 +152,28 @@
       "ticker": "VALE3"
     },
     {
+      "cd_cvm": "17329",
+      "nome": "ENGIE BRASIL ENERGIA S.A.",
+      "data": "2026-06-10",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Oferta Pública de Distribuição de Ações",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1533325&numSequencia=1058031&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "EGIE3"
+    },
+    {
+      "cd_cvm": "2453",
+      "nome": "CIA ENERG MINAS GERAIS - CEMIG",
+      "data": "2026-06-10",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Pagamento da 1ª parcela dos proventos",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1533120&numSequencia=1057826&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CMIG4"
+    },
+    {
       "cd_cvm": "4170",
       "nome": "VALE S.A.",
       "data": "2026-06-09",
@@ -62,6 +183,17 @@
       "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1532207&numSequencia=1056913&numVersao=2",
       "alerta_politica": false,
       "ticker": "VALE3"
+    },
+    {
+      "cd_cvm": "17329",
+      "nome": "ENGIE BRASIL ENERGIA S.A.",
+      "data": "2026-06-03",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Aprovação da proposta de incorporação da controlada integral Companhia Energética do Jari - CEJA.",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1530509&numSequencia=1055215&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "EGIE3"
     },
     {
       "cd_cvm": "7617",
@@ -86,6 +218,17 @@
       "ticker": "PETR4"
     },
     {
+      "cd_cvm": "18660",
+      "nome": "CPFL ENERGIA SA",
+      "data": "2026-06-01",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1529053&numSequencia=1053759&numVersao=2",
+      "alerta_politica": false,
+      "ticker": "CPFE3"
+    },
+    {
       "cd_cvm": "19348",
       "nome": "ITAÚ UNIBANCO HOLDING S.A.",
       "data": "2026-06-01",
@@ -108,6 +251,17 @@
       "ticker": "BBAS3"
     },
     {
+      "cd_cvm": "14443",
+      "nome": "CIA SANEAMENTO BÁSICO ESTADO SÃO PAULO",
+      "data": "2026-05-29",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Resultado do Leilão de Frações de Ações",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1528879&numSequencia=1053585&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "SBSP3"
+    },
+    {
       "cd_cvm": "19348",
       "nome": "ITAÚ UNIBANCO HOLDING S.A.",
       "data": "2026-05-28",
@@ -117,6 +271,50 @@
       "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1528166&numSequencia=1052872&numVersao=1",
       "alerta_politica": false,
       "ticker": "ITUB4"
+    },
+    {
+      "cd_cvm": "2453",
+      "nome": "CIA ENERG MINAS GERAIS - CEMIG",
+      "data": "2026-05-27",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Julgamento do Tribunal Regional Federal da 1ª Região (TRF1) sobre a RBSE",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1527534&numSequencia=1052240&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CMIG4"
+    },
+    {
+      "cd_cvm": "14311",
+      "nome": "COMPANHIA PARANAENSE DE ENERGIA COPEL",
+      "data": "2026-05-25",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Elejor repactua Uso do Bem Público (\"UBP\")",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1526605&numSequencia=1051311&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CPLE6"
+    },
+    {
+      "cd_cvm": "14443",
+      "nome": "CIA SANEAMENTO BÁSICO ESTADO SÃO PAULO",
+      "data": "2026-05-25",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Leilão de Frações de Ações",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1526577&numSequencia=1051283&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "SBSP3"
+    },
+    {
+      "cd_cvm": "14443",
+      "nome": "CIA SANEAMENTO BÁSICO ESTADO SÃO PAULO",
+      "data": "2026-05-25",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Resultado do Leilão de Frações de Ações",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1526539&numSequencia=1051245&numVersao=2",
+      "alerta_politica": false,
+      "ticker": "SBSP3"
     },
     {
       "cd_cvm": "7617",
@@ -130,15 +328,26 @@
       "ticker": "ITSA4"
     },
     {
-      "cd_cvm": "1023",
-      "nome": "BANCO DO BRASIL S.A.",
-      "data": "2026-05-20",
-      "categoria": "Relatório Proventos",
+      "cd_cvm": "14311",
+      "nome": "COMPANHIA PARANAENSE DE ENERGIA COPEL",
+      "data": "2026-05-21",
+      "categoria": "Fato Relevante",
       "tipo": null,
-      "assunto": null,
-      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1524938&numSequencia=1049644&numVersao=1",
+      "assunto": "FR 03/26 - Aditamento e Renovação do Programa de Recompra de Ações",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1525729&numSequencia=1050435&numVersao=1",
       "alerta_politica": false,
-      "ticker": "BBAS3"
+      "ticker": "CPLE6"
+    },
+    {
+      "cd_cvm": "20257",
+      "nome": "TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S.A.",
+      "data": "2026-05-21",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "TAESA celebra contrato para aquisição de 5 ativos de transmissão de energia",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1525312&numSequencia=1050018&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "TAEE11"
     },
     {
       "cd_cvm": "1023",
@@ -150,6 +359,28 @@
       "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1525224&numSequencia=1049930&numVersao=1",
       "alerta_politica": false,
       "ticker": "BBAS3"
+    },
+    {
+      "cd_cvm": "1023",
+      "nome": "BANCO DO BRASIL S.A.",
+      "data": "2026-05-20",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1524938&numSequencia=1049644&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "BBAS3"
+    },
+    {
+      "cd_cvm": "14443",
+      "nome": "CIA SANEAMENTO BÁSICO ESTADO SÃO PAULO",
+      "data": "2026-05-20",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Resultado do Leilão de Frações de Ações",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1524855&numSequencia=1049561&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "SBSP3"
     },
     {
       "cd_cvm": "9512",
@@ -174,13 +405,68 @@
       "ticker": "B3SA3"
     },
     {
+      "cd_cvm": "17671",
+      "nome": "TELEFÔNICA BRASIL S.A.",
+      "data": "2026-05-18",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1523507&numSequencia=1048213&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "VIVT3"
+    },
+    {
+      "cd_cvm": "17671",
+      "nome": "TELEFÔNICA BRASIL S.A.",
+      "data": "2026-05-15",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1523132&numSequencia=1047838&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "VIVT3"
+    },
+    {
+      "cd_cvm": "17671",
+      "nome": "TELEFÔNICA BRASIL S.A.",
+      "data": "2026-05-15",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Redução de Capital - fim do prazo de oposição de credores",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1522620&numSequencia=1047326&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "VIVT3"
+    },
+    {
+      "cd_cvm": "14443",
+      "nome": "CIA SANEAMENTO BÁSICO ESTADO SÃO PAULO",
+      "data": "2026-05-14",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Leilão de Frações de Ações",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1522426&numSequencia=1047132&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "SBSP3"
+    },
+    {
+      "cd_cvm": "2453",
+      "nome": "CIA ENERG MINAS GERAIS - CEMIG",
+      "data": "2026-05-14",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Fato Relevante - Incidente de segurança cibernética com exposição de dados pessoais",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1522269&numSequencia=1046975&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CMIG4"
+    },
+    {
       "cd_cvm": "9512",
       "nome": "PETRÓLEO BRASILEIRO  S.A.  - PETROBRAS",
       "data": "2026-05-14",
       "categoria": "Relatório Proventos",
       "tipo": null,
       "assunto": null,
-      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1522009&numSequencia=1046715&numVersao=2",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1521941&numSequencia=1046647&numVersao=2",
       "alerta_politica": false,
       "ticker": "PETR4"
     },
@@ -191,7 +477,7 @@
       "categoria": "Relatório Proventos",
       "tipo": null,
       "assunto": null,
-      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1521941&numSequencia=1046647&numVersao=2",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1522009&numSequencia=1046715&numVersao=2",
       "alerta_politica": false,
       "ticker": "PETR4"
     },
@@ -229,6 +515,17 @@
       "ticker": "VALE3"
     },
     {
+      "cd_cvm": "18660",
+      "nome": "CPFL ENERGIA SA",
+      "data": "2026-05-11",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1519522&numSequencia=1044228&numVersao=2",
+      "alerta_politica": false,
+      "ticker": "CPFE3"
+    },
+    {
       "cd_cvm": "7617",
       "nome": "ITAUSA S.A.",
       "data": "2026-05-11",
@@ -251,6 +548,17 @@
       "ticker": "PETR4"
     },
     {
+      "cd_cvm": "18660",
+      "nome": "CPFL ENERGIA SA",
+      "data": "2026-05-08",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Renovação das Concessões das distribuidoras",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1519069&numSequencia=1043775&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CPFE3"
+    },
+    {
       "cd_cvm": "19348",
       "nome": "ITAÚ UNIBANCO HOLDING S.A.",
       "data": "2026-05-08",
@@ -260,6 +568,17 @@
       "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1518428&numSequencia=1043134&numVersao=1",
       "alerta_politica": false,
       "ticker": "ITUB4"
+    },
+    {
+      "cd_cvm": "20257",
+      "nome": "TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S.A.",
+      "data": "2026-05-08",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1518725&numSequencia=1043431&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "TAEE11"
     },
     {
       "cd_cvm": "23264",
@@ -273,6 +592,39 @@
       "ticker": "ABEV3"
     },
     {
+      "cd_cvm": "23795",
+      "nome": "CAIXA SEGURIDADE PARTICIPAÇÕES S.A.",
+      "data": "2026-05-08",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1518573&numSequencia=1043279&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CXSE3"
+    },
+    {
+      "cd_cvm": "2453",
+      "nome": "CIA ENERG MINAS GERAIS - CEMIG",
+      "data": "2026-05-08",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1519060&numSequencia=1043766&numVersao=3",
+      "alerta_politica": false,
+      "ticker": "CMIG4"
+    },
+    {
+      "cd_cvm": "2453",
+      "nome": "CIA ENERG MINAS GERAIS - CEMIG",
+      "data": "2026-05-08",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1519058&numSequencia=1043764&numVersao=2",
+      "alerta_politica": false,
+      "ticker": "CMIG4"
+    },
+    {
       "cd_cvm": "23264",
       "nome": "AMBEV S.A.",
       "data": "2026-05-07",
@@ -280,6 +632,39 @@
       "tipo": null,
       "assunto": null,
       "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1517648&numSequencia=1042354&numVersao=3",
+      "alerta_politica": false,
+      "ticker": "ABEV3"
+    },
+    {
+      "cd_cvm": "23795",
+      "nome": "CAIXA SEGURIDADE PARTICIPAÇÕES S.A.",
+      "data": "2026-05-07",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos 1T2026",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1518295&numSequencia=1043001&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CXSE3"
+    },
+    {
+      "cd_cvm": "20257",
+      "nome": "TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S.A.",
+      "data": "2026-05-06",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Aviso Acionistas - Pagamento de Juros sobre Capital Próprio  (JCP)||Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1517316&numSequencia=1042022&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "TAEE11"
+    },
+    {
+      "cd_cvm": "23264",
+      "nome": "AMBEV S.A.",
+      "data": "2026-05-05",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Pagamento e Distribuição JCP",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1515656&numSequencia=1040362&numVersao=2",
       "alerta_politica": false,
       "ticker": "ABEV3"
     },
@@ -295,15 +680,26 @@
       "ticker": "ABEV3"
     },
     {
-      "cd_cvm": "23264",
-      "nome": "AMBEV S.A.",
-      "data": "2026-05-05",
-      "categoria": "Aviso aos Acionistas",
-      "tipo": "Outros avisos",
-      "assunto": "Pagamento e Distribuição JCP",
-      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1515656&numSequencia=1040362&numVersao=2",
+      "cd_cvm": "18627",
+      "nome": "CIA. DE SANEAMENTO DO PARANÁ - SANEPAR",
+      "data": "2026-04-30",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1513129&numSequencia=1037835&numVersao=2",
       "alerta_politica": false,
-      "ticker": "ABEV3"
+      "ticker": "SAPR11"
+    },
+    {
+      "cd_cvm": "18627",
+      "nome": "CIA. DE SANEAMENTO DO PARANÁ - SANEPAR",
+      "data": "2026-04-30",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1513127&numSequencia=1037833&numVersao=3",
+      "alerta_politica": false,
+      "ticker": "SAPR11"
     },
     {
       "cd_cvm": "9512",
@@ -317,6 +713,160 @@
       "ticker": "PETR4"
     },
     {
+      "cd_cvm": "12653",
+      "nome": "KLABIN S.A.",
+      "data": "2026-04-29",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Encerramento da Oferta 2a Emissão de CPR-F",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1511591&numSequencia=1036297&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "KLBN11"
+    },
+    {
+      "cd_cvm": "18627",
+      "nome": "CIA. DE SANEAMENTO DO PARANÁ - SANEPAR",
+      "data": "2026-04-29",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Definição da data de pagamento dos JCPs 2025",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1511213&numSequencia=1035919&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "SAPR11"
+    },
+    {
+      "cd_cvm": "18660",
+      "nome": "CPFL ENERGIA SA",
+      "data": "2026-04-29",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1510933&numSequencia=1035639&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CPFE3"
+    },
+    {
+      "cd_cvm": "18660",
+      "nome": "CPFL ENERGIA SA",
+      "data": "2026-04-29",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1510817&numSequencia=1035523&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CPFE3"
+    },
+    {
+      "cd_cvm": "20257",
+      "nome": "TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S.A.",
+      "data": "2026-04-29",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1511144&numSequencia=1035850&numVersao=2",
+      "alerta_politica": false,
+      "ticker": "TAEE11"
+    },
+    {
+      "cd_cvm": "20257",
+      "nome": "TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S.A.",
+      "data": "2026-04-29",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1510963&numSequencia=1035669&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "TAEE11"
+    },
+    {
+      "cd_cvm": "14443",
+      "nome": "CIA SANEAMENTO BÁSICO ESTADO SÃO PAULO",
+      "data": "2026-04-28",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Aprovação do Desdobramento de Ações",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1510039&numSequencia=1034745&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "SBSP3"
+    },
+    {
+      "cd_cvm": "3980",
+      "nome": "GERDAU S.A.",
+      "data": "2026-04-28",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1509818&numSequencia=1034524&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "GGBR4"
+    },
+    {
+      "cd_cvm": "14443",
+      "nome": "CIA SANEAMENTO BÁSICO ESTADO SÃO PAULO",
+      "data": "2026-04-27",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Desdobramento de ações",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1509238&numSequencia=1033944&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "SBSP3"
+    },
+    {
+      "cd_cvm": "17329",
+      "nome": "ENGIE BRASIL ENERGIA S.A.",
+      "data": "2026-04-27",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1508940&numSequencia=1033646&numVersao=2",
+      "alerta_politica": false,
+      "ticker": "EGIE3"
+    },
+    {
+      "cd_cvm": "17329",
+      "nome": "ENGIE BRASIL ENERGIA S.A.",
+      "data": "2026-04-27",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1508939&numSequencia=1033645&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "EGIE3"
+    },
+    {
+      "cd_cvm": "17329",
+      "nome": "ENGIE BRASIL ENERGIA S.A.",
+      "data": "2026-04-27",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Contratação assessoria financeira",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1509427&numSequencia=1034133&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "EGIE3"
+    },
+    {
+      "cd_cvm": "3980",
+      "nome": "GERDAU S.A.",
+      "data": "2026-04-27",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Cancelamento de ações em tesouraria",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1509331&numSequencia=1034037&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "GGBR4"
+    },
+    {
+      "cd_cvm": "3980",
+      "nome": "GERDAU S.A.",
+      "data": "2026-04-27",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1509334&numSequencia=1034040&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "GGBR4"
+    },
+    {
       "cd_cvm": "9512",
       "nome": "PETRÓLEO BRASILEIRO  S.A.  - PETROBRAS",
       "data": "2026-04-27",
@@ -326,6 +876,116 @@
       "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1509255&numSequencia=1033961&numVersao=1",
       "alerta_politica": false,
       "ticker": "PETR4"
+    },
+    {
+      "cd_cvm": "17329",
+      "nome": "ENGIE BRASIL ENERGIA S.A.",
+      "data": "2026-04-24",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Crédito de dividendos complementares 2025",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1508599&numSequencia=1033305&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "EGIE3"
+    },
+    {
+      "cd_cvm": "14311",
+      "nome": "COMPANHIA PARANAENSE DE ENERGIA COPEL",
+      "data": "2026-04-23",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1507928&numSequencia=1032634&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CPLE6"
+    },
+    {
+      "cd_cvm": "14311",
+      "nome": "COMPANHIA PARANAENSE DE ENERGIA COPEL",
+      "data": "2026-04-23",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1508000&numSequencia=1032706&numVersao=3",
+      "alerta_politica": false,
+      "ticker": "CPLE6"
+    },
+    {
+      "cd_cvm": "18627",
+      "nome": "CIA. DE SANEAMENTO DO PARANÁ - SANEPAR",
+      "data": "2026-04-17",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Impetração de Mandado de Segurança contra atos da AGEPAR relativos ao Precatório",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1506340&numSequencia=1031046&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "SAPR11"
+    },
+    {
+      "cd_cvm": "18627",
+      "nome": "CIA. DE SANEAMENTO DO PARANÁ - SANEPAR",
+      "data": "2026-04-17",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Impetração de Mandado de Segurança contra atos da AGEPAR relativos ao Precatório",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1506339&numSequencia=1031045&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "SAPR11"
+    },
+    {
+      "cd_cvm": "14311",
+      "nome": "COMPANHIA PARANAENSE DE ENERGIA COPEL",
+      "data": "2026-04-16",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1505554&numSequencia=1030260&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CPLE6"
+    },
+    {
+      "cd_cvm": "17329",
+      "nome": "ENGIE BRASIL ENERGIA S.A.",
+      "data": "2026-04-16",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Adesão ao mecanismo de repactuação de UBP (Uso do Bem Público)",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1505839&numSequencia=1030545&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "EGIE3"
+    },
+    {
+      "cd_cvm": "17671",
+      "nome": "TELEFÔNICA BRASIL S.A.",
+      "data": "2026-04-16",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1505626&numSequencia=1030332&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "VIVT3"
+    },
+    {
+      "cd_cvm": "14311",
+      "nome": "COMPANHIA PARANAENSE DE ENERGIA COPEL",
+      "data": "2026-04-15",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1505434&numSequencia=1030140&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CPLE6"
+    },
+    {
+      "cd_cvm": "17671",
+      "nome": "TELEFÔNICA BRASIL S.A.",
+      "data": "2026-04-15",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1505330&numSequencia=1030036&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "VIVT3"
     },
     {
       "cd_cvm": "7617",
@@ -339,6 +999,50 @@
       "ticker": "ITSA4"
     },
     {
+      "cd_cvm": "18627",
+      "nome": "CIA. DE SANEAMENTO DO PARANÁ - SANEPAR",
+      "data": "2026-04-13",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Decisão, pela Agepar, da aplicação do Índice de Reajuste Tarifário 2026",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1504447&numSequencia=1029153&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "SAPR11"
+    },
+    {
+      "cd_cvm": "14311",
+      "nome": "COMPANHIA PARANAENSE DE ENERGIA COPEL",
+      "data": "2026-04-08",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Aviso aos Acionistas 02/2026 - Indicação CF",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1502726&numSequencia=1027432&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CPLE6"
+    },
+    {
+      "cd_cvm": "20257",
+      "nome": "TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S.A.",
+      "data": "2026-04-08",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Alteração na Proposta da Administração e no BVD para AGO 2026",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1502580&numSequencia=1027286&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "TAEE11"
+    },
+    {
+      "cd_cvm": "12653",
+      "nome": "KLABIN S.A.",
+      "data": "2026-04-06",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Adoção do processo de voto múltiplo",
+      "assunto": "Adoção do processo de voto múltiplo",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1501298&numSequencia=1026004&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "KLBN11"
+    },
+    {
       "cd_cvm": "23264",
       "nome": "AMBEV S.A.",
       "data": "2026-04-02",
@@ -350,15 +1054,26 @@
       "ticker": "ABEV3"
     },
     {
-      "cd_cvm": "21610",
-      "nome": "B3 S.A. - BRASIL, BOLSA, BALCÃO",
-      "data": "2026-03-31",
+      "cd_cvm": "23795",
+      "nome": "CAIXA SEGURIDADE PARTICIPAÇÕES S.A.",
+      "data": "2026-04-02",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Alteração de Formador de Mercado",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1500951&numSequencia=1025657&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CXSE3"
+    },
+    {
+      "cd_cvm": "3980",
+      "nome": "GERDAU S.A.",
+      "data": "2026-04-01",
       "categoria": "Aviso aos Acionistas",
       "tipo": "Outros avisos",
-      "assunto": "Dividendos/Juros sobre Capital Próprio",
-      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1498976&numSequencia=1023682&numVersao=1",
+      "assunto": "Reapresentação Proposta da Administração AGOE 2026",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1500057&numSequencia=1024763&numVersao=1",
       "alerta_politica": false,
-      "ticker": "B3SA3"
+      "ticker": "GGBR4"
     },
     {
       "cd_cvm": "21610",
@@ -368,6 +1083,17 @@
       "tipo": null,
       "assunto": null,
       "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1499092&numSequencia=1023798&numVersao=2",
+      "alerta_politica": false,
+      "ticker": "B3SA3"
+    },
+    {
+      "cd_cvm": "21610",
+      "nome": "B3 S.A. - BRASIL, BOLSA, BALCÃO",
+      "data": "2026-03-31",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1498976&numSequencia=1023682&numVersao=1",
       "alerta_politica": false,
       "ticker": "B3SA3"
     },
@@ -405,6 +1131,50 @@
       "ticker": "ABEV3"
     },
     {
+      "cd_cvm": "12653",
+      "nome": "KLABIN S.A.",
+      "data": "2026-03-27",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Emissão de Cédulas de Produto Rural com Liquidação Financeira (CPR-F)",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1497548&numSequencia=1022254&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "KLBN11"
+    },
+    {
+      "cd_cvm": "17329",
+      "nome": "ENGIE BRASIL ENERGIA S.A.",
+      "data": "2026-03-27",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Participação no leilão de transmissão Aneel 01/26",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1497183&numSequencia=1021889&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "EGIE3"
+    },
+    {
+      "cd_cvm": "23159",
+      "nome": "BB SEGURIDADE PARTICIPAÇÕES S.A.",
+      "data": "2026-03-27",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Cancelamento de ações em tesouraria",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1497128&numSequencia=1021834&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "BBSE3"
+    },
+    {
+      "cd_cvm": "3980",
+      "nome": "GERDAU S.A.",
+      "data": "2026-03-26",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Indicação de candidato ao Conselho Fiscal",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1495806&numSequencia=1020512&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "GGBR4"
+    },
+    {
       "cd_cvm": "906",
       "nome": "BANCO BRADESCO S.A.",
       "data": "2026-03-26",
@@ -414,6 +1184,17 @@
       "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1495468&numSequencia=1020174&numVersao=1",
       "alerta_politica": false,
       "ticker": "BBDC4"
+    },
+    {
+      "cd_cvm": "20257",
+      "nome": "TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S.A.",
+      "data": "2026-03-25",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Solicitação de acionista para o Boletim de Voto",
+      "assunto": "Solicitação de acionista para o Boletim de Voto",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1495319&numSequencia=1020025&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "TAEE11"
     },
     {
       "cd_cvm": "906",
@@ -438,6 +1219,17 @@
       "ticker": "B3SA3"
     },
     {
+      "cd_cvm": "14311",
+      "nome": "COMPANHIA PARANAENSE DE ENERGIA COPEL",
+      "data": "2026-03-18",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "FR 01/26 - Copel vence leilão de reserva de capacidade com duas usinas hidrelétricas",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1491875&numSequencia=1016581&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CPLE6"
+    },
+    {
       "cd_cvm": "7617",
       "nome": "ITAUSA S.A.",
       "data": "2026-03-16",
@@ -460,6 +1252,28 @@
       "ticker": "ITSA4"
     },
     {
+      "cd_cvm": "12653",
+      "nome": "KLABIN S.A.",
+      "data": "2026-03-13",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Indicação de Candidatos AGO 2026",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1490449&numSequencia=1015155&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "KLBN11"
+    },
+    {
+      "cd_cvm": "12653",
+      "nome": "KLABIN S.A.",
+      "data": "2026-03-11",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Indicação de Candidatos AGO 2026",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1489279&numSequencia=1013985&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "KLBN11"
+    },
+    {
       "cd_cvm": "19348",
       "nome": "ITAÚ UNIBANCO HOLDING S.A.",
       "data": "2026-03-09",
@@ -469,6 +1283,17 @@
       "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1487386&numSequencia=1012092&numVersao=1",
       "alerta_politica": false,
       "ticker": "ITUB4"
+    },
+    {
+      "cd_cvm": "18660",
+      "nome": "CPFL ENERGIA SA",
+      "data": "2026-03-06",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Renúncia de membro do Conselho de Administração",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1486793&numSequencia=1011499&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CPFE3"
     },
     {
       "cd_cvm": "19348",
@@ -504,6 +1329,17 @@
       "ticker": "BBDC4"
     },
     {
+      "cd_cvm": "12653",
+      "nome": "KLABIN S.A.",
+      "data": "2026-02-26",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Incorporação Klabin Amazônia",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1482857&numSequencia=1007563&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "KLBN11"
+    },
+    {
       "cd_cvm": "19348",
       "nome": "ITAÚ UNIBANCO HOLDING S.A.",
       "data": "2026-02-26",
@@ -526,6 +1362,17 @@
       "ticker": "B3SA3"
     },
     {
+      "cd_cvm": "23159",
+      "nome": "BB SEGURIDADE PARTICIPAÇÕES S.A.",
+      "data": "2026-02-26",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1482392&numSequencia=1007098&numVersao=3",
+      "alerta_politica": false,
+      "ticker": "BBSE3"
+    },
+    {
       "cd_cvm": "1023",
       "nome": "BANCO DO BRASIL S.A.",
       "data": "2026-02-24",
@@ -535,6 +1382,17 @@
       "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1481183&numSequencia=1005889&numVersao=1",
       "alerta_politica": false,
       "ticker": "BBAS3"
+    },
+    {
+      "cd_cvm": "3980",
+      "nome": "GERDAU S.A.",
+      "data": "2026-02-24",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1481216&numSequencia=1005922&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "GGBR4"
     },
     {
       "cd_cvm": "1023",
@@ -548,6 +1406,39 @@
       "ticker": "BBAS3"
     },
     {
+      "cd_cvm": "23159",
+      "nome": "BB SEGURIDADE PARTICIPAÇÕES S.A.",
+      "data": "2026-02-23",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1480772&numSequencia=1005478&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "BBSE3"
+    },
+    {
+      "cd_cvm": "3980",
+      "nome": "GERDAU S.A.",
+      "data": "2026-02-23",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1480643&numSequencia=1005349&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "GGBR4"
+    },
+    {
+      "cd_cvm": "3980",
+      "nome": "GERDAU S.A.",
+      "data": "2026-02-23",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Aquisição de Ações de Emissão da Própria Companhia||Cancelamento de Ações de Emissão da Própria Companhia",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1480641&numSequencia=1005347&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "GGBR4"
+    },
+    {
       "cd_cvm": "4170",
       "nome": "VALE S.A.",
       "data": "2026-02-23",
@@ -559,15 +1450,48 @@
       "ticker": "VALE3"
     },
     {
-      "cd_cvm": "23264",
-      "nome": "AMBEV S.A.",
+      "cd_cvm": "12653",
+      "nome": "KLABIN S.A.",
+      "data": "2026-02-13",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Guidance EBITDA 2027",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1477735&numSequencia=1002441&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "KLBN11"
+    },
+    {
+      "cd_cvm": "12653",
+      "nome": "KLABIN S.A.",
+      "data": "2026-02-13",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Bonificação/Desdobramento",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1477732&numSequencia=1002438&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "KLBN11"
+    },
+    {
+      "cd_cvm": "23159",
+      "nome": "BB SEGURIDADE PARTICIPAÇÕES S.A.",
       "data": "2026-02-12",
       "categoria": "Relatório Proventos",
       "tipo": null,
       "assunto": null,
-      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1476842&numSequencia=1001548&numVersao=2",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1477112&numSequencia=1001818&numVersao=2",
       "alerta_politica": false,
-      "ticker": "ABEV3"
+      "ticker": "BBSE3"
+    },
+    {
+      "cd_cvm": "23159",
+      "nome": "BB SEGURIDADE PARTICIPAÇÕES S.A.",
+      "data": "2026-02-12",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1477085&numSequencia=1001791&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "BBSE3"
     },
     {
       "cd_cvm": "23264",
@@ -579,6 +1503,50 @@
       "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1476801&numSequencia=1001507&numVersao=1",
       "alerta_politica": false,
       "ticker": "ABEV3"
+    },
+    {
+      "cd_cvm": "23264",
+      "nome": "AMBEV S.A.",
+      "data": "2026-02-12",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Pagamento de JCP",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1476800&numSequencia=1001506&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "ABEV3"
+    },
+    {
+      "cd_cvm": "23159",
+      "nome": "BB SEGURIDADE PARTICIPAÇÕES S.A.",
+      "data": "2026-02-10",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1475846&numSequencia=1000552&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "BBSE3"
+    },
+    {
+      "cd_cvm": "23159",
+      "nome": "BB SEGURIDADE PARTICIPAÇÕES S.A.",
+      "data": "2026-02-09",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1475087&numSequencia=999793&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "BBSE3"
+    },
+    {
+      "cd_cvm": "23159",
+      "nome": "BB SEGURIDADE PARTICIPAÇÕES S.A.",
+      "data": "2026-02-09",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Projeções Empresariais (Guidance 2026)",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1475085&numSequencia=999791&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "BBSE3"
     },
     {
       "cd_cvm": "4170",
@@ -628,10 +1596,10 @@
       "cd_cvm": "19348",
       "nome": "ITAÚ UNIBANCO HOLDING S.A.",
       "data": "2026-02-04",
-      "categoria": "Aviso aos Acionistas",
-      "tipo": "Outros avisos",
-      "assunto": "Data de Pagamento de Juros sobre o Capital Próprio",
-      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1473196&numSequencia=997902&numVersao=1",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Projeções 2026",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1473323&numSequencia=998029&numVersao=1",
       "alerta_politica": false,
       "ticker": "ITUB4"
     },
@@ -658,6 +1626,50 @@
       "ticker": "BBDC4"
     },
     {
+      "cd_cvm": "18660",
+      "nome": "CPFL ENERGIA SA",
+      "data": "2026-02-02",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Reorganização Societária - Incorporação, Cisão ou Fusão da Companhia",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1472129&numSequencia=996835&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CPFE3"
+    },
+    {
+      "cd_cvm": "23795",
+      "nome": "CAIXA SEGURIDADE PARTICIPAÇÕES S.A.",
+      "data": "2026-02-02",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1471991&numSequencia=996697&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CXSE3"
+    },
+    {
+      "cd_cvm": "23795",
+      "nome": "CAIXA SEGURIDADE PARTICIPAÇÕES S.A.",
+      "data": "2026-01-30",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Distribuição de Dividendos Intermediários",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1471801&numSequencia=996507&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CXSE3"
+    },
+    {
+      "cd_cvm": "18660",
+      "nome": "CPFL ENERGIA SA",
+      "data": "2026-01-23",
+      "categoria": "Fato Relevante",
+      "tipo": null,
+      "assunto": "Deferimento do Cancelamento de Registro de Companhia Aberta da CPFL Geração",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1469479&numSequencia=994185&numVersao=2",
+      "alerta_politica": false,
+      "ticker": "CPFE3"
+    },
+    {
       "cd_cvm": "906",
       "nome": "BANCO BRADESCO S.A.",
       "data": "2026-01-23",
@@ -667,6 +1679,17 @@
       "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1469605&numSequencia=994311&numVersao=1",
       "alerta_politica": false,
       "ticker": "BBDC4"
+    },
+    {
+      "cd_cvm": "23795",
+      "nome": "CAIXA SEGURIDADE PARTICIPAÇÕES S.A.",
+      "data": "2026-01-15",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Data prevista para a assembleia",
+      "assunto": "Data prevista para AGO 2026",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1467725&numSequencia=992431&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CXSE3"
     },
     {
       "cd_cvm": "906",
@@ -702,15 +1725,48 @@
       "ticker": "B3SA3"
     },
     {
-      "cd_cvm": "21610",
-      "nome": "B3 S.A. - BRASIL, BOLSA, BALCÃO",
-      "data": "2025-12-30",
+      "cd_cvm": "23795",
+      "nome": "CAIXA SEGURIDADE PARTICIPAÇÕES S.A.",
+      "data": "2026-01-02",
       "categoria": "Relatório Proventos",
       "tipo": null,
       "assunto": null,
-      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1462676&numSequencia=987382&numVersao=3",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1463243&numSequencia=987949&numVersao=2",
+      "alerta_politica": false,
+      "ticker": "CXSE3"
+    },
+    {
+      "cd_cvm": "23795",
+      "nome": "CAIXA SEGURIDADE PARTICIPAÇÕES S.A.",
+      "data": "2026-01-02",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1463242&numSequencia=987948&numVersao=1",
+      "alerta_politica": false,
+      "ticker": "CXSE3"
+    },
+    {
+      "cd_cvm": "21610",
+      "nome": "B3 S.A. - BRASIL, BOLSA, BALCÃO",
+      "data": "2025-12-30",
+      "categoria": "Aviso aos Acionistas",
+      "tipo": "Outros avisos",
+      "assunto": "Dividendos/Juros sobre Capital Próprio",
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1462574&numSequencia=987280&numVersao=1",
       "alerta_politica": false,
       "ticker": "B3SA3"
+    },
+    {
+      "cd_cvm": "20257",
+      "nome": "TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S.A.",
+      "data": "2025-11-12",
+      "categoria": "Relatório Proventos",
+      "tipo": null,
+      "assunto": null,
+      "link": "https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&descTipo=IPE&CodigoInstituicao=1&numProtocolo=1443959&numSequencia=968671&numVersao=2",
+      "alerta_politica": false,
+      "ticker": "TAEE11"
     }
   ]
 }

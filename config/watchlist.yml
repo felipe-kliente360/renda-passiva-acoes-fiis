@@ -18,6 +18,19 @@ acoes:
   - { ticker: BBAS3, nome: "Banco do Brasil ON",  cd_cvm: "001023", cnpj: "00.000.000/0001-91" }
   - { ticker: ABEV3, nome: "Ambev ON",            cd_cvm: "023264", cnpj: "07.526.557/0001-00" }
   - { ticker: ITSA4, nome: "Itaúsa PN",           cd_cvm: "007617", cnpj: "61.532.644/0001-15" }
+  # Ampliação (pagadoras consolidadas) — cd_cvm resolvido por CNPJ no cadastro CVM (inequívoco).
+  - { ticker: TAEE11, nome: "Taesa",              cd_cvm: "020257", cnpj: "07.859.971/0001-30" }
+  - { ticker: CPLE6, nome: "Copel PNB",           cd_cvm: "014311", cnpj: "76.483.817/0001-20" }
+  - { ticker: EGIE3, nome: "Engie Brasil",        cd_cvm: "017329", cnpj: "02.474.103/0001-19" }
+  - { ticker: VIVT3, nome: "Telefônica/Vivo",     cd_cvm: "017671", cnpj: "02.558.157/0001-62" }
+  - { ticker: BBSE3, nome: "BB Seguridade",       cd_cvm: "023159", cnpj: "17.344.597/0001-94" }
+  - { ticker: CXSE3, nome: "Caixa Seguridade",    cd_cvm: "023795", cnpj: "22.543.331/0001-00" }
+  - { ticker: KLBN11, nome: "Klabin",             cd_cvm: "012653", cnpj: "89.637.490/0001-45" }
+  - { ticker: SAPR11, nome: "Sanepar",            cd_cvm: "018627", cnpj: "76.484.013/0001-45" }
+  - { ticker: SBSP3, nome: "Sabesp",              cd_cvm: "014443", cnpj: "43.776.517/0001-80" }
+  - { ticker: CMIG4, nome: "Cemig PN",            cd_cvm: "002453", cnpj: "17.155.730/0001-64" }
+  - { ticker: GGBR4, nome: "Gerdau PN",           cd_cvm: "003980", cnpj: "33.611.500/0001-19" }
+  - { ticker: CPFE3, nome: "CPFL Energia",        cd_cvm: "018660", cnpj: "02.429.144/0001-93" }
 
 # cnpj preenchido via JOIN ticker→ISIN→CNPJ no membro `geral` do INF_MENSAL (CVM),
 # cruzado contra o cadastro de VP (1314 fundos). P/VP resultante validado em 0,90–1,05.
@@ -31,3 +44,12 @@ fiis:
   - { ticker: HGRU11, nome: "Pátria Renda Urbana",    cnpj: "29.641.226/0001-53" }
   - { ticker: VISC11, nome: "Vinci Shopping Centers", cnpj: "17.554.274/0001-25" }
   - { ticker: BTLG11, nome: "BTG Logística",          cnpj: "11.839.593/0001-09" }
+  # Ampliação (FIIs líquidos) — cnpj resolvido por ISIN→ticker no membro `geral` ∩ brapi.
+  - { ticker: GGRC11, nome: "Zagros Renda Imob.",      cnpj: "26.614.291/0001-00" }
+  - { ticker: GARE11, nome: "Guardian Logística",      cnpj: "37.295.919/0001-60" }
+  - { ticker: CPTS11, nome: "Capitânia Securities II",  cnpj: "18.979.895/0001-13" }
+  - { ticker: KNSC11, nome: "Kinea Securities",         cnpj: "35.864.448/0001-38" }
+  - { ticker: VGIR11, nome: "Valora CRI CDI",           cnpj: "29.852.732/0001-91" }
+  - { ticker: VGHF11, nome: "Valora Hedge",             cnpj: "36.771.692/0001-19" }
+  - { ticker: SNEL11, nome: "Suno Energias Limpas",     cnpj: "43.741.171/0001-84" }
+  - { ticker: JSAF11, nome: "JS Ativos Financeiros",    cnpj: "42.085.661/0001-07" }
