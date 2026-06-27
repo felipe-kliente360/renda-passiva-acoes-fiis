@@ -9,6 +9,7 @@ from pipeline.fundamentos import (
     patrimonio_liquido,
     resolve_share_scale,
     total_acoes,
+    ttm_proventos,
 )
 from pipeline.normalize import read_cvm_csv
 
@@ -92,6 +93,14 @@ def test_patrimonio_liquido_prefere_controladora_e_cai_no_consolidado():
     beta = out[out["denom"] == "BANCO BETA SA"]
     assert beta["valor"].iloc[0] == pytest.approx(90_000_000.0)
     assert beta["fonte_pl"].iloc[0] == "consolidado"
+
+
+def test_ttm_proventos_ponte_ano_cheio_mais_ytd():
+    # Petrobras (validado no ITR Q1/2026): cheio 2025=45,2bi; YTD 2025=16,6bi; YTD 2026=11,6bi.
+    ttm = ttm_proventos(45_205_000_000, 11_639_000_000, 16_587_000_000)
+    assert ttm == pytest.approx(40_257_000_000.0)
+    # sem variação intra-ano, TTM = ano cheio.
+    assert ttm_proventos(100.0, 30.0, 30.0) == pytest.approx(100.0)
 
 
 def test_resolve_share_scale_detecta_milhares_e_unidades():

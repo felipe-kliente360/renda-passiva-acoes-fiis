@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-27T00:50:50.247437+00:00",
+    "generated_at": "2026-06-27T00:54:20.039388+00:00",
     "count": 8,
     "metodologia": "proventos por competência CVM (DFP); DY nível empresa; denominador split-adj (Fase 1); escala de ações ancorada no yfinance",
     "anos": [
@@ -56,7 +56,9 @@
       },
       "dy_historico_media": 0.25013124551124355,
       "dy_historico_mediana": 0.20370509766116804,
-      "dy_corrente": 0.0921767928596667,
+      "dy_corrente": 0.08206583726349477,
+      "dy_corrente_base": "ttm_itr",
+      "ttm_proventos": 40257000000.0,
       "payout_por_ano": {
         "2015": null,
         "2016": null,
@@ -91,7 +93,7 @@
         "2024": 28.514362646424026,
         "2025": 32.399383845056974
       },
-      "pvp": 1.1744050498603884,
+      "pvp": 1.1747136977052928,
       "recorrencia": {
         "years_paid": 8,
         "window": 10,
@@ -153,7 +155,9 @@
       },
       "dy_historico_media": 0.10249320776567424,
       "dy_historico_mediana": 0.08790320452840567,
-      "dy_corrente": 0.05956693351103679,
+      "dy_corrente": 0.06915662099489046,
+      "dy_corrente_base": "ttm_itr",
+      "ttm_proventos": 23071000000.0,
       "payout_por_ano": {
         "2015": null,
         "2016": 0.13743050628199546,
@@ -188,7 +192,7 @@
         "2024": 50.06653048220544,
         "2025": 44.2576202703396
       },
-      "pvp": 1.7746096495982555,
+      "pvp": 1.7657976077935276,
       "recorrencia": {
         "years_paid": 10,
         "window": 10,
@@ -248,7 +252,9 @@
       },
       "dy_historico_media": 0.06024977141720757,
       "dy_historico_mediana": 0.04376309232449755,
-      "dy_corrente": 0.10328356966587834,
+      "dy_corrente": 0.06829692217739257,
+      "dy_corrente_base": "ttm_itr",
+      "ttm_proventos": 31810000000.0,
       "payout_por_ano": {
         "2015": 0.27226107226107227,
         "2016": 0.3298370803421743,
@@ -283,7 +289,7 @@
         "2024": 22.700281378688896,
         "2025": 19.50533096377426
       },
-      "pvp": 2.1742773849243986,
+      "pvp": 2.1655618188919266,
       "recorrencia": {
         "years_paid": 10,
         "window": 10,
@@ -340,7 +346,9 @@
       },
       "dy_historico_media": 0.04781460329348995,
       "dy_historico_mediana": 0.05004174992415357,
-      "dy_corrente": 0.062158029175139205,
+      "dy_corrente": 0.05771549935530955,
+      "dy_corrente_base": "ttm_itr",
+      "ttm_proventos": 10939399000.0,
       "payout_por_ano": {
         "2015": 0.2761606992282428,
         "2016": 0.3135839900294223,
@@ -374,7 +382,7 @@
         "2024": 15.892226508643102,
         "2025": 16.8681998779703
       },
-      "pvp": 1.0670966748211121,
+      "pvp": 1.0623540274559637,
       "recorrencia": {
         "years_paid": 9,
         "window": 10,
@@ -436,7 +444,9 @@
       },
       "dy_historico_media": 0.04004933256834362,
       "dy_historico_mediana": 0.033676273431366435,
-      "dy_corrente": 0.019195011673599646,
+      "dy_corrente": 0.028038496155088542,
+      "dy_corrente_base": "ttm_itr",
+      "ttm_proventos": 2106130000.0,
       "payout_por_ano": {
         "2015": 0.6481315825083392,
         "2016": 0.4038511667656574,
@@ -471,7 +481,7 @@
         "2024": 3.4914983836679965,
         "2025": 3.4688382933684223
       },
-      "pvp": 4.3098001535113095,
+      "pvp": 4.3011518019785955,
       "recorrencia": {
         "years_paid": 10,
         "window": 10,
@@ -531,7 +541,9 @@
       },
       "dy_historico_media": 0.14485440073245995,
       "dy_historico_mediana": 0.1483058115010151,
-      "dy_corrente": 0.05751095710711917,
+      "dy_corrente": 0.04075219906133136,
+      "dy_corrente_base": "ttm_itr",
+      "ttm_proventos": 4731744000.0,
       "payout_por_ano": {
         "2015": 0.5675043508755271,
         "2016": 0.5656240301191884,
@@ -566,7 +578,7 @@
         "2024": 31.468381943407916,
         "2025": 33.14511344892352
       },
-      "pvp": 0.6139668344423981,
+      "pvp": 0.6136651239384576,
       "recorrencia": {
         "years_paid": 10,
         "window": 10,
@@ -626,7 +638,9 @@
       },
       "dy_historico_media": 0.05574504616836553,
       "dy_historico_mediana": 0.05150713972785176,
-      "dy_corrente": 0.08555839044598795,
+      "dy_corrente": 0.057461915266575785,
+      "dy_corrente_base": "ttm_itr",
+      "ttm_proventos": 15012757000.0,
       "payout_por_ano": {
         "2015": 0.5915905887189968,
         "2016": 0.5211168594544662,
@@ -661,7 +675,7 @@
         "2024": 6.33147658452999,
         "2025": 5.684668984638453
       },
-      "pvp": 2.9324486828240826,
+      "pvp": 2.9430032931460763,
       "recorrencia": {
         "years_paid": 10,
         "window": 10,
@@ -669,7 +683,7 @@
         "passes": true
       },
       "crescimento_dps_cagr": 0.48670996102344777,
-      "yield_trap": true,
+      "yield_trap": false,
       "acoes_circulacao": 15616526000.0,
       "escala_acoes_recente": 1000.0,
       "notes": []
@@ -721,7 +735,9 @@
       },
       "dy_historico_media": 0.07888260779901479,
       "dy_historico_mediana": 0.05497929869100938,
-      "dy_corrente": 0.1244521941143282,
+      "dy_corrente": 0.08423857828541899,
+      "dy_corrente_base": "ttm_itr",
+      "ttm_proventos": 12712000000.0,
       "payout_por_ano": {
         "2015": 0.2869869192602616,
         "2016": 0.3531847521617343,
@@ -756,7 +772,7 @@
         "2024": 8.762213412383907,
         "2025": 8.32897242409855
       },
-      "pvp": 1.6268513690272408,
+      "pvp": 1.616045696009584,
       "recorrencia": {
         "years_paid": 10,
         "window": 10,

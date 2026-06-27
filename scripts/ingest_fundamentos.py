@@ -30,7 +30,7 @@ import yaml
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from pipeline import metrics  # noqa: E402
-from pipeline.cvm import download_dfp  # noqa: E402
+from pipeline.cvm import download_dfp, download_itr  # noqa: E402
 from pipeline.export import export_json, export_parquet  # noqa: E402
 from pipeline.fundamentos import (  # noqa: E402
     extract_concept,
@@ -39,6 +39,7 @@ from pipeline.fundamentos import (  # noqa: E402
     patrimonio_liquido,
     resolve_share_scale,
     total_acoes,
+    ttm_proventos,
 )
 from pipeline.normalize import list_zip_members, read_cvm_csv_from_zip  # noqa: E402
 from pipeline.prices import fetch_shares_outstanding  # noqa: E402
@@ -56,6 +57,15 @@ def _member(zip_path: Path, contains: str) -> str | None:
 def _by_key(df: pd.DataFrame, key_col: str, key_val: str, val_col: str = "valor") -> float | None:
     sub = df[df[key_col].astype("string").str.zfill(6) == str(key_val).zfill(6)]
     return float(sub[val_col].iloc[0]) if not sub.empty else None
+
+
+def _latest_ytd(df: pd.DataFrame, cd_cvm: str) -> tuple[float, int] | None:
+    """(valor, ano) do trimestre YTD mais recente de uma empresa num extract de ITR."""
+    sub = df[df["cd_cvm"].astype("string").str.zfill(6) == str(cd_cvm).zfill(6)]
+    if sub.empty:
+        return None
+    row = sub.loc[sub["dt_fim_exerc"].idxmax()]
+    return float(row["valor"]), int(row["dt_fim_exerc"].year)
 
 
 def main() -> int:
@@ -129,11 +139,38 @@ def main() -> int:
                 shares_raw.setdefault(cd, {})[year] = sh
         print(f"[{year}] ok")
 
+    # TTM via ITR do ano corrente: YTD atual (ÚLTIMO) e do mesmo período do ano anterior
+    # (PENÚLTIMO). Latest dt_fim por empresa = trimestre mais recente publicado.
+    ytd_cur: dict[str, tuple[float, int]] = {}
+    ytd_pri: dict[str, float] = {}
+    itr_zip = DEFAULT_RAW / f"itr_cia_aberta_{args.end}.zip"
+    if not args.no_download and not itr_zip.exists():
+        try:
+            itr_zip = download_itr(args.end)
+        except Exception as e:
+            print(f"[ITR {args.end}] download falhou ({e}); TTM indisponível.", file=sys.stderr)
+    if itr_zip.exists():
+        m_dfc = _member(itr_zip, "DFC_MI")
+        if m_dfc:
+            itr_dfc = read_cvm_csv_from_zip(itr_zip, m_dfc)
+            cur = extract_concept(itr_dfc, specs["proventos_pagos"], ordem="ÚLTIMO")
+            pri = extract_concept(itr_dfc, specs["proventos_pagos"], ordem="PENÚLTIMO")
+            for a in acoes:
+                cd = a["cd_cvm"]
+                v = _latest_ytd(cur, cd)
+                if v is not None:
+                    ytd_cur[cd] = v
+                p = _latest_ytd(pri, cd)
+                if p is not None:
+                    ytd_pri[cd] = p[0]
+            print(f"[ITR {args.end}] TTM calculado para {len(ytd_cur)} ações.")
+
     records = []
     for a in acoes:
         cd, tk = a["cd_cvm"], a["ticker"]
         rec = _build_record(a, prov.get(cd, {}), lucro.get(cd, {}), pl.get(cd, {}),
-                            shares_raw.get(cd, {}), prices.get(tk, {}))
+                            shares_raw.get(cd, {}), prices.get(tk, {}),
+                            ytd_cur.get(cd), ytd_pri.get(cd))
         records.append(rec)
 
     meta = {
@@ -149,7 +186,8 @@ def main() -> int:
 
 
 def _build_record(
-    a: dict, prov: dict, lucro: dict, pl: dict, shares_raw: dict, price: dict
+    a: dict, prov: dict, lucro: dict, pl: dict, shares_raw: dict, price: dict,
+    ytd_cur: tuple[float, int] | None = None, ytd_pri: float | None = None,
 ) -> dict:
     tk = a["ticker"]
     notes: list[str] = []
@@ -179,9 +217,22 @@ def _build_record(
     hist = metrics.historical_dy(dps, avg_price)
     current_price = price.get("current_price")
     latest_y = max(prov) if prov else None
+    shares_now = shares.get(latest_share_year) if latest_share_year else None
+
+    # proventos correntes: TTM via ITR (ponte ano-cheio + YTD) quando disponível; senão o
+    # último ano fiscal cheio (DFP). Ambos no nível da empresa, mesmas ações atuais.
+    prov_corrente = prov.get(latest_y) if latest_y is not None else None
+    base_corrente = "ano_fiscal"
+    ttm = None
+    if ytd_cur is not None and ytd_pri is not None:
+        full_prior = prov.get(ytd_cur[1] - 1)
+        if full_prior is not None:
+            ttm = ttm_proventos(full_prior, ytd_cur[0], ytd_pri)
+            prov_corrente, base_corrente = ttm, "ttm_itr"
+
     current_dy = float("nan")
-    if latest_y is not None and shares.get(latest_y, 0) > 0 and current_price:
-        current_dy = metrics.current_dy(prov[latest_y] / shares[latest_y], current_price)
+    if prov_corrente is not None and shares_now and current_price:
+        current_dy = metrics.current_dy(prov_corrente / shares_now, current_price)
 
     payout = {
         int(y): metrics.payout_ratio(prov[y], lucro[y])
@@ -208,6 +259,8 @@ def _build_record(
         "dy_historico_media": None if pd.isna(hist.mean) else hist.mean,
         "dy_historico_mediana": None if pd.isna(hist.median) else hist.median,
         "dy_corrente": None if pd.isna(current_dy) else current_dy,
+        "dy_corrente_base": base_corrente,
+        "ttm_proventos": ttm,
         "payout_por_ano": {y: (None if pd.isna(v) else v) for y, v in payout.items()},
         "patrimonio_liquido_por_ano": {int(y): float(v) for y, v in sorted(pl.items())},
         "vpa_por_ano": vpa,

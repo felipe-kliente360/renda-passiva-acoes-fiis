@@ -185,6 +185,18 @@ def patrimonio_liquido(
     )
 
 
+def ttm_proventos(full_prior_year: float, ytd_current: float, ytd_prior: float) -> float:
+    """Proventos dos últimos 12 meses por ponte ano-cheio + YTD (base CVM, sem data-com).
+
+    A DFC do ITR é ACUMULADA no exercício (YTD). Para a janela de 12 meses que termina no
+    último trimestre publicado: pega o ano fiscal cheio anterior (DFP) e troca o YTD daquele
+    ano (até o mesmo trimestre) pelo YTD do ano corrente:
+        TTM = ano_cheio(Y-1) − YTD(Y-1 até o trimestre) + YTD(Y até o trimestre).
+    `ytd_prior` e `ytd_current` saem do MESMO arquivo ITR (PENÚLTIMO e ÚLTIMO).
+    """
+    return float(full_prior_year) - float(ytd_prior) + float(ytd_current)
+
+
 def resolve_share_scale(cvm_raw: float, anchor_shares: float | None) -> float:
     """Fator de escala (1 ou 1000) para a contagem de ações crua da CVM.
 
