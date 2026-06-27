@@ -105,6 +105,14 @@ def main() -> int:
         frames.append(parsed[parsed["ticker"].isin(traded)])
         print(f"[{year}{month:02d}] ok ({len(frames[-1])} negociados)")
 
+    if not frames:
+        print(
+            "ERRO: nenhum mês de INF_MENSAL FIAgro baixado — CVM inalcançável? "
+            "Mantendo artefatos existentes; nada escrito.",
+            file=sys.stderr,
+        )
+        return 1
+
     allm = (
         pd.concat(frames, ignore_index=True)
         if frames

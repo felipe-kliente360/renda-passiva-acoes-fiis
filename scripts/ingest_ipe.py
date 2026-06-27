@@ -70,6 +70,14 @@ def main() -> int:
         frames.append(parsed[parsed["cd_cvm"].isin(cds)])
         print(f"[{year}] ok ({len(frames[-1])} docs da watchlist)")
 
+    if not frames:
+        print(
+            "ERRO: nenhum ano de IPE baixado — CVM inalcançável? "
+            "Mantendo artefatos existentes; nada escrito.",
+            file=sys.stderr,
+        )
+        return 1
+
     allm = pd.concat(frames, ignore_index=True) if frames else pd.DataFrame(
         columns=["cd_cvm", "data", "categoria"]
     )

@@ -69,6 +69,14 @@ def main() -> int:
         frames.append(monthly[monthly["cnpj_fundo"].isin(cnpjs)])
         print(f"[{year}] ok")
 
+    if not frames:
+        print(
+            "ERRO: nenhum ano de INF_MENSAL FII baixado — CVM inalcançável? "
+            "Mantendo artefatos existentes; nada escrito.",
+            file=sys.stderr,
+        )
+        return 1
+
     allm = pd.concat(frames, ignore_index=True) if frames else pd.DataFrame(
         columns=["cnpj_fundo", "competencia", "dy_mes"]
     )

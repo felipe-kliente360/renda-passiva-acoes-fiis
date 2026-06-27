@@ -88,6 +88,13 @@ def main() -> int:
         }
         for row in latest.itertuples()
     ]
+    if not records:
+        print(
+            "ERRO: 0 fundos com VP — CSV vazio/CVM inalcançável? "
+            "Mantendo artefatos existentes; nada escrito.",
+            file=sys.stderr,
+        )
+        return 1
     json_path = export_json(records, args.out.with_suffix(".json"), meta={"dataset": DATASET})
     pq_path = export_parquet(records, args.out.with_suffix(".parquet"))
     print(f"Fundos com VP: {len(records)}")
