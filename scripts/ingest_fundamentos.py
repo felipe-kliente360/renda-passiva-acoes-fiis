@@ -207,6 +207,18 @@ def main() -> int:
                             anchor_cache.get(tk))
         records.append(rec)
 
+    # Trava anti-clobber: se NENHUMA ação trouxe proventos, a CVM não foi alcançada
+    # (ex.: runner sem acesso a dados.cvm.gov.br). Não sobrescrever os artefatos bons
+    # com registros vazios — abortar para o passo de commit não rodar (bash -e).
+    com_proventos = sum(1 for r in records if r.get("proventos_pagos_por_ano"))
+    if records and com_proventos == 0:
+        print(
+            f"ERRO: 0/{len(records)} ações com proventos — download da CVM falhou "
+            "(dados.cvm.gov.br inalcançável?). Mantendo artefatos existentes; nada escrito.",
+            file=sys.stderr,
+        )
+        return 1
+
     meta = {
         "metodologia": "proventos por competência CVM (DFP); DY nível empresa; "
         "denominador split-adj (Fase 1); escala de ações ancorada no yfinance",
