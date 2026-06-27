@@ -35,6 +35,10 @@ jobs:
       - name: DY de FII (rendimentos via INF_MENSAL)
         run: python scripts/ingest_fii_dy.py --start 2020 --end "$(date -u +%Y)" --out data/fii_dy
 
+      - name: Vacância de FII de tijolo (FNET — Informe Trimestral)
+        run: python scripts/ingest_fii_vacancia.py --out data/fii_vacancia.json
+        continue-on-error: true   # FNET é instável; não derruba o pipeline
+
       - name: FII estilo-ações (DY + projeção + saúde + score)
         run: python scripts/ingest_fii_fundos.py --start 2020 --end "$(date -u +%Y)" --out data/fii_fundos
 
@@ -54,6 +58,7 @@ jobs:
                   data/fiagro.json data/fiagro.parquet \
                   data/fiagro_score.json data/fiagro_score.parquet \
                   data/fatos_relevantes.json data/fatos_relevantes.parquet \
+                  data/fii_vacancia.json \
                   data/macro.json
           if git diff --staged --quiet; then
             echo "Sem mudanças nos artefatos."

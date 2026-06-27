@@ -57,12 +57,14 @@ function FundShortlist({
   baselineLabel,
   showConfianca = false,
   showCredito = false,
+  showVacancia = false,
 }: {
   rows: FundScoreRow[];
   baselineKey: "dy_mediana" | "dy_baseline_pares";
   baselineLabel: string;
   showConfianca?: boolean;
   showCredito?: boolean;
+  showVacancia?: boolean;
 }) {
   return (
     <div className="tablecard">
@@ -80,6 +82,7 @@ function FundShortlist({
             <th>Cresc.</th>
             <th>Alav.</th>
             {showCredito && <th>Inadimpl.</th>}
+            {showVacancia && <th title="Vacância dos imóveis, ponderada pela receita (FNET)">Vacância</th>}
             <th title="Volume diário negociado (brapi)">Liq.</th>
             {showConfianca && <th>Confiança</th>}
             <th>Flags</th>
@@ -111,6 +114,11 @@ function FundShortlist({
                   {r.inadimplencia === null || r.inadimplencia === undefined
                     ? "—"
                     : pct(r.inadimplencia)}
+                </td>
+              )}
+              {showVacancia && (
+                <td className="muted">
+                  {r.vacancia === null || r.vacancia === undefined ? "—" : pct(r.vacancia)}
                 </td>
               )}
               <td className="muted">{fmtVol(r.volume_brapi)}</td>
@@ -256,12 +264,14 @@ export default function Home() {
           DY), alavancagem (passivo/PL), preservação da cota e taxa de administração.{" "}
           <strong>Baseline = histórico do próprio fundo</strong> (~5 anos de DY mensal); o trap é
           per-fundo. <strong>Tipo</strong> (tijolo/papel/FoF) classificado pela composição do
-          ativo no informe da CVM.
+          ativo no informe da CVM. <strong>Vacância</strong> (tijolo) vem do Informe Trimestral
+          do FNET, ponderada pela receita dos imóveis — cobertura parcial (papel não tem).
         </p>
         <FundShortlist
           rows={fiiScore.data}
           baselineKey="dy_mediana"
           baselineLabel="DY mediana"
+          showVacancia
         />
       </section>
 

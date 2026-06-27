@@ -23,7 +23,7 @@ Este README é o guia explicativo (conceitos, análises, lógica de decisão). O
 | Universo | Análise | Artefato |
 |---|---|---|
 | **Ações** (blue chips pagadoras) | DY (competência CVM), payout pago **e** declarado, ROE, dívida líq./EBITDA, P/VP, recorrência, CAGR, yield trap → score | `fundamentos.json`, `score.json` |
-| **FIIs** | DY oficial, crescimento, saúde (alavancagem/cota/taxa), **tipo** tijolo/papel/FoF, P/VP, nº cotistas → score | `fii_fundos.json`, `fii_score.json`, `fii_dy.json`, `fii_vp.json` |
+| **FIIs** | DY oficial, crescimento, saúde (alavancagem/cota/taxa), **tipo** tijolo/papel/FoF, **vacância** (FNET, tijolo), P/VP, nº cotistas → score | `fii_fundos.json`, `fii_score.json`, `fii_vacancia.json`, `fii_dy.json` |
 | **FIAgros** | DY oficial, **camada de crédito** (inadimplência, diversificação, liquidez), **tipo** crédito/terras, confiança → score | `fiagro.json`, `fiagro_score.json` |
 | **Preços** | spot (brapi) + série split-adj (yfinance), P/VP, preço médio anual | `prices.json` |
 | **Macro** | CDI 12m, Selic, IPCA (BCB) — base do *spread sobre CDI* | `macro.json` |
@@ -177,6 +177,7 @@ score = (0,40·recorrência + 0,30·yield_vs_baseline + 0,30·crescimento) × su
 | **brapi** | Preço spot, **volume** (liquidez), universo negociado (lista fi-agro/fii) | Cotação corrente e liquidez |
 | **yfinance** | Série histórica split-adj/div-unadj; âncora de nº de ações | Denominador correto do DY histórico |
 | **BCB / SGS** | CDI, Selic, IPCA | Contexto macro / spread sobre CDI; API pública sem auth |
+| **FNET (B3)** | Vacância/inadimplência de FII de tijolo (Informe Trimestral) | Único lugar com vacância; lento/instável, cobertura parcial |
 
 **Evitado de propósito**: scrapers de agregadores (Status Invest, Funds Explorer) — frágeis,
 questões de ToS, e contra a decisão "CVM autoritativa". Carteira da B3 e scraping da área do
@@ -203,8 +204,10 @@ investidor **não** são automatizados (importar CSV exportado, quando houver �
 
 ## 8. Limitações honestas
 
-- **Vacância, contratos e inquilinos de FII de tijolo** — o indicador nº 1 do tijolo **não**
-  está na base aberta da CVM (vive nos relatórios gerenciais do FNET). Não coberto.
+- **Vacância de FII de tijolo** — não está na base aberta da CVM; vem do **FNET** (Informe
+  Trimestral), com **cobertura parcial**: FNET é lento/instável e o layout varia por
+  administrador (ex.: XPML preenche a coluna com ocupação → cai na trava de sanidade e fica
+  N/A). Contratos/inquilinos individualizados ainda não são extraídos.
 - **FIAgro tem ~1 ano de histórico** (dataset começa em 2025-05): crescimento e baseline são
   rasos por construção — reportados com honestidade (TTM estimado, baseline por pares, confiança).
 - **Bradesco** fica N/A no payout declarado (filou a DMPL fora das colunas de lucros/reservas).
@@ -230,6 +233,7 @@ Pipelines (ordem usual; `--no-download` reusa ZIPs em `data/raw/`):
 python scripts/fetch_macro.py                                              # macro (CDI/Selic/IPCA)
 python scripts/ingest_fii.py --download --out data/fii_vp                  # VP da cota de FII
 python scripts/ingest_fii_dy.py --start 2020 --end 2026 --out data/fii_dy  # DY de FII
+python scripts/ingest_fii_vacancia.py                                      # vacância de FII de tijolo (FNET)
 python scripts/ingest_fii_fundos.py --start 2020 --end 2026 --out data/fii_fundos  # FII estilo-ações + score
 python scripts/ingest_fiagro.py --out data/fiagro                          # FIAgro + shortlist
 python scripts/fetch_prices.py --fii-vp data/fii_vp.json --out data/prices # preços + P/VP

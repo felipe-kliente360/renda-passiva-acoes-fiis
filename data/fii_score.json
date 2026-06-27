@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-27T13:48:36.013917+00:00",
+    "generated_at": "2026-06-27T15:28:50.593615+00:00",
     "count": 8,
     "metodologia": "score de fundos 40/30/30 × sustentabilidade (alavancagem/cota/taxa)",
     "fonte": "CVM INF_MENSAL FII (Percentual_Dividend_Yield_Mes + saúde patrimonial)",
@@ -27,6 +27,8 @@
       "amortizacao_recente": 0.0,
       "spread_cdi": -0.006722083155106251,
       "volume_brapi": 178043,
+      "vacancia": null,
+      "inadimplencia": null,
       "crescimento": 0.284817837690273,
       "crescimento_base": "cagr_anual",
       "rank": 1
@@ -51,6 +53,8 @@
       "amortizacao_recente": 0.0,
       "spread_cdi": -0.05406408315510623,
       "volume_brapi": 131186,
+      "vacancia": null,
+      "inadimplencia": null,
       "crescimento": 0.179260850124217,
       "crescimento_base": "cagr_anual",
       "rank": 2
@@ -75,6 +79,8 @@
       "amortizacao_recente": null,
       "spread_cdi": -0.06571308315510624,
       "volume_brapi": 54256,
+      "vacancia": 0.0546,
+      "inadimplencia": 0.0619,
       "crescimento": 0.17572140860836183,
       "crescimento_base": "cagr_anual",
       "rank": 3
@@ -99,6 +105,8 @@
       "amortizacao_recente": 0.0,
       "spread_cdi": -0.05699608315510622,
       "volume_brapi": 90379,
+      "vacancia": 0.0223,
+      "inadimplencia": 0.0,
       "crescimento": 0.121752553315716,
       "crescimento_base": "cagr_anual",
       "rank": 4
@@ -123,6 +131,8 @@
       "amortizacao_recente": 0.0,
       "spread_cdi": -0.07115308315510624,
       "volume_brapi": 121317,
+      "vacancia": 0.0043,
+      "inadimplencia": 0.0065,
       "crescimento": 0.08046170932313479,
       "crescimento_base": "cagr_anual",
       "rank": 5
@@ -147,6 +157,8 @@
       "amortizacao_recente": 0.0,
       "spread_cdi": -0.050333083155106234,
       "volume_brapi": 61249,
+      "vacancia": 0.0052,
+      "inadimplencia": 0.0,
       "crescimento": 0.05031123838678764,
       "crescimento_base": "cagr_anual",
       "rank": 6
@@ -171,6 +183,8 @@
       "amortizacao_recente": 0.0,
       "spread_cdi": -0.023039083155106235,
       "volume_brapi": 2011985,
+      "vacancia": null,
+      "inadimplencia": null,
       "crescimento": 0.10195426507067462,
       "crescimento_base": "cagr_anual",
       "rank": 7
@@ -195,6 +209,8 @@
       "amortizacao_recente": 0.0,
       "spread_cdi": -0.06857408315510624,
       "volume_brapi": 102815,
+      "vacancia": 0.0365,
+      "inadimplencia": 0.0,
       "crescimento": 0.0017328301539105695,
       "crescimento_base": "cagr_anual",
       "rank": 8

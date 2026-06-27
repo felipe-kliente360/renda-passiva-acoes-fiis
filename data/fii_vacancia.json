@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "generated_at": "2026-06-27T15:28:36.219785+00:00",
+    "count": 5,
+    "fonte": "FNET (B3) — Informe Trimestral Estruturado (ANEXO 39-II)",
+    "metrica": "vacância e inadimplência do fundo, ponderadas pela receita dos imóveis",
+    "cobertura": "parcial: só FII de tijolo cujo informe parseia; papel/falha = ausente"
+  },
+  "data": [
+    {
+      "ticker": "HGLG11",
+      "cnpj": "11.728.688/0001-47",
+      "vacancia": 0.0365,
+      "inadimplencia": 0.0,
+      "n_imoveis": 37,
+      "data_ref": "31/03/2026"
+    },
+    {
+      "ticker": "KNRI11",
+      "cnpj": "12.005.956/0001-65",
+      "vacancia": 0.0043,
+      "inadimplencia": 0.0065,
+      "n_imoveis": 19,
+      "data_ref": "31/03/2026"
+    },
+    {
+      "ticker": "HGRU11",
+      "cnpj": "29.641.226/0001-53",
+      "vacancia": 0.0052,
+      "inadimplencia": 0.0,
+      "n_imoveis": 100,
+      "data_ref": "31/03/2026"
+    },
+    {
+      "ticker": "VISC11",
+      "cnpj": "17.554.274/0001-25",
+      "vacancia": 0.0546,
+      "inadimplencia": 0.0619,
+      "n_imoveis": 32,
+      "data_ref": "31/03/2026"
+    },
+    {
+      "ticker": "BTLG11",
+      "cnpj": "11.839.593/0001-09",
+      "vacancia": 0.0223,
+      "inadimplencia": 0.0,
+      "n_imoveis": 31,
+      "data_ref": "31/03/2026"
+    }
+  ]
+}

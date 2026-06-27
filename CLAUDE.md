@@ -159,6 +159,14 @@ saúde financeira no tempo + projeção), com **listas separadas** (decisão do 
   inadimplência (`Vencidos/(A_Vencer+Vencidos)`), diversificação (HHI de CRA/CRI/CPR/deb),
   liquidez (`Necessidades_Liquidez/PL`), composição. **FII** ganhou nº de cotistas e
   separação de amortização (`Amortizacao_Cotas_Mes` = devolução de capital, não yield).
+- **Vacância de FII de tijolo (FNET)** — `pipeline/fnet.py` + `scripts/ingest_fii_vacancia.py`
+  → `data/fii_vacancia.json`. A CVM aberta não traz vacância; vem do **Informe Trimestral
+  Estruturado** (ANEXO 39-II) do FNET. Vacância + inadimplência de aluguel do fundo,
+  ponderadas pela receita dos imóveis. Cobertura **parcial e honesta**: FNET é lento/instável
+  (retry/backoff) e o layout varia por administrador — papel não tem; XPML preenche a coluna
+  de vacância com ocupação (100%) → trava de sanidade (>40% = N/A). Parser por PADRÃO
+  ("Área (m" + 3 percentuais), não pelo cabeçalho (que aparece 1×). Validado: HGLG 3,65%/37
+  imóveis, HGRU 0,52%/100, VISC 5,46%.
 - **Camada macro (BCB/SGS)** — `pipeline/macro.py` + `scripts/fetch_macro.py` →
   `data/macro.json` (CDI 12m composto, Selic meta, IPCA 12m; API pública sem auth). Gera o
   **spread sobre CDI** (`DY TTM − CDI 12m`) dos fundos — é **contexto aditivo**, NÃO entra

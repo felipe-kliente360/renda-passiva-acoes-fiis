@@ -138,6 +138,13 @@ def main() -> int:
         f["ticker"]: f.get("volume") for f in (fetch_brapi_fund_list("fii") or [])
     }
 
+    # Vacância/inadimplência de aluguel (FNET, tijolo) — artefato separado, juntado por ticker.
+    vac_by_ticker: dict[str, dict] = {}
+    vac_path = args.out.parent / "fii_vacancia.json"
+    if vac_path.exists():
+        for v in json.loads(vac_path.read_text(encoding="utf-8")).get("data", []):
+            vac_by_ticker[v["ticker"]] = v
+
     # Score de fundos: baseline = mediana histórica do PRÓPRIO fundo (FII tem ~5 anos).
     rows: list[dict] = []
     for r in records:
@@ -168,6 +175,8 @@ def main() -> int:
                 if (r.get("dy_ttm") is not None and cdi_12m is not None) else None
             ),
             "volume_brapi": vol_by_ticker.get(r["ticker"]),
+            "vacancia": vac_by_ticker.get(r["ticker"], {}).get("vacancia"),
+            "inadimplencia": vac_by_ticker.get(r["ticker"], {}).get("inadimplencia"),
             "crescimento": r.get("crescimento"), "crescimento_base": r.get("crescimento_base"),
         })
     rows.sort(key=lambda x: x["score"], reverse=True)

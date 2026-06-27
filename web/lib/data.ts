@@ -84,6 +84,7 @@ export type FundScoreRow = {
   confianca?: "alta" | "baixa";
   tipo?: string | null;
   inadimplencia?: number | null;
+  vacancia?: number | null;
   diversificacao_hhi?: number | null;
   liquidez_pl?: number | null;
   num_cotistas?: number | null;
