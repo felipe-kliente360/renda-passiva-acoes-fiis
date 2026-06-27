@@ -120,3 +120,24 @@ marcados confiança baixa — validar fundo a fundo se quiser cravar.
 `prices.json` (16 tickers, P/VP dos FIIs) · `fundamentos.json` (8 ações) ·
 `score.json` (short-list de ações). Gerados pelas Actions: `ingest.yml` (FII + FIAgro,
 mensal), `prices.yml` (diário), `fundamentos.yml` (trimestral, fundamentos+score de ações).
+
+## 9. Split de rede dos runners (CVM × Yahoo) — validado 2026-06-27
+**Descoberta**: o runner do GitHub **não alcança `dados.cvm.gov.br`** (`Errno 101 Network
+is unreachable` — egress de nuvem bloqueado). O Yahoo (yfinance) é o inverso: só funciona
+no GH, não neste ambiente. Um run de `fundamentos.yml` no GH gravou 20 ações vazias e
+sobrescreveu `main` (restaurado em `26cbe53`).
+
+**Tratamento (commits c789700, 4b1f5b1, 655b1fb)**:
+- `scripts/fetch_anchors.py` + `.github/workflows/anchors.yml`: coletam `sharesOutstanding`
+  da watchlist no GH (yfinance OK) e commitam `config/shares_anchor.yml` por MERGE.
+- `ingest_fundamentos.py --no-yfinance`: gera aqui (CVM OK) lendo só o cache de âncora.
+  Aplicado no `fundamentos.yml`. 18/20 ações com DY; CPLE6 (Yahoo sem sharesOutstanding da
+  PNB) e SAPR11 (escala unit/ação) ficam N/A honesto.
+- **Trava anti-clobber** em `ingest_fundamentos`, `ingest_fii`, `ingest_fii_dy`,
+  `ingest_fii_fundos`, `ingest_fiagro`, `ingest_ipe`: se nenhum período da CVM baixa,
+  abortam (exit 1) sem escrever → `bash -e` derruba o passo antes do commit.
+
+**Onde rodar o quê**: GH = `prices.yml` + `anchors.yml` (yfinance). CVM (fundamentos +
+ingest FII/FIAgro/IPE) = **gerar neste ambiente** (alcança a CVM) e commitar.
+**Pendente decisão do Felipe**: desativar crons de `fundamentos.yml`/`ingest.yml` no GH
+(recomendado) vs. mantê-los vermelhos vs. proxy/mirror/self-hosted runner BR.
